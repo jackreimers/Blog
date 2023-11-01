@@ -1,7 +1,44 @@
-<header class="px-8 py-6 flex">
-    <h1 class="text-4xl font-semibold">Header</h1>
-    <div class="flex-1"></div>
-    <div>
-        <p>Right</p>
-    </div>
+<script lang='ts'>
+	import Icon from '$lib/components/text/icon.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
+
+	let scrollAmount = 0;
+	$: scrolled = scrollAmount > 50;
+
+	function onScroll() {
+		scrollAmount = window.scrollY;
+	}
+</script>
+
+<header
+	class='px-10 fixed w-full border-b duration-700 bg-white'
+	class:py-8={!scrolled}
+	class:py-4={scrolled}
+	class:border-transparent={!scrolled}
+	class:border-gray-300={scrolled}
+>
+	<div class='mx-auto flex'>
+		<a href='/'>
+			<!--
+			<p class='text-3xl font-semibold m-0 p-0 mb-1 text-gb'>Jack Reimers</p>
+			<p class='text-gray-400'>Software Engineer</p>
+			-->
+		</a>
+		<div class='flex-1'></div>
+		<div class='flex gap-6'>
+			<Button classes='text-2xl'></Button>
+			<Icon icon='dark_mode' classes='text-4xl text-gb' />
+			<Icon icon='menu' classes='text-4xl text-gb' />
+		</div>
+	</div>
 </header>
+
+<div class='h-64'></div>
+
+<style>
+    header {
+        transition-property: margin, padding, border-color;
+    }
+</style>
+
+<svelte:window on:scroll={() => onScroll()} />
