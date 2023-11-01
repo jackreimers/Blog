@@ -6,36 +6,36 @@
 @tailwind utilities;
 
 body {
-    font-family: Inter, sans-serif;
+	font-family: Inter, sans-serif;
 
-    /* For testing scroll effects */
-    min-height: 2000px;
+	/* For testing scroll effects */
+	min-height: 2000px;
 }
 
 .text-gt {
-    background: linear-gradient(to top, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	background: linear-gradient(to top, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .text-gb {
-    background: linear-gradient(to bottom, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	background: linear-gradient(to bottom, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .text-gr {
-    background: linear-gradient(to right, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	background: linear-gradient(to right, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
 
 .text-gl {
-    background: linear-gradient(to left, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+	background: linear-gradient(to left, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
 }
