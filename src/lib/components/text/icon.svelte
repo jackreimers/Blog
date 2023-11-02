@@ -4,9 +4,9 @@
 	export let classes: string = '';
 </script>
 
-<div class="flex items-center">
+<div>
 	<span
-		class="material-symbols-rounded {classes}"
+		class="material-symbols-rounded align-bottom leading-none {classes}"
 		style="font-variation-settings: 'wght' {weight}"
 	>
 		{icon}

@@ -31,10 +31,18 @@
             -->
 		</a>
 		<div class="flex-1"></div>
-		<div class="flex gap-6">
-			<Button classes="text-2xl"></Button>
-			<Icon icon="dark_mode" classes="text-4xl text-gb" />
-			<Icon icon="menu" classes="text-4xl text-gb" />
+		<div class="flex items-center gap-4">
+			<Button onClick={() => {}}>
+				<Icon icon="home" classes="text-4xl text-gb" />
+			</Button>
+			<!--
+            <Button onClick={() => {}}>
+                <Icon icon="dark_mode" classes="text-4xl text-gb" />
+            </Button>
+            -->
+			<Button onClick={() => {}}>
+				<Icon icon="menu" classes="text-4xl text-gb" />
+			</Button>
 		</div>
 	</div>
 </header>
