@@ -5,14 +5,18 @@
 </style>
 
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
-	let scrollAmount = 0;
-	$: scrolled = scrollAmount > 50;
+	let scrolled: boolean;
+
+	onMount(() => {
+		onScroll();
+	});
 
 	function onScroll() {
-		scrollAmount = window.scrollY;
+		scrolled = window.scrollY > 50;
 	}
 </script>
 
