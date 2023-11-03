@@ -4,11 +4,9 @@
 	export let classes: string = '';
 </script>
 
-<div>
-	<span
-		class="material-symbols-rounded align-bottom leading-none {classes}"
-		style="font-variation-settings: 'wght' {weight}"
-	>
-		{icon}
-	</span>
-</div>
+<span
+	class="material-symbols-rounded align-bottom leading-none {classes}"
+	style="font-variation-settings: 'wght' {weight}"
+>
+	{icon}
+</span>

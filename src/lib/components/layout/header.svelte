@@ -36,8 +36,8 @@
 		</a>
 		<div class="flex-1"></div>
 		<div class="flex items-center gap-4">
-			<Button onClick={() => {}}>
-				<Icon icon="home" classes="text-4xl text-gb" />
+			<Button onClick={() => {}} classes="hover:bg-gray-100">
+				<Icon icon="home" classes="text-gb p-2 text-4xl" />
 			</Button>
 			<!--
             <Button onClick={() => {}}>
@@ -45,7 +45,7 @@
             </Button>
             -->
 			<Button onClick={() => {}}>
-				<Icon icon="menu" classes="text-4xl text-gb" />
+				<Icon icon="menu" classes="text-gb p-2 text-4xl" />
 			</Button>
 		</div>
 	</div>
