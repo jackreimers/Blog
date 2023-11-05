@@ -44,7 +44,7 @@
                 <Icon icon="dark_mode" classes="text-4xl text-gb" />
             </Button>
             -->
-			<Button onClick={() => {}}>
+			<Button onClick={() => {}} classes="hover:bg-gray-100">
 				<Icon icon="menu" classes="text-gb p-2 text-4xl" />
 			</Button>
 		</div>

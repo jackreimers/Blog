@@ -1,8 +1,10 @@
 <script lang="ts">
 	import Icon from '$lib/components/text/icon.svelte';
+
+	export let classes: string = '';
 </script>
 
-<div class="inline-flex items-center rounded-full bg-gray-100">
+<div class="inline-flex items-center rounded-full bg-gray-100 {classes}">
 	<div class="rounded-full bg-gray-200 p-2.5">
 		<slot name="icon">
 			<Icon icon="question_mark" weight={500} />
