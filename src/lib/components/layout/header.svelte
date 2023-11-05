@@ -51,6 +51,6 @@
 	</div>
 </header>
 
-<div class="h-64"></div>
+<div class="h-64" />
 
 <svelte:window on:scroll={() => onScroll()} />

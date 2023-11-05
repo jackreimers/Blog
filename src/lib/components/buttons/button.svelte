@@ -4,7 +4,7 @@
 </script>
 
 <button
-	class="flex items-center rounded font-semibold transition-colors duration-700 {classes}"
+	class="flex items-center rounded transition-colors duration-700 {classes}"
 	on:click={() => onClick}
 >
 	<slot>
