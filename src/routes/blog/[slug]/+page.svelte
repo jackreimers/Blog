@@ -1,11 +1,18 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
-	import { load } from './+page';
 	import { page } from '$app/stores';
 
-	let data;
+	/** @type {import('./$types').PageData} */
+	export let data: any;
 
-	async function loadData() {}
+	console.log('data', data);
 </script>
 
-<SvelteMarkdown source={load($page.params.slug).content} />
+<p>Slug: {$page.params.slug}</p>
+<p>Type: {typeof $page.params.slug}</p>
+
+<p>Content: {data.content}</p>
+
+<!--
+<SvelteMarkdown source={load($page.params.slug)} />
+-->

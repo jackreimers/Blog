@@ -1,34 +1,22 @@
-import { error } from '@sveltejs/kit';
+interface PageLoadRequest {
+	slug: string;
+}
 
 interface PageLoadResult {
-	title: string;
 	content: string;
 }
 
-export function load(slug: string): PageLoadResult {
-	console.log(slug === 'lalala');
+/** @type {import('./$types').PageLoad} */
+//TODO: Figure out what the type is for params
+//@ts-ignore
+export async function load({ params }): PageLoadResult {
+	//TODO: Figure out how to use relative paths and HTTPS here - https://github.com/sveltejs/kit/issues/3479 | https://kit.svelte.dev/docs/modules
+	//http://localhost:5173
 
-	if (slug === 'lalala') {
-		return {
-			title: 'Hello world!',
-			content: `
-# This is a header
+	// @ts-ignore
+	FetchEvent;
+	const blogContent = await fetch('/posts/test.md');
+	return { content: await blogContent.text() };
 
-This is a paragraph.
-
-* This is a list
-* With two items
-  1. And a sublist
-  2. That is ordered
-    * With another
-    * Sublist inside
-
-| And this is | A table |
-|-------------|---------|
-| With two    | columns |
-    `
-		};
-	}
-
-	throw error(404, 'Not found');
+	//throw error(404, 'Not found');
 }

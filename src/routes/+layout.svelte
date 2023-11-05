@@ -1,6 +1,8 @@
 <script lang="ts">
 	import '../app.css';
 	import Header from '$lib/components/layout/header.svelte';
+
+	//TODO: https://kit.svelte.dev/docs/load#$page-data
 </script>
 
 <Header />
