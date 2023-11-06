@@ -36,7 +36,7 @@
 		</a>
 		<div class="flex-1"></div>
 		<div class="flex items-center gap-4">
-			<Button onClick={() => {}} classes="hover:bg-gray-100">
+			<Button href="/" classes="hover:bg-gray-100">
 				<Icon icon="home" classes="text-gb p-2 text-4xl" />
 			</Button>
 			<!--
