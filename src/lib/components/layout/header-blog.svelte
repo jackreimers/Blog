@@ -5,10 +5,9 @@
 	import Profile from '$lib/components/social/profile.svelte';
 </script>
 
-<div class="flex">
+<div class="mb-16 flex">
 	<div class="inline-flex flex-1 flex-col gap-4">
 		<h1 class="text-6xl font-semibold">Article Title</h1>
-
 		<div>
 			<Detail>
 				<Icon slot="icon" icon="calendar_month" />
