@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
-	import { page } from '$app/stores';
+	import BlogHeader from '$lib/components/layout/header-blog.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -8,11 +8,6 @@
 	console.log('data', data);
 </script>
 
-<p>Slug: {$page.params.slug}</p>
-<p>Type: {typeof $page.params.slug}</p>
+<BlogHeader />
 
-<p>Content: {data.content}</p>
-
-<!--
-<SvelteMarkdown source={load($page.params.slug)} />
--->
+<SvelteMarkdown source={data.content} />
