@@ -3,15 +3,24 @@
 	import Detail from '$lib/components/text/detail.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 	import Profile from '$lib/components/social/profile.svelte';
+	import type { BlogPost } from '$lib/types/types';
+
+	export let data: BlogPost;
+
+	//TODO: Gotta be a better way to do this
+	let dateString = `
+		${data.metadata.date.getDate()} 
+		${data.metadata.date.toLocaleString('default', { month: 'long' })} 
+		${data.metadata.date.getFullYear()}`;
 </script>
 
 <div class="mb-16 flex">
 	<div class="inline-flex flex-1 flex-col gap-4">
-		<h1 class="text-6xl font-semibold">Article Title</h1>
+		<h1 class="text-6xl font-semibold">{data.metadata.title}</h1>
 		<div>
 			<Detail>
 				<Icon slot="icon" icon="calendar_month" />
-				<p slot="text">02/11/2023</p>
+				<p slot="text">{dateString}</p>
 			</Detail>
 		</div>
 
@@ -52,7 +61,7 @@
 		<!-- TODO: Have this calculated from markdown -->
 		<Detail>
 			<Icon slot="icon" icon="schedule" />
-			<p slot="text">2 minutes</p>
+			<p slot="text">{data.metadata.readTime} minutes</p>
 		</Detail>
 	</div>
 </div>

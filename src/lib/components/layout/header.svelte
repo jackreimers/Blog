@@ -21,19 +21,13 @@
 </script>
 
 <header
-	class="fixed w-full border-b bg-white px-10 duration-700"
+	class="fixed z-10 w-full border-b bg-white px-10 duration-700"
 	class:py-8={!scrolled}
 	class:py-4={scrolled}
 	class:border-transparent={!scrolled}
 	class:border-gray-300={scrolled}
 >
 	<div class="mx-auto flex">
-		<a href="/">
-			<!--
-            <p class='text-3xl font-semibold m-0 p-0 mb-1 text-gb'>Jack Reimers</p>
-            <p class='text-gray-400'>Software Engineer</p>
-            -->
-		</a>
 		<div class="flex-1"></div>
 		<div class="flex items-center gap-4">
 			<Button href="/" classes="hover:bg-gray-100">

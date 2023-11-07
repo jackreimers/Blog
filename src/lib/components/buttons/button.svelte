@@ -4,19 +4,22 @@
 	export let classes: string = '';
 </script>
 
-{#if onClick != null}
-	<button
-		class="flex items-center rounded transition-colors duration-700 {classes}"
-		on:click={() => onClick}
-	>
-		<slot>
-			<p>Button</p>
-		</slot>
-	</button>
-{:else}
-	<a {href} class="flex items-center rounded transition-colors duration-700 {classes}">
-		<slot>
-			<p>Button</p>
-		</slot>
-	</a>
-{/if}
+<!-- TODO: Figure out how to get rid of this -->
+<div class="flex">
+	{#if onClick != null}
+		<button
+			class="flex items-center rounded transition-colors duration-500 {classes}"
+			on:click={() => onClick?.call(null)}
+		>
+			<slot>
+				<p>Button</p>
+			</slot>
+		</button>
+	{:else}
+		<a {href} class="flex items-center rounded transition-colors duration-500 {classes}">
+			<slot>
+				<p>Button</p>
+			</slot>
+		</a>
+	{/if}
+</div>
