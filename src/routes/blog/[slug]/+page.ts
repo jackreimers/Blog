@@ -8,7 +8,7 @@ import { getPost } from '$lib/functions/functions';
 /** @type {import('./$types').PageLoad} */
 //TODO: Figure out what the type is for params
 //@ts-ignore
-export async function load({ params }): PageLoadResult {
+export async function load({ params }) {
 	return await getPost(params.slug);
 	//throw error(404, 'Not found');
 }

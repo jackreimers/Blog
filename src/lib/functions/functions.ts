@@ -32,6 +32,22 @@ This is a paragraph.
 
 const metadataPattern = /^---([\s\S]*?)---/;
 
+export async function getPosts(): Promise<BlogPost[]> {
+	const contents = await fetch(`${PUBLIC_APP_ROOT}/posts/_contents.md`);
+	const contentsText = await contents.text();
+
+	const postNames = contentsText.split('\n');
+	const posts: BlogPost[] = [];
+
+	for (let i = 0; i < postNames.length; i++) {
+		const postName = postNames[i];
+		const post = await getPost(postName);
+		posts.push(post);
+	}
+
+	return posts;
+}
+
 export async function getPost(slug: string): Promise<BlogPost> {
 	try {
 		let blogText: string;
@@ -40,7 +56,7 @@ export async function getPost(slug: string): Promise<BlogPost> {
 		if (PUBLIC_APP_ROOT === 'https://localhost:5173') {
 			blogText = mockContent;
 		} else {
-			const blogContent = await fetch(`${PUBLIC_APP_ROOT}/posts/test.md`);
+			const blogContent = await fetch(`${PUBLIC_APP_ROOT}/posts/${slug}.md`);
 			blogText = await blogContent.text();
 		}
 
