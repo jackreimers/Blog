@@ -32,6 +32,13 @@ This is a paragraph.
 
 const metadataPattern = /^---([\s\S]*?)---/;
 
+export function getDateString(date: Date): string {
+	return `
+		${date.getDate()} 
+		${date.toLocaleString('default', { month: 'long' })} 
+		${date.getFullYear()}`;
+}
+
 export async function getPosts(): Promise<BlogPost[]> {
 	const contents = await fetch(`${PUBLIC_APP_ROOT}/posts/_contents.md`);
 	const contentsText = await contents.text();

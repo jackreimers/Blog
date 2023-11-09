@@ -4,14 +4,9 @@
 	import Button from '$lib/components/buttons/button.svelte';
 	import Profile from '$lib/components/social/profile.svelte';
 	import type { BlogPost } from '$lib/types/types';
+	import { getDateString } from '$lib/functions/functions';
 
 	export let data: BlogPost;
-
-	//TODO: Gotta be a better way to do this
-	let dateString = `
-		${data.metadata.date.getDate()} 
-		${data.metadata.date.toLocaleString('default', { month: 'long' })} 
-		${data.metadata.date.getFullYear()}`;
 </script>
 
 <div class="mb-16 flex">
@@ -20,7 +15,7 @@
 		<div>
 			<Detail>
 				<Icon slot="icon" icon="calendar_month" />
-				<p slot="text">{dateString}</p>
+				<p slot="text">{getDateString(data.metadata.date)}</p>
 			</Detail>
 		</div>
 
@@ -58,7 +53,6 @@
 		<Profile />
 	</div>
 	<div class="flex items-end">
-		<!-- TODO: Have this calculated from markdown -->
 		<Detail>
 			<Icon slot="icon" icon="schedule" />
 			<p slot="text">{data.metadata.readTime} minutes</p>
