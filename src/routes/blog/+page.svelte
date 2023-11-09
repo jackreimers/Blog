@@ -10,7 +10,7 @@
 <BlogListHeader />
 
 <div class="flex flex-col gap-7">
-	{#each data as post}
+	{#each data.posts as post}
 		<BlogCard data={post} />
 	{/each}
 </div>

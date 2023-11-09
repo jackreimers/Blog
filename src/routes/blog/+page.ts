@@ -8,6 +8,6 @@ import { getPosts } from '$lib/functions/functions';
 //@ts-ignore
 export async function load({ params }) {
 	const posts = await getPosts();
-	return { posts };
+	return { posts: posts };
 	//throw error(404, 'Not found');
 }

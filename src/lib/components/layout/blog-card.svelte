@@ -11,7 +11,7 @@
 	<p class="font-medium">7 September 2023</p>
 	<!-- TODO: Hover effects on links -->
 	<Button href="/blog/test" classes="flex">
-		<p class="text-4xl font-semibold">Post Title</p>
+		<p class="text-4xl font-semibold">{data.metadata.title}</p>
 	</Button>
 	<div class="mb-8 flex gap-2">
 		<Button
