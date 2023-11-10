@@ -21,33 +21,14 @@
 
 		<!-- TODO: Have these populated from markdown frontmatter -->
 		<div class="flex gap-2">
-			<Button
-				onClick={() => {}}
-				classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-sky-700"
-			>
-				<p class="font-semibold">C#</p>
-			</Button>
-
-			<Button
-				onClick={() => {}}
-				classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-sky-700"
-			>
-				<p class="font-semibold">.NET</p>
-			</Button>
-
-			<Button
-				onClick={() => {}}
-				classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-sky-700"
-			>
-				<p class="font-semibold">Angular</p>
-			</Button>
-
-			<Button
-				onClick={() => {}}
-				classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-sky-700"
-			>
-				<p class="font-semibold">React</p>
-			</Button>
+			{#each data.metadata.categories as category}
+				<Button
+					onClick={() => {}}
+					classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-sky-700"
+				>
+					<p class="font-semibold">{category.name}</p>
+				</Button>
+			{/each}
 		</div>
 
 		<Profile />

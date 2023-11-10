@@ -1,11 +1,13 @@
 import { PUBLIC_APP_ROOT } from '$env/static/public';
 import { error } from '@sveltejs/kit';
-import type { BlogPost, BlogPostMetadata } from '$lib/types/types';
+import type { BlogPost, BlogPostMetadata, Category } from '$lib/types/types';
+import { categoryMappings } from '$lib/objects/objects';
 
 const mockContent = `---
 
 title: Test Article
 date: 2023-11-06T19:41:00.000+10:00
+categories: [ "dotnet", "csharp" ]
 
 ---
 
@@ -31,6 +33,7 @@ This is a paragraph.
 `;
 
 const metadataPattern = /^---([\s\S]*?)---/;
+const arrayPattern = /^\[.*]$/;
 
 export function getDateString(date: Date): string {
 	return `
@@ -83,6 +86,7 @@ export async function getPost(slug: string): Promise<BlogPost> {
 			content
 		};
 	} catch (e) {
+		console.log(e);
 		throw error(404, 'Blog post not found!');
 	}
 }
@@ -94,21 +98,37 @@ function parseMetadata(content: string): BlogPostMetadata {
 	}
 
 	const metadata = matched[1].split('\n');
-	const accumulator = metadata.reduce((accumulator: [string, string][], line) => {
+	const accumulator = metadata.reduce((accumulator: [string, string | string[]][], line) => {
 		const [key, ...value] = line.split(':').map((part) => part.trim());
 
 		if (key) {
 			const joinedValue = value[1] ? value.join(':') : value.join('');
-			accumulator.push([key, joinedValue]);
+			const isArray = arrayPattern.test(joinedValue);
+
+			if (isArray) {
+				accumulator.push([key, JSON.parse(joinedValue)]);
+			} else {
+				accumulator.push([key, joinedValue]);
+			}
 		}
 		return accumulator;
 	}, []);
 
-	const mappedMetadata: { [key: string]: string } = Object.fromEntries(accumulator);
+	const mappedMetadata: { [key: string]: string | string[] } = Object.fromEntries(accumulator);
 
 	return {
-		title: mappedMetadata['title'],
-		readTime: 0,
-		date: new Date(Date.parse(mappedMetadata['date']))
+		date: new Date(Date.parse(mappedMetadata['date'] as string)),
+		title: mappedMetadata['title'] as string,
+		categories: parseCategories(mappedMetadata['categories'] as string[]),
+		readTime: 0
 	};
+}
+
+function parseCategories(categories: string[]): Category[] {
+	return categories.map((category) => {
+		return {
+			name: categoryMappings.find((i) => i.slug == category)?.name ?? category,
+			slug: category
+		};
+	});
 }

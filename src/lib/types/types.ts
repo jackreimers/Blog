@@ -7,5 +7,11 @@ export type BlogPost = {
 export type BlogPostMetadata = {
 	date: Date;
 	title: string;
+	categories: Category[];
 	readTime: number;
+};
+
+export type Category = {
+	name: string;
+	slug: string;
 };

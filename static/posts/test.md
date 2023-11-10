@@ -1,7 +1,12 @@
 ---
 title: Test Article
 date: 2023-11-06T19:41:00.000+10:00
+categories: [ "dotnet", "csharp" ]
 ---
+
+Intro paragraph.
+
+<!--endintro-->
 
 # This is a header
 
