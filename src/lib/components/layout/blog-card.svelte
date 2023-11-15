@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Detail from '$lib/components/text/detail.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 	import type { BlogPost } from '$lib/types/types';
@@ -15,35 +14,16 @@
 		<p class="text-4xl font-semibold">{data.metadata.title}</p>
 	</Button>
 	<div class="mb-8 flex gap-2">
-		<Button
-			onClick={() => {}}
-			classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-sky-700"
-		>
-			<p class="font-semibold">C#</p>
-		</Button>
-
-		<Button
-			onClick={() => {}}
-			classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-sky-700"
-		>
-			<p class="font-semibold">.NET</p>
-		</Button>
-
-		<Button
-			onClick={() => {}}
-			classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-sky-700"
-		>
-			<p class="font-semibold">Angular</p>
-		</Button>
-
-		<Button
-			onClick={() => {}}
-			classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-sky-700"
-		>
-			<p class="font-semibold">React</p>
-		</Button>
+		{#each data.metadata.categories as category}
+			<Button
+				onClick={() => {}}
+				classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-gray-400"
+			>
+				<p class="font-semibold">{category.name}</p>
+			</Button>
+		{/each}
 	</div>
-	<p class="mb-8">{data.content}</p>
+	<p class="mb-8">{data.intro}</p>
 	<div class="flex">
 		<Button href="/blog/test">
 			<p class="font-bold">Read more &nbsp</p>

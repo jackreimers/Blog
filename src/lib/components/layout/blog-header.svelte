@@ -18,8 +18,6 @@
 				<p slot="text">{getDateString(data.metadata.date)}</p>
 			</Detail>
 		</div>
-
-		<!-- TODO: Have these populated from markdown frontmatter -->
 		<div class="flex gap-2">
 			{#each data.metadata.categories as category}
 				<Button
@@ -30,7 +28,6 @@
 				</Button>
 			{/each}
 		</div>
-
 		<Profile />
 	</div>
 	<div class="flex items-end">
