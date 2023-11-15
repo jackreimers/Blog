@@ -1,10 +1,11 @@
 ---
 title: Test Article 2
+slug: test-2
 date: 2023-11-09T07:52:00.000+10:00
 categories: [ "csharp", "godot", "game-dev" ]
 ---
 
-Intro paragraph.
+Intro paragraph for the second test article.
 
 <!--endintro-->
 

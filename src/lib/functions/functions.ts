@@ -119,6 +119,7 @@ function parseMetadata(content: string): BlogPostMetadata {
 	return {
 		date: new Date(Date.parse(mappedMetadata['date'] as string)),
 		title: mappedMetadata['title'] as string,
+		slug: mappedMetadata['slug'] as string,
 		categories: parseCategories(mappedMetadata['categories'] as string[]),
 		readTime: 0
 	};
