@@ -6,12 +6,14 @@
 	//TODO: https://kit.svelte.dev/docs/load#$page-data
 </script>
 
-<div class="flex h-screen flex-col">
-	<Header />
+<div class="h-screen">
+	<div class="flex min-h-full flex-col">
+		<Header />
 
-	<div class="container mx-auto flex-1 px-8">
-		<slot />
+		<div class="container mx-auto flex-1 px-8">
+			<slot />
+		</div>
+
+		<Footer />
 	</div>
-
-	<Footer />
 </div>
