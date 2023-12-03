@@ -13,4 +13,6 @@
 	<p class="flex-1 px-3 py-1 font-medium">{data.intro}</p>
 </div>
 
-<SvelteMarkdown source={data.content} />
+<div class="markdown max-w-prose">
+	<SvelteMarkdown source={data.content} />
+</div>

@@ -9,6 +9,7 @@ body {
     font-family: Inter, sans-serif;
 }
 
+/* TODO: These aren't necessary */
 .text-gt {
     background: linear-gradient(to top, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
     background-clip: text;
@@ -35,4 +36,40 @@ body {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.markdown h2 {
+    @apply text-4xl mb-1 font-bold;
+}
+
+.markdown h3 {
+    @apply text-3xl mb-1 font-bold;
+}
+
+.markdown h4 {
+    @apply text-2xl mb-1 font-bold;
+}
+
+.markdown h5 {
+    @apply text-2xl mb-1 font-bold;
+}
+
+.markdown h6 {
+    @apply font-bold mb-1;
+}
+
+.markdown p {
+    @apply mb-5;
+}
+
+.markdown ul, .markdown ol {
+    @apply mb-5;
+}
+
+.markdown li {
+    @apply list-disc pl-5;
+}
+
+.markdown table {
+    @apply mb-5 border border-gray-500;
 }
