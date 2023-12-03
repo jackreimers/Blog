@@ -23,8 +23,10 @@
 	<p class="mb-8">{data.intro}</p>
 	<div class="flex">
 		<Button href="/blog/{data.metadata.slug}">
-			<p class="font-bold">Read more &nbsp</p>
-			<Icon icon="arrow_forward" />
+			<span class="flex">
+				<p class="font-bold">Read more &nbsp</p>
+				<Icon icon="arrow_forward" />
+			</span>
 		</Button>
 	</div>
 </div>

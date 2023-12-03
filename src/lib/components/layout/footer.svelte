@@ -49,6 +49,6 @@
 		</Button>
 	</div>
 	<div class="w-full text-center">
-		<p class="my-4 font-medium">Copyright © 2023</p>
+		<p class="my-4 font-semibold">Copyright © 2023</p>
 	</div>
 </footer>
