@@ -15,10 +15,7 @@
 	</Button>
 	<div class="mb-8 flex gap-2">
 		{#each data.metadata.categories as category}
-			<Button
-				onClick={() => {}}
-				classes="border-2 border-gray-200 bg-gray-100 px-3.5 py-2 hover:border-gray-400"
-			>
+			<Button onClick={() => {}} classes="bg-gray-100 px-4 py-2.5 hover:bg-gray-200">
 				<p class="font-semibold">{category.name}</p>
 			</Button>
 		{/each}

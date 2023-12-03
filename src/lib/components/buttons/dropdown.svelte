@@ -10,7 +10,7 @@
 
 <div class="relative">
 	<Button
-		classes="inline-flex gap-1 rounded-full bg-gray-100 py-2 pl-5 pr-3 transition-colors duration-500 hover:bg-gray-200"
+		classes="inline-flex gap-1 rounded-full bg-gray-100 py-2.5 pl-5 pr-3 transition-colors duration-500 hover:bg-gray-200"
 		onClick={() => {
 			open = !open;
 		}}

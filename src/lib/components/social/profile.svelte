@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { PUBLIC_APP_ROOT } from '$env/static/public';
-
 	const url = `${PUBLIC_APP_ROOT}/images/headshot.png`;
 </script>
 
