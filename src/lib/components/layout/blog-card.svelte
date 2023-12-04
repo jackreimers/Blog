@@ -10,7 +10,7 @@
 <div class="flex flex-col gap-2 rounded border border-gray-300 p-10">
 	<p class="font-medium">{getDateString(data.metadata.date)}</p>
 	<!-- TODO: Hover effects on links -->
-	<Button href="/blog/test" classes="flex">
+	<Button href="/blog/{data.metadata.slug}" classes="flex">
 		<p class="text-4xl font-semibold">{data.metadata.title}</p>
 	</Button>
 	<div class="mb-8 flex gap-2">
@@ -23,8 +23,8 @@
 	<p class="mb-8">{data.intro}</p>
 	<div class="flex">
 		<Button href="/blog/{data.metadata.slug}">
-			<span class="flex">
-				<p class="font-bold">Read more &nbsp</p>
+			<span class="flex font-bold">
+				Read more &nbsp
 				<Icon icon="arrow_forward" />
 			</span>
 		</Button>
