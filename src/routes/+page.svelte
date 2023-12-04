@@ -28,21 +28,21 @@
 <div class="grid w-full max-w-2xl grid-cols-3 gap-4">
 	<Button
 		href="blog"
-		classes="flex w-full flex-col justify-center gap-2 rounded bg-gray-100 py-8 text-center"
+		classes="flex w-full flex-col justify-center gap-2 rounded bg-gray-100 py-8 text-center hover:bg-gray-200"
 	>
 		<Icon icon="news" classes="text-5xl" />
 		<span class="text-2xl font-medium">Blog</span>
 	</Button>
 	<Button
 		href="projects"
-		classes="flex w-full flex-col justify-center gap-2 rounded bg-gray-100 py-8 text-center"
+		classes="flex w-full flex-col justify-center gap-2 rounded bg-gray-100 py-8 text-center hover:bg-gray-200"
 	>
 		<Icon icon="handyman" classes="text-5xl" />
 		<span class="text-2xl font-medium">Projects</span>
 	</Button>
 	<Button
 		href="about"
-		classes="flex w-full flex-col justify-center gap-2 rounded bg-gray-100 py-8 text-center"
+		classes="flex w-full flex-col justify-center gap-2 rounded bg-gray-100 py-8 text-center hover:bg-gray-200"
 	>
 		<Icon icon="person" classes="text-5xl" />
 		<span class="text-2xl font-medium">About</span>

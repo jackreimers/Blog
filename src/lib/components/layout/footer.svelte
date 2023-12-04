@@ -38,13 +38,13 @@
     <div class="h-[50px] w-full border-y border-gray-300 bg-gray-100"></div>
     -->
 	<div class="flex w-full justify-center gap-3">
-		<Button classes="rounded-full bg-gray-100 p-4">
+		<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
 			<Icon icon="mail" classes="text-2xl" />
 		</Button>
-		<Button classes="rounded-full bg-gray-100 p-4">
+		<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
 			<Icon icon="question_mark" classes="text-2xl" />
 		</Button>
-		<Button classes="rounded-full bg-gray-100 p-4">
+		<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
 			<Icon icon="question_mark" classes="text-2xl" />
 		</Button>
 	</div>

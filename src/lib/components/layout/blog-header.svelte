@@ -9,7 +9,7 @@
 	export let data: BlogPost;
 </script>
 
-<div class="mb-16 flex">
+<div class="mb-12 flex">
 	<div class="inline-flex flex-col gap-4">
 		<h1 class="text-6xl font-semibold">{data.metadata.title}</h1>
 		<div>

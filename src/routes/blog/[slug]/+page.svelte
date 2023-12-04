@@ -12,11 +12,11 @@
 
 <BlogHeader {data} />
 
-<div class="mb-6 flex">
+<div class="flex">
 	<div class="w-[5px] rounded-full bg-gradient-to-b from-blue-600 to-blue-950" />
-	<p class="flex-1 px-3 py-1 font-medium">{data.intro}</p>
+	<p class="max-w-prose flex-1 px-3 py-1 font-medium">{data.intro}</p>
 </div>
 
-<div class="markdown max-w-prose">
+<div class="markdown">
 	<SvelteMarkdown source={data.content} />
 </div>
