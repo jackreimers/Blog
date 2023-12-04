@@ -3,46 +3,6 @@ import { error } from '@sveltejs/kit';
 import type { BlogPost, BlogPostMetadata, Category } from '$lib/types/types';
 import { categoryMappings } from '$lib/objects/objects';
 
-const mockContent = `---
-
-title: Test Article
-date: 2023-11-06T19:41:00.000+10:00
-categories: [ "dotnet", "csharp" ]
-
----
-
-Intro paragraph.
-
-<!--endintro-->
-
-## This is a H2
-This is a paragraph.
-
-### This is a H3
-This is a paragraph.
-
-#### This is a H4
-This is a paragraph.
-
-##### This is a H5
-This is a paragraph.
-
-###### This is a H6
-This is a paragraph.
-
-* This is a list
-* With two items
-    1. And a sublist
-    2. That is ordered
-
-    * With another
-    * Sublist inside
-
-| And this is | A table |
-|-------------|---------|
-| With two    | columns |
-`;
-
 const metadataPattern = /^---([\s\S]*?)---/;
 const arrayPattern = /^\[.*]$/;
 
@@ -73,13 +33,8 @@ export async function getPost(slug: string): Promise<BlogPost> {
 	try {
 		let blogText: string;
 
-		//TODO: Fix certificate issue so fetch works when running locally - returning mock content for now
-		if (PUBLIC_APP_ROOT === 'https://localhost:5173') {
-			blogText = mockContent;
-		} else {
-			const blogContent = await fetch(`${PUBLIC_APP_ROOT}/posts/${slug}.md`);
-			blogText = await blogContent.text();
-		}
+		const blogContent = await fetch(`${PUBLIC_APP_ROOT}/posts/${slug}.md`);
+		blogText = await blogContent.text();
 
 		const split = blogText.split('<!--endintro-->');
 
