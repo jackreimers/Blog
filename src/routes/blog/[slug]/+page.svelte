@@ -6,6 +6,10 @@
 	export let data: any;
 </script>
 
+<svelte:head>
+	<title>Jack Reimers | {data.metadata.title}</title>
+</svelte:head>
+
 <BlogHeader {data} />
 
 <div class="mb-6 flex">

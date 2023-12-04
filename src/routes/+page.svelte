@@ -1,8 +1,11 @@
 <script lang="ts">
 	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
-	import Detail from '$lib/components/text/detail.svelte';
 </script>
+
+<svelte:head>
+	<title>Jack Reimers</title>
+</svelte:head>
 
 <div class="mb-20">
 	<p class="mb-3.5 text-2xl text-gray-500">Hi, my name is</p>

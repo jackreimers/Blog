@@ -3,6 +3,10 @@
 	import Icon from '$lib/components/text/icon.svelte';
 </script>
 
+<svelte:head>
+	<title>Jack Reimers | About</title>
+</svelte:head>
+
 <div class="mb-16 max-w-prose">
 	<p class="mb-4 text-6xl font-bold">Oops...</p>
 	<p>This page is still under construction!</p>
