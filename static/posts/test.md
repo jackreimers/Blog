@@ -26,7 +26,8 @@ velit egestas dui id ornare arcu odio ut sem. At augue eget arcu dictum varius d
 venenatis lectus magna. Nisi vitae suscipit tellus mauris a diam. Eu facilisis sed odio morbi quis. Iaculis at erat
 pellentesque adipiscing commodo.
 
-`This is inline code`
+Here is some `inline code` as part of a normal paragraph.  
+Below it is another paragraph with a [link](https://www.google.com).
 
 ```csharp
 //This is a code block
