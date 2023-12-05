@@ -26,21 +26,7 @@ velit egestas dui id ornare arcu odio ut sem. At augue eget arcu dictum varius d
 venenatis lectus magna. Nisi vitae suscipit tellus mauris a diam. Eu facilisis sed odio morbi quis. Iaculis at erat
 pellentesque adipiscing commodo.
 
-### This is a H3
-
-This is a paragraph.
-
-#### This is a H4
-
-This is a paragraph.
-
-##### This is a H5
-
-This is a paragraph.
-
-###### This is a H6
-
-This is a paragraph.
+`This is inline code`
 
 ```csharp
 //This is a code block

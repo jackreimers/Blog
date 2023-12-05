@@ -1,6 +1,7 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
-	import CodeBlockRenderer from '$lib/components/renderers/code-block-renderer.svelte';
+	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
+	import InlineCodeRenderer from '$lib/components/renderers/code-renderer-inline.svelte';
 	import BlogHeader from '$lib/components/layout/blog-header.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -19,5 +20,8 @@
 </div>
 
 <div class="markdown">
-	<SvelteMarkdown source={data.content} renderers={{ code: CodeBlockRenderer }} />
+	<SvelteMarkdown
+		source={data.content}
+		renderers={{ code: BlockCodeRenderer, codespan: InlineCodeRenderer }}
+	/>
 </div>
