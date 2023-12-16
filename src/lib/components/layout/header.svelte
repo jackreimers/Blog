@@ -21,17 +21,23 @@
 </script>
 
 <header
-	class="fixed z-10 w-full border-b bg-white px-10 duration-700"
-	class:py-8={!scrolled}
-	class:py-4={scrolled}
+	class="fixed z-10 w-full border-b bg-white px-4 duration-700 lg:px-12"
+	class:py-4={!scrolled}
+	class:lg:py-8={!scrolled}
+	class:py-2={scrolled}
+	class:lg:py-4={scrolled}
 	class:border-transparent={!scrolled}
 	class:border-gray-300={scrolled}
 >
 	<div class="mx-auto flex">
 		<div class="flex-1"></div>
-		<div class="flex items-center gap-4">
+		<div class="flex items-center gap-0.5 lg:gap-4">
 			<Button href="/" classes="hover:bg-gray-100">
-				<Icon icon="home" weight={700} classes="text-gb p-2 text-4xl" />
+				<Icon
+					icon="home"
+					weight={500}
+					classes="text-gb p-1 sm:p-1.5 sm:text-3xl md:p-2 md:text-4xl"
+				/>
 			</Button>
 			<!--
             <Button onClick={() => {}}>
@@ -39,12 +45,16 @@
             </Button>
             -->
 			<Button onClick={() => {}} classes="hover:bg-gray-100">
-				<Icon icon="menu" weight={700} classes="text-gb p-2 text-4xl" />
+				<Icon
+					icon="menu"
+					weight={500}
+					classes="text-gb p-1 sm:p-1.5 sm:text-3xl md:p-2 md:text-4xl"
+				/>
 			</Button>
 		</div>
 	</div>
 </header>
 
-<div class="h-64" />
+<div class="h-36 lg:h-64" />
 
 <svelte:window on:scroll={() => onScroll()} />

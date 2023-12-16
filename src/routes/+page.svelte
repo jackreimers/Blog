@@ -7,10 +7,13 @@
 	<title>Jack Reimers</title>
 </svelte:head>
 
-<div class="mb-20">
-	<p class="mb-3.5 text-2xl text-gray-500">Hi, my name is</p>
-	<h1 class="text-gb mb-3 text-7xl font-semibold">Jack Reimers</h1>
-	<p class="mb-5 text-4xl font-medium">
+<div class="mb-14 flex flex-col gap-2 leading-normal sm:mb-20 sm:gap-3">
+	<!-- 2xl -->
+	<p class="text-sm text-gray-500 sm:text-base md:text-2xl">Hi, my name is</p>
+	<!-- 7xl -->
+	<h1 class="text-gb text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-7xl">Jack Reimers</h1>
+	<!-- 4xl -->
+	<p class="font-medium sm:text-2xl md:text-3xl lg:text-4xl">
 		I'm a full-stack Software Engineer at
 		<Button
 			href="https://ssw.com.au"
@@ -20,32 +23,49 @@
 			SSW Consulting.
 		</Button>
 	</p>
-	<p class="max-w-prose text-gray-500">
+	<!-- 1xl -->
+	<p class="max-w-prose text-sm text-gray-500 sm:text-base">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua.
 	</p>
 </div>
-<div class="grid w-full max-w-2xl grid-cols-3 gap-4">
+<div class="grid w-full max-w-2xl gap-4 sm:grid-cols-3">
+	<!-- TODO: Put these cards into components -->
 	<Button
 		href="blog"
-		classes="flex w-full flex-col justify-center gap-2 rounded bg-gray-100 py-8 text-center hover:bg-gray-200"
+		classes="flex w-full flex-col overflow-hidden rounded border border-gray-200"
 	>
-		<Icon icon="news" classes="text-5xl" />
-		<span class="text-2xl font-medium">Blog</span>
+		<span class="flex justify-center bg-gray-100 py-8 align-middle">
+			<Icon icon="newsmode" weight={300} classes="text-7xl text-gray-400" />
+		</span>
+		<span class="h-[2px] w-full bg-gradient-to-r from-blue-600 to-blue-950" />
+		<span class="flex flex-col px-3.5 py-2.5">
+			<span class="font-semibold">Blog</span>
+		</span>
 	</Button>
 	<Button
-		href="projects"
-		classes="flex w-full flex-col justify-center gap-2 rounded bg-gray-100 py-8 text-center hover:bg-gray-200"
+		href="blog"
+		classes="flex w-full flex-col overflow-hidden rounded border border-gray-200"
 	>
-		<Icon icon="handyman" classes="text-5xl" />
-		<span class="text-2xl font-medium">Projects</span>
+		<span class="flex justify-center bg-gray-100 py-8 align-middle">
+			<Icon icon="handyman" weight={300} classes="text-7xl text-gray-400" />
+		</span>
+		<span class="h-[2px] w-full bg-gradient-to-r from-blue-600 to-blue-950" />
+		<span class="flex flex-col px-3.5 py-2.5">
+			<span class="font-semibold">Projects</span>
+		</span>
 	</Button>
 	<Button
-		href="about"
-		classes="flex w-full flex-col justify-center gap-2 rounded bg-gray-100 py-8 text-center hover:bg-gray-200"
+		href="blog"
+		classes="flex w-full flex-col overflow-hidden rounded border border-gray-200"
 	>
-		<Icon icon="person" classes="text-5xl" />
-		<span class="text-2xl font-medium">About</span>
+		<span class="flex justify-center bg-gray-100 py-8 align-middle">
+			<Icon icon="person" weight={300} classes="text-7xl text-gray-400" />
+		</span>
+		<span class="h-[2px] w-full bg-gradient-to-r from-blue-600 to-blue-950" />
+		<span class="flex flex-col px-3.5 py-2.5">
+			<span class="font-semibold">About</span>
+		</span>
 	</Button>
 </div>
 

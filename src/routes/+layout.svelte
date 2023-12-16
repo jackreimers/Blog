@@ -10,7 +10,7 @@
 	<div class="flex min-h-full flex-col">
 		<Header />
 
-		<div class="container mx-auto flex-1 px-12">
+		<div class="container mx-auto flex-1 px-6 md:px-12">
 			<slot />
 		</div>
 
