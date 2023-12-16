@@ -31,7 +31,7 @@
 >
 	<div class="mx-auto flex">
 		<div class="flex-1"></div>
-		<div class="flex items-center gap-0.5 lg:gap-4">
+		<div class="flex items-center gap-0.5 sm:gap-1 md:gap-2 lg:gap-4">
 			<Button href="/" classes="hover:bg-gray-100">
 				<Icon icon="home" weight={600} classes="text-gb p-2 text-3xl sm:text-4xl" />
 			</Button>

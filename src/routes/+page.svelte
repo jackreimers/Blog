@@ -18,7 +18,7 @@
 		<Button
 			href="https://ssw.com.au"
 			target="_blank"
-			classes="bg-gradient-to-b from-red-500 to-red-900 bg-clip-text font-bold text-transparent"
+			classes="whitespace-nowrap bg-gradient-to-b from-red-500 to-red-900 bg-clip-text font-bold text-transparent"
 		>
 			SSW Consulting.
 		</Button>
@@ -41,6 +41,7 @@
 		<span class="h-[2px] w-full bg-gradient-to-r from-blue-600 to-blue-950" />
 		<span class="flex flex-col px-3.5 py-2.5">
 			<span class="font-semibold">Blog</span>
+			<span class="text-sm text-gray-500">Read my latest posts.</span>
 		</span>
 	</Button>
 	<Button
@@ -53,6 +54,7 @@
 		<span class="h-[2px] w-full bg-gradient-to-r from-blue-600 to-blue-950" />
 		<span class="flex flex-col px-3.5 py-2.5">
 			<span class="font-semibold">Projects</span>
+			<span class="text-sm text-gray-500">View projects I've worked on.</span>
 		</span>
 	</Button>
 	<Button
@@ -65,6 +67,7 @@
 		<span class="h-[2px] w-full bg-gradient-to-r from-blue-600 to-blue-950" />
 		<span class="flex flex-col px-3.5 py-2.5">
 			<span class="font-semibold">About</span>
+			<span class="text-sm text-gray-500">Learn more about me.</span>
 		</span>
 	</Button>
 </div>
