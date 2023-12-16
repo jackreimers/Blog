@@ -33,11 +33,7 @@
 		<div class="flex-1"></div>
 		<div class="flex items-center gap-0.5 lg:gap-4">
 			<Button href="/" classes="hover:bg-gray-100">
-				<Icon
-					icon="home"
-					weight={600}
-					classes="text-gb p-1.5 text-2xl sm:p-2 sm:text-3xl md:text-4xl"
-				/>
+				<Icon icon="home" weight={600} classes="text-gb p-2 text-3xl sm:text-4xl" />
 			</Button>
 			<!--
             <Button onClick={() => {}}>
@@ -45,11 +41,7 @@
             </Button>
             -->
 			<Button onClick={() => {}} classes="hover:bg-gray-100">
-				<Icon
-					icon="menu"
-					weight={600}
-					classes="text-gb p-1.5 text-2xl sm:p-2 sm:text-3xl md:text-4xl"
-				/>
+				<Icon icon="menu" weight={600} classes="text-gb p-2 text-3xl sm:text-4xl" />
 			</Button>
 		</div>
 	</div>
