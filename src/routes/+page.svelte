@@ -11,7 +11,7 @@
 	<!-- 2xl -->
 	<p class="text-sm text-gray-500 sm:text-base md:text-2xl">Hi, my name is</p>
 	<!-- 7xl -->
-	<h1 class="text-gb text-4xl font-semibold sm:text-5xl md:text-6xl lg:text-7xl">Jack Reimers</h1>
+	<h1 class="text-gb text-5xl font-semibold md:text-6xl lg:text-7xl">Jack Reimers</h1>
 	<!-- 4xl -->
 	<p class="font-medium sm:text-2xl md:text-3xl lg:text-4xl">
 		I'm a full-stack Software Engineer at
