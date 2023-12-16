@@ -35,8 +35,8 @@
 			<Button href="/" classes="hover:bg-gray-100">
 				<Icon
 					icon="home"
-					weight={500}
-					classes="text-gb p-1 sm:p-1.5 sm:text-3xl md:p-2 md:text-4xl"
+					weight={600}
+					classes="text-gb p-1.5 text-2xl sm:p-2 sm:text-3xl md:text-4xl"
 				/>
 			</Button>
 			<!--
@@ -47,8 +47,8 @@
 			<Button onClick={() => {}} classes="hover:bg-gray-100">
 				<Icon
 					icon="menu"
-					weight={500}
-					classes="text-gb p-1 sm:p-1.5 sm:text-3xl md:p-2 md:text-4xl"
+					weight={600}
+					classes="text-gb p-1.5 text-2xl sm:p-2 sm:text-3xl md:text-4xl"
 				/>
 			</Button>
 		</div>
