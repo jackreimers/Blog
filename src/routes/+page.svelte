@@ -13,14 +13,14 @@
 	<!-- 7xl -->
 	<h1 class="text-gb text-5xl font-semibold md:text-6xl lg:text-7xl">Jack Reimers</h1>
 	<!-- 4xl -->
-	<p class="font-medium sm:text-2xl md:text-3xl lg:text-4xl">
+	<p class="text-2xl font-medium md:text-3xl lg:text-4xl">
 		I'm a full-stack Software Engineer at
 		<Button
 			href="https://ssw.com.au"
 			target="_blank"
 			classes="whitespace-nowrap bg-gradient-to-b from-red-500 to-red-900 bg-clip-text font-bold text-transparent"
 		>
-			SSW Consulting.
+			SSW Consulting
 		</Button>
 	</p>
 	<!-- 1xl -->
