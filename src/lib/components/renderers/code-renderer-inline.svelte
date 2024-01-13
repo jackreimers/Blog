@@ -1,4 +1,5 @@
 <script lang="ts">
+    //TODO: This is currently redundant, just apply the classes to the code element
 	export let raw: string = '';
 </script>
 
