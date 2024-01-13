@@ -55,6 +55,10 @@ body {
     @apply mb-5 leading-normal text-sm sm:text-base;
 }
 
+.markdown a {
+    @apply underline;
+}
+
 .markdown ul, .markdown ol {
     @apply mb-5;
 }
