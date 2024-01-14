@@ -17,9 +17,9 @@
 			style="background-image: url({url})"
 		/>
 		<div class="mt-4 text-center">
-			<h2 class="text-2xl font-semibold">Jack Reimers</h2>
-			<p>Software Engineer</p>
-			<p>SSW</p>
+			<h2 class="text-3xl font-semibold">Jack Reimers</h2>
+			<p class="font-medium text-gray-500">Software Engineer</p>
+			<p class="text-[#CC4141] font-medium">SSW</p>
 		</div>
 		<div class="my-6 h-[2px] w-full rounded-full bg-gray-200" />
 		<div class="flex w-full justify-center gap-3">

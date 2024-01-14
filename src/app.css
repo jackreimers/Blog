@@ -52,7 +52,7 @@ body {
 }
 
 .markdown p {
-    @apply mb-5 leading-normal text-sm sm:text-base;
+    @apply mb-5 leading-normal;
 }
 
 .markdown a {
