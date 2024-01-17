@@ -29,10 +29,16 @@
 			<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
 				<Mail />
 			</Button>
-			<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
+			<Button
+				href="https://www.linkedin.com/in/jackreimers/"
+				classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200"
+			>
 				<Linkedin />
 			</Button>
-			<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
+			<Button
+				href="https://github.com/jackreimers"
+				classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200"
+			>
 				<Github />
 			</Button>
 		</div>
