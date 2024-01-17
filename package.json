@@ -31,5 +31,8 @@
     "vite": "^4.4.2",
     "vite-plugin-mkcert": "^1.16.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "lucide-svelte": "^0.311.0"
+  }
 }

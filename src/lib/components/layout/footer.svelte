@@ -1,21 +1,21 @@
 <script>
-	import { PUBLIC_APP_ROOT } from '$env/static/public';
-	import Button from '$lib/components/buttons/button.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
+	import { Mail } from 'lucide-svelte';
+	import { Linkedin } from 'lucide-svelte';
+	import { Github } from 'lucide-svelte';
 
-	const url = `${PUBLIC_APP_ROOT}/icons/github.svg`;
+	import Button from '$lib/components/buttons/button.svelte';
 </script>
 
 <footer class="mt-32">
 	<div class="flex w-full justify-center gap-3">
 		<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
-			<Icon icon="mail" classes="text-2xl" />
+			<Mail />
 		</Button>
 		<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
-			<Icon icon="question_mark" classes="text-2xl" />
+			<Linkedin />
 		</Button>
 		<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
-			<Icon icon="question_mark" classes="text-2xl" />
+			<Github />
 		</Button>
 	</div>
 	<div class="w-full text-center">

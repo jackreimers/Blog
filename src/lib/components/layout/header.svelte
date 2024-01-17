@@ -6,7 +6,9 @@
 
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Icon from '$lib/components/text/icon.svelte';
+	import { Home } from 'lucide-svelte';
+	import { Menu } from 'lucide-svelte';
+
 	import Button from '$lib/components/buttons/button.svelte';
 
 	let scrolled: boolean;
@@ -32,16 +34,18 @@
 	<div class="mx-auto flex">
 		<div class="flex-1"></div>
 		<div class="flex items-center gap-0.5 sm:gap-1 md:gap-2 lg:gap-4">
-			<Button href="/" classes="hover:bg-gray-100">
-				<Icon icon="home" weight={600} classes="text-gb p-2 text-3xl sm:text-4xl" />
+			<Button href="/" classes="p-2 hover:bg-gray-100">
+				<Home size="30" strokeWidth="3" />
 			</Button>
 			<!--
             <Button onClick={() => {}}>
                 <Icon icon="dark_mode" classes="text-4xl text-gb" />
             </Button>
             -->
-			<Button onClick={() => {}} classes="hover:bg-gray-100">
-				<Icon icon="menu" weight={600} classes="text-gb p-2 text-3xl sm:text-4xl" />
+			<Button onClick={() => {}} classes="p-2 hover:bg-gray-100">
+				<div class="text-gb">
+					<Menu size="30" strokeWidth="3" />
+				</div>
 			</Button>
 		</div>
 	</div>
