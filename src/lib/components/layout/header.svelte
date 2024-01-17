@@ -35,7 +35,7 @@
 		<div class="flex-1"></div>
 		<div class="flex items-center gap-0.5 sm:gap-1 md:gap-2 lg:gap-4">
 			<Button href="/" classes="p-2 hover:bg-gray-100">
-				<Home size="30" strokeWidth="3" />
+				<Home strokeWidth="3" />
 			</Button>
 			<!--
             <Button onClick={() => {}}>
@@ -44,7 +44,7 @@
             -->
 			<Button onClick={() => {}} classes="p-2 hover:bg-gray-100">
 				<div class="text-gb">
-					<Menu size="30" strokeWidth="3" />
+					<Menu strokeWidth="3" />
 				</div>
 			</Button>
 		</div>

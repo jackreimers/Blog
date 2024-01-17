@@ -7,30 +7,54 @@
 	<title>Jack Reimers</title>
 </svelte:head>
 
-<div class="mb-14 flex flex-col gap-2 leading-normal sm:mb-20 sm:gap-3">
-	<!-- 2xl -->
-	<p class="text-sm text-gray-500 sm:text-base md:text-2xl">Hi, my name is</p>
-	<!-- 7xl -->
-	<h1 class="text-gb text-5xl font-semibold md:text-6xl lg:text-7xl">Jack Reimers</h1>
-	<!-- 4xl -->
-	<p class="text-2xl font-medium md:text-3xl lg:text-4xl">
-		I'm a full-stack Software Engineer at
-		<Button
-			href="https://ssw.com.au"
-			target="_blank"
-			classes="whitespace-nowrap bg-gradient-to-b from-red-500 to-red-900 bg-clip-text font-bold text-transparent"
-		>
-			SSW Consulting
-		</Button>
-	</p>
-	<!-- 1xl -->
-	<p class="max-w-prose text-sm text-gray-500 sm:text-base">
+<div class="mb-8 flex flex-col gap-2 leading-normal">
+	<p class="text-sm text-gray-500 md:text-base">Hi, my name is</p>
+	<h1
+		class="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-4xl font-bold text-transparent sm:text-5xl md:text-6xl lg:text-7xl"
+	>
+		Jack Reimers
+	</h1>
+	<p class="mb-4 font-medium md:text-2xl">I'm a full-stack Software Engineer.</p>
+	<p class="max-w-prose">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua.
 	</p>
 </div>
-<div class="grid w-full max-w-2xl gap-4 sm:grid-cols-3">
-	<!-- TODO: Put these cards into components -->
+<div class="flex flex-col gap-4">
+	<Button href="blog">
+		<div class="w-full rounded-[4px] bg-gradient-to-r from-blue-600 to-blue-800 p-0.5">
+			<div class="h-full w-full rounded-[2px] bg-white">
+				<span class="flex flex-col px-3.5 py-2.5">
+					<span class="font-semibold">Blog</span>
+					<span class="text-sm text-gray-500">Read my latest posts.</span>
+				</span>
+			</div>
+		</div>
+	</Button>
+	<Button href="projects">
+		<div class="w-full rounded-[4px] bg-gradient-to-r from-blue-600 to-blue-800 p-0.5">
+			<div class="h-full w-full rounded-[2px] bg-white">
+				<span class="flex flex-col px-3.5 py-2.5">
+					<span class="font-semibold">Projects</span>
+					<span class="text-sm text-gray-500">View projects I've worked on.</span>
+				</span>
+			</div>
+		</div>
+	</Button>
+	<Button href="about">
+		<div class="w-full rounded-[4px] bg-gradient-to-r from-blue-600 to-blue-800 p-0.5">
+			<div class="h-full w-full rounded-[2px] bg-white">
+				<span class="flex flex-col px-3.5 py-2.5">
+					<span class="font-semibold">About</span>
+					<span class="text-sm text-gray-500">Learn more about me.</span>
+				</span>
+			</div>
+		</div>
+	</Button>
+</div>
+
+<!--
+<div class="grid w-full">
 	<Button
 		href="blog"
 		classes="flex w-full flex-col overflow-hidden rounded border border-gray-200"
@@ -72,7 +96,6 @@
 	</Button>
 </div>
 
-<!--
 <Button href="blog">Go to blog</Button>
 <Button href="blog/test">Go to blog post</Button>
 -->
