@@ -1,9 +1,3 @@
-<style>
-	header {
-		transition-property: margin, padding, border-color;
-	}
-</style>
-
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { Home } from 'lucide-svelte';
@@ -23,7 +17,7 @@
 </script>
 
 <header
-	class="fixed z-10 w-full border-b bg-white px-4 duration-700 lg:px-12"
+	class="fixed z-10 w-full border-b bg-white px-4 transition-all duration-700 lg:px-12"
 	class:py-4={!scrolled}
 	class:lg:py-8={!scrolled}
 	class:py-2={scrolled}
@@ -43,9 +37,7 @@
             </Button>
             -->
 			<Button onClick={() => {}} classes="p-2 hover:bg-gray-100">
-				<div class="text-gb">
-					<Menu strokeWidth="3" />
-				</div>
+				<Menu strokeWidth="3" />
 			</Button>
 		</div>
 	</div>
