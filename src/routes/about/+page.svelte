@@ -14,7 +14,7 @@
 </svelte:head>
 
 <div class="md:flex md:gap-20">
-	<div class="mb-12 flex flex-col gap-4 md:mb-0">
+	<div class="mb-8 sm:mb-12 flex flex-col gap-4 md:mb-0">
 		<div
 			class="mx-auto h-[170px] w-[170px] rounded-full border border-gray-300 bg-cover md:mx-0"
 			style="background-image: url({url})"
@@ -42,7 +42,7 @@
 			</Button>
 		</div>
 	</div>
-	<div class="rounded bg-gray-100 p-4 md:flex-1">
+	<div class="rounded bg-gray-100 px-4 py-3.5 sm:px-5 sm:py-4 md:px-6 md:py-5 md:flex-1">
 		<p class="mb-5">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 			incididunt ut labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper

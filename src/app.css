@@ -6,45 +6,17 @@
 @tailwind utilities;
 
 body {
+    @apply text-gray-700;
+    
     font-family: Inter, sans-serif;
 }
-
-/* TODO: These aren't necessary */
-.text-gt {
-    background: linear-gradient(to top, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.text-gb {
-    background: linear-gradient(to bottom, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.text-gr {
-    background: linear-gradient(to right, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.text-gl {
-    background: linear-gradient(to left, hsl(211, 78%, 49%), hsl(256, 100%, 16%));
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 
 .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
     @apply font-semibold mb-3;
 }
 
 .markdown h1, .markdown h2 {
-    @apply text-2xl sm:text-3xl mt-12 font-medium;
+    @apply text-2xl sm:text-3xl mt-8 sm:mt-12 font-medium;
 }
 
 .markdown h3, .markdown h4, .markdown h5, .markdown h6 {

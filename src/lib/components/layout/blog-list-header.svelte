@@ -6,7 +6,7 @@
 	let categories: string[] = ['.NET', 'Angular', 'C#', 'Svelte'];
 </script>
 
-<div class="mb-12 flex flex-col gap-2.5 text-center sm:gap-3.5">
+<div class="mb-8 flex flex-col gap-2.5 text-center sm:mb-12 sm:gap-3.5">
 	<p class="mb-0.5 text-sm leading-none sm:text-base">2 Found</p>
 	<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">Blog Posts</h1>
 

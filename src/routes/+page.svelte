@@ -22,10 +22,13 @@
 	</p>
 </div>
 <div class="flex flex-col gap-4">
-	<Button href="blog" classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200">
+	<Button
+		href="blog"
+		classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200 sm:px-5 sm:py-4 md:px-6 md:py-5"
+	>
 		<span class="flex flex-1 flex-col">
-			<span class="font-semibold">Blog</span>
-			<span class="text-sm text-gray-500">Read my latest posts.</span>
+			<span class="font-bold sm:text-2xl">Blog</span>
+			<span class="text-sm text-gray-500 sm:text-base">Read my latest posts.</span>
 		</span>
 		<span
 			class="mr-3 flex items-center text-gray-400 transition-all duration-300 group-hover:mr-1.5 group-hover:text-gray-600"
@@ -33,10 +36,13 @@
 			<MoveRight />
 		</span>
 	</Button>
-	<Button href="projects" classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200">
+	<Button
+		href="projects"
+		classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200 sm:px-5 sm:py-4 md:px-6 md:py-5"
+	>
 		<span class="flex flex-1 flex-col">
-			<span class="font-semibold">Projects</span>
-			<span class="text-sm text-gray-500">See my past projects.</span>
+			<span class="font-bold sm:text-2xl">Projects</span>
+			<span class="text-sm text-gray-500 sm:text-base">See my past projects.</span>
 		</span>
 		<span
 			class="mr-3 flex items-center text-gray-400 transition-all duration-300 group-hover:mr-1.5 group-hover:text-gray-600"
@@ -44,10 +50,13 @@
 			<MoveRight />
 		</span>
 	</Button>
-	<Button href="about" classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200">
+	<Button
+		href="about"
+		classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200 sm:px-5 sm:py-4 md:px-6 md:py-5"
+	>
 		<span class="flex flex-1 flex-col">
-			<span class="font-semibold">About</span>
-			<span class="text-sm text-gray-500">Learn more about me.</span>
+			<span class="font-bold sm:text-2xl">About</span>
+			<span class="text-sm text-gray-500 sm:text-base">Learn more about me.</span>
 		</span>
 		<span
 			class="mr-3 flex items-center text-gray-400 transition-all duration-300 group-hover:mr-1.5 group-hover:text-gray-600"
