@@ -4,7 +4,6 @@
 	import { Linkedin } from 'lucide-svelte';
 	import { Github } from 'lucide-svelte';
 
-	import Icon from '$lib/components/text/icon.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	const url = `${PUBLIC_APP_ROOT}/images/headshot.png`;
@@ -23,7 +22,7 @@
 		<div class="text-center md:text-left">
 			<h2 class="text-3xl font-semibold">Jack Reimers</h2>
 			<p class="font-medium text-gray-500">Software Engineer</p>
-			<p class="font-medium text-[#CC4141]">SSW</p>
+			<p class="font-semibold text-[#CC4141]">SSW</p>
 		</div>
 		<div class="flex w-full justify-center gap-3 md:justify-start">
 			<Button classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200">
