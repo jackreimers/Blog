@@ -1,13 +1,12 @@
 ---
-date: 2023-11-06T19:41:00.000+10:00
-title: Writing Game Engine Agnostic Code
+date: 2024-01-20T19:41:00.000+10:00
+title: 10 Interesting Svelte Features
 slug: test
-categories: [ "dotnet", "csharp", "godot" ]
+categories: [ "svelte", "javascript", "typescript" ]
 ---
 
-Fermentum dui faucibus in ornare quam viverra orci. Non diam phasellus vestibulum lorem sed risus ultricies tristique
-nulla. Malesuada proin libero nunc consequat interdum varius sit amet. Pharetra pharetra massa massa ultricies mi. Est
-velit egestas dui id ornare arcu odio ut sem.
+Aliquam purus sit amet luctus venenatis lectus magna. Nisi vitae suscipit tellus mauris a diam. Eu facilisis sed odio
+morbi quis. Iaculis at erat pellentesque adipiscing commodo.
 
 <!--endintro-->
 

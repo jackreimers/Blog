@@ -1,6 +1,9 @@
 {
   "csharp": "C#",
   "dotnet": ".NET",
+  "javascript": "JavaScript",
+  "typescript": "TypeScript",
+  "svelte": "Svelte",
   "godot": "Godot",
   "game-dev": "Game Development"
 }
