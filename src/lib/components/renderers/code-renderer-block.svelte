@@ -1,10 +1,9 @@
 <script lang="ts">
-	//TODO: Try to get the autoloader working
-	import Button from '$lib/components/buttons/button.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
-	import Prism from 'prismjs';
 	import 'prismjs/themes/prism.css';
 	import 'prismjs/components/prism-csharp';
+
+	import Prism from 'prismjs';
+	import Button from '$lib/components/buttons/button.svelte';
 
 	export let lang: string = '';
 	export let text: string = '';

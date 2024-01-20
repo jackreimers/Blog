@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Icon from '$lib/components/text/icon.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	export let name: string = 'Dropdown';
@@ -16,9 +15,7 @@
 		}}
 	>
 		<p class="flex-1 font-bold">{name}</p>
-		<span class="transition-transform duration-500" class:-rotate-180={open}>
-			<Icon icon="arrow_drop_down" />
-		</span>
+		<span class="transition-transform duration-500" class:-rotate-180={open}> </span>
 	</Button>
 	<!-- TODO: Close this when user clicks outside the dropdown -->
 	<div

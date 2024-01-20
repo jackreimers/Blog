@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Button from '$lib/components/buttons/button.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
 </script>
 
 <svelte:head>

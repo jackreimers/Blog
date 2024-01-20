@@ -1,10 +1,8 @@
 <script lang="ts">
-	import Icon from '$lib/components/text/icon.svelte';
-	import Detail from '$lib/components/text/detail.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
-	import Profile from '$lib/components/social/profile.svelte';
 	import type { BlogPost } from '$lib/types/types';
 	import { getDateString } from '$lib/functions/functions';
+
+	import Button from '$lib/components/buttons/button.svelte';
 
 	export let data: BlogPost;
 </script>
