@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	import Blocker from '$lib/components/layout/blocker.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
 	let scrolled: boolean;
+	let open: boolean = false;
 
 	onMount(() => {
 		onScroll();
@@ -34,7 +36,12 @@
 					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent sm:text-4xl"
 				/>
 			</Button>
-			<Button onClick={() => {}} classes="p-2 hover:bg-gray-100">
+			<Button
+				onClick={() => {
+					open = true;
+				}}
+				classes="p-2 hover:bg-gray-100"
+			>
 				<Icon
 					icon="menu"
 					weight={600}
@@ -46,5 +53,36 @@
 </header>
 
 <div class="h-36 lg:h-64" />
+
+<div
+	class:w-0={!open}
+	class:w-[320px]={open}
+	class="absolute right-0 top-0 z-20 h-full overflow-hidden bg-white transition-all duration-500"
+>
+	<div class="w-[320px]">
+		<div class="flex p-4">
+			<div class="flex-1" />
+			<Button
+				onClick={() => {
+					open = false;
+				}}
+				classes="rounded p-2 duration-500 hover:bg-gray-100"
+			>
+				<Icon
+					icon="close"
+					weight={600}
+					classes="bg-gradient-to-b from-red-600 to-red-800 bg-clip-text text-3xl text-transparent sm:text-4xl"
+				/>
+			</Button>
+		</div>
+	</div>
+</div>
+
+<Blocker
+	{open}
+	onClick={() => {
+		open = false;
+	}}
+/>
 
 <svelte:window on:scroll={() => onScroll()} />

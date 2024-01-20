@@ -23,7 +23,7 @@
 </script>
 
 <div
-	class="relative mb-5 inline-block w-full overflow-hidden overflow-x-auto rounded bg-gray-100 px-2.5 py-2 text-sm sm:px-5 sm:py-3.5 sm:text-base"
+	class="relative mb-5 inline-block w-full overflow-hidden overflow-x-auto rounded bg-gray-50 px-2.5 py-2 text-sm sm:px-5 sm:py-3.5 sm:text-base"
 >
 	<code class="{lang} whitespace-pre">
 		{@html Prism.highlight(text, Prism.languages[lang], lang)}

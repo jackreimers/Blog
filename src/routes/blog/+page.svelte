@@ -10,7 +10,7 @@
 	<title>Jack Reimers | Blog</title>
 </svelte:head>
 
-<BlogListHeader />
+<BlogListHeader postCount={data.posts.length} />
 
 <div class="grid gap-5">
 	{#each data.posts as post}
