@@ -31,14 +31,14 @@
 				<Icon
 					icon="home"
 					weight={600}
-					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-2xl text-transparent sm:text-3xl md:text-4xl"
+					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent sm:text-4xl"
 				/>
 			</Button>
 			<Button onClick={() => {}} classes="p-2 hover:bg-gray-100">
 				<Icon
 					icon="menu"
 					weight={600}
-					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-2xl text-transparent sm:text-3xl md:text-4xl"
+					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent sm:text-4xl"
 				/>
 			</Button>
 		</div>
