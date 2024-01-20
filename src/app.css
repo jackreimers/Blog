@@ -7,7 +7,7 @@
 
 body {
     @apply text-gray-700;
-    
+
     font-family: Inter, sans-serif;
 }
 
@@ -16,7 +16,7 @@ body {
 }
 
 .markdown h1, .markdown h2 {
-    @apply text-2xl sm:text-3xl mt-8 sm:mt-12 font-medium;
+    @apply text-2xl sm:text-3xl mt-12 font-medium;
 }
 
 .markdown h3, .markdown h4, .markdown h5, .markdown h6 {

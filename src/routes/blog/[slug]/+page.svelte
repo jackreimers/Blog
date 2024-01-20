@@ -15,7 +15,7 @@
 <BlogHeader {data} />
 
 <div class="flex">
-	<div class="w-[5px] rounded-full bg-gradient-to-b from-blue-600 to-blue-950" />
+	<div class="w-[5px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800" />
 	<p class="max-w-prose flex-1 px-3 py-1 font-medium">{data.intro}</p>
 </div>
 
