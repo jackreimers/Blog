@@ -12,7 +12,7 @@
 
 <BlogListHeader />
 
-<div class="grid grid-cols-2 gap-7">
+<div class="grid gap-5">
 	{#each data.posts as post}
 		<BlogCard data={post} />
 	{/each}

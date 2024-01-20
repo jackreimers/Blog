@@ -12,7 +12,7 @@
 <div class="mb-2.5">
 	<div class="flex flex-col gap-2.5 text-center sm:gap-3.5">
 		<p class="mb-0.5 text-sm leading-none sm:text-base">{getDateString(data.metadata.date)}</p>
-		<h1 class="text-3xl font-semibold sm:text-5xl lg:text-6xl">
+		<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">
 			{data.metadata.title}
 		</h1>
 
