@@ -25,6 +25,6 @@
 	class:visible={open}
 	class:opacity-0={!open}
 	class:opacity-100={open}
-	class="absolute left-0 top-0 z-10 h-full w-full bg-black bg-opacity-50"
+	class="fixed left-0 top-0 z-10 h-full w-full bg-black bg-opacity-50"
 	on:click={handleClick}
 />

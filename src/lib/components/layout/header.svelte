@@ -21,6 +21,27 @@
 		open = false;
 		goto(path);
 	}
+
+	let scrollTop = null;
+	let scrollLeft = null;
+
+	function disableScroll() {
+		scrollTop = window.pageYOffset || window.document.documentElement.scrollTop;
+		(scrollLeft = window.pageXOffset || window.document.documentElement.scrollLeft),
+			(window.onscroll = function () {
+				window.scrollTo(scrollLeft, scrollTop);
+			});
+	}
+
+	function enableScroll() {
+		window.onscroll = function () {};
+	}
+
+	$: if (open) {
+		disableScroll();
+	} else {
+		enableScroll();
+	}
 </script>
 
 <header
@@ -63,7 +84,7 @@
 <div
 	class:w-0={!open}
 	class:w-[320px]={open}
-	class="absolute right-0 top-0 z-20 h-full overflow-hidden bg-white transition-all duration-500"
+	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-white transition-all duration-500"
 >
 	<div class="w-[320px]">
 		<div
