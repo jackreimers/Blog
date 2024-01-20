@@ -22,7 +22,7 @@
 	</p>
 </div>
 <div class="flex flex-col gap-4">
-	<Button href="blog" classes="group flex bg-gray-100 px-3.5 py-2.5">
+	<Button href="blog" classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200">
 		<span class="flex flex-1 flex-col">
 			<span class="font-semibold">Blog</span>
 			<span class="text-sm text-gray-500">Read my latest posts.</span>
@@ -33,7 +33,7 @@
 			<MoveRight />
 		</span>
 	</Button>
-	<Button href="projects" classes="group flex bg-gray-100 px-3.5 py-2.5">
+	<Button href="projects" classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200">
 		<span class="flex flex-1 flex-col">
 			<span class="font-semibold">Projects</span>
 			<span class="text-sm text-gray-500">See my past projects.</span>
@@ -44,7 +44,7 @@
 			<MoveRight />
 		</span>
 	</Button>
-	<Button href="about" classes="group flex bg-gray-100 px-3.5 py-2.5">
+	<Button href="about" classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200">
 		<span class="flex flex-1 flex-col">
 			<span class="font-semibold">About</span>
 			<span class="text-sm text-gray-500">Learn more about me.</span>

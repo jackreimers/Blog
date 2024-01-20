@@ -43,7 +43,7 @@
 			</Button>
 		</div>
 	</div>
-	<div class="rounded bg-gray-50 p-4 md:flex-1">
+	<div class="rounded bg-gray-100 p-4 md:flex-1">
 		<p class="mb-5">
 			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
 			incididunt ut labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper

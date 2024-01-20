@@ -31,11 +31,6 @@
 			<Button href="/" classes="p-2 hover:bg-gray-100">
 				<Home strokeWidth="3" />
 			</Button>
-			<!--
-            <Button onClick={() => {}}>
-                <Icon icon="dark_mode" classes="text-4xl text-gb" />
-            </Button>
-            -->
 			<Button onClick={() => {}} classes="p-2 hover:bg-gray-100">
 				<Menu strokeWidth="3" />
 			</Button>
