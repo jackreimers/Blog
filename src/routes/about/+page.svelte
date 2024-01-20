@@ -30,12 +30,14 @@
 			</Button>
 			<Button
 				href="https://www.linkedin.com/in/jackreimers/"
+				target="_blank"
 				classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200"
 			>
 				<Linkedin />
 			</Button>
 			<Button
 				href="https://github.com/jackreimers"
+				target="_blank"
 				classes="rounded-full bg-gray-100 p-4 hover:bg-gray-200"
 			>
 				<Github />

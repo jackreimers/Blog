@@ -18,7 +18,7 @@
 			>{getDateString(data.metadata.date)}</span
 		>
 		<span class="mb-2.5 block font-bold sm:text-2xl">{data.metadata.title}</span>
-		<span class="block">
+		<span class="block max-w-prose">
 			{data.intro.substring(0, 100)}
 			<span class="bg-gradient-to-r from-gray-700 to-white bg-clip-text text-transparent"
 				>{data.intro.substring(100, 110)}</span
