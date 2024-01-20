@@ -6,8 +6,11 @@
 	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
-	let scrolled: boolean;
 	let open: boolean = false;
+
+	let scrolled: boolean;
+	let scrollTop: number = 0;
+	let scrollLeft: number = 0;
 
 	onMount(() => {
 		onScroll();
@@ -15,32 +18,26 @@
 
 	function onScroll() {
 		scrolled = window.scrollY > 50;
+
+		//Lock the window scroll location if the menu is open
+		if (open) window.scrollTo(scrollLeft, scrollTop);
+	}
+
+	function openMenu() {
+		open = true;
+
+		//Store the window scroll location
+		scrollTop = window.scrollY || window.document.documentElement.scrollTop;
+		scrollLeft = window.scrollX || window.document.documentElement.scrollLeft;
+	}
+
+	function closeMenu() {
+		open = false;
 	}
 
 	function routeTo(path: string) {
-		open = false;
+		closeMenu();
 		goto(path);
-	}
-
-	let scrollTop = null;
-	let scrollLeft = null;
-
-	function disableScroll() {
-		scrollTop = window.pageYOffset || window.document.documentElement.scrollTop;
-		(scrollLeft = window.pageXOffset || window.document.documentElement.scrollLeft),
-			(window.onscroll = function () {
-				window.scrollTo(scrollLeft, scrollTop);
-			});
-	}
-
-	function enableScroll() {
-		window.onscroll = function () {};
-	}
-
-	$: if (open) {
-		disableScroll();
-	} else {
-		enableScroll();
 	}
 </script>
 
@@ -63,12 +60,7 @@
 					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent sm:text-4xl"
 				/>
 			</Button>
-			<Button
-				onClick={() => {
-					open = true;
-				}}
-				classes="p-2 hover:bg-gray-100"
-			>
+			<Button onClick={openMenu} classes="p-2 hover:bg-gray-100">
 				<Icon
 					icon="menu"
 					weight={600}
@@ -94,12 +86,7 @@
 		>
 			<div class="mb-8 flex">
 				<div class="flex-1" />
-				<Button
-					onClick={() => {
-						open = false;
-					}}
-					classes="rounded p-2 duration-500 hover:bg-gray-100"
-				>
+				<Button onClick={closeMenu} classes="rounded p-2 duration-500 hover:bg-gray-100">
 					<Icon
 						icon="close"
 						weight={600}
