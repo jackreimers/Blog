@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
 
 	import Blocker from '$lib/components/layout/blocker.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
@@ -51,7 +52,7 @@
 	class:border-gray-300={scrolled}
 >
 	<div class="mx-auto flex">
-		<div class="flex-1"></div>
+		<div class="flex-1" />
 		<div class="flex items-center gap-0.5 sm:gap-1 md:gap-2 lg:gap-4">
 			<Button href="/" classes="p-2 hover:bg-gray-100">
 				<Icon
@@ -76,13 +77,14 @@
 <div
 	class:w-0={!open}
 	class:w-[320px]={open}
+	class:sm:w-[500px]={open}
 	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-white transition-all duration-500"
 >
-	<div class="w-[320px]">
+	<div class="w-[320px] sm:w-[500px]">
 		<div
 			class:ml-0={open}
 			class:ml-4={!open}
-			class=" p-4 transition-spacing delay-100 duration-700"
+			class="p-4 transition-spacing delay-100 duration-700"
 		>
 			<div class="mb-8 flex">
 				<div class="flex-1" />
@@ -94,27 +96,57 @@
 					/>
 				</Button>
 			</div>
-			<div class="flex flex-col gap-4 px-4">
+			<div class="grid gap-4 px-4">
 				<Button
 					onClick={() => {
 						routeTo('/');
 					}}
-					classes="text-left text-2xl font-semibold"
-					>Home
+					classes="group flex text-left text-2xl font-semibold"
+				>
+					<span
+						class:opacity-100={$page.url.pathname === '/'}
+						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+					/>
+					<span class="px-3.5 py-2">Home</span>
 				</Button>
+
+				<Button
+					onClick={() => {
+						routeTo('blog');
+					}}
+					classes="group flex text-left text-2xl font-semibold"
+				>
+					<span
+						class:opacity-100={$page.url.pathname === '/blog/'}
+						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					/>
+					<span class="px-3.5 py-2">Blog</span>
+				</Button>
+
 				<Button
 					onClick={() => {
 						routeTo('projects');
 					}}
-					classes="text-left text-2xl font-semibold"
-					>Projects
+					classes="group flex text-left text-2xl font-semibold"
+				>
+					<span
+						class:opacity-100={$page.url.pathname === '/projects/'}
+						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					/>
+					<span class="px-3.5 py-2">Projects</span>
 				</Button>
+
 				<Button
 					onClick={() => {
 						routeTo('about');
 					}}
-					classes="text-left text-2xl font-semibold"
-					>About
+					classes="group flex text-left text-2xl font-semibold"
+				>
+					<span
+						class:opacity-100={$page.url.pathname === '/about/'}
+						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+					/>
+					<span class="px-3.5 py-2">About</span>
 				</Button>
 			</div>
 		</div>
