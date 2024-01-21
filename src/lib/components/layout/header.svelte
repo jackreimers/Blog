@@ -112,7 +112,7 @@
 
 				<Button
 					onClick={() => {
-						routeTo('blog');
+						routeTo('/blog');
 					}}
 					classes="group flex text-left text-2xl font-semibold"
 				>
@@ -125,7 +125,7 @@
 
 				<Button
 					onClick={() => {
-						routeTo('projects');
+						routeTo('/projects');
 					}}
 					classes="group flex text-left text-2xl font-semibold"
 				>
@@ -138,7 +138,7 @@
 
 				<Button
 					onClick={() => {
-						routeTo('about');
+						routeTo('/about');
 					}}
 					classes="group flex text-left text-2xl font-semibold"
 				>

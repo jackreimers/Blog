@@ -23,7 +23,7 @@
 </div>
 <div class="flex flex-col gap-4">
 	<Button
-		href="blog"
+		href="/blog"
 		classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200 sm:px-5 sm:py-4 md:px-6 md:py-5"
 	>
 		<span class="flex flex-1 flex-col">
@@ -37,7 +37,7 @@
 		</span>
 	</Button>
 	<Button
-		href="projects"
+		href="/projects"
 		classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200 sm:px-5 sm:py-4 md:px-6 md:py-5"
 	>
 		<span class="flex flex-1 flex-col">
@@ -51,7 +51,7 @@
 		</span>
 	</Button>
 	<Button
-		href="about"
+		href="/about"
 		classes="group flex bg-gray-100 px-3.5 py-2.5 hover:bg-gray-200 sm:px-5 sm:py-4 md:px-6 md:py-5"
 	>
 		<span class="flex flex-1 flex-col">
