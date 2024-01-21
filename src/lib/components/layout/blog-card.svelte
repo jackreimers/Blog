@@ -11,7 +11,7 @@
 
 <Button
 	href="/blog/{data.metadata.slug}"
-	classes="group flex gap-3 rounded bg-gray-100 px-4 py-3.5 sm:px-5 sm:py-4 md:px-6 md:py-5"
+	classes="group flex gap-3 rounded bg-gray-100 px-4 py-3.5 hover:bg-gray-200 sm:px-5 sm:py-4 md:px-6 md:py-5"
 >
 	<span class="flex-1">
 		<span class="mb-1 block text-sm text-gray-500 sm:text-base"

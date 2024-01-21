@@ -77,14 +77,14 @@
 <div
 	class:w-0={!open}
 	class:w-[320px]={open}
-	class:sm:w-[500px]={open}
+	class:lg:w-[500px]={open}
 	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-white transition-all duration-500"
 >
-	<div class="w-[320px] sm:w-[500px]">
+	<div class="w-[320px] lg:w-[500px]">
 		<div
 			class:ml-0={open}
 			class:ml-4={!open}
-			class="p-4 transition-spacing delay-100 duration-700"
+			class="p-4 transition-spacing delay-100 duration-700 lg:px-12 lg:py-8"
 		>
 			<div class="mb-8 flex">
 				<div class="flex-1" />
