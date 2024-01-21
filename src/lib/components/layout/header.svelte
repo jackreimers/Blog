@@ -96,12 +96,12 @@
 					/>
 				</Button>
 			</div>
-			<div class="grid gap-4 px-4">
+			<div class="grid gap-2 px-4 sm:gap-4">
 				<Button
 					onClick={() => {
 						routeTo('/');
 					}}
-					classes="group flex text-left text-2xl font-semibold"
+					classes="group flex text-left font-semibold sm:text-2xl"
 				>
 					<span
 						class:opacity-70={$page.url.pathname === '/'}
@@ -114,7 +114,7 @@
 					onClick={() => {
 						routeTo('/blog');
 					}}
-					classes="group flex text-left text-2xl font-semibold"
+					classes="group flex text-left font-semibold sm:text-2xl"
 				>
 					<span
 						class:opacity-70={$page.url.pathname.startsWith('/blog/')}
@@ -127,7 +127,7 @@
 					onClick={() => {
 						routeTo('/projects');
 					}}
-					classes="group flex text-left text-2xl font-semibold"
+					classes="group flex text-left font-semibold sm:text-2xl"
 				>
 					<span
 						class:opacity-70={$page.url.pathname.startsWith('/projects/')}
@@ -140,7 +140,7 @@
 					onClick={() => {
 						routeTo('/about');
 					}}
-					classes="group flex text-left text-2xl font-semibold"
+					classes="group flex text-left font-semibold sm:text-2xl"
 				>
 					<span
 						class:opacity-70={$page.url.pathname === '/about/'}
