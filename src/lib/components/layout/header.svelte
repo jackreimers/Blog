@@ -18,7 +18,7 @@
 	});
 
 	function onScroll() {
-		scrolled = window.scrollY > 50;
+		scrolled = window.scrollY > 1;
 
 		//Lock the window scroll location if the menu is open
 		if (open) window.scrollTo(scrollLeft, scrollTop);

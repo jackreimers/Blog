@@ -11,4 +11,4 @@
 	<h1 class="text-center text-3xl font-bold sm:text-5xl lg:text-6xl">Projects</h1>
 </PageHeader>
 
-<p>This page is still under construction.</p>
+<p class="text-center">This page is still under construction.</p>
