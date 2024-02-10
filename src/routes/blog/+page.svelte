@@ -1,6 +1,6 @@
 <script lang="ts">
+	import PageHeader from '$lib/components/layout/page-header.svelte';
 	import BlogCard from '$lib/components/layout/blog-card.svelte';
-	import BlogListHeader from '$lib/components/layout/blog-list-header.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -10,7 +10,12 @@
 	<title>Jack Reimers | Blog</title>
 </svelte:head>
 
-<BlogListHeader postCount={data.posts.length} />
+<PageHeader>
+	<div class="flex flex-col gap-2.5 text-center sm:gap-3.5">
+		<p class="mb-0.5 text-sm leading-none sm:text-base">{data.posts.length} Posts</p>
+		<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">Blog Posts</h1>
+	</div>
+</PageHeader>
 
 <div class="grid gap-5">
 	{#each data.posts as post}

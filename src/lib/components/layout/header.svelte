@@ -104,7 +104,7 @@
 					classes="group flex text-left font-semibold sm:text-2xl"
 				>
 					<span
-						class:opacity-70={$page.url.pathname === '/'}
+						class:opacity-100={$page.url.pathname === '/'}
 						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 					/>
 					<span class="px-3.5 py-2">Home</span>
@@ -117,7 +117,7 @@
 					classes="group flex text-left font-semibold sm:text-2xl"
 				>
 					<span
-						class:opacity-70={$page.url.pathname.startsWith('/blog/')}
+						class:opacity-100={$page.url.pathname.startsWith('/blog/')}
 						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 					/>
 					<span class="px-3.5 py-2">Blog</span>
@@ -130,7 +130,7 @@
 					classes="group flex text-left font-semibold sm:text-2xl"
 				>
 					<span
-						class:opacity-70={$page.url.pathname.startsWith('/projects/')}
+						class:opacity-100={$page.url.pathname.startsWith('/projects/')}
 						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 					/>
 					<span class="px-3.5 py-2">Projects</span>
@@ -143,7 +143,7 @@
 					classes="group flex text-left font-semibold sm:text-2xl"
 				>
 					<span
-						class:opacity-70={$page.url.pathname === '/about/'}
+						class:opacity-100={$page.url.pathname === '/about/'}
 						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
 					/>
 					<span class="px-3.5 py-2">About</span>

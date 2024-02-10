@@ -15,7 +15,7 @@
 	>
 		Jack Reimers
 	</h1>
-	<p class="mb-4 font-medium md:text-2xl">I'm a full-stack Software Engineer.</p>
+	<p class="mb-4 font-medium md:text-2xl">I'm a Full Stack Software Engineer.</p>
 	<p class="max-w-prose">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua.
