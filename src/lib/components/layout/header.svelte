@@ -72,7 +72,7 @@
 	</div>
 </header>
 
-<div class="h-36 lg:h-64" />
+<div class="h-28 sm:h-32 md:h-36 lg:h-64" />
 
 <div
 	class:w-0={!open}

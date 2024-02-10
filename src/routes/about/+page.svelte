@@ -13,10 +13,7 @@
 </svelte:head>
 
 <PageHeader>
-	<div class="flex flex-col gap-2.5 text-center sm:gap-3.5">
-		<p class="mb-0.5 text-sm leading-none sm:text-base">&nbsp;</p>
-		<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">About</h1>
-	</div>
+	<h1 class="text-center text-3xl font-bold sm:text-5xl lg:text-6xl">About</h1>
 </PageHeader>
 
 <div class="mb-5 flex gap-3 sm:gap-4">
