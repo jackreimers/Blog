@@ -58,7 +58,7 @@
 				<Icon
 					icon="home"
 					weight={600}
-					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent sm:text-4xl"
+					classes="bg-gradient-to-br from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent sm:text-4xl"
 				/>
 			</Button>
 			<Button onClick={openMenu} classes="p-2 hover:bg-gray-100">

@@ -11,7 +11,7 @@
 <div class="mb-8 flex flex-col gap-2 leading-normal">
 	<p class="text-sm text-gray-500 md:text-base">Hi, my name is</p>
 	<h1
-		class="bg-gradient-to-r from-blue-600 to-blue-800 bg-clip-text text-4xl font-extrabold text-transparent min-[380px]:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+		class="bg-gradient-to-br from-blue-600 to-blue-800 bg-clip-text text-4xl font-extrabold text-transparent min-[380px]:text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
 	>
 		Jack Reimers
 	</h1>
