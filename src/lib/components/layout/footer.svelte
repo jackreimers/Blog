@@ -29,6 +29,8 @@
 		</Button>
 	</div>
 	<div class="w-full text-center">
-		<p class="my-4 text-sm font-semibold lg:text-base">Copyright © 2023</p>
+		<p class="my-4 text-sm font-semibold lg:text-base">
+			Copyright © {new Date().getFullYear()}
+		</p>
 	</div>
 </footer>
