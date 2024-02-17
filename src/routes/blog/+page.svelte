@@ -11,7 +11,7 @@
 </svelte:head>
 
 <PageHeader>
-	<h1 class="text-center text-3xl font-bold sm:text-5xl lg:text-6xl">Blog Posts</h1>
+	<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">Blog Posts</h1>
 </PageHeader>
 
 <div class="grid gap-5">

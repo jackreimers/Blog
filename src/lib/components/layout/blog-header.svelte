@@ -4,23 +4,27 @@
 
 	import PageHeader from '$lib/components/layout/page-header.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
+	import Icon from '$lib/components/text/icon.svelte';
 
 	export let data: BlogPost;
 </script>
 
 <PageHeader>
-	<div class="text-center">
+	<div class="flex flex-col gap-2.5 sm:gap-3.5">
+		<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">
+			{data.metadata.title}
+		</h1>
 		<div
-			class="mb-4 flex flex-col gap-2.5 border-b-2 border-gray-200 pb-4 text-center sm:mb-8 sm:gap-3.5 sm:pb-8"
+			class="flex items-center gap-2 text-sm font-semibold leading-none sm:gap-2.5 sm:text-base"
 		>
-			<p class="mb-0.5 text-sm leading-none sm:text-base">
-				{getDateString(data.metadata.date)}
-			</p>
-			<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">
-				{data.metadata.title}
-			</h1>
+			<Icon
+				icon="calendar_month"
+				weight={400}
+				classes="rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white sm:p-1.5"
+			/>
+			<p>{getDateString(data.metadata.date)}</p>
 		</div>
-		<div class="mx-auto flex flex-wrap justify-center gap-2">
+		<div class="flex flex-wrap gap-2">
 			{#each data.metadata.categories as category}
 				<Button
 					onClick={() => {}}

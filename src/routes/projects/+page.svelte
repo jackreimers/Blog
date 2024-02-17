@@ -8,7 +8,7 @@
 </svelte:head>
 
 <PageHeader>
-	<h1 class="text-center text-3xl font-bold sm:text-5xl lg:text-6xl">Projects</h1>
+	<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">Projects</h1>
 </PageHeader>
 
-<p class="text-center">This page is still under construction.</p>
+<p class="">This page is still under construction.</p>
