@@ -16,7 +16,7 @@
 	<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">About</h1>
 </PageHeader>
 
-<div class="grid grid-cols-6 grid-rows-4 gap-5">
+<div class="grid grid-cols-6 grid-rows-2 gap-5">
 	<div class="col-start-1 col-end-3 row-start-1 row-end-3 rounded bg-gray-100">
 		<img
 			src="/images/headshot-transparent.png"
