@@ -16,7 +16,7 @@
 	<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">About</h1>
 </PageHeader>
 
-<div class="grid grid-cols-6 grid-rows-6 gap-5">
+<div class="grid grid-cols-6 grid-rows-4 gap-5">
 	<div class="col-start-1 col-end-3 row-start-1 row-end-3 rounded bg-gray-100">
 		<img
 			src="/images/headshot-transparent.png"
@@ -25,23 +25,32 @@
 			class="mx-auto"
 		/>
 	</div>
-	<div class="col-start-3 col-end-5 rounded bg-gray-100">
-		<div class="flex h-full flex-col items-center justify-center gap-1.5">
-			<Icon icon="badge" classes="text-5xl" />
-			<p class="font-semibold">Software Engineer</p>
-		</div>
+	<div class="col-start-3 col-end-6 row-start-1 row-end-3 bg-gray-100 p-6">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+			incididunt ut labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper
+			feugiat nibh.
+		</p>
 	</div>
-	<div class="rounded bg-gray-100">
-		<div class="flex h-full flex-col items-center justify-center gap-1.5">
-			<Icon icon="work" classes="text-5xl" />
-			<p class="font-semibold">SSW</p>
-		</div>
-	</div>
-	<div></div>
-	<div class="rounded bg-gray-100">
-		<div class="flex h-full flex-col items-center justify-center gap-1.5">
-			<Icon icon="location_on" classes="text-5xl" />
+	<!-- TODO: Image is incredibly large resolution -->
+	<div
+		class="overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane-river.jpg')] bg-cover text-white"
+	>
+		<div
+			class="flex h-full flex-col items-center justify-center gap-1.5 backdrop-blur-[2px] backdrop-brightness-75 backdrop-filter"
+		>
+			<Icon icon="location_on" weight={700} classes="text-6xl" />
 			<p class="font-semibold">Brisbane</p>
+		</div>
+	</div>
+	<div
+		class="overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane.jpg')] bg-cover text-white"
+	>
+		<div
+			class="flex h-full flex-col items-center justify-center gap-1.5 p-4 backdrop-blur-[2px] backdrop-brightness-75 backdrop-filter"
+		>
+			<Icon icon="work" weight={700} classes="text-6xl" />
+			<p class="font-semibold">SSW</p>
 		</div>
 	</div>
 </div>
