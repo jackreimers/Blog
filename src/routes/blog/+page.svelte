@@ -15,7 +15,7 @@
 
 <PageHeader>
 	<div class="flex flex-col gap-2.5 sm:gap-3.5">
-		<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">Blog Posts</h1>
+		<h1 class="text-4xl font-bold sm:text-5xl lg:text-6xl">Blog Posts</h1>
 		<div
 			class="flex items-center gap-2 text-sm font-semibold leading-none sm:gap-2.5 sm:text-base"
 		>

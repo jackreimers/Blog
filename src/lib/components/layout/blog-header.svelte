@@ -11,7 +11,7 @@
 
 <PageHeader>
 	<div class="flex flex-col gap-2.5 sm:gap-3.5">
-		<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">
+		<h1 class="text-4xl font-bold sm:text-5xl lg:text-6xl">
 			{data.metadata.title}
 		</h1>
 		<div
