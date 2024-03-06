@@ -15,7 +15,13 @@
 <PageHeader>
 	<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">About</h1>
 </PageHeader>
-
+<div class="mb-8 sm:mb-10">
+	<p class="mb-3 text-2xl font-semibold sm:text-3xl">Jack Reimers</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper feugiat nibh.
+	</p>
+</div>
 <div
 	class="grid grid-cols-2 grid-rows-3 gap-3 min-[450px]:grid-cols-[repeat(3,_1fr)_auto] min-[450px]:grid-rows-2 sm:gap-5"
 >
@@ -73,13 +79,6 @@
 			<Github />
 		</Button>
 	</div>
-</div>
-<div class="mt-8 sm:mt-12">
-	<p class="mb-3 text-2xl font-semibold sm:text-3xl">Jack Reimers</p>
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper feugiat nibh.
-	</p>
 </div>
 
 <!--
