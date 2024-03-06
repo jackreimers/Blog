@@ -31,7 +31,6 @@
 		<img
 			src="/images/headshot-transparent.png"
 			alt="Professional headshot of Jack Reimers"
-			width="300"
 			class="mx-auto w-[250px] sm:w-[300px]"
 		/>
 	</div>
