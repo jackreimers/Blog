@@ -16,7 +16,6 @@
 	<h1 class="text-4xl font-bold sm:text-5xl lg:text-6xl">About</h1>
 </PageHeader>
 <div class="mb-8 sm:mb-10">
-	<p class="mb-3 text-2xl font-semibold sm:text-3xl">Jack Reimers</p>
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
 		labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper feugiat nibh.
