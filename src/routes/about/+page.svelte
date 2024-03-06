@@ -17,7 +17,7 @@
 </PageHeader>
 
 <div
-	class="grid grid-cols-2 grid-rows-3 gap-3 sm:grid-cols-[repeat(3,_1fr)_auto] sm:grid-rows-2 sm:gap-5"
+	class="grid grid-cols-2 grid-rows-3 gap-3 min-[450px]:grid-cols-[repeat(3,_1fr)_auto] min-[450px]:grid-rows-2 sm:gap-5"
 >
 	<div
 		class="col-start-1 col-end-3 row-start-1 row-end-3 flex gap-3 rounded bg-gray-100 sm:gap-4"
@@ -26,7 +26,7 @@
 			src="/images/headshot-transparent.png"
 			alt="Professional headshot of Jack Reimers"
 			width="300"
-			class="mx-auto w-[210px] sm:w-[300px]"
+			class="mx-auto w-[250px] sm:w-[300px]"
 		/>
 	</div>
 
@@ -52,7 +52,9 @@
 		</div>
 	</div>
 
-	<div class="flex gap-3 sm:col-end-5 sm:row-start-1 sm:row-end-3 sm:flex-col sm:gap-5">
+	<div
+		class="flex gap-3 min-[450px]:col-end-5 min-[450px]:row-start-1 min-[450px]:row-end-3 min-[450px]:flex-col sm:gap-5"
+	>
 		<Button classes="rounded bg-gray-100 p-4 hover:bg-gray-200">
 			<Mail />
 		</Button>
