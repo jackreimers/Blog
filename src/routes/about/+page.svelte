@@ -16,22 +16,20 @@
 	<h1 class="text-3xl font-bold sm:text-5xl lg:text-6xl">About</h1>
 </PageHeader>
 
-<div class="grid grid-cols-6 grid-rows-2 gap-5">
-	<div class="col-start-1 col-end-3 row-start-1 row-end-3 rounded bg-gray-100">
+<div
+	class="grid grid-cols-2 grid-rows-3 gap-3 sm:grid-cols-[repeat(3,_1fr)_auto] sm:grid-rows-2 sm:gap-5"
+>
+	<div
+		class="col-start-1 col-end-3 row-start-1 row-end-3 flex gap-3 rounded bg-gray-100 sm:gap-4"
+	>
 		<img
 			src="/images/headshot-transparent.png"
 			alt="Professional headshot of Jack Reimers"
 			width="300"
-			class="mx-auto"
+			class="mx-auto w-[210px] sm:w-[300px]"
 		/>
 	</div>
-	<div class="col-start-3 col-end-6 row-start-1 row-end-3 bg-gray-100 p-6">
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-			incididunt ut labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper
-			feugiat nibh.
-		</p>
-	</div>
+
 	<!-- TODO: Image is incredibly large resolution -->
 	<div
 		class="overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane-river.jpg')] bg-cover text-white"
@@ -39,7 +37,7 @@
 		<div
 			class="flex h-full flex-col items-center justify-center gap-1.5 backdrop-blur-[2px] backdrop-brightness-75 backdrop-filter"
 		>
-			<Icon icon="location_on" weight={700} classes="text-6xl" />
+			<Icon icon="location_on" weight={700} classes="text-4xl sm:text-6xl" />
 			<p class="font-semibold">Brisbane</p>
 		</div>
 	</div>
@@ -49,13 +47,45 @@
 		<div
 			class="flex h-full flex-col items-center justify-center gap-1.5 p-4 backdrop-blur-[2px] backdrop-brightness-75 backdrop-filter"
 		>
-			<Icon icon="work" weight={700} classes="text-6xl" />
+			<Icon icon="work" weight={700} classes="text-4xl sm:text-6xl" />
 			<p class="font-semibold">SSW</p>
 		</div>
 	</div>
+
+	<div class="flex gap-3 sm:col-end-5 sm:row-start-1 sm:row-end-3 sm:flex-col sm:gap-5">
+		<Button classes="rounded bg-gray-100 p-4 hover:bg-gray-200">
+			<Mail />
+		</Button>
+		<Button
+			href="https://www.linkedin.com/in/jackreimers"
+			target="_blank"
+			classes="rounded bg-gray-100 p-4 hover:bg-gray-200"
+		>
+			<Linkedin />
+		</Button>
+		<Button
+			href="https://github.com/jackreimers"
+			target="_blank"
+			classes="rounded bg-gray-100 p-4 hover:bg-gray-200"
+		>
+			<Github />
+		</Button>
+	</div>
+</div>
+<div class="mt-8 sm:mt-12">
+	<p class="mb-3 text-2xl font-semibold sm:text-3xl">Jack Reimers</p>
+	<p>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+		labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper feugiat nibh.
+	</p>
 </div>
 
 <!--
+	<div
+		class="col-start-1 col-end-3 md:col-end-5 xl:col-start-3 xl:col-end-6 xl:row-start-1 xl:row-end-3"
+	>
+		
+	</div>
 <div class="flex gap-3 sm:gap-8">
 	<div class="flex flex-col rounded bg-gray-100 px-6 py-5 text-center">
 		<div class="mx-auto mb-4 overflow-hidden rounded-full border-2 bg-gray-50">
