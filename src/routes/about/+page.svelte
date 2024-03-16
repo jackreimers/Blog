@@ -1,10 +1,5 @@
 <script lang="ts">
-	import { Mail } from 'lucide-svelte';
-	import { Linkedin } from 'lucide-svelte';
-	import { Github } from 'lucide-svelte';
-
 	import PageHeader from '$lib/components/layout/page-header.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 </script>
 
@@ -22,7 +17,7 @@
 	</p>
 </div>
 <div
-	class="grid grid-cols-2 grid-rows-3 gap-3 min-[450px]:grid-cols-[repeat(3,_1fr)_auto] min-[450px]:grid-rows-2 sm:gap-5"
+	class="grid grid-cols-2 grid-rows-3 gap-3 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-5"
 >
 	<div
 		class="col-start-1 col-end-3 row-start-1 row-end-3 flex gap-3 rounded bg-gray-100 sm:gap-4"
@@ -52,26 +47,5 @@
 			<Icon icon="work" weight={700} classes="text-4xl sm:text-6xl" />
 			<p class="font-semibold">SSW</p>
 		</div>
-	</div>
-	<div
-		class="flex gap-3 min-[450px]:col-end-5 min-[450px]:row-start-1 min-[450px]:row-end-3 min-[450px]:flex-col sm:gap-5"
-	>
-		<Button classes="rounded bg-gray-100 p-4 hover:bg-gray-200">
-			<Mail />
-		</Button>
-		<Button
-			href="https://www.linkedin.com/in/jackreimers"
-			target="_blank"
-			classes="rounded bg-gray-100 p-4 hover:bg-gray-200"
-		>
-			<Linkedin />
-		</Button>
-		<Button
-			href="https://github.com/jackreimers"
-			target="_blank"
-			classes="rounded bg-gray-100 p-4 hover:bg-gray-200"
-		>
-			<Github />
-		</Button>
 	</div>
 </div>
