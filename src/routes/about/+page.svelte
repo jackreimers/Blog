@@ -7,9 +7,7 @@
 	<title>Jack Reimers | About</title>
 </svelte:head>
 
-<PageHeader>
-	<h1 class="text-4xl font-bold sm:text-5xl lg:text-6xl">About</h1>
-</PageHeader>
+<PageHeader title="About" />
 <div class="mb-8 sm:mb-10">
 	<p>
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
