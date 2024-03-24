@@ -1,6 +1,3 @@
-<style>
-</style>
-
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
@@ -46,8 +43,8 @@
 </script>
 
 <header
-	class="fixed z-10 w-full border-b px-4 transition-all duration-700 lg:px-12
-		{scrolled ? 'bg-white py-2 shadow-md lg:py-4' : 'border-transparent py-4 lg:py-8'}"
+	class="fixed z-10 w-full border-b bg-gray-100 px-4 transition-all duration-700 lg:px-12
+		{scrolled ? 'py-2 lg:py-4' : 'border-transparent py-4 lg:py-8'}"
 >
 	<div class="mx-auto flex">
 		<div class="flex-1" />
@@ -86,14 +83,14 @@
 				<Icon
 					icon="home"
 					weight={600}
-					classes="bg-gradient-to-br from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent sm:text-4xl"
+					classes="bg-gradient-to-br from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent"
 				/>
 			</Button>
 			<Button onClick={openMenu} classes="p-2 hover:bg-gray-100">
 				<Icon
 					icon="menu"
 					weight={600}
-					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent sm:text-4xl"
+					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent"
 				/>
 			</Button>
 		</div>

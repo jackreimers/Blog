@@ -6,7 +6,7 @@
 	import Button from '$lib/components/buttons/button.svelte';
 </script>
 
-<footer class="mt-32">
+<footer class="mt-16 md:mt-32">
 	<div class="flex w-full justify-center gap-3">
 		<Button href="mailto:" classes="btn-hover rounded-full bg-white p-4 shadow">
 			<Mail />
