@@ -1,35 +1,50 @@
 <script lang="ts">
 	import Icon from '$lib/components/text/icon.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
+	import { onMount } from 'svelte';
 
-	export let name: string = 'Dropdown';
-	export let options: string[];
+	let outerElement: HTMLElement;
+	let buttonElement: HTMLElement;
+
+	export let title: string = 'Dropdown';
 
 	let open: boolean = false;
+
+	onMount(() => {
+		window.addEventListener('click', clickHandler);
+
+		return () => {
+			window.removeEventListener('click', clickHandler);
+		};
+	});
+
+	function clickHandler(event: MouseEvent) {
+		const target = event.target as Node;
+
+		if (buttonElement.contains(target)) {
+			open = !open;
+		} else if (!outerElement.contains(target)) {
+			open = false;
+		}
+	}
 </script>
 
-<div class="relative">
-	<Button
-		classes="inline-flex gap-1 rounded-full bg-gray-100 py-2.5 pl-5 pr-3 transition-colors duration-500 hover:bg-gray-200"
-		onClick={() => {
-			open = !open;
-		}}
+<div class="relative" bind:this={outerElement}>
+	<div
+		class="btn-padding-icon btn-hover inline-flex cursor-pointer items-center gap-0.5 rounded bg-white text-sm shadow duration-500 sm:text-base"
+		bind:this={buttonElement}
 	>
-		<p class="flex-1 font-bold">{name}</p>
-		<span class="transition-transform duration-500" class:-rotate-180={open}>
+		<p class="flex-1 font-semibold">{title}</p>
+		<span class="transform-gpu" class:-rotate-180={open}>
 			<Icon icon="arrow_drop_down" />
 		</span>
-	</Button>
-	<!-- TODO: Close this when user clicks outside the dropdown -->
+	</div>
 	<div
 		class="absolute bottom-0 left-0 mt-2 w-auto min-w-full translate-y-full transition-opacity duration-500"
 		class:opacity-0={!open}
 		class:pointer-events-none={!open}
 	>
-		<div class="mt-2 flex flex-col gap-2 whitespace-nowrap rounded bg-gray-100 p-5 py-3.5">
-			{#each options as option}
-				<p>{option}</p>
-			{/each}
+		<div class="btn-padding mt-2 flex flex-col gap-2 whitespace-nowrap rounded bg-white shadow">
+			<slot />
 		</div>
 	</div>
 </div>

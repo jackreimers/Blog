@@ -5,8 +5,27 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .btn-hover {
+        @apply transform-gpu transition-transform hover:translate-y-[-5px]
+    }
+    
+    .btn-padding {
+        @apply py-1.5 px-3 sm:py-2.5 sm:px-4
+    }
+    
+    .btn-padding-icon {
+        @apply py-1.5 pl-3 pr-2 sm:py-2.5 sm:pl-4 sm:pr-2.5
+    }
+    
+    .gradient {
+        @apply bg-gradient-to-br from-blue-600 to-blue-800 text-white
+    }
+}
+
+/* TODO: https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
 body {
-    @apply text-gray-700;
+    @apply text-gray-700 bg-gray-100;
 
     font-family: Inter, sans-serif;
 }

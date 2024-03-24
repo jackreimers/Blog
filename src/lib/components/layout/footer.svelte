@@ -8,22 +8,20 @@
 
 <footer class="mt-32">
 	<div class="flex w-full justify-center gap-3">
-		<Button
-			classes="transform rounded-full bg-gray-100 p-4 transition-all hover:translate-y-[-5px] hover:bg-gray-200"
-		>
+		<Button href="mailto:" classes="btn-hover rounded-full bg-white p-4 shadow">
 			<Mail />
 		</Button>
 		<Button
 			href="https://www.linkedin.com/in/jackreimers/"
 			target="_blank"
-			classes="transform rounded-full bg-gray-100 p-4 transition-all hover:translate-y-[-5px] hover:bg-gray-200"
+			classes="btn-hover rounded-full bg-white p-4 shadow"
 		>
 			<Linkedin />
 		</Button>
 		<Button
 			href="https://github.com/jackreimers"
 			target="_blank"
-			classes="transform rounded-full bg-gray-100 p-4 transition-all hover:translate-y-[-5px] hover:bg-gray-200"
+			classes="btn-hover rounded-full bg-white p-4 shadow"
 		>
 			<Github />
 		</Button>

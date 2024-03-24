@@ -11,9 +11,9 @@
 
 <Button
 	{href}
-	classes="group flex rounded bg-gray-100 px-4 py-3 hover:bg-gray-200 sm:px-5 sm:py-4 md:px-7 md:py-6"
+	classes="group flex rounded bg-white px-4 py-3 shadow sm:px-5 sm:py-4 md:px-7 md:py-6"
 >
-	<span class="mr-2.5 flex flex-1 flex-col">
+	<span class="mr-3 flex flex-1 flex-col">
 		<span class="font-bold md:text-2xl">{title}</span>
 		{#if subText}
 			<span class:mb-2.5={bodyText} class="text-sm text-gray-500 md:text-base">

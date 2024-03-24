@@ -18,7 +18,7 @@
 	class="grid grid-cols-2 grid-rows-3 gap-3 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-5"
 >
 	<div
-		class="col-start-1 col-end-3 row-start-1 row-end-3 flex gap-3 rounded bg-gray-100 sm:gap-4"
+		class="col-start-1 col-end-3 row-start-1 row-end-3 flex gap-3 rounded bg-white shadow sm:gap-4"
 	>
 		<img
 			src="/images/headshot-transparent.png"
@@ -27,7 +27,7 @@
 		/>
 	</div>
 	<div
-		class="overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane-river.jpg')] bg-cover text-white"
+		class="overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane-river.jpg')] bg-cover text-white shadow"
 	>
 		<div
 			class="flex h-full flex-col items-center justify-center gap-1.5 backdrop-blur-[2px] backdrop-brightness-75 backdrop-filter"
@@ -37,7 +37,7 @@
 		</div>
 	</div>
 	<div
-		class="overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane.jpg')] bg-cover text-white"
+		class="overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane.jpg')] bg-cover text-white shadow"
 	>
 		<div
 			class="flex h-full flex-col items-center justify-center gap-1.5 p-4 backdrop-blur-[2px] backdrop-brightness-75 backdrop-filter"

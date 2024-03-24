@@ -1,3 +1,6 @@
+<style>
+</style>
+
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
@@ -43,52 +46,43 @@
 </script>
 
 <header
-	class="fixed z-10 w-full border-b bg-white px-4 transition-all duration-700 lg:px-12"
-	class:py-4={!scrolled}
-	class:lg:py-8={!scrolled}
-	class:py-2={scrolled}
-	class:lg:py-4={scrolled}
-	class:border-transparent={!scrolled}
-	class:border-gray-300={scrolled}
+	class="fixed z-10 w-full border-b px-4 transition-all duration-700 lg:px-12
+		{scrolled ? 'bg-white py-2 shadow-md lg:py-4' : 'border-transparent py-4 lg:py-8'}"
 >
 	<div class="mx-auto flex">
 		<div class="flex-1" />
 		<div class="hidden items-center gap-0.5 sm:gap-1 md:flex md:gap-2 lg:gap-4">
 			<a
 				href="/"
-				class:bg-gray-100={$page.url.pathname === '/'}
-				class:hover:bg-gray-200={$page.url.pathname === '/'}
-				class="rounded px-4 py-2.5 font-semibold transition-colors duration-500 hover:bg-gray-100"
+				class="btn-padding rounded font-semibold transition-all duration-500
+					{$page.url.pathname === '/' ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				Home
 			</a>
 			<a
 				href="/blog"
-				class:bg-gray-100={$page.url.pathname.startsWith('/blog')}
-				class:hover:bg-gray-200={$page.url.pathname.startsWith('/blog')}
-				class="rounded px-4 py-2.5 font-semibold transition-colors duration-500 hover:bg-gray-100"
+				class="btn-padding rounded font-semibold transition-all duration-500
+					{$page.url.pathname.startsWith('/blog') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				Blog
 			</a>
 			<a
 				href="/projects"
-				class:bg-gray-100={$page.url.pathname.startsWith('/projects')}
-				class:hover:bg-gray-200={$page.url.pathname.startsWith('/projects')}
-				class="rounded px-4 py-2.5 font-semibold transition-colors duration-500 hover:bg-gray-100"
+				class="btn-padding rounded font-semibold transition-all duration-500
+					{$page.url.pathname.startsWith('/projects') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				Projects
 			</a>
 			<a
 				href="/about"
-				class:bg-gray-100={$page.url.pathname.startsWith('/about')}
-				class:hover:bg-gray-200={$page.url.pathname.startsWith('/about')}
-				class="rounded px-4 py-2.5 font-semibold transition-colors duration-500 hover:bg-gray-100"
+				class="btn-padding rounded font-semibold transition-all duration-500
+					{$page.url.pathname.startsWith('/about') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				About
 			</a>
 		</div>
 		<div class="flex items-center gap-0.5 sm:gap-1 md:hidden md:gap-2 lg:gap-4">
-			<Button href="/" classes="px-3 py-2 hover:bg-gray-100">
+			<Button href="/" classes="p-2 hover:bg-gray-100">
 				<Icon
 					icon="home"
 					weight={600}

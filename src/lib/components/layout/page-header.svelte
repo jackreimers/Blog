@@ -16,7 +16,7 @@
 				<Icon
 					icon={infoIcon}
 					weight={400}
-					classes="rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white sm:p-1.5"
+					classes="rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:p-1.5"
 				/>
 				<p>{infoText}</p>
 			</div>
