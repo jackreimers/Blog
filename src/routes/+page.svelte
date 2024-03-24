@@ -14,8 +14,7 @@
 </h1>
 <p class="mb-4 font-medium md:text-2xl">I'm a Full Stack Software Engineer.</p>
 <p class="mb-8 max-w-prose text-gray-500 sm:mb-10">
-	I'm passionate about web and video game development and specialise in full stack .NET
-	development.
+	I'm passionate about web and video game development and specialise in .NET development.
 </p>
 <div class="flex flex-col gap-4 sm:gap-5">
 	<Card href="/blog" title="Blog" subText="Read my latest posts." />
