@@ -5,6 +5,11 @@ import type { BlogPost } from '$lib/types/types';
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }) {
 	const directoryResponse = await fetch('/posts/directory.json');
+
+	if (!directoryResponse.ok) {
+		throw error(500, 'Invalid blog directory.');
+	}
+
 	const directoryData = await directoryResponse.json();
 	const fileNames = directoryData.files;
 

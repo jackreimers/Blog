@@ -15,7 +15,7 @@
 	</p>
 </div>
 <div
-	class="grid grid-cols-2 grid-rows-3 gap-3 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-5"
+	class="grid grid-cols-2 grid-rows-3 gap-4 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-5"
 >
 	<div
 		class="col-start-1 col-end-3 row-start-1 row-end-3 flex gap-3 rounded bg-white shadow sm:gap-4"

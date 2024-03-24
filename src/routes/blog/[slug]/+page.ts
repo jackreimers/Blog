@@ -6,7 +6,7 @@ export async function load({ fetch, params }) {
 	const postResponse = await fetch(`/posts/${params.slug}.md`);
 
 	if (!postResponse.ok) {
-		throw error(404, 'Blog post not found!');
+		throw error(404, 'The blog post could not be found.');
 	}
 
 	const postData = await postResponse.text();
