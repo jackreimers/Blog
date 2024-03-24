@@ -7,7 +7,7 @@ export async function load({ fetch, params }) {
 	const directoryResponse = await fetch('/posts/directory.json');
 
 	if (!directoryResponse.ok) {
-		throw error(500, 'Invalid blog directory.');
+		throw error(500);
 	}
 
 	const directoryData = await directoryResponse.json();
@@ -20,7 +20,7 @@ export async function load({ fetch, params }) {
 		const postResponse = await fetch(`/posts/${fileNames[i]}`);
 
 		if (!postResponse.ok) {
-			throw error(500, 'Invalid blog directory entry.');
+			throw error(500);
 		}
 
 		const postData = await postResponse.text();
