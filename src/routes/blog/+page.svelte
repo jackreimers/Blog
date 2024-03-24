@@ -1,7 +1,9 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/layout/page-header.svelte';
-	import BlogCard from '$lib/components/layout/blog-card.svelte';
+	import Card from '$lib/components/layout/card.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
+
+	import { getDateString } from '$lib/functions/functions';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -30,6 +32,11 @@
 
 <div class="grid gap-4">
 	{#each data.posts as post}
-		<BlogCard data={post} />
+		<Card
+			href="/blog/{post.metadata.slug}"
+			title={post.metadata.title}
+			subText={getDateString(post.metadata.date)}
+			bodyText={post.intro.substring(0, post.intro.indexOf('.') + 1)}
+		/>
 	{/each}
 </div>
