@@ -4,24 +4,25 @@ import type { BlogPost } from '$lib/types/types';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }) {
-	try {
-		const directoryResponse = await fetch('/posts/directory.json');
-		const directoryData = await directoryResponse.json();
-		const fileNames = directoryData.files;
+	const directoryResponse = await fetch('/posts/directory.json');
+	const directoryData = await directoryResponse.json();
+	const fileNames = directoryData.files;
 
-		let posts: BlogPost[] = [];
+	let posts: BlogPost[] = [];
 
-		//TODO: Add pagination and only fetch the posts needed
-		for (let i = 0; i < fileNames.length; i++) {
-			const postResponse = await fetch(`/posts/${fileNames[i]}`);
-			const postData = await postResponse.text();
-			const post = parseBlogPost(postData);
+	//TODO: Add pagination and only fetch the posts needed
+	for (let i = 0; i < fileNames.length; i++) {
+		const postResponse = await fetch(`/posts/${fileNames[i]}`);
 
-			posts.push(post);
+		if (!postResponse.ok) {
+			throw error(500, 'Invalid blog directory entry.');
 		}
 
-		return { posts: posts };
-	} catch (e) {
-		throw error(500, 'There was an error fetching the blog posts!');
+		const postData = await postResponse.text();
+		const post = parseBlogPost(postData);
+
+		posts.push(post);
 	}
+
+	return { posts: posts };
 }

@@ -16,7 +16,7 @@
 	<span class="mr-3 flex flex-1 flex-col">
 		<span class="font-bold md:text-2xl">{title}</span>
 		{#if subText}
-			<span class:mb-2.5={bodyText} class="text-sm text-gray-500 md:text-base">
+			<span class="text-sm text-gray-500 md:text-base {bodyText ? 'mb-8 sm:mb-10' : ''}">
 				{subText}
 			</span>
 		{/if}

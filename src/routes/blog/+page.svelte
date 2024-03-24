@@ -26,6 +26,17 @@
 			}
 		});
 	}
+
+	function getSentences(text: string, number: number) {
+		let sentenceRegex = /[.!?] [A-Z]/g;
+		let sentences = text.split(sentenceRegex);
+
+		if (sentences.length > number) {
+			number = sentences.length;
+		}
+
+		return sentences.slice(0, number).join('');
+	}
 </script>
 
 <svelte:head>
@@ -49,13 +60,13 @@
 	</div>
 </PageHeader>
 
-<div class="grid gap-4">
+<div class="grid gap-4 sm:gap-5">
 	{#each posts as post}
 		<Card
 			href="/blog/{post.metadata.slug}"
 			title={post.metadata.title}
 			subText={getDateString(post.metadata.date)}
-			bodyText={post.intro.substring(0, post.intro.indexOf('.') + 1)}
+			bodyText={getSentences(post.intro, 2)}
 		/>
 	{/each}
 </div>

@@ -13,7 +13,7 @@
 	Jack Reimers
 </h1>
 <p class="mb-4 font-medium md:text-2xl">I'm a Full Stack Software Engineer.</p>
-<p class="mb-8 max-w-prose">
+<p class="mb-8 max-w-prose sm:mb-10">
 	I'm passionate about development and enjoy working on a range of different technologies, many of
 	which you'll find me talking about here.
 </p>
