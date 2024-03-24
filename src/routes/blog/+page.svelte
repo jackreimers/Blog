@@ -63,6 +63,7 @@
 <div class="grid gap-4 sm:gap-5">
 	{#each posts as post}
 		<Card
+			arrow={false}
 			href="/blog/{post.metadata.slug}"
 			title={post.metadata.title}
 			subText={getDateString(post.metadata.date)}
