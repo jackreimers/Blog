@@ -9,9 +9,20 @@
 
 <PageHeader title="About" />
 <div class="mb-8 sm:mb-10">
-	<p>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-		labore et dolore magna aliqua. Posuere urna nec tincidunt praesent semper feugiat nibh.
+	<p class="mb-5">
+		My name is <span class="font-semibold">Jack Reimers</span> and I am currently living and working
+		in Brisbane, Australia.
+	</p>
+	<p class="mb-5">
+		I'm passionate about all things web and video game development and specialise in full stack
+		.NET development with a focus on web-based technologies such as
+		<span class="font-semibold">ASP.NET Core</span>,
+		<span class="font-semibold">EF Core</span> and
+		<span class="font-semibold">Blazor</span>.
+	</p>
+	<p class="mb-5">
+		I also have extensive professional experience working with AI technologies and building
+		custom AI solutions.
 	</p>
 </div>
 <div
