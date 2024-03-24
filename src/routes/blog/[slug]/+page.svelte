@@ -11,16 +11,16 @@
 </script>
 
 <svelte:head>
-	<title>Jack Reimers | {data.metadata.title}</title>
+	<title>Jack Reimers | {data.post.metadata.title}</title>
 </svelte:head>
 
 <PageHeader
-	title={data.metadata.title}
+	title={data.post.metadata.title}
 	infoIcon="calendar_month"
-	infoText={getDateString(data.metadata.date)}
+	infoText={getDateString(data.post.metadata.date)}
 >
 	<div class="flex flex-wrap gap-2">
-		{#each data.metadata.categories as category}
+		{#each data.post.metadata.categories as category}
 			<Button
 				onClick={() => {}}
 				classes="bg-gray-100 px-3 py-1.5 text-sm hover:bg-gray-200 sm:px-4 sm:py-2.5 sm:text-base"
@@ -34,13 +34,13 @@
 <div class="flex">
 	<div class="w-[5px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800" />
 	<div class="flex-1 px-3 py-1 font-medium">
-		<SvelteMarkdown source={data.intro} />
+		<SvelteMarkdown source={data.post.intro} />
 	</div>
 </div>
 
 <div class="markdown box-content">
 	<SvelteMarkdown
-		source={data.content}
+		source={data.post.content}
 		renderers={{ code: BlockCodeRenderer, codespan: InlineCodeRenderer }}
 	/>
 </div>

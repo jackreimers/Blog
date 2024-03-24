@@ -2,8 +2,6 @@
 	import '../app.css';
 	import Header from '$lib/components/layout/header.svelte';
 	import Footer from '$lib/components/layout/footer.svelte';
-
-	//TODO: https://kit.svelte.dev/docs/load#$page-data
 </script>
 
 <div class="h-screen">

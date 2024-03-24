@@ -9,7 +9,6 @@ export type BlogPostMetadata = {
 	title: string;
 	slug: string;
 	categories: Category[];
-	readTime: number;
 };
 
 export type Category = {

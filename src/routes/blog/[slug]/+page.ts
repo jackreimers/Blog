@@ -1,14 +1,15 @@
-import { PUBLIC_APP_ROOT } from '$env/static/public';
-import type { PageLoadRequest, PageLoadResult } from '$lib/types/interfaces';
 import { error } from '@sveltejs/kit';
-import { getPost } from '$lib/functions/functions';
-
-//TODO: Move these to their own files
+import { parseBlogPost } from '$lib/functions/functions';
 
 /** @type {import('./$types').PageLoad} */
-//TODO: Figure out what the type is for params
-//@ts-ignore
-export async function load({ params }) {
-	return await getPost(params.slug);
-	//throw error(404, 'Not found');
+export async function load({ fetch, params }) {
+	try {
+		const postResponse = await fetch(`/posts/${params.slug}.md`);
+		const postData = await postResponse.text();
+		const post = parseBlogPost(postData);
+
+		return { post: post };
+	} catch (e) {
+		throw error(500, 'There was an error fetching the blog post!');
+	}
 }

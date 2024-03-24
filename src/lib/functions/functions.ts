@@ -1,4 +1,3 @@
-import { PUBLIC_APP_ROOT } from '$env/static/public';
 import { error } from '@sveltejs/kit';
 import type { BlogPost, BlogPostMetadata, Category } from '$lib/types/types';
 import { categoryMappings } from '$lib/objects/objects';
@@ -13,48 +12,18 @@ export function getDateString(date: Date): string {
 		${date.getFullYear()}`;
 }
 
-export async function getPosts(): Promise<BlogPost[]> {
-	const contents = await fetch(`${PUBLIC_APP_ROOT}/posts/_contents.md`);
-	const contentsText = await contents.text();
+export function parseBlogPost(data: string): BlogPost {
+	const split = data.split('<!--endintro-->');
 
-	const postNames = contentsText.split('\n');
-	const posts: BlogPost[] = [];
+	const metadata = parseMetadata(split[0]);
+	const intro = split[0].split('---').pop() || '';
+	const content = split[1] || '';
 
-	for (let i = 0; i < postNames.length; i++) {
-		const postName = postNames[i];
-		const post = await getPost(postName);
-		posts.push(post);
-	}
-
-	return posts;
-}
-
-export async function getPost(slug: string): Promise<BlogPost> {
-	try {
-		let blogText: string;
-
-		const blogContent = await fetch(`${PUBLIC_APP_ROOT}/posts/${slug}.md`);
-		blogText = await blogContent.text();
-
-		const split = blogText.split('<!--endintro-->');
-
-		const metadata = parseMetadata(split[0]);
-		const intro = split[0].split('---').pop() || '';
-		const content = split[1] || '';
-
-		//Calculate time to read article
-		const wordCount = intro.split(' ').length + content.split(' ').length;
-		metadata.readTime = Math.ceil(wordCount / 200);
-
-		return {
-			metadata,
-			intro,
-			content
-		};
-	} catch (e) {
-		console.log(e);
-		throw error(404, 'Blog post not found!');
-	}
+	return {
+		metadata,
+		intro,
+		content
+	};
 }
 
 function parseMetadata(content: string): BlogPostMetadata {
@@ -86,8 +55,7 @@ function parseMetadata(content: string): BlogPostMetadata {
 		date: new Date(Date.parse(mappedMetadata['date'] as string)),
 		title: mappedMetadata['title'] as string,
 		slug: mappedMetadata['slug'] as string,
-		categories: parseCategories(mappedMetadata['categories'] as string[]),
-		readTime: 0
+		categories: parseCategories(mappedMetadata['categories'] as string[])
 	};
 }
 

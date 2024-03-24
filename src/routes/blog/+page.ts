@@ -1,13 +1,27 @@
-import { PUBLIC_APP_ROOT } from '$env/static/public';
-import type { PageLoadRequest, PageLoadResult } from '$lib/types/interfaces';
 import { error } from '@sveltejs/kit';
-import { getPosts } from '$lib/functions/functions';
+import { parseBlogPost } from '$lib/functions/functions';
+import type { BlogPost } from '$lib/types/types';
 
 /** @type {import('./$types').PageLoad} */
-//TODO: Figure out what the type is for params
-//@ts-ignore
-export async function load({ params }) {
-	const posts = await getPosts();
-	return { posts: posts };
-	//throw error(404, 'Not found');
+export async function load({ fetch, params }) {
+	try {
+		const directoryResponse = await fetch('/posts/directory.json');
+		const directoryData = await directoryResponse.json();
+		const fileNames = directoryData.files;
+
+		let posts: BlogPost[] = [];
+
+		//TODO: Add pagination and only fetch the posts needed
+		for (let i = 0; i < fileNames.length; i++) {
+			const postResponse = await fetch(`/posts/${fileNames[i]}`);
+			const postData = await postResponse.text();
+			const post = parseBlogPost(postData);
+
+			posts.push(post);
+		}
+
+		return { posts: posts };
+	} catch (e) {
+		throw error(500, 'There was an error fetching the blog posts!');
+	}
 }
