@@ -29,7 +29,7 @@ export function parseBlogPost(data: string): BlogPost {
 function parseMetadata(content: string): BlogPostMetadata {
 	const matched = content.match(metadataPattern);
 	if (!matched) {
-		throw error(500, 'Blog post is missing metadata!');
+		throw error(500);
 	}
 
 	const metadata = matched[1].split('\n');

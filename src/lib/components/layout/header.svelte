@@ -51,28 +51,28 @@
 		<div class="hidden items-center gap-0.5 sm:gap-1 md:flex md:gap-2 lg:gap-4">
 			<a
 				href="/"
-				class="btn-padding rounded font-semibold transition-all duration-500
+				class="btn-padding btn-hover rounded font-semibold transition-all duration-500
 					{$page.url.pathname === '/' ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				Home
 			</a>
 			<a
 				href="/blog"
-				class="btn-padding rounded font-semibold transition-all duration-500
+				class="btn-padding btn-hover rounded font-semibold transition-all duration-500
 					{$page.url.pathname.startsWith('/blog') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				Blog
 			</a>
 			<a
 				href="/projects"
-				class="btn-padding rounded font-semibold transition-all duration-500
+				class="btn-padding btn-hover rounded font-semibold transition-all duration-500
 					{$page.url.pathname.startsWith('/projects') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				Projects
 			</a>
 			<a
 				href="/about"
-				class="btn-padding rounded font-semibold transition-all duration-500
+				class="btn-padding btn-hover rounded font-semibold transition-all duration-500
 					{$page.url.pathname.startsWith('/about') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				About

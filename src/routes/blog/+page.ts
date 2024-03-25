@@ -5,8 +5,9 @@ import type { BlogPost } from '$lib/types/types';
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }) {
 	const directoryResponse = await fetch('/posts/directory.json');
+	const tagsResponse = await fetch('/posts/tags.json');
 
-	if (!directoryResponse.ok) {
+	if (!directoryResponse.ok || !tagsResponse.ok) {
 		throw error(500);
 	}
 

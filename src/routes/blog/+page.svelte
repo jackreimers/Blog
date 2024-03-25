@@ -12,7 +12,6 @@
 	export let data: any;
 
 	let newest: boolean = true;
-
 	$: posts = data.posts;
 
 	function toggleSort() {
@@ -54,8 +53,8 @@
 				<Icon icon="arrow_right_alt" />
 			</span>
 		</Button>
-		<Dropdown title="Category">
-			<Button classes="text-sm sm:text-base">No categories found.</Button>
+		<Dropdown title="Tags">
+			<Button classes="text-sm sm:text-base">No tags found.</Button>
 		</Dropdown>
 	</div>
 </PageHeader>
