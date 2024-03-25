@@ -6,7 +6,8 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	adapter: adapter({
-		fallback: '404.html'
+		fallback: '404.html',
+		build: 'build/'
 	}),
 	paths: {
 		base: process.argv.includes('dev') ? '' : process.env.BASE_PATH
