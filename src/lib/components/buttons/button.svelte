@@ -1,3 +1,4 @@
+<!-- TODO: This is redundant now, remove it -->
 <script lang="ts">
 	export let onClick: Function | null = null;
 	export let href: string = '';

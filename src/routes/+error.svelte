@@ -1,9 +1,7 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import PageHeader from '$lib/components/layout/page-header.svelte';
 	import InfoBox from '$lib/components/layout/info-box.svelte';
-	import { page } from '$app/stores';
-
-	//TODO: https://kit.svelte.dev/docs/hooks#shared-hooks-handleerror
 </script>
 
 <svelte:head>

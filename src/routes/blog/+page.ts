@@ -1,17 +1,22 @@
 import { error } from '@sveltejs/kit';
-import { parseBlogPost } from '$lib/functions/functions';
-import type { BlogPost } from '$lib/types/types';
+import { parseBlogPost } from '$lib/common/functions';
+import type { BlogPost } from '$lib/common/types';
 
 /** @type {import('./$types').PageLoad} */
 export async function load({ fetch, params }) {
 	const directoryResponse = await fetch('/posts/directory.json');
-	const tagsResponse = await fetch('/posts/tags.json');
+	const tagsResponse = await fetch('/data/tags.json');
 
-	if (!directoryResponse.ok || !tagsResponse.ok) {
+	if (!directoryResponse.ok) {
+		throw error(500);
+	}
+
+	if (!tagsResponse.ok) {
 		throw error(500);
 	}
 
 	const directoryData = await directoryResponse.json();
+	const tagsData = await tagsResponse.json();
 	const fileNames = directoryData.files;
 
 	let posts: BlogPost[] = [];
@@ -25,7 +30,7 @@ export async function load({ fetch, params }) {
 		}
 
 		const postData = await postResponse.text();
-		const post = parseBlogPost(postData);
+		const post = parseBlogPost(postData, tagsData);
 
 		posts.push(post);
 	}

@@ -1,14 +1,12 @@
 <script lang="ts">
-	import Button from '$lib/components/buttons/button.svelte';
-
 	import { MoveRight } from 'lucide-svelte';
-
-	export let arrow: boolean = true;
+	import Button from '$lib/components/buttons/button.svelte';
 
 	export let href: string;
 	export let title: string = 'Card Title';
 	export let subText: string | null;
 	export let bodyText: string | null = null;
+	export let arrow: boolean = true;
 </script>
 
 <Button

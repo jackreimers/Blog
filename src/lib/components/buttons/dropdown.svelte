@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Icon from '$lib/components/text/icon.svelte';
 	import { onMount } from 'svelte';
+	import Icon from '$lib/components/text/icon.svelte';
 
 	let outerElement: HTMLElement;
 	let buttonElement: HTMLElement;

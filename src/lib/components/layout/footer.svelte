@@ -2,7 +2,6 @@
 	import { Mail } from 'lucide-svelte';
 	import { Linkedin } from 'lucide-svelte';
 	import { Github } from 'lucide-svelte';
-
 	import Button from '$lib/components/buttons/button.svelte';
 </script>
 

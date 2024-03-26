@@ -1,12 +1,12 @@
 ---
-date: 2024-01-20T19:41:00.000+10:00
+date: 2024-03-20T19:41:00.000+10:00
 title: 10 Interesting Svelte Features
-slug: test
+slug: svelte-features
 categories: [ "svelte", "javascript", "typescript" ]
 ---
 
-Aliquam purus sit amet luctus venenatis lectus magna. Nisi vitae suscipit tellus mauris a diam. Eu facilisis sed odio
-morbi quis. Iaculis at erat pellentesque adipiscing commodo.
+Having only recently started using SvelteKit I was really impressed with how easy it was to get started and how much I enjoyed using it.  
+Here are some of the features that I found particularly useful whilst I was learning the framework.
 
 <!--endintro-->
 
