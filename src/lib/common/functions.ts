@@ -28,7 +28,7 @@ export function parseBlogPost(data: string, tags: object): BlogPost {
 function parseMetadata(content: string, tags: object): BlogPostMetadata {
 	const matched = content.match(metadataPattern);
 	if (!matched) {
-		throw error(500);
+		error(500);
 	}
 
 	const metadata = matched[1].split('\n');

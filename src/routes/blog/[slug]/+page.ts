@@ -7,11 +7,11 @@ export async function load({ fetch, params }) {
 	const tagsResponse = await fetch('/data/tags.json');
 
 	if (!postResponse.ok) {
-		throw error(404);
+		error(404);
 	}
 
 	if (!tagsResponse.ok) {
-		throw error(500);
+		error(500);
 	}
 
 	const postData = await postResponse.text();

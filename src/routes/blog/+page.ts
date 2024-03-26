@@ -8,11 +8,11 @@ export async function load({ fetch, params }) {
 	const tagsResponse = await fetch('/data/tags.json');
 
 	if (!directoryResponse.ok) {
-		throw error(500);
+		error(500);
 	}
 
 	if (!tagsResponse.ok) {
-		throw error(500);
+		error(500);
 	}
 
 	const directoryData = await directoryResponse.json();
@@ -26,7 +26,7 @@ export async function load({ fetch, params }) {
 		const postResponse = await fetch(`/posts/${fileNames[i]}`);
 
 		if (!postResponse.ok) {
-			throw error(500);
+			error(500);
 		}
 
 		const postData = await postResponse.text();
