@@ -3,8 +3,8 @@
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
 	import Blocker from '$lib/components/layout/blocker.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
 
 	let open: boolean = false;
 	let scrolled: boolean;

@@ -5,7 +5,7 @@ slug: svelte-features
 categories: [ "svelte", "javascript", "typescript" ]
 ---
 
-Having only recently started using SvelteKit I was really impressed with how easy it was to get started and how much I enjoyed using it.  
+Having only recently started using SvelteKit I was really impressed with how easy it was to get started and how much I enjoyed using it. 
 Here are some of the features that I found particularly useful whilst I was learning the framework.
 
 <!--endintro-->
