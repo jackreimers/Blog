@@ -1,7 +1,7 @@
+import { getBlogPost, parseBlogPost } from '$lib/common/functions';
 import { error } from '@sveltejs/kit';
-import { parseBlogPost } from '$lib/common/functions';
 
-/** @type {import('./$types').PageLoad} */
+/** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, params }) {
 	const postResponse = await fetch(`/posts/${params.slug}.md`);
 	const tagsResponse = await fetch('/data/tags.json');
@@ -16,7 +16,6 @@ export async function load({ fetch, params }) {
 
 	const postData = await postResponse.text();
 	const tagsData = await tagsResponse.json();
-	const post = parseBlogPost(postData, tagsData);
 
-	return { post: post };
+	return { post: parseBlogPost(postData, tagsData) };
 }

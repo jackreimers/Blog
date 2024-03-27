@@ -2,11 +2,10 @@
 	import { onMount } from 'svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
-	let outerElement: HTMLElement;
-	let buttonElement: HTMLElement;
-
 	export let title: string = 'Dropdown';
 
+	let outerElement: HTMLElement;
+	let buttonElement: HTMLElement;
 	let open: boolean = false;
 
 	onMount(() => {

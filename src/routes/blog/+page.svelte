@@ -1,27 +1,28 @@
 <script lang="ts">
 	import type { BlogPost } from '$lib/common/types';
 	import { getDateString } from '$lib/common/functions';
+	import { fly } from 'svelte/transition';
 	import PageHeader from '$lib/components/layout/page-header.svelte';
 	import Card from '$lib/components/layout/card.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 	import Dropdown from '$lib/components/buttons/dropdown.svelte';
+	import Spinner from '$lib/components/text/spinner.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 
 	let newest: boolean = true;
-	$: posts = data.posts;
 
 	function toggleSort() {
 		newest = !newest;
-		posts = data.posts.sort((a: BlogPost, b: BlogPost) => {
-			if (newest) {
-				return b.metadata.date.getTime() - a.metadata.date.getTime();
-			} else {
-				return a.metadata.date.getTime() - b.metadata.date.getTime();
-			}
-		});
+		//posts = data.posts.sort((a: BlogPost, b: BlogPost) => {
+		//if (newest) {
+		//	return b.metadata.date.getTime() - a.metadata.date.getTime();
+		//} else {
+		//	return a.metadata.date.getTime() - b.metadata.date.getTime();
+		//}
+		//});
 	}
 
 	function getSentences(text: string, number: number) {
@@ -39,7 +40,7 @@
 	<title>Jack Reimers | Blog</title>
 </svelte:head>
 
-<PageHeader title="Blog Posts" infoIcon="description" infoText="{posts.length} Posts">
+<PageHeader title="Blog Posts" infoIcon="description" infoText="21 Posts">
 	<div class="flex flex-wrap gap-2">
 		<Button
 			onClick={toggleSort}
@@ -55,14 +56,20 @@
 		</Dropdown>
 	</div>
 </PageHeader>
-<div class="grid gap-4 sm:gap-5">
-	{#each posts as post}
-		<Card
-			href="/blog/{post.metadata.slug}"
-			title={post.metadata.title}
-			subText={getDateString(post.metadata.date)}
-			bodyText={getSentences(post.intro, 2)}
-			arrow={false}
-		/>
-	{/each}
-</div>
+{#await data.posts}
+	<div class="absolute left-1/2 top-1/2 -translate-x-1/2 translate-y-1/2 transform">
+		<Spinner />
+	</div>
+{:then data}
+	<div class="grid gap-4 sm:gap-5" in:fly>
+		{#each data as post}
+			<Card
+				href="/blog/{post.metadata.slug}"
+				title={post.metadata.title}
+				subText={getDateString(post.metadata.date)}
+				bodyText={getSentences(post.intro, 2)}
+				arrow={false}
+			/>
+		{/each}
+	</div>
+{/await}

@@ -21,7 +21,7 @@
 			</span>
 		{/if}
 		{#if bodyText}
-			<span class="text-sm text-gray-600 md:text-base">{bodyText}</span>
+			<span class="text-sm md:text-base">{bodyText}</span>
 		{/if}
 	</span>
 	{#if arrow}

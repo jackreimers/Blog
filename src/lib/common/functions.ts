@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import type { BlogPost, BlogPostMetadata, Category } from '$lib/common/types';
+import type { BlogPost, BlogPostMetadata, Tag } from '$lib/common/types';
 
 const metadataPattern = /^---([\s\S]*?)---/;
 const arrayPattern = /^\[.*]$/;
@@ -11,10 +11,62 @@ export function getDateString(date: Date): string {
 		${date.getFullYear()}`;
 }
 
-export function parseBlogPost(data: string, tags: object): BlogPost {
+export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
+	const postResponse = await fetch(`/posts/${slug}.md`);
+	const tagsResponse = await fetch('/data/tags.json');
+
+	if (!postResponse.ok) {
+		error(404);
+	}
+
+	if (!tagsResponse.ok) {
+		error(500);
+	}
+
+	const postData = await postResponse.text();
+	const tagsData = await tagsResponse.json();
+	return parseBlogPost(postData, tagsData);
+}
+
+export async function getBlogPosts(fetch: any): Promise<BlogPost[]> {
+	const directoryResponse = await fetch('/posts/directory.json');
+	const tagsResponse = await fetch('/data/tags.json');
+
+	const directoryData = await directoryResponse.json();
+	const tagsData = await tagsResponse.json();
+	const fileNames = directoryData.files;
+
+	let posts: BlogPost[] = [];
+
+	//TODO: Add pagination and only fetch the posts needed
+	for (let i = 0; i < fileNames.length; i++) {
+		const postResponse = await fetch(`/posts/${fileNames[i]}`);
+
+		if (!postResponse.ok) {
+			error(500);
+		}
+
+		const postData = await postResponse.text();
+		const post = parseBlogPost(postData, tagsData);
+
+		posts.push(post);
+	}
+
+	//TODO: Debugging purposes only
+	await new Promise((resolve) => setTimeout(resolve, 2000));
+	return posts;
+}
+
+export async function getBlogPostsCount(fetch: any): Promise<number> {
+	const directoryResponse = await fetch('/posts/directory.json');
+	const directoryData = await directoryResponse.json();
+	return directoryData.files.length;
+}
+
+export function parseBlogPost(data: string, tagMappings: object): BlogPost {
 	const split = data.split('<!--endintro-->');
 
-	const metadata = parseMetadata(split[0], tags);
+	const metadata = parseMetadata(split[0], tagMappings);
 	const intro = split[0].split('---').pop() || '';
 	const content = split[1] || '';
 
@@ -25,7 +77,7 @@ export function parseBlogPost(data: string, tags: object): BlogPost {
 	};
 }
 
-function parseMetadata(content: string, tags: object): BlogPostMetadata {
+function parseMetadata(content: string, tagMappings: object): BlogPostMetadata {
 	const matched = content.match(metadataPattern);
 	if (!matched) {
 		error(500);
@@ -54,16 +106,16 @@ function parseMetadata(content: string, tags: object): BlogPostMetadata {
 		date: new Date(Date.parse(mappedMetadata['date'] as string)),
 		title: mappedMetadata['title'] as string,
 		slug: mappedMetadata['slug'] as string,
-		categories: parseCategories(mappedMetadata['categories'] as string[], tags)
+		categories: parseTags(mappedMetadata['tags'] as string[], tagMappings)
 	};
 }
 
-function parseCategories(categories: string[], tags: object): Category[] {
-	return categories.map((category: string) => {
+function parseTags(tags: string[], tagMappings: object): Tag[] {
+	return tags.map((tag: string) => {
 		return {
 			// @ts-ignore
-			name: tags[category] ?? category,
-			slug: category
+			name: tagMappings[tag] ?? tag,
+			slug: tag
 		};
 	});
 }

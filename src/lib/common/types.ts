@@ -8,10 +8,10 @@ export type BlogPostMetadata = {
 	date: Date;
 	title: string;
 	slug: string;
-	categories: Category[];
+	categories: Tag[];
 };
 
-export type Category = {
+export type Tag = {
 	name: string;
 	slug: string;
 };

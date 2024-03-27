@@ -2,7 +2,7 @@
 date: 2024-03-20T19:41:00.000+10:00
 title: 10 Interesting Svelte Features
 slug: svelte-features
-categories: [ "svelte", "javascript", "typescript" ]
+tags: [ "svelte", "javascript", "typescript" ]
 ---
 
 Having only recently started using SvelteKit I was really impressed with how easy it was to get started and how much I enjoyed using it. 
