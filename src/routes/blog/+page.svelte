@@ -40,7 +40,7 @@
 	<title>Jack Reimers | Blog</title>
 </svelte:head>
 
-<PageHeader title="Blog Posts" infoIcon="description" infoText="21 Posts">
+<PageHeader title="Blog Posts" infoIcon="description" infoText={data.count}>
 	<div class="flex flex-wrap gap-2">
 		<Button
 			onClick={toggleSort}

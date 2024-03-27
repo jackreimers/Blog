@@ -57,10 +57,14 @@ export async function getBlogPosts(fetch: any): Promise<BlogPost[]> {
 	return posts;
 }
 
-export async function getBlogPostsCount(fetch: any): Promise<number> {
+export async function getBlogPostsCountString(fetch: any): Promise<string> {
+	await new Promise((resolve) => setTimeout(resolve, 1000));
+
 	const directoryResponse = await fetch('/posts/directory.json');
 	const directoryData = await directoryResponse.json();
-	return directoryData.files.length;
+	const count = directoryData.files.length;
+
+	return `${count} Post${count === 1 ? '' : 's'}`;
 }
 
 export function parseBlogPost(data: string, tagMappings: object): BlogPost {

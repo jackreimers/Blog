@@ -21,6 +21,14 @@
     .gradient {
         @apply bg-gradient-to-br from-blue-600 to-blue-800 text-white
     }
+    
+    .skeleton {
+        background: #eee;
+        background: linear-gradient(110deg, #ececec 8%, #f5f5f5 18%, #ececec 33%);
+        border-radius: 5px;
+        background-size: 200% 100%;
+        animation: 1.5s shine linear infinite;
+    }
 }
 
 /* TODO: https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
@@ -60,4 +68,10 @@ body {
 
 .markdown table {
     @apply mb-5 border border-gray-500;
+}
+
+@keyframes shine {
+    to {
+        background-position-x: -200%;
+    }
 }
