@@ -1,14 +1,10 @@
 export type BlogPost = {
-	metadata: BlogPostMetadata;
-	intro: string;
-	content: string;
-};
-
-export type BlogPostMetadata = {
 	date: Date;
+	tags: Tag[];
 	title: string;
 	slug: string;
-	categories: Tag[];
+	intro: string;
+	content: string;
 };
 
 export type Tag = {

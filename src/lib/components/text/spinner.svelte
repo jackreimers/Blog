@@ -18,7 +18,7 @@
 		width: 7px;
 		height: 7px;
 		border-radius: 50%;
-		background: #9ca3af;
+		background: #d1d5db;
 		margin: -4px 0 0 -4px;
 	}
 

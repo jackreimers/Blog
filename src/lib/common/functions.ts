@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import type { BlogPost, BlogPostMetadata, Tag } from '$lib/common/types';
+import type { BlogPost } from '$lib/common/types';
 
 const metadataPattern = /^---([\s\S]*?)---/;
 const arrayPattern = /^\[.*]$/;
@@ -25,6 +25,7 @@ export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
 
 	const postData = await postResponse.text();
 	const tagsData = await tagsResponse.json();
+
 	return parseBlogPost(postData, tagsData);
 }
 
@@ -57,32 +58,9 @@ export async function getBlogPosts(fetch: any): Promise<BlogPost[]> {
 	return posts;
 }
 
-export async function getBlogPostsCountString(fetch: any): Promise<string> {
-	await new Promise((resolve) => setTimeout(resolve, 1000));
-
-	const directoryResponse = await fetch('/posts/directory.json');
-	const directoryData = await directoryResponse.json();
-	const count = directoryData.files.length;
-
-	return `${count} Post${count === 1 ? '' : 's'}`;
-}
-
-export function parseBlogPost(data: string, tagMappings: object): BlogPost {
+function parseBlogPost(data: string, tagMappings: object): BlogPost {
 	const split = data.split('<!--endintro-->');
-
-	const metadata = parseMetadata(split[0], tagMappings);
-	const intro = split[0].split('---').pop() || '';
-	const content = split[1] || '';
-
-	return {
-		metadata,
-		intro,
-		content
-	};
-}
-
-function parseMetadata(content: string, tagMappings: object): BlogPostMetadata {
-	const matched = content.match(metadataPattern);
+	const matched = data.match(metadataPattern);
 	if (!matched) {
 		error(500);
 	}
@@ -105,21 +83,24 @@ function parseMetadata(content: string, tagMappings: object): BlogPostMetadata {
 	}, []);
 
 	const mappedMetadata: { [key: string]: string | string[] } = Object.fromEntries(accumulator);
-
-	return {
-		date: new Date(Date.parse(mappedMetadata['date'] as string)),
-		title: mappedMetadata['title'] as string,
-		slug: mappedMetadata['slug'] as string,
-		categories: parseTags(mappedMetadata['tags'] as string[], tagMappings)
-	};
-}
-
-function parseTags(tags: string[], tagMappings: object): Tag[] {
-	return tags.map((tag: string) => {
+	const tags = mappedMetadata['tags'] as string[];
+	const mappedTags = tags.map((tag: string) => {
 		return {
 			// @ts-ignore
 			name: tagMappings[tag] ?? tag,
 			slug: tag
 		};
 	});
+
+	const intro = split[0].split('---').pop() || '';
+	const content = split[1] || '';
+
+	return {
+		date: new Date(mappedMetadata['date'] as string),
+		tags: mappedTags,
+		title: mappedMetadata['title'] as string,
+		slug: mappedMetadata['slug'] as string,
+		intro: intro,
+		content: content
+	};
 }
