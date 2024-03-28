@@ -1,7 +1,10 @@
 <script lang="ts">
+	import { inject } from '@vercel/analytics';
 	import '../app.css';
 	import Header from '$lib/components/layout/header.svelte';
 	import Footer from '$lib/components/layout/footer.svelte';
+
+	inject();
 </script>
 
 <div class="h-screen">
