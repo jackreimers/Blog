@@ -41,7 +41,7 @@ export async function getBlogPosts(fetch: any): Promise<BlogPost[]> {
 
 	//TODO: Add pagination and only fetch the posts needed
 	for (let i = 0; i < fileNames.length; i++) {
-		const postResponse = await fetch(`/posts/${fileNames[i]}`);
+		const postResponse = await fetch(`/posts/${fileNames[i]}.md`);
 
 		if (!postResponse.ok) {
 			error(500);
