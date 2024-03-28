@@ -15,6 +15,14 @@ export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
 	const postResponse = await fetch(`/posts/${slug}.md`);
 	const tagsResponse = await fetch('/data/tags.json');
 
+	if (!postResponse.ok) {
+		error(404);
+	}
+
+	if (!tagsResponse.ok) {
+		error(500);
+	}
+
 	const postData = await postResponse.text();
 	const tagsData = await tagsResponse.json();
 
