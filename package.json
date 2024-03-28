@@ -19,6 +19,7 @@
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "@types/prismjs": "^1.26.3",
     "@vercel/analytics": "^1.2.2",
+    "@vercel/speed-insights": "^1.0.10",
     "autoprefixer": "^10.4.16",
     "lucide-svelte": "^0.311.0",
     "postcss": "^8.4.31",
