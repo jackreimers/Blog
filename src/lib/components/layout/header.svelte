@@ -41,8 +41,8 @@
 </script>
 
 <header
-	class="fixed z-10 w-full bg-gray-100 px-4 transition-all duration-700 lg:px-12
-		{scrolled ? 'py-2 shadow-md lg:py-4' : 'py-4 lg:py-8'}"
+	class="fixed z-10 w-full border-b-2 bg-gray-100 px-4 transition-all duration-700 lg:px-12
+		{scrolled ? 'border-gray-200 py-2 lg:py-4' : 'border-transparent py-4 lg:py-8'}"
 >
 	<div class="mx-auto flex">
 		<div class="flex-1" />
