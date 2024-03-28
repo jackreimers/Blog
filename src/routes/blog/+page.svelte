@@ -60,7 +60,7 @@
 					<p>0 Posts</p>
 				</Skeleton>
 			{:then posts}
-				<p>{posts.length.toString()} {posts.length > 1 ? 'Posts' : 'Post'}</p>
+				<p in:fade>{posts.length.toString()} {posts.length > 1 ? 'Posts' : 'Post'}</p>
 			{/await}
 		</div>
 	</div>
