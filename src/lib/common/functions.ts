@@ -54,7 +54,7 @@ export async function getBlogPosts(fetch: any): Promise<BlogPost[]> {
 	}
 
 	//Debugging purposes only
-	//await new Promise((resolve) => setTimeout(resolve, 2000));
+	await new Promise((resolve) => setTimeout(resolve, 2000));
 	return posts;
 }
 

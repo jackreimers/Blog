@@ -2,13 +2,18 @@
 	import { page } from '$app/stores';
 	import PageHeader from '$lib/components/layout/page-header.svelte';
 	import InfoBox from '$lib/components/layout/info-box.svelte';
+	import PageTitle from '$lib/components/layout/page-title.svelte';
 </script>
 
 <svelte:head>
 	<title>Jack Reimers | Oops...</title>
 </svelte:head>
 
-<PageHeader title="Oops..." />
+<PageHeader>
+	<div slot="title">
+		<PageTitle>Oops</PageTitle>
+	</div>
+</PageHeader>
 <InfoBox
 	title={$page.status.toString()}
 	description={$page.status === 404
