@@ -6,3 +6,8 @@ export async function load({ fetch, params }) {
 		post: await getBlogPost(fetch, params.slug)
 	};
 }
+
+/** @type {import('./$types').EntryGenerator} */
+export function entries() {
+	return [{ slug: 'svelte-features' }];
+}
