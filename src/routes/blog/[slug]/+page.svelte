@@ -8,6 +8,9 @@
 	import InlineCodeRenderer from '$lib/components/renderers/code-renderer-inline.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
+	//TODO: Investigate if this can be prerendered
+	export const prerender = false;
+
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 </script>
