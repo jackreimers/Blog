@@ -1,15 +1,15 @@
 <script lang="ts">
+	import type { Tag } from '$lib/common/types';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { getDateString } from '$lib/common/functions';
-	import PageHeader from '$lib/components/layout/page-header.svelte';
-	import PageTitle from '$lib/components/layout/page-title.svelte';
-	import Card from '$lib/components/layout/card.svelte';
+	import PageHeader from '$lib/components/layout/header-page.svelte';
+	import Spinner from '$lib/components/loading/spinner.svelte';
+	import Skeleton from '$lib/components/loading/skeleton.svelte';
+	import Error from '$lib/components/loading/error.svelte';
+	import Card from '$lib/components/interactivity/card.svelte';
+	import Dropdown from '$lib/components/interactivity/dropdown.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
-	import Dropdown from '$lib/components/buttons/dropdown.svelte';
-	import Spinner from '$lib/components/text/spinner.svelte';
-	import Skeleton from '$lib/components/layout/skeleton.svelte';
-	import type { Tag } from '$lib/common/types';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -64,11 +64,11 @@
 
 <PageHeader>
 	<div slot="title">
-		<PageTitle>Blog Posts</PageTitle>
+		<h1 class="pg-title">Blog Posts</h1>
 	</div>
 	<div slot="info">
 		<div
-			class="flex items-center gap-2 text-sm font-semibold leading-none sm:gap-2.5 sm:text-base"
+			class="flex items-center gap-2 text-sm font-medium leading-none sm:gap-2.5 sm:text-base"
 		>
 			<Icon
 				icon="description"
@@ -80,7 +80,10 @@
 					<p>0 Posts</p>
 				</Skeleton>
 			{:then posts}
-				<p in:fade>{posts.length.toString()} {posts.length === 1 ? 'Post' : 'Posts'}</p>
+				<p class="text-gray-500" in:fade>
+					{posts.length.toString()}
+					{posts.length === 1 ? 'Post' : 'Posts'}
+				</p>
 			{/await}
 		</div>
 	</div>
@@ -88,7 +91,7 @@
 		<div class="flex flex-wrap gap-2">
 			<button
 				on:click={handleSortClicked}
-				class="btn-padding-icon btn-hover inline-flex items-center gap-0.5 rounded bg-white text-sm shadow duration-500 sm:text-base"
+				class="btn-padding-icon btn-hover inline-flex items-center gap-0.5 rounded bg-white text-sm shadow sm:text-base"
 			>
 				<span class="font-semibold">Date</span>
 				<span class="transform-gpu {data.filters.newest ? '-rotate-90' : 'rotate-90'}">
@@ -99,11 +102,11 @@
 				{#each data.filters.tags.all as tag}
 					<button
 						on:click={() => handleTagClicked(tag)}
-						class="btn-padding text-left text-sm sm:text-base {data.filters.tags.active.includes(
+						class="btn btn-padding text-left text-sm sm:text-base {data.filters.tags.active.includes(
 							tag
 						)
-							? 'bg-gray-50'
-							: ''}"
+							? 'bg-gray-100 hover:bg-gray-200'
+							: 'hover:bg-gray-100'}"
 					>
 						{tag.name}
 					</button>
@@ -114,7 +117,7 @@
 					on:click={() => {
 						handleTagClicked(tag);
 					}}
-					class="btn-hover btn-padding-icon inline-flex items-center gap-1.5 rounded border border-gray-200 bg-gray-50 text-sm duration-500 sm:text-base"
+					class="btn-hover btn-padding-icon inline-flex items-center gap-0.5 rounded border border-gray-200 border-t-neutral-50 bg-gray-50 text-sm sm:text-base"
 				>
 					<span class="font-semibold">{tag.name}</span>
 					<Icon
@@ -137,20 +140,13 @@
 				<Card
 					href="/blog/{post.slug}"
 					title={post.title}
-					subText={getDateString(post.date)}
+					subTitle={getDateString(post.date)}
 					bodyText={getSentences(post.intro, 2)}
 					arrow={false}
 				/>
 			{/each}
 		</div>
 	{:else}
-		<div class="flex items-center gap-4 sm:gap-5">
-			<div>
-				<Icon icon="quick_reference_all" classes="text-9xl text-gray-300" />
-			</div>
-			<div>
-				<p class="text-4xl text-gray-300">No posts found...</p>
-			</div>
-		</div>
+		<Error icon="quick_reference_all" message="No posts found." />
 	{/if}
 {/await}

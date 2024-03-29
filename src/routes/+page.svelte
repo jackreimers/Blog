@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Card from '$lib/components/layout/card.svelte';
+	import Card from '$lib/components/interactivity/card.svelte';
 </script>
 
 <svelte:head>
@@ -17,7 +17,7 @@
 	I'm passionate about web and video game development and specialise in .NET development.
 </p>
 <div class="flex flex-col gap-4 sm:gap-5">
-	<Card href="/blog" title="Blog" subText="Read my latest posts." />
-	<Card href="/projects" title="Projects" subText="See my past projects." />
-	<Card href="/about" title="About" subText="Learn more about me." />
+	<Card href="/blog" title="Blog" subTitle="Read my latest posts." />
+	<Card href="/projects" title="Projects" subTitle="See my past projects." />
+	<Card href="/about" title="About" subTitle="Learn more about me." />
 </div>

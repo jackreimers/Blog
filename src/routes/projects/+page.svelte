@@ -1,7 +1,6 @@
 <script lang="ts">
-	import PageHeader from '$lib/components/layout/page-header.svelte';
+	import PageHeader from '$lib/components/layout/header-page.svelte';
 	import InfoBox from '$lib/components/layout/info-box.svelte';
-	import PageTitle from '$lib/components/layout/page-title.svelte';
 </script>
 
 <svelte:head>
@@ -10,9 +9,10 @@
 
 <PageHeader>
 	<div slot="title">
-		<PageTitle>Projects</PageTitle>
+		<h1 class="pg-title">Projects</h1>
 	</div>
-</PageHeader><InfoBox
+</PageHeader>
+<InfoBox
 	title="Under Construction"
 	description="This page is still under construction."
 	iconClasses="from-amber-600 to-amber-800"

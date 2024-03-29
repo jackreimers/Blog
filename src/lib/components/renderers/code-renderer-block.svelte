@@ -21,7 +21,7 @@
 </script>
 
 <div
-	class="btn-padding relative mb-5 inline-block w-full overflow-hidden overflow-x-auto rounded bg-white shadow"
+	class="btn btn-padding relative mb-5 inline-block w-full overflow-hidden overflow-x-auto rounded bg-white shadow"
 >
 	<code class="{lang} whitespace-pre">
 		{@html Prism.highlight(text, Prism.languages[lang], lang)}

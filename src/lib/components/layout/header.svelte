@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import { page } from '$app/stores';
-	import Blocker from '$lib/components/layout/blocker.svelte';
+	import Blocker from '$lib/components/interactivity/blocker.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
 	let open: boolean = false;
@@ -48,28 +48,28 @@
 		<div class="hidden items-center gap-0.5 sm:gap-1 md:flex md:gap-2 lg:gap-4">
 			<a
 				href="/"
-				class="btn-padding btn-hover rounded font-semibold transition-all duration-500
+				class="btn btn-padding btn-hover font-semibold transition-all
 					{$page.url.pathname === '/' ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				Home
 			</a>
 			<a
 				href="/blog"
-				class="btn-padding btn-hover rounded font-semibold transition-all duration-500
+				class="btn btn-padding btn-hover font-semibold transition-all
 					{$page.url.pathname.startsWith('/blog') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				Blog
 			</a>
 			<a
 				href="/projects"
-				class="btn-padding btn-hover rounded font-semibold transition-all duration-500
+				class="btn btn-padding btn-hover font-semibold transition-all
 					{$page.url.pathname.startsWith('/projects') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				Projects
 			</a>
 			<a
 				href="/about"
-				class="btn-padding btn-hover rounded font-semibold transition-all duration-500
+				class="btn btn-padding btn-hover font-semibold transition-all
 					{$page.url.pathname.startsWith('/about') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
 			>
 				About
@@ -79,14 +79,12 @@
 			<a href="/" class="p-2 hover:bg-gray-100">
 				<Icon
 					icon="home"
-					weight={600}
 					classes="bg-gradient-to-br from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent"
 				/>
 			</a>
 			<button on:click={openMenu} class="p-2 hover:bg-gray-100">
 				<Icon
 					icon="menu"
-					weight={600}
 					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent"
 				/>
 			</button>
@@ -97,23 +95,21 @@
 <div class="h-[150px] md:h-[200px] lg:h-64" />
 
 <div
-	class:w-0={!open}
-	class:w-[320px]={open}
-	class:lg:w-[500px]={open}
-	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-white transition-all duration-500"
+	class="fixed right-0 top-0 z-30 h-full overflow-hidden bg-white transition-all duration-500 {open
+		? 'w-[320px] lg:w-[500px]'
+		: 'w-0'}"
 >
 	<div class="w-[320px] lg:w-[500px]">
 		<div
-			class:ml-0={open}
-			class:ml-4={!open}
-			class="p-4 transition-spacing delay-100 duration-700 lg:px-12 lg:py-8"
+			class="p-4 transition-spacing delay-100 duration-700 lg:px-12 lg:py-8 {open
+				? 'ml-0'
+				: 'ml-4'}"
 		>
 			<div class="mb-8 flex">
 				<div class="flex-1" />
 				<button on:click={closeMenu} class="rounded p-2 duration-500 hover:bg-gray-100">
 					<Icon
 						icon="close"
-						weight={600}
 						classes="bg-gradient-to-b from-red-600 to-red-800 bg-clip-text text-3xl text-transparent sm:text-4xl"
 					/>
 				</button>

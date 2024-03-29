@@ -1,11 +1,10 @@
 <script lang="ts">
 	import { getDateString } from '$lib/common/functions';
 	import SvelteMarkdown from 'svelte-markdown';
-	import PageHeader from '$lib/components/layout/page-header.svelte';
-	import PageTitle from '$lib/components/layout/page-title.svelte';
+	import PageHeader from '$lib/components/layout/header-page.svelte';
+	import Icon from '$lib/components/text/icon.svelte';
 	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
 	import InlineCodeRenderer from '$lib/components/renderers/code-renderer-inline.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -17,7 +16,7 @@
 
 <PageHeader>
 	<div slot="title">
-		<PageTitle>{data.post.title}</PageTitle>
+		<h1 class="pg-title">{data.post.title}</h1>
 	</div>
 	<div slot="info">
 		<div
@@ -36,7 +35,7 @@
 			{#each data.post.tags as tag}
 				<a
 					href="/blog?tags={tag.slug}"
-					class="btn-padding btn-hover bg-white text-sm shadow sm:text-base"
+					class="btn btn-padding btn-hover bg-white text-sm shadow sm:text-base"
 				>
 					<p class="font-semibold">{tag.name}</p>
 				</a>
