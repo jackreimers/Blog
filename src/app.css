@@ -5,9 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer base {
+    
+}
+
+@layer components {    
     .btn-hover {
-        @apply transform-gpu transition-transform hover:translate-y-[-5px]
+        @apply transform-gpu transition-transform hover:translate-y-[-3px]
     }
     
     .btn-padding {

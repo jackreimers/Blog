@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { MoveRight } from 'lucide-svelte';
-	import Button from '$lib/components/buttons/button.svelte';
 
 	export let href: string;
 	export let title: string = 'Card Title';
@@ -9,10 +8,7 @@
 	export let arrow: boolean = true;
 </script>
 
-<Button
-	{href}
-	classes="group flex rounded bg-white px-4 py-3 shadow sm:px-5 sm:py-4 md:px-7 md:py-6"
->
+<a {href} class="group flex rounded bg-white px-4 py-3 shadow sm:px-5 sm:py-4 md:px-7 md:py-6">
 	<span class="flex flex-1 flex-col">
 		<span class="font-bold md:text-2xl">{title}</span>
 		{#if subText}
@@ -31,4 +27,4 @@
 			<MoveRight />
 		</span>
 	{/if}
-</Button>
+</a>

@@ -6,7 +6,6 @@
 	import PageTitle from '$lib/components/layout/page-title.svelte';
 	import Card from '$lib/components/layout/card.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
 	import Dropdown from '$lib/components/buttons/dropdown.svelte';
 	import Spinner from '$lib/components/text/spinner.svelte';
 	import Skeleton from '$lib/components/layout/skeleton.svelte';
@@ -87,42 +86,42 @@
 	</div>
 	<div slot="actions">
 		<div class="flex flex-wrap gap-2">
-			<Button
-				onClick={handleSortClicked}
-				classes="btn-padding-icon btn-hover inline-flex items-center gap-0.5 rounded bg-white text-sm shadow duration-500 sm:text-base"
+			<button
+				on:click={handleSortClicked}
+				class="btn-padding-icon btn-hover inline-flex items-center gap-0.5 rounded bg-white text-sm shadow duration-500 sm:text-base"
 			>
 				<span class="font-semibold">Date</span>
 				<span class="transform-gpu {data.filters.newest ? '-rotate-90' : 'rotate-90'}">
 					<Icon icon="arrow_right_alt" />
 				</span>
-			</Button>
+			</button>
 			<Dropdown title="Tags">
 				{#each data.filters.tags.all as tag}
-					<Button
-						onClick={() => handleTagClicked(tag)}
-						classes="btn-padding text-left text-sm sm:text-base {data.filters.tags.active.includes(
+					<button
+						on:click={() => handleTagClicked(tag)}
+						class="btn-padding text-left text-sm sm:text-base {data.filters.tags.active.includes(
 							tag
 						)
 							? 'bg-gray-50'
 							: ''}"
 					>
 						{tag.name}
-					</Button>
+					</button>
 				{/each}
 			</Dropdown>
 			{#each data.filters.tags.active as tag}
-				<Button
-					onClick={() => {
+				<button
+					on:click={() => {
 						handleTagClicked(tag);
 					}}
-					classes="btn-hover btn-padding-icon inline-flex items-center gap-1.5 rounded border border-gray-200 bg-gray-50 text-sm duration-500 sm:text-base"
+					class="btn-hover btn-padding-icon inline-flex items-center gap-1.5 rounded border border-gray-200 bg-gray-50 text-sm duration-500 sm:text-base"
 				>
 					<span class="font-semibold">{tag.name}</span>
 					<Icon
 						icon="close"
 						classes="bg-gradient-to-br from-red-600 to-red-800 bg-clip-text text-transparent"
 					/>
-				</Button>
+				</button>
 			{/each}
 		</div>
 	</div>

@@ -3,9 +3,6 @@
 	import 'prismjs/themes/prism.css';
 	import 'prismjs/components/prism-csharp';
 
-	import Icon from '$lib/components/text/icon.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
-
 	export let lang: string = '';
 	export let text: string = '';
 

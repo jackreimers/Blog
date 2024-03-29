@@ -3,7 +3,6 @@
 	import SvelteMarkdown from 'svelte-markdown';
 	import PageHeader from '$lib/components/layout/page-header.svelte';
 	import PageTitle from '$lib/components/layout/page-title.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
 	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
 	import InlineCodeRenderer from '$lib/components/renderers/code-renderer-inline.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
@@ -35,12 +34,12 @@
 	<div slot="actions">
 		<div class="flex flex-wrap gap-2">
 			{#each data.post.tags as tag}
-				<Button
+				<a
 					href="/blog?tags={tag.slug}"
-					classes="btn-padding btn-hover bg-white text-sm shadow sm:text-base"
+					class="btn-padding btn-hover bg-white text-sm shadow sm:text-base"
 				>
 					<p class="font-semibold">{tag.name}</p>
-				</Button>
+				</a>
 			{/each}
 		</div>
 	</div>
