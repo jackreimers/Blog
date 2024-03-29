@@ -36,7 +36,7 @@
 		<div class="flex flex-wrap gap-2">
 			{#each data.post.tags as tag}
 				<Button
-					onClick={() => {}}
+					href="/blog?tags={tag.slug}"
 					classes="btn-padding btn-hover bg-white text-sm shadow sm:text-base"
 				>
 					<p class="font-semibold">{tag.name}</p>

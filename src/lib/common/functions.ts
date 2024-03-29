@@ -1,5 +1,5 @@
 import { error } from '@sveltejs/kit';
-import type { BlogPost } from '$lib/common/types';
+import type { BlogPost, Tag } from '$lib/common/types';
 
 const metadataPattern = /^---([\s\S]*?)---/;
 const arrayPattern = /^\[.*]$/;
@@ -15,50 +15,51 @@ export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
 	const postResponse = await fetch(`/posts/${slug}.md`);
 	const tagsResponse = await fetch('/data/tags.json');
 
-	if (!postResponse.ok) {
-		error(404);
-	}
-
-	if (!tagsResponse.ok) {
-		error(500);
-	}
-
 	const postData = await postResponse.text();
 	const tagsData = await tagsResponse.json();
 
 	return parseBlogPost(postData, tagsData);
 }
 
-export async function getBlogPosts(fetch: any): Promise<BlogPost[]> {
+export async function getBlogPosts(
+	fetch: any,
+	newest: boolean,
+	tagFilters: string[]
+): Promise<BlogPost[]> {
+	//The directory file MUST be ordered chronologically
 	const directoryResponse = await fetch('/posts/directory.json');
 	const tagsResponse = await fetch('/data/tags.json');
-
 	const directoryData = await directoryResponse.json();
 	const tagsData = await tagsResponse.json();
-	const fileNames = directoryData.files;
+
+	let fileNames = directoryData.files;
+
+	if (!newest) {
+		fileNames.reverse();
+	}
 
 	let posts: BlogPost[] = [];
 
 	//TODO: Add pagination and only fetch the posts needed
 	for (let i = 0; i < fileNames.length; i++) {
 		const postResponse = await fetch(`/posts/${fileNames[i]}.md`);
-
-		if (!postResponse.ok) {
-			error(500);
-		}
-
 		const postData = await postResponse.text();
 		const post = parseBlogPost(postData, tagsData);
 
-		posts.push(post);
+		if (
+			tagFilters.length == 0 ||
+			tagFilters.some((s) => post.tags.map((m) => m.slug).includes(s))
+		) {
+			posts.push(post);
+		}
 	}
 
 	//Debugging purposes only
-	await new Promise((resolve) => setTimeout(resolve, 3000));
+	//await new Promise((resolve) => setTimeout(resolve, 3000));
 	return posts;
 }
 
-function parseBlogPost(data: string, tagMappings: object): BlogPost {
+function parseBlogPost(data: string, allTags: Tag[]): BlogPost {
 	const split = data.split('<!--endintro-->');
 	const matched = data.match(metadataPattern);
 	if (!matched) {
@@ -84,20 +85,14 @@ function parseBlogPost(data: string, tagMappings: object): BlogPost {
 
 	const mappedMetadata: { [key: string]: string | string[] } = Object.fromEntries(accumulator);
 	const tags = mappedMetadata['tags'] as string[];
-	const mappedTags = tags.map((tag: string) => {
-		return {
-			// @ts-ignore
-			name: tagMappings[tag] ?? tag,
-			slug: tag
-		};
-	});
+	const filteredTags = allTags.filter((f) => tags.includes(f.slug));
 
 	const intro = split[0].split('---').pop() || '';
 	const content = split[1] || '';
 
 	return {
 		date: new Date(mappedMetadata['date'] as string),
-		tags: mappedTags,
+		tags: filteredTags,
 		title: mappedMetadata['title'] as string,
 		slug: mappedMetadata['slug'] as string,
 		intro: intro,

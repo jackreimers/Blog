@@ -1,9 +1,26 @@
-{
-  "csharp": "C#",
-  "dotnet": ".NET",
-  "javascript": "JavaScript",
-  "typescript": "TypeScript",
-  "svelte": "Svelte",
-  "godot": "Godot",
-  "game-dev": "Game Development"
-}
+[
+  {
+    "name": "C#",
+    "slug": "csharp"
+  },
+  {
+    "name": ".NET",
+    "slug": "dotnet"
+  },
+  {
+    "name": "JavaScript",
+    "slug": "javascript"
+  },
+  {
+    "name": "TypeScript",
+    "slug": "typescript"
+  },
+  {
+    "name": "Svelte",
+    "slug": "svelte"
+  },
+  {
+    "name": "Godot",
+    "slug": "godot"
+  }
+]

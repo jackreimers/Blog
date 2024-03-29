@@ -1,7 +1,7 @@
 <script lang="ts">
-	import type { BlogPost } from '$lib/common/types';
-	import { getDateString } from '$lib/common/functions';
+	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
+	import { getDateString } from '$lib/common/functions';
 	import PageHeader from '$lib/components/layout/page-header.svelte';
 	import PageTitle from '$lib/components/layout/page-title.svelte';
 	import Card from '$lib/components/layout/card.svelte';
@@ -10,26 +10,47 @@
 	import Dropdown from '$lib/components/buttons/dropdown.svelte';
 	import Spinner from '$lib/components/text/spinner.svelte';
 	import Skeleton from '$lib/components/layout/skeleton.svelte';
+	import type { Tag } from '$lib/common/types';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 
-	let newest: boolean = true;
+	function handleSortClicked() {
+		data.filters.newest = !data.filters.newest;
+		updateQuery();
+	}
 
-	function toggleSort() {
-		newest = !newest;
-		//posts = data.posts.sort((a: BlogPost, b: BlogPost) => {
-		//if (newest) {
-		//	return b.metadata.date.getTime() - a.metadata.date.getTime();
-		//} else {
-		//	return a.metadata.date.getTime() - b.metadata.date.getTime();
-		//}
-		//});
+	function handleTagClicked(tag: Tag) {
+		if (data.filters.tags.active.includes(tag)) {
+			const index = data.filters.tags.active.indexOf(tag);
+			data.filters.tags.active.splice(index, 1);
+		} else {
+			data.filters.tags.active.push(tag);
+		}
+
+		updateQuery();
+	}
+
+	function updateQuery() {
+		let query = new URLSearchParams();
+
+		if (data.filters.newest == false) {
+			query.append('newest', 'false');
+		}
+
+		if (data.filters.tags.active.length > 0) {
+			query.append(
+				'tags',
+				data.filters.tags.active.map((m: Tag) => m.slug)
+			);
+		}
+
+		goto('/blog?' + query);
 	}
 
 	function getSentences(text: string, number: number) {
-		let sentenceRegex = /[.!?] [A-Z]/g;
-		let sentences = text.split(sentenceRegex);
+		let sentencePattern = /[.!?] [A-Z]/g;
+		let sentences = text.split(sentencePattern);
 		if (sentences.length > number) {
 			number = sentences.length;
 		}
@@ -67,17 +88,42 @@
 	<div slot="actions">
 		<div class="flex flex-wrap gap-2">
 			<Button
-				onClick={toggleSort}
+				onClick={handleSortClicked}
 				classes="btn-padding-icon btn-hover inline-flex items-center gap-0.5 rounded bg-white text-sm shadow duration-500 sm:text-base"
 			>
 				<span class="font-semibold">Date</span>
-				<span class="transform-gpu {newest ? '-rotate-90' : 'rotate-90'}">
+				<span class="transform-gpu {data.filters.newest ? '-rotate-90' : 'rotate-90'}">
 					<Icon icon="arrow_right_alt" />
 				</span>
 			</Button>
 			<Dropdown title="Tags">
-				<Button classes="text-sm sm:text-base">No tags found.</Button>
+				{#each data.filters.tags.all as tag}
+					<Button
+						onClick={() => handleTagClicked(tag)}
+						classes="btn-padding text-left text-sm sm:text-base {data.filters.tags.active.includes(
+							tag
+						)
+							? 'bg-gray-50'
+							: ''}"
+					>
+						{tag.name}
+					</Button>
+				{/each}
 			</Dropdown>
+			{#each data.filters.tags.active as tag}
+				<Button
+					onClick={() => {
+						handleTagClicked(tag);
+					}}
+					classes="btn-hover btn-padding-icon inline-flex items-center gap-1.5 rounded border border-gray-200 bg-gray-50 text-sm duration-500 sm:text-base"
+				>
+					<span class="font-semibold">{tag.name}</span>
+					<Icon
+						icon="close"
+						classes="bg-gradient-to-br from-red-600 to-red-800 bg-clip-text text-transparent"
+					/>
+				</Button>
+			{/each}
 		</div>
 	</div>
 </PageHeader>
