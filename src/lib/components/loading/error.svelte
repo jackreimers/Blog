@@ -7,9 +7,9 @@
 
 <div class="flex items-center gap-4 sm:gap-5">
 	<div>
-		<Icon {icon} classes="text-9xl text-gray-300" />
+		<Icon {icon} classes="text-7xl text-gray-300 sm:text-8xl lg:text-9xl" />
 	</div>
 	<div>
-		<p class="text-4xl font-semibold text-gray-300">{message}</p>
+		<p class="text-3xl font-semibold text-gray-300 sm:text-4xl lg:text-5xl">{message}</p>
 	</div>
 </div>

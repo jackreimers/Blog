@@ -6,7 +6,42 @@
 @tailwind utilities;
 
 @layer base {
-    
+    body {
+        @apply text-gray-700 bg-gray-100;
+        font-family: Inter, sans-serif;
+    }
+
+    .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+        @apply font-semibold mb-3;
+    }
+
+    .markdown h1, .markdown h2 {
+        @apply text-2xl sm:text-3xl mt-8 sm:mt-12;
+    }
+
+    .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
+        @apply text-2xl mt-12;
+    }
+
+    .markdown p {
+        @apply mb-5 leading-normal;
+    }
+
+    .markdown a {
+        @apply underline;
+    }
+
+    .markdown ul, .markdown ol {
+        @apply mb-5;
+    }
+
+    .markdown li {
+        @apply list-disc pl-5;
+    }
+
+    .markdown table {
+        @apply mb-5 border border-gray-500;
+    }
 }
 
 @layer components {    
@@ -33,43 +68,4 @@
     .gradient {
         @apply bg-gradient-to-br from-blue-600 to-blue-800 text-white;
     }
-}
-
-/* TODO: https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles */
-body {
-    @apply text-gray-700 bg-gray-100;
-
-    font-family: Inter, sans-serif;
-}
-
-.markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
-    @apply font-semibold mb-3;
-}
-
-.markdown h1, .markdown h2 {
-    @apply text-2xl sm:text-3xl mt-8 sm:mt-12;
-}
-
-.markdown h3, .markdown h4, .markdown h5, .markdown h6 {
-    @apply text-2xl mt-12;
-}
-
-.markdown p {
-    @apply mb-5 leading-normal;
-}
-
-.markdown a {
-    @apply underline;
-}
-
-.markdown ul, .markdown ol {
-    @apply mb-5;
-}
-
-.markdown li {
-    @apply list-disc pl-5;
-}
-
-.markdown table {
-    @apply mb-5 border border-gray-500;
 }
