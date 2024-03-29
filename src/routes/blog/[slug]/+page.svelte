@@ -20,14 +20,14 @@
 	</div>
 	<div slot="info">
 		<div
-			class="flex items-center gap-2 text-sm font-semibold leading-none sm:gap-2.5 sm:text-base"
+			class="flex items-center gap-2 text-sm font-medium leading-none sm:gap-2.5 sm:text-base"
 		>
 			<Icon
 				icon="calendar_month"
 				weight={400}
 				classes="rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:p-1.5"
 			/>
-			<p>{getDateString(data.post.date)}</p>
+			<p class="text-gray-500">{getDateString(data.post.date)}</p>
 		</div>
 	</div>
 	<div slot="actions">
