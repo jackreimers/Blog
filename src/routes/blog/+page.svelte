@@ -117,7 +117,7 @@
 					on:click={() => {
 						handleTagClicked(tag);
 					}}
-					class="btn-hover btn-padding-icon inline-flex items-center gap-0.5 rounded border border-gray-200 border-t-neutral-50 bg-gray-50 text-sm sm:text-base"
+					class="btn btn-hover btn-padding-icon inline-flex items-center gap-0.5 rounded border border-gray-200 bg-gray-50 text-sm sm:text-base"
 				>
 					<span class="font-semibold">{tag.name}</span>
 					<Icon
