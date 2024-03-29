@@ -45,7 +45,7 @@
 			);
 		}
 
-		goto('/blog?' + query);
+		goto('/blog?' + query, { replaceState: true, invalidateAll: false });
 	}
 
 	function getSentences(text: string, number: number) {
