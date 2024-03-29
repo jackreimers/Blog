@@ -81,7 +81,7 @@
 					<p>0 Posts</p>
 				</Skeleton>
 			{:then posts}
-				<p in:fade>{posts.length.toString()} {posts.length > 1 ? 'Posts' : 'Post'}</p>
+				<p in:fade>{posts.length.toString()} {posts.length === 1 ? 'Post' : 'Posts'}</p>
 			{/await}
 		</div>
 	</div>
@@ -132,15 +132,26 @@
 		<Spinner />
 	</div>
 {:then data}
-	<div class="grid gap-4 sm:gap-5" in:fade>
-		{#each data as post}
-			<Card
-				href="/blog/{post.slug}"
-				title={post.title}
-				subText={getDateString(post.date)}
-				bodyText={getSentences(post.intro, 2)}
-				arrow={false}
-			/>
-		{/each}
-	</div>
+	{#if data.length > 0}
+		<div class="grid gap-4 sm:gap-5" in:fade>
+			{#each data as post}
+				<Card
+					href="/blog/{post.slug}"
+					title={post.title}
+					subText={getDateString(post.date)}
+					bodyText={getSentences(post.intro, 2)}
+					arrow={false}
+				/>
+			{/each}
+		</div>
+	{:else}
+		<div class="flex items-center gap-4 sm:gap-5">
+			<div>
+				<Icon icon="quick_reference_all" classes="text-9xl text-gray-300" />
+			</div>
+			<div>
+				<p class="text-4xl text-gray-300">No posts found...</p>
+			</div>
+		</div>
+	{/if}
 {/await}
