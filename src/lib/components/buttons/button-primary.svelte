@@ -13,7 +13,7 @@
 	<a
 		{href}
 		{target}
-		class="inline-flex items-center rounded border border-transparent bg-white px-3 py-1.5 shadow transition-colors duration-200 hover:border-gray-700 sm:px-4 sm:py-2.5 {classes}"
+		class="inline-flex items-center rounded border-2 border-transparent bg-white px-3 py-1.5 shadow transition-colors duration-200 hover:border-gray-700 sm:px-4 sm:py-2.5 {classes}"
 	>
 		<span
 			class="font-semibold {$$slots.icon
@@ -27,7 +27,7 @@
 {:else if onClick}
 	<button
 		on:click={handleClick}
-		class="inline-flex items-center rounded border border-transparent bg-white px-3 py-1.5 shadow transition-colors duration-200 hover:border-gray-700 sm:px-4 sm:py-2.5 {classes}"
+		class="inline-flex items-center rounded border-2 border-transparent bg-white px-3 py-1.5 shadow transition-colors duration-200 hover:border-gray-700 sm:px-4 sm:py-2.5 {classes}"
 	>
 		<span
 			class="font-semibold {$$slots.icon
