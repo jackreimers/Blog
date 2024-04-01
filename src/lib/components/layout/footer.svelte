@@ -7,7 +7,7 @@
 
 <footer class="mx-auto mt-16 md:mt-32">
 	<Stack direction={Direction.Vertical} size={Size.M}>
-		<Stack direction={Direction.Horizontal} size={Size.S}>
+		<Stack direction={Direction.Horizontal} size={Size.M}>
 			<Button href="mailto:me@jackreimers.dev">
 				<Mail />
 			</Button>
