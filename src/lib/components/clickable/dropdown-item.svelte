@@ -7,7 +7,7 @@
 	on:click={() => {
 		onClick();
 	}}
-	class="rounded px-2 py-1 text-left transition-colors duration-200 sm:px-3 sm:py-1.5 {active
+	class="rounded px-3 py-1 text-left transition-colors duration-200 sm:px-4 sm:py-2 {active
 		? 'bg-gray-100 hover:bg-gray-200'
 		: 'hover:bg-gray-100'}"
 >

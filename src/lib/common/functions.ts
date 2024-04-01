@@ -24,7 +24,7 @@ export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
 export async function getBlogPosts(
 	fetch: any,
 	newest: boolean,
-	tagFilters: string[]
+	tagFilter: string | null
 ): Promise<BlogPost[]> {
 	//The directory file MUST be ordered chronologically
 	const directoryResponse = await fetch('/posts/directory.json');
@@ -46,10 +46,7 @@ export async function getBlogPosts(
 		const postData = await postResponse.text();
 		const post = parseBlogPost(postData, tagsData);
 
-		if (
-			tagFilters.length == 0 ||
-			tagFilters.some((s) => post.tags.map((m) => m.slug).includes(s))
-		) {
+		if (!tagFilter || post.tags.some((s) => s.slug === tagFilter)) {
 			posts.push(post);
 		}
 	}

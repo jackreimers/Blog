@@ -26,12 +26,10 @@
 	}
 
 	function handleTagClicked(tag: Tag) {
-		if (data.filters.tags.active.includes(tag)) {
-			const index = data.filters.tags.active.indexOf(tag);
-			data.filters.tags.active.splice(index, 1);
+		if (data.filters.tags.active === tag) {
+			data.filters.tags.active = null;
 		} else {
-			data.filters.tags.active = [];
-			data.filters.tags.active.push(tag);
+			data.filters.tags.active = tag;
 		}
 
 		updateQuery();
@@ -44,11 +42,8 @@
 			query.append('newest', 'false');
 		}
 
-		if (data.filters.tags.active.length > 0) {
-			query.append(
-				'tags',
-				data.filters.tags.active.map((m: Tag) => m.slug)
-			);
+		if (data.filters.tags.active) {
+			query.append('tag', data.filters.tags.active.slug);
 		}
 
 		goto('/blog?' + query, { replaceState: true, invalidateAll: false });
@@ -104,14 +99,14 @@
 		<Dropdown title="Tags">
 			{#each data.filters.tags.all as tag}
 				<DropdownItem
-					active={data.filters.tags.active.includes(tag)}
+					active={data.filters.tags.active === tag}
 					onClick={() => handleTagClicked(tag)}
 				>
 					{tag.name}
 				</DropdownItem>
 			{/each}
 		</Dropdown>
-		{#if data.filters.tags.active.length > 0 || !data.filters.newest}
+		{#if data.filters.tags.active || !data.filters.newest}
 			<Button href="/blog">
 				<span slot="text" class="font-normal">Clear Filters</span>
 				<GradientText slot="icon" classes="from-red-600 to-red-800">
