@@ -5,6 +5,10 @@
 	import Icon from '$lib/components/text/icon.svelte';
 	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
 	import InlineCodeRenderer from '$lib/components/renderers/code-renderer-inline.svelte';
+	import PageTitle from '$lib/components/layout/header-title.svelte';
+	import { Direction, Size } from '$lib/common/enums';
+	import Stack from '$lib/components/layout/stack.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -15,9 +19,7 @@
 </svelte:head>
 
 <PageHeader>
-	<div slot="title">
-		<h1 class="pg-title">{data.post.title}</h1>
-	</div>
+	<PageTitle slot="title">{data.post.title}</PageTitle>
 	<div slot="info">
 		<div
 			class="flex items-center gap-2 text-sm font-medium leading-none sm:gap-2.5 sm:text-base"
@@ -30,18 +32,13 @@
 			<p class="text-gray-500">{getDateString(data.post.date)}</p>
 		</div>
 	</div>
-	<div slot="actions">
-		<div class="flex flex-wrap gap-2">
-			{#each data.post.tags as tag}
-				<a
-					href="/blog?tags={tag.slug}"
-					class="btn btn-padding btn-hover bg-white text-sm shadow sm:text-base"
-				>
-					<p class="font-semibold">{tag.name}</p>
-				</a>
-			{/each}
-		</div>
-	</div>
+	<Stack slot="actions" direction={Direction.Horizontal} size={Size.Small}>
+		{#each data.post.tags as tag}
+			<Button href="/blog?tags={tag.slug}">
+				<p slot="text">{tag.name}</p>
+			</Button>
+		{/each}
+	</Stack>
 </PageHeader>
 <div class="flex">
 	<div class="w-[5px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800" />

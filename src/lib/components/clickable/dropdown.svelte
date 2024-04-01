@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
 	export let title: string = 'Dropdown';
@@ -28,15 +29,17 @@
 </script>
 
 <div class="relative z-10" bind:this={outerElement}>
-	<button
-		class="btn btn-padding-icon btn-hover inline-flex h-full cursor-pointer items-center gap-0.5 bg-white text-sm shadow sm:text-base"
-		bind:this={buttonElement}
+	<Button
+		onClick={() => {
+			open = !open;
+		}}
+		classes="h-full"
 	>
-		<p class="flex-1 font-semibold">{title}</p>
-		<span class="transform-gpu" class:-rotate-180={open}>
+		<span slot="text" class="flex-1 font-semibold">{title}</span>
+		<span slot="icon" class="transform-gpu" class:-rotate-180={open}>
 			<Icon icon="arrow_drop_down" />
 		</span>
-	</button>
+	</Button>
 	<div
 		class="absolute bottom-0 left-0 mt-2 w-auto min-w-full translate-y-full transition-opacity duration-500 {open
 			? ''

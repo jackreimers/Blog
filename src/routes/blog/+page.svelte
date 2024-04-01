@@ -1,15 +1,19 @@
 <script lang="ts">
 	import type { Tag } from '$lib/common/types';
+	import { Direction, Size } from '$lib/common/enums';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { getDateString } from '$lib/common/functions';
 	import PageHeader from '$lib/components/layout/header-page.svelte';
+	import PageTitle from '$lib/components/layout/header-title.svelte';
 	import Spinner from '$lib/components/loading/spinner.svelte';
 	import Skeleton from '$lib/components/loading/skeleton.svelte';
 	import Error from '$lib/components/loading/error.svelte';
 	import Card from '$lib/components/interactivity/card.svelte';
-	import Dropdown from '$lib/components/interactivity/dropdown.svelte';
+	import Dropdown from '$lib/components/clickable/dropdown.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
+	import Stack from '$lib/components/layout/stack.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -62,12 +66,11 @@
 	<title>Jack Reimers | Blog</title>
 </svelte:head>
 
-<PageHeader>
-	<div slot="title">
-		<h1 class="pg-title">Blog Posts</h1>
-	</div>
-	<div slot="info">
+<Stack direction={Direction.Vertical} size={Size.Large}>
+	<PageHeader>
+		<PageTitle slot="title">Blog Posts</PageTitle>
 		<div
+			slot="info"
 			class="flex items-center gap-2 text-sm font-medium leading-none sm:gap-2.5 sm:text-base"
 		>
 			<Icon
@@ -86,30 +89,28 @@
 				</p>
 			{/await}
 		</div>
-	</div>
-	<div slot="actions">
-		<div class="flex flex-wrap gap-2">
-			<button
-				on:click={handleSortClicked}
-				class="btn-padding-icon btn-hover inline-flex items-center gap-0.5 rounded bg-white text-sm shadow sm:text-base"
-			>
-				<span class="font-semibold">Date</span>
-				<span class="transform-gpu {data.filters.newest ? '-rotate-90' : 'rotate-90'}">
+		<Stack slot="actions" direction={Direction.Horizontal} size={Size.Small}>
+			<Button onClick={handleSortClicked}>
+				<span slot="text">Date</span>
+				<span
+					slot="icon"
+					class="transform-gpu {data.filters.newest ? '-rotate-90' : 'rotate-90'}"
+				>
 					<Icon icon="arrow_right_alt" />
 				</span>
-			</button>
+			</Button>
 			<Dropdown title="Tags">
 				{#each data.filters.tags.all as tag}
-					<button
-						on:click={() => handleTagClicked(tag)}
-						class="btn btn-padding text-left text-sm sm:text-base {data.filters.tags.active.includes(
+					<Button
+						onClick={() => handleTagClicked(tag)}
+						classes="text-left text-sm sm:text-base {data.filters.tags.active.includes(
 							tag
 						)
 							? 'bg-gray-100 hover:bg-gray-200'
 							: 'hover:bg-gray-100'}"
 					>
-						{tag.name}
-					</button>
+						<span slot="text">{tag.name}</span>
+					</Button>
 				{/each}
 			</Dropdown>
 			{#each data.filters.tags.active as tag}
@@ -126,27 +127,29 @@
 					/>
 				</button>
 			{/each}
+		</Stack>
+	</PageHeader>
+	{#await data.posts}
+		<div class="flex justify-center pt-8">
+			<Spinner />
 		</div>
-	</div>
-</PageHeader>
-{#await data.posts}
-	<div class="flex justify-center pt-8">
-		<Spinner />
-	</div>
-{:then data}
-	{#if data.length > 0}
-		<div class="grid gap-4 sm:gap-5" in:fade>
-			{#each data as post}
-				<Card
-					href="/blog/{post.slug}"
-					title={post.title}
-					subTitle={getDateString(post.date)}
-					bodyText={getSentences(post.intro, 2)}
-					arrow={false}
-				/>
-			{/each}
-		</div>
-	{:else}
-		<Error icon="quick_reference_all" message="No posts found." />
-	{/if}
-{/await}
+	{:then data}
+		{#if data.length > 0}
+			<div in:fade>
+				<Stack direction={Direction.Vertical} size={Size.Medium}>
+					{#each data as post}
+						<Card
+							href="/blog/{post.slug}"
+							title={post.title}
+							subTitle={getDateString(post.date)}
+							bodyText={getSentences(post.intro, 2)}
+							arrow={false}
+						/>
+					{/each}
+				</Stack>
+			</div>
+		{:else}
+			<Error icon="quick_reference_all" message="No posts found." />
+		{/if}
+	{/await}
+</Stack>

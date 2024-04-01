@@ -1,5 +1,6 @@
 <script lang="ts">
 	import PageHeader from '$lib/components/layout/header-page.svelte';
+	import PageTitle from '$lib/components/layout/header-title.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 </script>
 
@@ -8,9 +9,7 @@
 </svelte:head>
 
 <PageHeader>
-	<div slot="title">
-		<h1 class="pg-title">About</h1>
-	</div>
+	<PageTitle slot="title">About</PageTitle>
 </PageHeader>
 <div class="mb-8 sm:mb-10">
 	<p class="mb-5">

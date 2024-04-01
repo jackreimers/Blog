@@ -4,20 +4,23 @@
 
 <footer class="mt-16 md:mt-32">
 	<div class="flex w-full justify-center gap-3">
-		<a href="mailto:me@jackreimers.dev" class="btn btn-hover rounded-full bg-white p-4 shadow">
+		<a
+			href="mailto:me@jackreimers.dev"
+			class="btn btn-hover rounded-full bg-white p-3 shadow sm:p-4"
+		>
 			<Mail />
 		</a>
 		<a
 			href="https://www.linkedin.com/in/jackreimers/"
 			target="_blank"
-			class="btn btn-hover rounded-full bg-white p-4 shadow"
+			class="btn btn-hover rounded-full bg-white p-3 shadow sm:p-4"
 		>
 			<Linkedin />
 		</a>
 		<a
 			href="https://github.com/jackreimers"
 			target="_blank"
-			class="btn-hover rounded-full bg-white p-4 shadow"
+			class="btn btn-hover rounded-full bg-white p-3 shadow sm:p-4"
 		>
 			<Github />
 		</a>

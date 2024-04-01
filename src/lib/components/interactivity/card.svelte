@@ -8,16 +8,16 @@
 	export let arrow: boolean = true;
 </script>
 
-<a {href} class="group flex rounded bg-white px-4 py-3 shadow sm:px-5 sm:py-4 md:px-7 md:py-6">
+<a {href} class="group flex rounded bg-white px-4 py-3 shadow sm:px-6 sm:py-5 md:px-7 md:py-6">
 	<span class="flex flex-1 flex-col">
-		<span class="font-bold md:text-2xl">{title}</span>
+		<span class="font-bold sm:text-2xl">{title}</span>
 		{#if subTitle}
-			<span class="text-sm text-gray-500 md:text-base {bodyText ? 'mb-8 sm:mb-10' : ''}">
+			<span class="text-gray-500 {bodyText ? 'mb-8 sm:mb-10' : ''}">
 				{subTitle}
 			</span>
 		{/if}
 		{#if bodyText}
-			<span class="text-sm md:text-base">{bodyText}</span>
+			<span class="text-gray-500">{bodyText}</span>
 		{/if}
 	</span>
 	{#if arrow}
