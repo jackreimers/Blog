@@ -30,6 +30,7 @@
 			const index = data.filters.tags.active.indexOf(tag);
 			data.filters.tags.active.splice(index, 1);
 		} else {
+			data.filters.tags.active = [];
 			data.filters.tags.active.push(tag);
 		}
 
@@ -110,18 +111,14 @@
 				</DropdownItem>
 			{/each}
 		</Dropdown>
-		{#each data.filters.tags.active as tag}
-			<Button
-				onClick={() => {
-					handleTagClicked(tag);
-				}}
-			>
-				<span slot="text" class="font-normal">Filter by {tag.name}</span>
+		{#if data.filters.tags.active.length > 0 || !data.filters.newest}
+			<Button href="/blog">
+				<span slot="text" class="font-normal">Clear Filters</span>
 				<GradientText slot="icon" classes="from-red-600 to-red-800">
 					<Icon icon="close" />
 				</GradientText>
 			</Button>
-		{/each}
+		{/if}
 	</Stack>
 </PageHeader>
 {#await data.posts}
