@@ -13,8 +13,8 @@
 <PageHeader>
 	<PageTitle slot="title">About</PageTitle>
 </PageHeader>
-<Stack direction={Direction.Vertical} size={Size.L}>
-	<Stack direction={Direction.Vertical} size={Size.S}>
+<Stack direction={Direction.Vertical} size={Size.XL}>
+	<Stack direction={Direction.Vertical} size={Size.M}>
 		<p>
 			My name is <span class="font-semibold">Jack Reimers</span> and I am currently living and
 			working in Brisbane, Australia.

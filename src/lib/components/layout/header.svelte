@@ -49,7 +49,7 @@
 	<div class="mx-auto flex">
 		<div class="flex-1" />
 		<div class="hidden md:block">
-			<Stack direction={Direction.Horizontal} size={Size.S}>
+			<Stack direction={Direction.Horizontal} size={Size.M}>
 				<Button href="/">
 					<span slot="text">Home</span>
 				</Button>

@@ -6,7 +6,7 @@
 
 <Stack
 	direction={Direction.Vertical}
-	size={Size.S}
+	size={Size.M}
 	classes="mb-6 border-b-2 border-gray-200 pb-6 sm:mb-8 sm:pb-8"
 >
 	<slot name="title">

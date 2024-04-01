@@ -8,7 +8,8 @@ export const enum Size {
 	XS,
 	S,
 	M,
-	L
+	L,
+	XL
 }
 
 export const enum Typography {

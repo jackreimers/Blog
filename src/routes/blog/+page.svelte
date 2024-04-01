@@ -91,7 +91,7 @@
 			</p>
 		{/await}
 	</div>
-	<Stack slot="actions" direction={Direction.Horizontal} size={Size.S}>
+	<Stack slot="actions" direction={Direction.Horizontal} size={Size.M}>
 		<Button onClick={handleSortClicked}>
 			<span slot="text">Date</span>
 			<span
@@ -128,10 +128,10 @@
 {:then data}
 	{#if data.length > 0}
 		<div in:fade>
-			<Stack direction={Direction.Vertical} size={Size.M}>
+			<Stack direction={Direction.Vertical} size={Size.L}>
 				{#each data as post}
 					<Card href="/blog/{post.slug}" arrow={false}>
-						<Stack direction={Direction.Vertical} size={Size.M}>
+						<Stack direction={Direction.Vertical} size={Size.L}>
 							<Stack direction={Direction.Vertical} size={Size.XXS}>
 								<p class="font-bold sm:text-2xl">{post.title}</p>
 								<p class="text-secondary">{getDateString(post.date)}</p>

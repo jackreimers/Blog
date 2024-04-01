@@ -32,7 +32,7 @@
 			<p class="font-semibold">{getDateString(data.post.date)}</p>
 		</div>
 	</div>
-	<Stack slot="actions" direction={Direction.Horizontal} size={Size.S}>
+	<Stack slot="actions" direction={Direction.Horizontal} size={Size.M}>
 		{#each data.post.tags as tag}
 			<Button href="/blog?tags={tag.slug}">
 				<p slot="text">{tag.name}</p>

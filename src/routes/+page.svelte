@@ -9,7 +9,7 @@
 	<title>Jack Reimers</title>
 </svelte:head>
 
-<Stack direction={Direction.Vertical} size={Size.XS} classes="mb-8 sm:mb-10">
+<Stack direction={Direction.Vertical} size={Size.S} classes="mb-8 sm:mb-10">
 	<p class="text-secondary text-sm md:text-base">Hi, my name is</p>
 	<GradientText
 		typography={Typography.H1}
@@ -22,7 +22,7 @@
 		I'm passionate about web and video game development and specialise in .NET development.
 	</p>
 </Stack>
-<Stack direction={Direction.Vertical} size={Size.M}>
+<Stack direction={Direction.Vertical} size={Size.L}>
 	<Card href="/blog">
 		<Stack direction={Direction.Vertical} size={Size.XXS}>
 			<h2 class="font-bold sm:text-2xl">Blog</h2>

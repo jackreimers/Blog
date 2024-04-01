@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import Stack from '$lib/components/layout/stack.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
+	import { Direction, Size } from '$lib/common/enums';
 
 	export let title: string = 'Dropdown';
 
@@ -42,8 +44,10 @@
 			? ''
 			: 'pointer-events-none opacity-0'}"
 	>
-		<div class="mt-2 flex flex-col gap-2 whitespace-nowrap rounded bg-white p-2 shadow">
-			<slot />
+		<div class="mt-2 whitespace-nowrap rounded bg-white p-2 shadow">
+			<Stack direction={Direction.Vertical} size={Size.S}>
+				<slot />
+			</Stack>
 		</div>
 	</div>
 </div>
