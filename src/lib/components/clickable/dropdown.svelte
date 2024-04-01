@@ -6,7 +6,6 @@
 	export let title: string = 'Dropdown';
 
 	let outerElement: HTMLElement;
-	let buttonElement: HTMLElement;
 	let open: boolean = false;
 
 	onMount(() => {
@@ -20,9 +19,7 @@
 	function clickHandler(event: MouseEvent) {
 		const target = event.target as Node;
 
-		if (buttonElement.contains(target)) {
-			open = !open;
-		} else if (!outerElement.contains(target)) {
+		if (!outerElement.contains(target)) {
 			open = false;
 		}
 	}
@@ -41,7 +38,7 @@
 		</span>
 	</Button>
 	<div
-		class="absolute bottom-0 left-0 mt-2 w-auto min-w-full translate-y-full transition-opacity duration-500 {open
+		class="absolute bottom-0 left-0 mt-2 w-auto min-w-full translate-y-full transition-opacity duration-200 {open
 			? ''
 			: 'pointer-events-none opacity-0'}"
 	>

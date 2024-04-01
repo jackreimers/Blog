@@ -7,7 +7,7 @@
 
 <a
 	{href}
-	class="group flex rounded border-2 border-transparent bg-white p-4 shadow transition-colors duration-200 hover:border-gray-400 sm:p-6 md:p-7"
+	class="group flex rounded border border-transparent bg-white p-4 shadow transition-colors duration-200 hover:border-gray-700 sm:p-6 md:p-7"
 >
 	<span class="flex-1">
 		<slot />

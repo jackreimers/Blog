@@ -11,6 +11,7 @@
 	import Error from '$lib/components/loading/error.svelte';
 	import Card from '$lib/components/buttons/card.svelte';
 	import Dropdown from '$lib/components/clickable/dropdown.svelte';
+	import DropdownItem from '$lib/components/clickable/dropdown-item.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import Stack from '$lib/components/layout/stack.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
@@ -101,9 +102,12 @@
 		</Button>
 		<Dropdown title="Tags">
 			{#each data.filters.tags.all as tag}
-				<Button onClick={() => handleTagClicked(tag)}>
-					<span slot="text">{tag.name}</span>
-				</Button>
+				<DropdownItem
+					active={data.filters.tags.active.includes(tag)}
+					onClick={() => handleTagClicked(tag)}
+				>
+					{tag.name}
+				</DropdownItem>
 			{/each}
 		</Dropdown>
 		{#each data.filters.tags.active as tag}
@@ -112,7 +116,7 @@
 					handleTagClicked(tag);
 				}}
 			>
-				<span slot="text" class="text-secondary font-medium">{tag.name}</span>
+				<span slot="text" class="font-normal">Filter by {tag.name}</span>
 				<GradientText slot="icon" classes="from-red-600 to-red-800">
 					<Icon icon="close" />
 				</GradientText>
