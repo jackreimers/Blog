@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import PageHeader from '$lib/components/layout/header-page.svelte';
+	import PageTitle from '$lib/components/layout/header-title.svelte';
 	import InfoBox from '$lib/components/layout/info-box.svelte';
 </script>
 
@@ -9,9 +10,7 @@
 </svelte:head>
 
 <PageHeader>
-	<div slot="title">
-		<h1 class="pg-title">Oops</h1>
-	</div>
+	<PageTitle slot="title">Oops...</PageTitle>
 </PageHeader>
 <InfoBox
 	title={$page.status.toString()}
