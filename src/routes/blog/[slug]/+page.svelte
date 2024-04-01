@@ -8,7 +8,7 @@
 	import PageTitle from '$lib/components/layout/header-title.svelte';
 	import { Direction, Size } from '$lib/common/enums';
 	import Stack from '$lib/components/layout/stack.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
+	import Button from '$lib/components/buttons/button-primary.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -29,7 +29,7 @@
 				weight={400}
 				classes="rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:p-1.5"
 			/>
-			<p>{getDateString(data.post.date)}</p>
+			<p class="font-semibold">{getDateString(data.post.date)}</p>
 		</div>
 	</div>
 	<Stack slot="actions" direction={Direction.Horizontal} size={Size.S}>

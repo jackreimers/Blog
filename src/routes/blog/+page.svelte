@@ -13,7 +13,8 @@
 	import Dropdown from '$lib/components/clickable/dropdown.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import Stack from '$lib/components/layout/stack.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
+	import Button from '$lib/components/buttons/button-primary.svelte';
+	import GradientText from '$lib/components/text/gradient-text.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -82,7 +83,7 @@
 				<p>0 Posts</p>
 			</Skeleton>
 		{:then posts}
-			<p in:fade>
+			<p class="font-semibold" in:fade>
 				{posts.length.toString()}
 				{posts.length === 1 ? 'Post' : 'Posts'}
 			</p>
@@ -100,29 +101,22 @@
 		</Button>
 		<Dropdown title="Tags">
 			{#each data.filters.tags.all as tag}
-				<Button
-					onClick={() => handleTagClicked(tag)}
-					classes="text-left text-sm sm:text-base {data.filters.tags.active.includes(tag)
-						? 'bg-gray-100 hover:bg-gray-200'
-						: 'hover:bg-gray-100'}"
-				>
+				<Button onClick={() => handleTagClicked(tag)}>
 					<span slot="text">{tag.name}</span>
 				</Button>
 			{/each}
 		</Dropdown>
 		{#each data.filters.tags.active as tag}
-			<button
-				on:click={() => {
+			<Button
+				onClick={() => {
 					handleTagClicked(tag);
 				}}
-				class="btn btn-hover btn-padding-icon inline-flex items-center gap-0.5 rounded border border-gray-200 bg-gray-50 text-sm sm:text-base"
 			>
-				<span class="font-semibold">{tag.name}</span>
-				<Icon
-					icon="close"
-					classes="bg-gradient-to-br from-red-600 to-red-800 bg-clip-text text-transparent"
-				/>
-			</button>
+				<span slot="text" class="text-secondary font-medium">{tag.name}</span>
+				<GradientText slot="icon" classes="from-red-600 to-red-800">
+					<Icon icon="close" />
+				</GradientText>
+			</Button>
 		{/each}
 	</Stack>
 </PageHeader>

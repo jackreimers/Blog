@@ -17,7 +17,7 @@
 	>
 		Jack Reimers
 	</GradientText>
-	<p class="font-medium md:text-2xl">I'm a Full Stack Software Engineer.</p>
+	<p class="font-medium md:text-2xl">I'm a full stack Software Engineer.</p>
 	<p class="text-secondary max-w-prose">
 		I'm passionate about web and video game development and specialise in .NET development.
 	</p>

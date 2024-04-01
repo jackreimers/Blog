@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
 	import Blocker from '$lib/components/interactivity/blocker.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
+	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import { Direction, Size } from '$lib/common/enums';
 	import Stack from '$lib/components/layout/stack.svelte';

@@ -2,7 +2,7 @@
 	import { Direction, Size } from '$lib/common/enums.ts';
 	import { Mail, Linkedin, Github } from 'lucide-svelte';
 	import Stack from '$lib/components/layout/stack.svelte';
-	import Button from '$lib/components/buttons/button-footer.svelte';
+	import Button from '$lib/components/buttons/button-round.svelte';
 </script>
 
 <footer class="mx-auto mt-16 md:mt-32">
