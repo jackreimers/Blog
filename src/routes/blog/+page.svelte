@@ -96,16 +96,12 @@
 				<Icon icon="arrow_right_alt" />
 			</span>
 		</Button>
-		<Dropdown title="Tags">
-			{#each data.filters.tags.all as tag}
-				<DropdownItem
-					active={data.filters.tags.active === tag}
-					onClick={() => handleTagClicked(tag)}
-				>
-					{tag.name}
-				</DropdownItem>
-			{/each}
-		</Dropdown>
+		<Button onClick={() => {}}>
+			<span slot="text">Tags</span>
+			<span slot="icon">
+				<Icon icon="filter_list" />
+			</span>
+		</Button>
 		{#if data.filters.tags.active || !data.filters.newest}
 			<Button href="/blog">
 				<span slot="text" class="font-normal">Clear Filters</span>

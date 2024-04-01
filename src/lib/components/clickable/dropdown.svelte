@@ -44,7 +44,7 @@
 			? ''
 			: 'pointer-events-none opacity-0'}"
 	>
-		<div class="mt-2 whitespace-nowrap rounded bg-gray-700 p-3 text-white shadow sm:p-4">
+		<div class="mt-2 whitespace-nowrap rounded bg-gray-300 p-3 shadow sm:p-4">
 			<Stack direction={Direction.Vertical} size={Size.S}>
 				<slot />
 			</Stack>
