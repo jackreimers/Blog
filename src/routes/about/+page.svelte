@@ -27,8 +27,9 @@
 			<span class="font-semibold">Blazor</span>.
 		</p>
 		<p>
-			I also have extensive professional experience working with AI technologies and building
-			custom AI solutions.
+			I also have extensive professional experience working with
+			<span class="font-semibold">Artifical Intelligence</span>
+			and building custom AI solutions.
 		</p>
 	</Stack>
 	<div
