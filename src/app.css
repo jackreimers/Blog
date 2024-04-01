@@ -45,27 +45,15 @@
 }
 
 @layer components {    
-    .pg-title {
-        @apply text-4xl font-bold sm:text-5xl lg:text-6xl;
+    .text-primary {
+        @apply text-gray-700;
     }
     
-    .btn {
-        @apply transition-colors duration-500;
+    .text-secondary {
+        @apply text-gray-500;
     }
     
-    .btn-padding {
-        @apply py-1.5 px-3 sm:py-2.5 sm:px-4 rounded;
-    }
-    
-    .btn-padding-icon {
-        @apply py-1.5 pl-3 pr-2 sm:py-2.5 sm:pl-4 sm:pr-2.5 rounded;
-    }
-
-    .btn-hover {
-        @apply transform-gpu transition-transform hover:translate-y-[-3px] duration-300;
-    }
-    
-    .gradient {
-        @apply bg-gradient-to-br from-blue-600 to-blue-800 text-white;
+    .text-tertiary {
+        @apply text-gray-400;
     }
 }

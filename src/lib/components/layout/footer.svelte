@@ -1,33 +1,26 @@
 <script>
+	import { Direction, Size } from '$lib/common/enums.ts';
 	import { Mail, Linkedin, Github } from 'lucide-svelte';
+	import Stack from '$lib/components/layout/stack.svelte';
+	import Button from '$lib/components/buttons/button-footer.svelte';
 </script>
 
-<footer class="mt-16 md:mt-32">
-	<div class="flex w-full justify-center gap-3">
-		<a
-			href="mailto:me@jackreimers.dev"
-			class="btn btn-hover rounded-full bg-white p-3 shadow sm:p-4"
-		>
-			<Mail />
-		</a>
-		<a
-			href="https://www.linkedin.com/in/jackreimers/"
-			target="_blank"
-			class="btn btn-hover rounded-full bg-white p-3 shadow sm:p-4"
-		>
-			<Linkedin />
-		</a>
-		<a
-			href="https://github.com/jackreimers"
-			target="_blank"
-			class="btn btn-hover rounded-full bg-white p-3 shadow sm:p-4"
-		>
-			<Github />
-		</a>
-	</div>
-	<div class="w-full text-center">
-		<p class="my-4 text-sm font-semibold lg:text-base">
+<footer class="mx-auto mt-16 md:mt-32">
+	<Stack direction={Direction.Vertical} size={Size.S}>
+		<Stack direction={Direction.Horizontal} size={Size.S}>
+			<Button href="mailto:me@jackreimers.dev">
+				<Mail />
+			</Button>
+			<Button href="https://www.linkedin.com/in/jackreimers/" target="_blank">
+				<Linkedin />
+			</Button>
+			<Button href="https://github.com/jackreimers" target="_blank">
+				<Github />
+			</Button>
+		</Stack>
+		<p class="text-center font-semibold">
 			Copyright © {new Date().getFullYear()}
 		</p>
-	</div>
+		<span />
+	</Stack>
 </footer>

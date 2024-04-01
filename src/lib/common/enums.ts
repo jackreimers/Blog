@@ -4,9 +4,11 @@ export const enum Direction {
 }
 
 export const enum Size {
-	Small,
-	Medium,
-	Large
+	XXS,
+	XS,
+	S,
+	M,
+	L
 }
 
 export const enum Typography {

@@ -9,7 +9,7 @@
 	import Spinner from '$lib/components/loading/spinner.svelte';
 	import Skeleton from '$lib/components/loading/skeleton.svelte';
 	import Error from '$lib/components/loading/error.svelte';
-	import Card from '$lib/components/interactivity/card.svelte';
+	import Card from '$lib/components/buttons/card.svelte';
 	import Dropdown from '$lib/components/clickable/dropdown.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import Stack from '$lib/components/layout/stack.svelte';
@@ -66,90 +66,88 @@
 	<title>Jack Reimers | Blog</title>
 </svelte:head>
 
-<Stack direction={Direction.Vertical} size={Size.Large}>
-	<PageHeader>
-		<PageTitle slot="title">Blog Posts</PageTitle>
-		<div
-			slot="info"
-			class="flex items-center gap-2 text-sm font-medium leading-none sm:gap-2.5 sm:text-base"
-		>
-			<Icon
-				icon="description"
-				weight={400}
-				classes="rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:p-1.5"
-			/>
-			{#await data.posts}
-				<Skeleton>
-					<p>0 Posts</p>
-				</Skeleton>
-			{:then posts}
-				<p class="text-gray-500" in:fade>
-					{posts.length.toString()}
-					{posts.length === 1 ? 'Post' : 'Posts'}
-				</p>
-			{/await}
-		</div>
-		<Stack slot="actions" direction={Direction.Horizontal} size={Size.Small}>
-			<Button onClick={handleSortClicked}>
-				<span slot="text">Date</span>
-				<span
-					slot="icon"
-					class="transform-gpu {data.filters.newest ? '-rotate-90' : 'rotate-90'}"
+<PageHeader>
+	<PageTitle slot="title">Blog Posts</PageTitle>
+	<div
+		slot="info"
+		class="flex items-center gap-2 text-sm font-medium leading-none sm:gap-2.5 sm:text-base"
+	>
+		<Icon
+			icon="description"
+			weight={400}
+			classes="rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:p-1.5"
+		/>
+		{#await data.posts}
+			<Skeleton>
+				<p>0 Posts</p>
+			</Skeleton>
+		{:then posts}
+			<p in:fade>
+				{posts.length.toString()}
+				{posts.length === 1 ? 'Post' : 'Posts'}
+			</p>
+		{/await}
+	</div>
+	<Stack slot="actions" direction={Direction.Horizontal} size={Size.S}>
+		<Button onClick={handleSortClicked}>
+			<span slot="text">Date</span>
+			<span
+				slot="icon"
+				class="transform-gpu {data.filters.newest ? '-rotate-90' : 'rotate-90'}"
+			>
+				<Icon icon="arrow_right_alt" />
+			</span>
+		</Button>
+		<Dropdown title="Tags">
+			{#each data.filters.tags.all as tag}
+				<Button
+					onClick={() => handleTagClicked(tag)}
+					classes="text-left text-sm sm:text-base {data.filters.tags.active.includes(tag)
+						? 'bg-gray-100 hover:bg-gray-200'
+						: 'hover:bg-gray-100'}"
 				>
-					<Icon icon="arrow_right_alt" />
-				</span>
-			</Button>
-			<Dropdown title="Tags">
-				{#each data.filters.tags.all as tag}
-					<Button
-						onClick={() => handleTagClicked(tag)}
-						classes="text-left text-sm sm:text-base {data.filters.tags.active.includes(
-							tag
-						)
-							? 'bg-gray-100 hover:bg-gray-200'
-							: 'hover:bg-gray-100'}"
-					>
-						<span slot="text">{tag.name}</span>
-					</Button>
-				{/each}
-			</Dropdown>
-			{#each data.filters.tags.active as tag}
-				<button
-					on:click={() => {
-						handleTagClicked(tag);
-					}}
-					class="btn btn-hover btn-padding-icon inline-flex items-center gap-0.5 rounded border border-gray-200 bg-gray-50 text-sm sm:text-base"
-				>
-					<span class="font-semibold">{tag.name}</span>
-					<Icon
-						icon="close"
-						classes="bg-gradient-to-br from-red-600 to-red-800 bg-clip-text text-transparent"
-					/>
-				</button>
+					<span slot="text">{tag.name}</span>
+				</Button>
 			{/each}
-		</Stack>
-	</PageHeader>
-	{#await data.posts}
-		<div class="flex justify-center pt-8">
-			<Spinner />
+		</Dropdown>
+		{#each data.filters.tags.active as tag}
+			<button
+				on:click={() => {
+					handleTagClicked(tag);
+				}}
+				class="btn btn-hover btn-padding-icon inline-flex items-center gap-0.5 rounded border border-gray-200 bg-gray-50 text-sm sm:text-base"
+			>
+				<span class="font-semibold">{tag.name}</span>
+				<Icon
+					icon="close"
+					classes="bg-gradient-to-br from-red-600 to-red-800 bg-clip-text text-transparent"
+				/>
+			</button>
+		{/each}
+	</Stack>
+</PageHeader>
+{#await data.posts}
+	<div class="flex justify-center pt-8">
+		<Spinner />
+	</div>
+{:then data}
+	{#if data.length > 0}
+		<div in:fade>
+			<Stack direction={Direction.Vertical} size={Size.M}>
+				{#each data as post}
+					<Card href="/blog/{post.slug}" arrow={false}>
+						<Stack direction={Direction.Vertical} size={Size.M}>
+							<Stack direction={Direction.Vertical} size={Size.XXS}>
+								<p class="font-bold sm:text-2xl">{post.title}</p>
+								<p class="text-secondary">{getDateString(post.date)}</p>
+							</Stack>
+							<p>{getSentences(post.intro, 2)}</p>
+						</Stack>
+					</Card>
+				{/each}
+			</Stack>
 		</div>
-	{:then data}
-		{#if data.length > 0}
-			<div in:fade>
-				<Stack direction={Direction.Vertical} size={Size.Medium}>
-					{#each data as post}
-						<Card
-							href="/blog/{post.slug}"
-							title={post.title}
-							subTitle={getDateString(post.date)}
-							bodyText={getSentences(post.intro, 2)}
-							arrow={false}
-						/>
-					{/each}
-				</Stack>
-			</div>
-		{:else}
-			<Error icon="quick_reference_all" message="No posts found." />
-		{/if}
-	{/await}
-</Stack>
+	{:else}
+		<Error icon="quick_reference_all" message="No posts found." />
+	{/if}
+{/await}

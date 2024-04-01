@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { goto } from '$app/navigation';
-	import { page } from '$app/stores';
 	import Blocker from '$lib/components/interactivity/blocker.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
+	import { Direction, Size } from '$lib/common/enums';
+	import Stack from '$lib/components/layout/stack.svelte';
 
 	let open: boolean = false;
 	let scrolled: boolean;
@@ -45,35 +48,18 @@
 >
 	<div class="mx-auto flex">
 		<div class="flex-1" />
-		<div class="hidden items-center gap-0.5 sm:gap-1 md:flex md:gap-2 lg:gap-4">
-			<a
-				href="/"
-				class="btn btn-padding btn-hover font-semibold transition-all
-					{$page.url.pathname === '/' ? 'bg-white shadow' : 'hover:bg-gray-200'}"
-			>
-				Home
-			</a>
-			<a
-				href="/blog"
-				class="btn btn-padding btn-hover font-semibold transition-all
-					{$page.url.pathname.startsWith('/blog') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
-			>
-				Blog
-			</a>
-			<a
-				href="/projects"
-				class="btn btn-padding btn-hover font-semibold transition-all
-					{$page.url.pathname.startsWith('/projects') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
-			>
-				Projects
-			</a>
-			<a
-				href="/about"
-				class="btn btn-padding btn-hover font-semibold transition-all
-					{$page.url.pathname.startsWith('/about') ? 'bg-white shadow' : 'hover:bg-gray-200'}"
-			>
-				About
-			</a>
+		<div class="hidden md:block">
+			<Stack direction={Direction.Horizontal} size={Size.S}>
+				<Button href="/">
+					<span slot="text">Home</span>
+				</Button>
+				<Button href="/blog">
+					<span slot="text">Blog</span>
+				</Button>
+				<Button href="/about">
+					<span slot="text">About</span>
+				</Button>
+			</Stack>
 		</div>
 		<div class="flex items-center gap-0.5 sm:gap-1 md:hidden md:gap-2 lg:gap-4">
 			<a href="/" class="p-2 hover:bg-gray-100">

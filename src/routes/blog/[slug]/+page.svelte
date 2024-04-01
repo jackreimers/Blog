@@ -29,10 +29,10 @@
 				weight={400}
 				classes="rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:p-1.5"
 			/>
-			<p class="text-gray-500">{getDateString(data.post.date)}</p>
+			<p>{getDateString(data.post.date)}</p>
 		</div>
 	</div>
-	<Stack slot="actions" direction={Direction.Horizontal} size={Size.Small}>
+	<Stack slot="actions" direction={Direction.Horizontal} size={Size.S}>
 		{#each data.post.tags as tag}
 			<Button href="/blog?tags={tag.slug}">
 				<p slot="text">{tag.name}</p>
