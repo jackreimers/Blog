@@ -3,15 +3,6 @@ import type { BlogPost, Tag } from '$lib/common/types';
 
 const metadataPattern = /^---([\s\S]*?)---/;
 const arrayPattern = /^\[.*]$/;
-
-export function preloadImage(src: string): Promise<void> {
-	return new Promise((resolve) => {
-		const img = new Image();
-		img.src = src;
-		img.onload = resolve;
-	});
-}
-
 export function getDateString(date: Date): string {
 	return `
 		${date.getDate()}
