@@ -3,7 +3,7 @@
 	import PageHeader from '$lib/components/layout/header-page.svelte';
 	import PageTitle from '$lib/components/layout/header-title.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
-	import { Direction, Size } from '$lib/common/enums';
+	import { Direction } from '$lib/common/enums';
 </script>
 
 <svelte:head>
@@ -13,13 +13,13 @@
 <PageHeader>
 	<PageTitle slot="title">About</PageTitle>
 </PageHeader>
-<Stack direction={Direction.Vertical} size={Size.XL}>
-	<Stack direction={Direction.Vertical} size={Size.M}>
-		<p>
+<Stack direction={Direction.Vertical} classes="gap-7 sm:gap-9">
+	<div>
+		<p class="mb-4">
 			My name is <span class="font-semibold">Jack Reimers</span> and I am currently living and
 			working in Brisbane, Australia.
 		</p>
-		<p>
+		<p class="mb-4">
 			I'm passionate about all things web and video game development and specialise in full
 			stack .NET development with a focus on web-based technologies such as
 			<span class="font-semibold">ASP.NET Core</span>,
@@ -31,9 +31,9 @@
 			<span class="font-semibold">Artifical Intelligence</span>
 			and building custom AI solutions.
 		</p>
-	</Stack>
+	</div>
 	<div
-		class="grid grid-cols-2 grid-rows-3 gap-4 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-6"
+		class="grid grid-cols-2 grid-rows-3 gap-2.5 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-3.5"
 	>
 		<div
 			class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-white shadow"

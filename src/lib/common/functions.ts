@@ -1,5 +1,6 @@
 import { error } from '@sveltejs/kit';
 import type { BlogPost, Tag } from '$lib/common/types';
+import { Award } from 'lucide-svelte';
 
 const metadataPattern = /^---([\s\S]*?)---/;
 const arrayPattern = /^\[.*]$/;
@@ -16,23 +17,11 @@ export async function getTags(fetch: any): Promise<Tag[]> {
 	return await response.json();
 }
 
-export async function mapTag(fetch: any, slug: string | null): Promise<Tag | null> {
-	if (!slug) {
-		return null;
-	}
-
-	const tags = await getTags(fetch);
-	return tags.filter((f) => slug === f.slug)[0];
-}
-
 export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
-	const postResponse = await fetch(`/posts/${slug}.md`);
-	const tagsResponse = await fetch('/data/tags.json');
+	const response = await fetch(`/posts/${slug}.md`);
+	const data = await response.text();
 
-	const postData = await postResponse.text();
-	const tagsData = await tagsResponse.json();
-
-	return parseBlogPost(postData, tagsData);
+	return parseBlogPost(fetch, data);
 }
 
 export async function getBlogPosts(
@@ -42,9 +31,7 @@ export async function getBlogPosts(
 ): Promise<BlogPost[]> {
 	//The directory file MUST be ordered chronologically
 	const directoryResponse = await fetch('/posts/directory.json');
-	const tagsResponse = await fetch('/data/tags.json');
 	const directoryData = await directoryResponse.json();
-	const tagsData = await tagsResponse.json();
 
 	let fileNames = directoryData.files;
 
@@ -58,7 +45,7 @@ export async function getBlogPosts(
 	for (let i = 0; i < fileNames.length; i++) {
 		const postResponse = await fetch(`/posts/${fileNames[i]}.md`);
 		const postData = await postResponse.text();
-		const post = parseBlogPost(postData, tagsData);
+		const post = await parseBlogPost(fetch, postData);
 
 		if (!tagFilter || post.tags.some((s) => s.slug === tagFilter)) {
 			posts.push(post);
@@ -70,7 +57,14 @@ export async function getBlogPosts(
 	return posts;
 }
 
-function parseBlogPost(data: string, allTags: Tag[]): BlogPost {
+async function parseTags(fetch: any, data: string[]): Promise<Tag[]> {
+	const response = await fetch('/data/tags.json');
+	const tags = await response.json();
+
+	return tags.filter((f: Tag) => data.includes(f.slug));
+}
+
+async function parseBlogPost(fetch: any, data: string): Promise<BlogPost> {
 	const split = data.split('<!--endintro-->');
 	const matched = data.match(metadataPattern);
 	if (!matched) {
@@ -95,15 +89,12 @@ function parseBlogPost(data: string, allTags: Tag[]): BlogPost {
 	}, []);
 
 	const mappedMetadata: { [key: string]: string | string[] } = Object.fromEntries(accumulator);
-	const tags = mappedMetadata['tags'] as string[];
-	const filteredTags = allTags.filter((f) => tags.includes(f.slug));
-
 	const intro = split[0].split('---').pop() || '';
 	const content = split[1] || '';
 
 	return {
 		date: new Date(mappedMetadata['date'] as string),
-		tags: filteredTags,
+		tags: await parseTags(fetch, mappedMetadata['tags'] as string[]),
 		title: mappedMetadata['title'] as string,
 		slug: mappedMetadata['slug'] as string,
 		intro: intro,

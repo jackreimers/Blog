@@ -5,9 +5,10 @@
 	import Blocker from '$lib/components/interactivity/blocker.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
-	import { Direction, Size } from '$lib/common/enums';
+	import { Direction } from '$lib/common/enums';
 	import Stack from '$lib/components/layout/stack.svelte';
 
+	let blocker: Blocker;
 	let open: boolean = false;
 	let scrolled: boolean;
 	let scrollTop: number = 0;
@@ -26,6 +27,7 @@
 
 	function openMenu() {
 		open = true;
+		blocker.set(true);
 
 		//Store the window scroll location
 		scrollTop = window.scrollY || window.document.documentElement.scrollTop;
@@ -34,6 +36,7 @@
 
 	function closeMenu() {
 		open = false;
+		blocker.set(false);
 	}
 
 	function routeTo(path: string) {
@@ -43,13 +46,13 @@
 </script>
 
 <header
-	class="fixed z-20 w-full border-b-2 bg-gray-100 px-4 transition-all duration-700 lg:px-12
+	class="fixed z-10 w-full border-b-2 bg-gray-100 px-4 transition-all duration-700 lg:px-12
 		{scrolled ? 'border-gray-200 py-2 lg:py-4' : 'border-transparent py-4 lg:py-8'}"
 >
 	<div class="mx-auto flex">
 		<div class="flex-1" />
 		<div class="hidden md:block">
-			<Stack direction={Direction.Horizontal} size={Size.M}>
+			<Stack direction={Direction.Horizontal} classes="gap-2.5 sm:gap-3.5">
 				<Button href="/">
 					<span slot="text">Home</span>
 				</Button>
@@ -78,10 +81,12 @@
 	</div>
 </header>
 
-<div class="h-[150px] md:h-[200px] lg:h-64 xl:h-72" />
+<Blocker bind:this={blocker} on:click={closeMenu} classes="z-20" />
+
+<div class="h-[150px] md:h-[200px] lg:h-52 xl:h-64" />
 
 <div
-	class="fixed right-0 top-0 z-30 h-full overflow-hidden bg-white transition-all duration-500 {open
+	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-white transition-all duration-500 {open
 		? 'w-[320px] lg:w-[500px]'
 		: 'w-0'}"
 >
@@ -156,12 +161,5 @@
 		</div>
 	</div>
 </div>
-
-<Blocker
-	{open}
-	onClick={() => {
-		open = false;
-	}}
-/>
 
 <svelte:window on:scroll={() => onScroll()} />

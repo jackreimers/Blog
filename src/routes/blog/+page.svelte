@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Tag } from '$lib/common/types';
-	import { Direction, Size } from '$lib/common/enums';
+	import { Direction } from '$lib/common/enums';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { getDateString } from '$lib/common/functions';
@@ -10,15 +10,16 @@
 	import Skeleton from '$lib/components/loading/skeleton.svelte';
 	import Error from '$lib/components/loading/error.svelte';
 	import Card from '$lib/components/buttons/card.svelte';
-	import Dropdown from '$lib/components/clickable/dropdown.svelte';
-	import DropdownItem from '$lib/components/clickable/dropdown-item.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import Stack from '$lib/components/layout/stack.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import GradientText from '$lib/components/text/gradient-text.svelte';
+	import Modal from '$lib/components/interactivity/modal.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
+
+	let modal: Modal;
 
 	function handleSortClicked() {
 		data.filters.newest = !data.filters.newest;
@@ -32,6 +33,7 @@
 			data.filters.tags.active = tag;
 		}
 
+		modal.set(false);
 		updateQuery();
 	}
 
@@ -64,6 +66,20 @@
 	<title>Jack Reimers | Blog</title>
 </svelte:head>
 
+<Modal bind:this={modal}>
+	{#await data.filters.tags.all}
+		<p>Loading</p>
+	{:then tags}
+		<Stack direction={Direction.Vertical} classes="gap-2.5 sm:gap-3.5">
+			{#each tags as tag}
+				<Button on:click={() => handleTagClicked(tag)} classes="text-left">
+					<span slot="text" class="font-medium">{tag.name}</span>
+				</Button>
+			{/each}
+		</Stack>
+	{/await}
+</Modal>
+
 <PageHeader>
 	<PageTitle slot="title">Blog Posts</PageTitle>
 	<div
@@ -80,14 +96,14 @@
 				<p>0 Posts</p>
 			</Skeleton>
 		{:then posts}
-			<p class="font-semibold" in:fade>
+			<p in:fade class="font-semibold">
 				{posts.length.toString()}
 				{posts.length === 1 ? 'Post' : 'Posts'}
 			</p>
 		{/await}
 	</div>
-	<Stack slot="actions" direction={Direction.Horizontal} size={Size.M}>
-		<Button onClick={handleSortClicked}>
+	<Stack slot="actions" direction={Direction.Horizontal} classes="gap-2.5 sm:gap-3.5">
+		<Button on:click={handleSortClicked}>
 			<span slot="text">Date</span>
 			<span
 				slot="icon"
@@ -96,15 +112,15 @@
 				<Icon icon="arrow_right_alt" />
 			</span>
 		</Button>
-		<Button onClick={() => {}}>
+		<Button on:click={() => modal.set(true)}>
 			<span slot="text">Tags</span>
 			<span slot="icon">
-				<Icon icon="filter_list" />
+				<Icon icon="sort" />
 			</span>
 		</Button>
-		{#if data.filters.tags.active || !data.filters.newest}
+		{#if data.filters.tags.active}
 			<Button href="/blog">
-				<span slot="text" class="font-normal">Clear Filters</span>
+				<span slot="text" class="font-normal">Clear Filter</span>
 				<GradientText slot="icon" classes="from-red-600 to-red-800">
 					<Icon icon="close" />
 				</GradientText>
@@ -119,14 +135,14 @@
 {:then data}
 	{#if data.length > 0}
 		<div in:fade>
-			<Stack direction={Direction.Vertical} size={Size.L}>
+			<Stack direction={Direction.Vertical} classes="gap-2.5 sm:gap-3.5">
 				{#each data as post}
 					<Card href="/blog/{post.slug}" arrow={false}>
-						<Stack direction={Direction.Vertical} size={Size.L}>
-							<Stack direction={Direction.Vertical} size={Size.XXS}>
+						<Stack direction={Direction.Vertical} classes="gap-2.5 sm:gap-3.5">
+							<div>
 								<p class="font-bold sm:text-2xl">{post.title}</p>
 								<p class="text-secondary">{getDateString(post.date)}</p>
-							</Stack>
+							</div>
 							<p>{getSentences(post.intro, 2)}</p>
 						</Stack>
 					</Card>

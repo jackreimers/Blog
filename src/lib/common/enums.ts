@@ -3,15 +3,6 @@ export const enum Direction {
 	Vertical
 }
 
-export const enum Size {
-	XXS,
-	XS,
-	S,
-	M,
-	L,
-	XL
-}
-
 export const enum Typography {
 	H1,
 	H2,

@@ -1,4 +1,4 @@
-import { getTags, mapTag, getBlogPosts } from '$lib/common/functions';
+import { getTags, getBlogPosts } from '$lib/common/functions';
 
 export const prerender = false;
 
@@ -11,8 +11,8 @@ export async function load({ url, fetch }) {
 		filters: {
 			newest: newest,
 			tags: {
-				all: getTags(fetch),
-				active: mapTag(fetch, activeTag)
+				active: activeTag,
+				all: getTags(fetch)
 			}
 		},
 		posts: getBlogPosts(fetch, newest, activeTag)

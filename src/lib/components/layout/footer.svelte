@@ -1,13 +1,13 @@
 <script>
-	import { Direction, Size } from '$lib/common/enums.ts';
+	import { Direction } from '$lib/common/enums.ts';
 	import { Mail, Linkedin, Github } from 'lucide-svelte';
 	import Stack from '$lib/components/layout/stack.svelte';
 	import Button from '$lib/components/buttons/button-round.svelte';
 </script>
 
-<footer class="mx-auto mt-16 md:mt-32">
-	<Stack direction={Direction.Vertical} size={Size.M}>
-		<Stack direction={Direction.Horizontal} size={Size.M}>
+<footer class="mx-auto mt-16 md:mt-24">
+	<Stack direction={Direction.Vertical} classes="gap-2.5 sm:gap-3.5">
+		<Stack direction={Direction.Horizontal} classes="gap-2.5 sm:gap-3.5">
 			<Button href="mailto:me@jackreimers.dev">
 				<Mail />
 			</Button>
