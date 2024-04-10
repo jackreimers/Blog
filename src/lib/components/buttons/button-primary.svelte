@@ -16,7 +16,7 @@
 	<a
 		{href}
 		{target}
-		class="inline-flex items-center rounded border-2 border-transparent bg-white shadow transition-colors duration-200 hover:border-gray-700 {classes} {$$slots.text
+		class="inline-flex items-center rounded border-2 border-transparent bg-white shadow transition-colors duration-200 hover:border-gray-500 {classes} {$$slots.text
 			? 'px-3 py-2 sm:px-4 sm:py-2.5'
 			: 'p-1.5 sm:p-2.5'}"
 	>
@@ -32,7 +32,7 @@
 {:else}
 	<button
 		on:click={handleClick}
-		class="inline-flex items-center rounded border-2 border-transparent bg-white shadow transition-colors duration-200 hover:border-gray-700 {classes} {$$slots.text
+		class="inline-flex items-center rounded border-2 border-transparent bg-white shadow transition-colors duration-200 hover:border-gray-500 {classes} {$$slots.text
 			? 'px-3 py-2 sm:px-4 sm:py-2.5'
 			: 'p-1.5 sm:p-2.5'}"
 	>
