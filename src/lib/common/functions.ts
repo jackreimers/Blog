@@ -3,6 +3,7 @@ import type { BlogPost, Tag } from '$lib/common/types';
 
 const metadataPattern = /^---([\s\S]*?)---/;
 const arrayPattern = /^\[.*]$/;
+
 export function getDateString(date: Date): string {
 	return `
 		${date.getDate()}
