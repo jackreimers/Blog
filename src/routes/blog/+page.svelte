@@ -133,8 +133,8 @@
 		<Spinner />
 	</div>
 {:then data}
-	{#if data.length > 0}
-		<div in:fade>
+	<div in:fade>
+		{#if data.length > 0}
 			<Stack direction={Direction.Vertical} classes="gap-2.5 sm:gap-3.5">
 				{#each data as post}
 					<Card href="/blog/{post.slug}" arrow={false}>
@@ -148,8 +148,8 @@
 					</Card>
 				{/each}
 			</Stack>
-		</div>
-	{:else}
-		<Error icon="quick_reference_all" message="No posts found." />
-	{/if}
+		{:else}
+			<Error icon="quick_reference_all" message="No posts found." />
+		{/if}
+	</div>
 {/await}

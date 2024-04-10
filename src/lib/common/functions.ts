@@ -52,7 +52,7 @@ export async function getBlogPosts(
 	}
 
 	//Debugging purposes only
-	//await new Promise((resolve) => setTimeout(resolve, 3000));
+	await new Promise((resolve) => setTimeout(resolve, 500));
 	return posts;
 }
 

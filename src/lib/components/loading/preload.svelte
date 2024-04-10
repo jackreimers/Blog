@@ -5,7 +5,10 @@
 	export let src: string;
 	export let classes: string = '';
 
-	function preload(src: string): Promise<void> {
+	async function preload(src: string): Promise<void> {
+		//Debugging purposes only
+		await new Promise((resolve) => setTimeout(resolve, 500));
+
 		return new Promise<void>((resolve) => {
 			const image = new Image();
 			image.onload = () => resolve();
