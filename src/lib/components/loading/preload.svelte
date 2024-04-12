@@ -13,13 +13,10 @@
 		}
 	}
 
-	async function handlePreload(src: string): Promise<void> {
-		//Debugging purposes only
-		//await new Promise((resolve) => setTimeout(resolve, 500));
-
-		return new Promise<void>((resolve) => {
-			const image = new Image();
-			image.onload = () => resolve();
+	function handlePreload(src: string) {
+		return new Promise(function (resolve) {
+			let image = new Image();
+			image.onload = resolve;
 			image.src = src;
 		});
 	}
