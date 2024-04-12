@@ -45,7 +45,7 @@
 		}
 
 		if (data.filters.tags.active) {
-			query.append('tag', data.filters.tags.active.slug);
+			query.append('tag', data.filters.tags.active);
 		}
 
 		goto('/blog?' + query, { replaceState: true, invalidateAll: false });

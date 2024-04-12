@@ -23,11 +23,7 @@
 		<SvelteMarkdown source={data.about} />
 	</div>
 	<Preload
-		src={[
-			'/images/headshot-transparent.png',
-			'/images/brisbane-river.jpg',
-			'/images/brisbane.jpg'
-		]}
+		src={['/images/headshot-transparent.png', '/images/melbourne.jpg', '/images/brisbane.jpg']}
 	>
 		<div
 			class="grid grid-cols-2 grid-rows-3 gap-2.5 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-3.5"
@@ -42,13 +38,13 @@
 				/>
 			</div>
 			<div
-				class="h-full overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane-river.jpg')] bg-cover text-white shadow"
+				class="h-full overflow-hidden rounded bg-gray-100 bg-[url('/images/melbourne.jpg')] bg-cover text-white shadow"
 			>
 				<div
 					class="flex h-full flex-col items-center justify-center gap-1.5 p-4 backdrop-blur-[2px] backdrop-brightness-75 backdrop-filter"
 				>
 					<Icon icon="location_on" weight={700} classes="text-4xl sm:text-6xl" />
-					<p class="font-semibold">Brisbane</p>
+					<p class="font-semibold">Melbourne</p>
 				</div>
 			</div>
 			<div
