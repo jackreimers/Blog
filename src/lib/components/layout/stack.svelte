@@ -6,7 +6,7 @@
 </script>
 
 <span
-	class="flex flex-wrap {direction === Direction.Horizontal ? 'flex-wrap' : 'flex-col'}
+	class="flex {direction === Direction.Horizontal ? '' : 'flex-col'}
 		{classes}"
 >
 	<slot />

@@ -17,7 +17,7 @@ export async function getTags(fetch: any): Promise<Tag[]> {
 }
 
 export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
-	const response = await fetch(`/posts/${slug}.md`);
+	const response = await fetch(`/data/posts/${slug}.md`);
 	const data = await response.text();
 
 	return parseBlogPost(fetch, data);
@@ -29,10 +29,10 @@ export async function getBlogPosts(
 	tagFilter: string | null
 ): Promise<BlogPost[]> {
 	//The directory file MUST be ordered chronologically
-	const directoryResponse = await fetch('/posts/directory.json');
+	const directoryResponse = await fetch('/data/directory.json');
 	const directoryData = await directoryResponse.json();
 
-	let fileNames = directoryData.files;
+	let fileNames = directoryData.posts;
 
 	if (!newest) {
 		fileNames.reverse();
@@ -42,7 +42,7 @@ export async function getBlogPosts(
 
 	//TODO: Add pagination and only fetch the posts needed
 	for (let i = 0; i < fileNames.length; i++) {
-		const postResponse = await fetch(`/posts/${fileNames[i]}.md`);
+		const postResponse = await fetch(`/data/posts/${fileNames[i]}.md`);
 		const postData = await postResponse.text();
 		const post = await parseBlogPost(fetch, postData);
 
@@ -52,7 +52,7 @@ export async function getBlogPosts(
 	}
 
 	//Debugging purposes only
-	await new Promise((resolve) => setTimeout(resolve, 500));
+	//await new Promise((resolve) => setTimeout(resolve, 500));
 	return posts;
 }
 

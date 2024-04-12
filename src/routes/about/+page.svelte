@@ -3,8 +3,12 @@
 	import Stack from '$lib/components/layout/stack.svelte';
 	import PageHeader from '$lib/components/layout/header-page.svelte';
 	import PageTitle from '$lib/components/layout/header-title.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
 	import Preload from '$lib/components/loading/preload.svelte';
+	import SvelteMarkdown from 'svelte-markdown';
+	import Icon from '$lib/components/text/icon.svelte';
+
+	/** @type {import('./$types').PageData} */
+	export let data: any;
 </script>
 
 <svelte:head>
@@ -14,41 +18,29 @@
 <PageHeader>
 	<PageTitle slot="title">About</PageTitle>
 </PageHeader>
-<Stack direction={Direction.Vertical} classes="gap-7 sm:gap-9">
-	<div>
-		<p class="mb-4">
-			My name is <span class="font-semibold">Jack Reimers</span> and I am currently living and
-			working in Brisbane, Australia.
-		</p>
-		<p class="mb-4">
-			I'm passionate about all things web and video game development and specialise in full
-			stack .NET development with a focus on web-based technologies such as
-			<span class="font-semibold">ASP.NET Core</span>,
-			<span class="font-semibold">EF Core</span> and
-			<span class="font-semibold">Blazor</span>.
-		</p>
-		<p>
-			I also have extensive professional experience working with
-			<span class="font-semibold">Artifical Intelligence</span>
-			and building custom AI solutions.
-		</p>
+<Stack direction={Direction.Vertical} classes="gap-3 sm:gap-5">
+	<div class="markdown">
+		<SvelteMarkdown source={data.about} />
 	</div>
-	<div
-		class="grid grid-cols-2 grid-rows-3 gap-2.5 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-3.5"
+	<Preload
+		src={[
+			'/images/headshot-transparent.png',
+			'/images/brisbane-river.jpg',
+			'/images/brisbane.jpg'
+		]}
 	>
-		<Preload
-			src="/images/headshot-transparent.png"
-			classes="col-start-1 col-end-3 row-start-1 row-end-3 "
+		<div
+			class="grid grid-cols-2 grid-rows-3 gap-2.5 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-3.5"
 		>
-			<div class="flex justify-center rounded bg-white shadow">
+			<div
+				class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-white shadow"
+			>
 				<img
 					src="/images/headshot-transparent.png"
 					alt="Professional headshot of Jack Reimers"
 					class="mx-auto h-[250px] sm:h-[300px]"
 				/>
 			</div>
-		</Preload>
-		<Preload src="/images/brisbane-river.jpg">
 			<div
 				class="h-full overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane-river.jpg')] bg-cover text-white shadow"
 			>
@@ -59,8 +51,6 @@
 					<p class="font-semibold">Brisbane</p>
 				</div>
 			</div>
-		</Preload>
-		<Preload src="/images/brisbane.jpg">
 			<div
 				class="block h-full overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane.jpg')] bg-cover text-white shadow"
 			>
@@ -71,6 +61,6 @@
 					<p class="font-semibold">SSW</p>
 				</div>
 			</div>
-		</Preload>
-	</div>
+		</div>
+	</Preload>
 </Stack>
