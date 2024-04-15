@@ -5,8 +5,8 @@
 	import Button from '$lib/components/buttons/button-round.svelte';
 </script>
 
-<footer class="mx-auto mt-16 md:mt-24">
-	<Stack direction={Direction.Vertical} classes="gap-2.5 sm:gap-3.5">
+<footer class="mx-auto mt-14">
+	<Stack direction={Direction.Vertical} classes="mb-2.5 gap-2.5 sm:mb-3 sm:gap-3.5">
 		<Stack direction={Direction.Horizontal} classes="gap-2.5 sm:gap-3.5">
 			<Button href="mailto:me@jackreimers.dev">
 				<Mail />
@@ -21,6 +21,5 @@
 		<p class="text-center font-semibold">
 			Copyright © {new Date().getFullYear()}
 		</p>
-		<span />
 	</Stack>
 </footer>

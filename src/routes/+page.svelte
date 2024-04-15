@@ -9,11 +9,11 @@
 	<title>Jack Reimers</title>
 </svelte:head>
 
-<Stack direction={Direction.Vertical} classes="mb-8 gap-1.5 sm:mb-10 sm:gap-2">
+<Stack direction={Direction.Vertical} classes="mb-8 gap-1.5 sm:mb-9 sm:gap-2">
 	<p class="text-secondary text-sm md:text-base">Hi, my name is</p>
 	<GradientText
 		typography={Typography.H1}
-		classes="text-4xl font-bold min-[450px]:text-6xl md:text-7xl xl:text-8xl"
+		classes="text-5xl font-bold sm:text-6xl md:text-7xl xl:text-8xl"
 	>
 		Jack Reimers
 	</GradientText>

@@ -14,7 +14,7 @@
 	</span>
 	{#if arrow}
 		<span
-			class="text-tertiary group-hover:text-primary mr-3 flex items-center transition-all duration-200 group-hover:mr-1.5"
+			class="mr-3 flex items-center text-gray-400 transition-all duration-200 group-hover:mr-1.5 group-hover:text-gray-700"
 		>
 			<MoveRight />
 		</span>

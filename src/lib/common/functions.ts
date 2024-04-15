@@ -1,5 +1,5 @@
-import { error } from '@sveltejs/kit';
 import type { BlogPost, Tag } from '$lib/common/types';
+import { error } from '@sveltejs/kit';
 
 const metadataPattern = /^---([\s\S]*?)---/;
 const arrayPattern = /^\[.*]$/;
@@ -11,9 +11,9 @@ export function getDateString(date: Date): string {
 		${date.getFullYear()}`;
 }
 
-export async function getTags(fetch: any): Promise<Tag[]> {
-	const response = await fetch('/data/tags.json');
-	return await response.json();
+export async function getAbout(fetch: any): Promise<string> {
+	const response = await fetch('/data/about/about.md');
+	return await response.text();
 }
 
 export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
@@ -52,8 +52,13 @@ export async function getBlogPosts(
 	}
 
 	//Debugging purposes only
-	//await new Promise((resolve) => setTimeout(resolve, 500));
+	await new Promise((resolve) => setTimeout(resolve, 500));
 	return posts;
+}
+
+export async function getTags(fetch: any): Promise<Tag[]> {
+	const response = await fetch('/data/tags.json');
+	return await response.json();
 }
 
 async function parseTags(fetch: any, data: string[]): Promise<Tag[]> {

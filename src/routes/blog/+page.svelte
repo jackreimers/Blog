@@ -30,7 +30,7 @@
 		if (data.filters.tags.active === tag) {
 			data.filters.tags.active = null;
 		} else {
-			data.filters.tags.active = tag;
+			data.filters.tags.active = tag.slug;
 		}
 
 		modal.set(false);
@@ -82,14 +82,11 @@
 
 <PageHeader>
 	<PageTitle slot="title">Blog Posts</PageTitle>
-	<div
-		slot="info"
-		class="flex items-center gap-2 text-sm font-medium leading-none sm:gap-2.5 sm:text-base"
-	>
+	<div slot="info" class="flex items-center text-sm font-medium leading-none sm:text-base">
 		<Icon
 			icon="description"
 			weight={400}
-			classes="rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:p-1.5"
+			classes="mr-2.5 rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:mr-3 sm:p-1.5"
 		/>
 		{#await data.posts}
 			<Skeleton>
@@ -129,16 +126,16 @@
 	</Stack>
 </PageHeader>
 {#await data.posts}
-	<div class="flex justify-center pt-8">
+	<div class="flex justify-center pt-8 sm:pt-9">
 		<Spinner />
 	</div>
 {:then data}
 	<div in:fade>
 		{#if data.length > 0}
-			<Stack direction={Direction.Vertical} classes="gap-2.5 sm:gap-3.5">
+			<Stack direction={Direction.Vertical} classes="gap-3 sm:gap-4">
 				{#each data as post}
 					<Card href="/blog/{post.slug}" arrow={false}>
-						<Stack direction={Direction.Vertical} classes="gap-2.5 sm:gap-3.5">
+						<Stack direction={Direction.Vertical} classes="gap-3 sm:gap-4">
 							<div>
 								<p class="font-bold sm:text-2xl">{post.title}</p>
 								<p class="text-secondary">{getDateString(post.date)}</p>
