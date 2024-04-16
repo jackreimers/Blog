@@ -134,7 +134,7 @@
 						<div class="flex flex-col gap-3 sm:gap-4">
 							<div>
 								<p class="font-bold sm:text-2xl">{post.title}</p>
-								<p class="text-secondary">{getDateString(post.date)}</p>
+								<p class="text-gray-500">{getDateString(post.date)}</p>
 							</div>
 							<p>{getSentences(post.intro, 2)}</p>
 						</div>

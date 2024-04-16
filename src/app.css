@@ -43,17 +43,3 @@
         @apply mb-5 border border-gray-500;
     }
 }
-
-@layer components {    
-    .text-primary {
-        @apply text-gray-700;
-    }
-    
-    .text-secondary {
-        @apply text-gray-500;
-    }
-    
-    .text-tertiary {
-        @apply text-gray-400;
-    }
-}
