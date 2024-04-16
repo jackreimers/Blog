@@ -28,7 +28,7 @@
 		if (data.filters.tags.active === tag) {
 			data.filters.tags.active = null;
 		} else {
-			data.filters.tags.active = tag.slug;
+			data.filters.tags.active = tag;
 		}
 
 		modal.close();
@@ -43,7 +43,7 @@
 		}
 
 		if (data.filters.tags.active) {
-			query.append('tag', data.filters.tags.active);
+			query.append('tag', data.filters.tags.active.slug);
 		}
 
 		goto('/blog?' + query, { replaceState: true, invalidateAll: false });
