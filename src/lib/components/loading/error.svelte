@@ -5,11 +5,11 @@
 	export let message: string = 'Error message goes here...';
 </script>
 
-<div class="flex items-center gap-4 sm:gap-5">
+<div class="flex items-center gap-2.5 sm:gap-3.5">
 	<div>
-		<Icon {icon} classes="text-7xl text-gray-300 sm:text-8xl lg:text-9xl" />
+		<Icon {icon} classes="text-5xl text-gray-300 md:text-7xl" />
 	</div>
 	<div>
-		<p class="text-3xl font-semibold text-gray-300 sm:text-4xl lg:text-5xl">{message}</p>
+		<p class="text-2xl font-semibold text-gray-300 md:text-3xl">{message}</p>
 	</div>
 </div>
