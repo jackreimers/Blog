@@ -1,13 +1,5 @@
 [
   {
-    "name": "C#",
-    "slug": "csharp"
-  },
-  {
-    "name": ".NET",
-    "slug": "dotnet"
-  },
-  {
     "name": "JavaScript",
     "slug": "javascript"
   },
@@ -16,11 +8,11 @@
     "slug": "typescript"
   },
   {
-    "name": "Svelte",
-    "slug": "svelte"
+    "name": "Node.js",
+    "slug": "nodejs"
   },
   {
-    "name": "Godot",
-    "slug": "godot"
+    "name": "Svelte",
+    "slug": "svelte"
   }
 ]
