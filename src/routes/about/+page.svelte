@@ -43,7 +43,7 @@
 			<img
 				src="/images/headshot-transparent.png"
 				alt="Professional headshot of Jack Reimers"
-				class="mx-auto h-[250px] sm:h-[300px]"
+				class="mx-auto h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]"
 			/>
 		</div>
 	</Preload>
