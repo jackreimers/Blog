@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import Navigation from '$lib/components/layout/mobile-navigation.svelte';
+	import Navigation from '$lib/components/layout/navigation.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 

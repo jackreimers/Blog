@@ -47,7 +47,11 @@
 			/>
 		</div>
 	</Preload>
-	<div class="markdown flex-1">
-		<SvelteMarkdown source={data.about} />
+	<div class="flex-1">
+		<a href="#profile" />
+		<div class="markdown flex-1">
+			<SvelteMarkdown source={data.about} />
+		</div>
+		<a href="#skills" />
 	</div>
 </div>

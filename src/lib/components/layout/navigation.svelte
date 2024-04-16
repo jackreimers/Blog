@@ -5,6 +5,7 @@
 	import Blocker from '$lib/components/interactivity/blocker.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
+	//TODO: Not sure this is needed at this stage
 	const dispatch = createEventDispatcher();
 
 	let blocker: Blocker;
@@ -77,7 +78,6 @@
 					/>
 					<span class="px-3.5 py-2">Home</span>
 				</button>
-
 				<button
 					on:click={() => {
 						navigate('/blog');
@@ -90,20 +90,6 @@
 					/>
 					<span class="px-3.5 py-2">Blog</span>
 				</button>
-
-				<button
-					on:click={() => {
-						navigate('/projects');
-					}}
-					class="group flex text-left font-semibold sm:text-2xl"
-				>
-					<span
-						class:opacity-100={$page.url.pathname.startsWith('/projects')}
-						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-					/>
-					<span class="px-3.5 py-2">Projects</span>
-				</button>
-
 				<button
 					on:click={() => {
 						navigate('/about');
