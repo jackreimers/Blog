@@ -1,14 +1,12 @@
 <script lang="ts">
 	import { getDateString } from '$lib/common/functions';
 	import SvelteMarkdown from 'svelte-markdown';
-	import PageHeader from '$lib/components/layout/header-page.svelte';
+	import PageHeader from '$lib/components/layout/page-header.svelte';
+	import PageTitle from '$lib/components/layout/page-header-title.svelte';
+	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
 	import InlineCodeRenderer from '$lib/components/renderers/code-renderer-inline.svelte';
-	import PageTitle from '$lib/components/layout/header-title.svelte';
-	import { Direction } from '$lib/common/enums';
-	import Stack from '$lib/components/layout/stack.svelte';
-	import Button from '$lib/components/buttons/button-primary.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -30,13 +28,13 @@
 			<p class="font-semibold">{getDateString(data.post.date)}</p>
 		</div>
 	</div>
-	<Stack slot="actions" direction={Direction.Horizontal} classes="gap-2.5 sm:gap-3.5">
+	<div slot="actions" class="flex gap-2.5 sm:gap-3.5">
 		{#each data.post.tags as tag}
 			<Button href="/blog?tag={tag.slug}">
 				<p slot="text">{tag.name}</p>
 			</Button>
 		{/each}
-	</Stack>
+	</div>
 </PageHeader>
 <div class="mb-7 flex sm:mb-9">
 	<div class="w-[5px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800" />

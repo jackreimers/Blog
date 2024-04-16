@@ -1,20 +1,18 @@
 <script lang="ts">
 	import type { Tag } from '$lib/common/types';
-	import { Direction } from '$lib/common/enums';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { getDateString } from '$lib/common/functions';
-	import PageHeader from '$lib/components/layout/header-page.svelte';
-	import PageTitle from '$lib/components/layout/header-title.svelte';
+	import PageHeader from '$lib/components/layout/page-header.svelte';
+	import PageTitle from '$lib/components/layout/page-header-title.svelte';
 	import Spinner from '$lib/components/loading/spinner.svelte';
 	import Skeleton from '$lib/components/loading/skeleton.svelte';
-	import Error from '$lib/components/loading/error.svelte';
-	import Card from '$lib/components/buttons/card.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
-	import Stack from '$lib/components/layout/stack.svelte';
-	import Button from '$lib/components/buttons/button-primary.svelte';
-	import GradientText from '$lib/components/text/gradient-text.svelte';
 	import Modal from '$lib/components/interactivity/modal.svelte';
+	import Card from '$lib/components/interactivity/card.svelte';
+	import Button from '$lib/components/buttons/button-primary.svelte';
+	import Icon from '$lib/components/text/icon.svelte';
+	import GradientText from '$lib/components/text/gradient-text.svelte';
+	import Error from '$lib/components/loading/error.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -33,7 +31,7 @@
 			data.filters.tags.active = tag.slug;
 		}
 
-		modal.set(false);
+		modal.close();
 		updateQuery();
 	}
 
@@ -70,23 +68,23 @@
 	{#await data.filters.tags.all}
 		<p>Loading</p>
 	{:then tags}
-		<Stack direction={Direction.Vertical} classes="gap-2.5 sm:gap-3.5">
+		<div class="flex flex-col gap-2.5 sm:gap-3.5">
 			{#each tags as tag}
 				<Button on:click={() => handleTagClicked(tag)} classes="text-left">
 					<span slot="text" class="font-medium">{tag.name}</span>
 				</Button>
 			{/each}
-		</Stack>
+		</div>
 	{/await}
 </Modal>
 
 <PageHeader>
-	<PageTitle slot="title">Blog Posts</PageTitle>
-	<div slot="info" class="flex items-center text-sm font-medium leading-none sm:text-base">
+	<PageTitle slot="title">Blog</PageTitle>
+	<div slot="info" class="flex items-center font-medium leading-none">
 		<Icon
 			icon="description"
 			weight={400}
-			classes="mr-2.5 rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:mr-3 sm:p-1.5"
+			classes="mr-2 rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:mr-2.5 sm:p-1.5"
 		/>
 		{#await data.posts}
 			<Skeleton>
@@ -99,7 +97,7 @@
 			</p>
 		{/await}
 	</div>
-	<Stack slot="actions" direction={Direction.Horizontal} classes="gap-2.5 sm:gap-3.5">
+	<div slot="actions" class="flex gap-2.5 sm:gap-3.5">
 		<Button on:click={handleSortClicked}>
 			<span slot="text">Date</span>
 			<span
@@ -109,11 +107,9 @@
 				<Icon icon="arrow_right_alt" />
 			</span>
 		</Button>
-		<Button on:click={() => modal.set(true)}>
+		<Button on:click={modal.open}>
 			<span slot="text">Tags</span>
-			<span slot="icon">
-				<Icon icon="sort" />
-			</span>
+			<Icon slot="icon" icon="sort" />
 		</Button>
 		{#if data.filters.tags.active}
 			<Button href="/blog">
@@ -123,7 +119,7 @@
 				</GradientText>
 			</Button>
 		{/if}
-	</Stack>
+	</div>
 </PageHeader>
 {#await data.posts}
 	<div class="flex justify-center pt-8 sm:pt-9">
@@ -132,19 +128,19 @@
 {:then data}
 	<div in:fade>
 		{#if data.length > 0}
-			<Stack direction={Direction.Vertical} classes="gap-3 sm:gap-4">
+			<div class="flex flex-col gap-3 sm:gap-4">
 				{#each data as post}
 					<Card href="/blog/{post.slug}" arrow={false}>
-						<Stack direction={Direction.Vertical} classes="gap-3 sm:gap-4">
+						<div class="flex flex-col gap-3 sm:gap-4">
 							<div>
 								<p class="font-bold sm:text-2xl">{post.title}</p>
 								<p class="text-secondary">{getDateString(post.date)}</p>
 							</div>
 							<p>{getSentences(post.intro, 2)}</p>
-						</Stack>
+						</div>
 					</Card>
 				{/each}
-			</Stack>
+			</div>
 		{:else}
 			<Error icon="quick_reference_all" message="No posts found." />
 		{/if}

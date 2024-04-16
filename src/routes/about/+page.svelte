@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Direction } from '$lib/common/enums';
-	import Stack from '$lib/components/layout/stack.svelte';
-	import PageHeader from '$lib/components/layout/header-page.svelte';
-	import PageTitle from '$lib/components/layout/header-title.svelte';
-	import Preload from '$lib/components/loading/preload.svelte';
 	import SvelteMarkdown from 'svelte-markdown';
+	import Preload from '$lib/components/loading/preload.svelte';
+	import PageHeader from '$lib/components/layout/page-header.svelte';
+	import PageTitle from '$lib/components/layout/page-header-title.svelte';
+	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -17,46 +16,38 @@
 
 <PageHeader>
 	<PageTitle slot="title">About</PageTitle>
-</PageHeader>
-<Stack direction={Direction.Vertical} classes="gap-3 sm:gap-5">
-	<div class="markdown">
-		<SvelteMarkdown source={data.about} />
+	<div slot="info" class="flex items-center font-medium leading-none">
+		<Icon
+			icon="location_on"
+			weight={400}
+			classes="mr-2 rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:mr-2.5 sm:p-1.5"
+		/>
+		<p class="font-semibold">Melbourne</p>
 	</div>
-	<Preload
-		src={['/images/headshot-transparent.png', '/images/melbourne.jpg', '/images/brisbane.jpg']}
-	>
+	<div slot="actions" class="flex gap-2.5 sm:gap-3.5">
+		<Button href="#profile">
+			<span slot="text">Profile</span>
+			<Icon slot="icon" icon="person" />
+		</Button>
+		<Button href="#skills">
+			<span slot="text">Skills</span>
+			<Icon slot="icon" icon="school" />
+		</Button>
+	</div>
+</PageHeader>
+<div class="flex flex-col-reverse gap-4 sm:gap-6 md:flex-row md:gap-7">
+	<Preload src="/images/headshot-transparent.png">
 		<div
-			class="grid grid-cols-2 grid-rows-3 gap-2.5 min-[450px]:grid-cols-3 min-[450px]:grid-rows-2 sm:gap-3.5"
+			class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-white shadow"
 		>
-			<div
-				class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-white shadow"
-			>
-				<img
-					src="/images/headshot-transparent.png"
-					alt="Professional headshot of Jack Reimers"
-					class="mx-auto h-[250px] sm:h-[300px]"
-				/>
-			</div>
-			<div
-				class="h-full overflow-hidden rounded bg-gray-100 bg-[url('/images/melbourne.jpg')] bg-cover text-white shadow"
-			>
-				<div
-					class="flex h-full flex-col items-center justify-center gap-1.5 p-4 backdrop-blur-[2px] backdrop-brightness-75 backdrop-filter"
-				>
-					<Icon icon="location_on" weight={700} classes="text-4xl sm:text-6xl" />
-					<p class="font-semibold">Melbourne</p>
-				</div>
-			</div>
-			<div
-				class="block h-full overflow-hidden rounded bg-gray-100 bg-[url('/images/brisbane.jpg')] bg-cover text-white shadow"
-			>
-				<div
-					class="flex h-full flex-col items-center justify-center gap-1.5 p-4 backdrop-blur-[2px] backdrop-brightness-75 backdrop-filter"
-				>
-					<Icon icon="work" weight={700} classes="text-4xl sm:text-6xl" />
-					<p class="font-semibold">SSW</p>
-				</div>
-			</div>
+			<img
+				src="/images/headshot-transparent.png"
+				alt="Professional headshot of Jack Reimers"
+				class="mx-auto h-[250px] sm:h-[300px]"
+			/>
 		</div>
 	</Preload>
-</Stack>
+	<div class="markdown flex-1">
+		<SvelteMarkdown source={data.about} />
+	</div>
+</div>

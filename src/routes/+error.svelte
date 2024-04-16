@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import PageHeader from '$lib/components/layout/header-page.svelte';
-	import PageTitle from '$lib/components/layout/header-title.svelte';
-	import InfoBox from '$lib/components/layout/info-box.svelte';
+	import PageHeader from '$lib/components/layout/page-header.svelte';
+	import PageTitle from '$lib/components/layout/page-header-title.svelte';
+	import InfoBox from '$lib/components/other/info-box.svelte';
 </script>
 
 <svelte:head>

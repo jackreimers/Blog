@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 
+	const dispatch = createEventDispatcher();
+
 	export let href: string | null = null;
 	export let target: string = '';
 	export let classes: string = '';
-
-	const dispatch = createEventDispatcher();
 
 	function handleClick(event: MouseEvent) {
 		dispatch('click', event);
@@ -14,6 +14,7 @@
 
 {#if href}
 	<a
+		on:click={handleClick}
 		{href}
 		{target}
 		class="inline-flex items-center rounded border-2 border-transparent bg-white shadow transition-colors duration-200 hover:border-gray-500 {classes} {$$slots.text

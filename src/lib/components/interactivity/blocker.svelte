@@ -9,27 +9,28 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 
-	//TODO: Fix close animation not working
-	//TODO: Fix blocker not blocking scroll
+	const dispatch = createEventDispatcher();
 
 	export let classes: string = '';
+	let isOpen = false;
 
-	const dispatch = createEventDispatcher();
-	let open = false;
+	export function open() {
+		isOpen = true;
+	}
 
-	export function set(value: boolean) {
-		open = value;
+	export function close() {
+		isOpen = false;
 	}
 
 	function handleClick(event: MouseEvent) {
 		dispatch('click', event);
-		open = false;
+		close();
 	}
 </script>
 
 <button
 	on:click={handleClick}
-	class="fixed left-0 top-0 h-full w-full bg-black bg-opacity-50 {classes} {open
+	class="fixed left-0 top-0 h-full w-full bg-black bg-opacity-50 {classes} {isOpen
 		? ''
 		: 'invisible opacity-0'}"
 />
