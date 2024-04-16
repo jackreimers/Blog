@@ -12,6 +12,7 @@
 	const dispatch = createEventDispatcher();
 
 	export let classes: string = '';
+
 	let isOpen = false;
 
 	export function open() {

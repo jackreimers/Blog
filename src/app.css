@@ -42,4 +42,8 @@
     .markdown table {
         @apply mb-5 border border-gray-500;
     }
+    
+    .markdown code {
+        @apply rounded bg-white px-1.5 py-1;
+    }
 }

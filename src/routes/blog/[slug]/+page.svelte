@@ -6,7 +6,6 @@
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
-	import InlineCodeRenderer from '$lib/components/renderers/code-renderer-inline.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -43,8 +42,5 @@
 	</div>
 </div>
 <div class="markdown box-content">
-	<SvelteMarkdown
-		source={data.post.content}
-		renderers={{ code: BlockCodeRenderer, codespan: InlineCodeRenderer }}
-	/>
+	<SvelteMarkdown source={data.post.content} renderers={{ code: BlockCodeRenderer }} />
 </div>

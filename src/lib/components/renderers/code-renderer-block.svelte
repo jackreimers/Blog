@@ -1,38 +1,43 @@
 <script lang="ts">
+	import { fade } from 'svelte/transition';
 	import Prism from 'prismjs';
+	import Icon from '$lib/components/text/icon.svelte';
 	import 'prismjs/themes/prism.css';
 	import 'prismjs/components/prism-csharp';
 
 	export let lang: string = '';
 	export let text: string = '';
 
+	let copied: boolean = false;
+
 	function copy() {
 		navigator.clipboard.writeText(text);
-	}
+		copied = true;
 
-	function getLanguageFriendlyName(lang: string): string {
-		switch (lang) {
-			case 'csharp':
-				return 'C#';
-			default:
-				return lang;
-		}
+		setTimeout(() => {
+			copied = false;
+		}, 3500);
 	}
 </script>
 
 <div
-	class="relative mb-4 inline-block w-full overflow-hidden overflow-x-auto rounded bg-white p-3 shadow sm:p-4"
+	class="group relative mb-4 inline-block w-full overflow-hidden overflow-x-auto rounded bg-white p-3 shadow sm:p-4"
 >
 	<code class="{lang} whitespace-pre">
 		{@html Prism.highlight(text, Prism.languages[lang], lang)}
 	</code>
-</div>
-
-<!--
-<Button
-		onClick={copy}
-		classes="absolute right-4 top-4 p-2 text-gray-400 hover:bg-gray-200 hover:text-gray-700"
+	<button
+		on:click={copy}
+		class="absolute right-3 top-3 rounded p-1.5 text-gray-400 opacity-0 transition-all duration-200 hover:bg-gray-100 group-hover:opacity-100 sm:right-4 sm:top-4 sm:p-2.5"
 	>
-		<Icon icon="content_copy" weight={400} />
-	</Button>
--->
+		{#if copied}
+			<span in:fade>
+				<Icon icon="check" weight={400} />
+			</span>
+		{:else}
+			<span in:fade>
+				<Icon icon="content_copy" weight={400} />
+			</span>
+		{/if}
+	</button>
+</div>

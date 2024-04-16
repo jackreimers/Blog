@@ -8,10 +8,6 @@
     "slug": "typescript"
   },
   {
-    "name": "Node.js",
-    "slug": "nodejs"
-  },
-  {
     "name": "Svelte",
     "slug": "svelte"
   }

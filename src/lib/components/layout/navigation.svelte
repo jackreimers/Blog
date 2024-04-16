@@ -46,7 +46,7 @@
 <Blocker bind:this={blocker} on:click={close} classes="z-20" />
 
 <div
-	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-white transition-all duration-500 {isOpen
+	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-gray-100 transition-all duration-500 {isOpen
 		? 'w-[320px] lg:w-[500px]'
 		: 'w-0'}"
 >
