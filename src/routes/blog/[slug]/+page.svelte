@@ -18,11 +18,11 @@
 <PageHeader>
 	<PageTitle slot="title">{data.post.title}</PageTitle>
 	<div slot="info">
-		<div class="flex items-center text-sm font-medium leading-none sm:text-base">
+		<div class="flex items-center font-medium leading-none">
 			<Icon
 				icon="calendar_month"
 				weight={400}
-				classes="mr-2.5 rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:mr-3 sm:p-1.5"
+				classes="mr-2 rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:mr-2.5 sm:p-1.5"
 			/>
 			<p class="font-semibold">{getDateString(data.post.date)}</p>
 		</div>
