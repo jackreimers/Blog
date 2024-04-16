@@ -97,7 +97,7 @@
 			</p>
 		{/await}
 	</div>
-	<div slot="actions" class="flex gap-2.5 sm:gap-3.5">
+	<div slot="actions" class="flex flex-wrap gap-2.5 sm:gap-3.5">
 		<Button on:click={handleSortClicked}>
 			<span slot="text">Date</span>
 			<span
@@ -111,14 +111,16 @@
 			<span slot="text">Tags</span>
 			<Icon slot="icon" icon="sort" />
 		</Button>
-		{#if data.filters.tags.active}
-			<Button href="/blog">
-				<span slot="text" class="font-normal">Clear Filter</span>
-				<GradientText slot="icon" classes="from-red-600 to-red-800">
-					<Icon icon="close" />
-				</GradientText>
-			</Button>
-		{/if}
+		{#await data.filters.tags.active then tag}
+			{#if tag}
+				<Button href="/blog">
+					<span slot="text" class="font-normal">{tag.name}</span>
+					<GradientText slot="icon" classes="from-red-600 to-red-800">
+						<Icon icon="close" />
+					</GradientText>
+				</Button>
+			{/if}
+		{/await}
 	</div>
 </PageHeader>
 {#await data.posts}
@@ -142,7 +144,7 @@
 				{/each}
 			</div>
 		{:else}
-			<Error icon="quick_reference_all" message="No posts found." />
+			<Error icon="quick_reference_all" message="Nothing found." />
 		{/if}
 	</div>
 {/await}

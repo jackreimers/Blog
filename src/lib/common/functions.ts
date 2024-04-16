@@ -56,6 +56,13 @@ export async function getBlogPosts(
 	return posts;
 }
 
+export async function getTag(fetch: any, tag: string | null): Promise<Tag | null> {
+	if (tag === null) return null;
+
+	const tags = await getTags(fetch);
+	return tags.find((f) => f.slug === tag) ?? null;
+}
+
 export async function getTags(fetch: any): Promise<Tag[]> {
 	const response = await fetch('/data/tags.json');
 	return await response.json();
