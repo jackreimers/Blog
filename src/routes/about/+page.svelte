@@ -48,10 +48,10 @@
 		</div>
 	</Preload>
 	<div class="flex-1">
-		<a href="#profile" />
+		<a id="profile" />
 		<div class="markdown flex-1">
 			<SvelteMarkdown source={data.about} />
 		</div>
-		<a href="#skills" />
+		<a id="skills" />
 	</div>
 </div>
