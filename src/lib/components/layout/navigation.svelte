@@ -58,7 +58,7 @@
 		>
 			<div class="mb-8 flex">
 				<div class="flex-1" />
-				<button on:click={close} class="rounded p-2 duration-500 hover:bg-gray-100">
+				<button on:click={close} class="mhover:hover:bg-gray-100 rounded p-2 duration-500">
 					<Icon
 						icon="close"
 						classes="bg-gradient-to-b from-red-600 to-red-800 bg-clip-text text-3xl text-transparent sm:text-4xl"
@@ -74,7 +74,7 @@
 				>
 					<span
 						class:opacity-100={$page.url.pathname === '/'}
-						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+						class="group-mhover:hover:opacity-100 h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300"
 					/>
 					<span class="px-3.5 py-2">Home</span>
 				</button>
@@ -86,7 +86,7 @@
 				>
 					<span
 						class:opacity-100={$page.url.pathname.startsWith('/blog')}
-						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+						class="group-mhover:hover:opacity-100 h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300"
 					/>
 					<span class="px-3.5 py-2">Blog</span>
 				</button>
@@ -98,7 +98,7 @@
 				>
 					<span
 						class:opacity-100={$page.url.pathname.startsWith('/about')}
-						class="h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+						class="group-mhover:hover:opacity-100 h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300"
 					/>
 					<span class="px-3.5 py-2">About</span>
 				</button>

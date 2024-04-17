@@ -6,7 +6,7 @@
 <a
 	{href}
 	{target}
-	class="rounded-full border-2 border-transparent bg-white p-3 shadow transition-colors duration-200 hover:border-gray-500 sm:p-4"
+	class="mhover:hover:border-gray-500 rounded-full border-2 border-transparent bg-white p-3 shadow transition-colors duration-200 sm:p-4"
 >
 	<slot />
 </a>

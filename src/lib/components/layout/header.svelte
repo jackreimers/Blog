@@ -38,7 +38,7 @@
 			</div>
 		</div>
 		<div class="flex items-center md:hidden">
-			<button on:click={navigation.open} class="p-2 hover:bg-gray-100">
+			<button on:click={navigation.open} class="mhover:hover:bg-gray-100 p-2">
 				<Icon
 					icon="menu"
 					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent"

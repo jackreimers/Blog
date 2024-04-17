@@ -5,6 +5,9 @@ export default {
 		extend: {
 			transitionProperty: {
 				spacing: 'margin, padding'
+			},
+			screens: {
+				mhover: { raw: '(hover: hover)' }
 			}
 		}
 	},
