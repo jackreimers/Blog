@@ -19,34 +19,36 @@
 
 	let modal: Modal;
 
-	function handleSortClicked() {
+	async function handleSortClicked() {
 		data.filters.newest = !data.filters.newest;
-		updateQuery();
+		await updateQuery();
 	}
 
-	function handleTagClicked(tag: Tag) {
-		if (data.filters.tags.active === tag) {
+	async function handleTagClicked(tag: Tag) {
+		const active = await data.filters.tags.active;
+		if (active === tag) {
 			data.filters.tags.active = null;
 		} else {
 			data.filters.tags.active = tag;
 		}
 
 		modal.close();
-		updateQuery();
+		await updateQuery();
 	}
 
-	function updateQuery() {
+	async function updateQuery() {
+		const active = await data.filters.tags.active;
 		let query = new URLSearchParams();
 
 		if (data.filters.newest == false) {
 			query.append('newest', 'false');
 		}
 
-		if (data.filters.tags.active) {
-			query.append('tag', data.filters.tags.active.slug);
+		if (active) {
+			query.append('tag', active.slug);
 		}
 
-		goto('/blog?' + query, { replaceState: true, invalidateAll: false });
+		await goto('/blog?' + query, { replaceState: true, invalidateAll: false });
 	}
 
 	function getSentences(text: string, number: number) {
