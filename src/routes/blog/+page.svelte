@@ -7,12 +7,12 @@
 	import PageTitle from '$lib/components/layout/page-header-title.svelte';
 	import Spinner from '$lib/components/loading/spinner.svelte';
 	import Skeleton from '$lib/components/loading/skeleton.svelte';
+	import InfoMessage from '$lib/components/loading/info-message.svelte';
 	import Modal from '$lib/components/interactivity/modal.svelte';
 	import Card from '$lib/components/interactivity/card.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import GradientText from '$lib/components/text/gradient-text.svelte';
-	import Error from '$lib/components/loading/error.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -146,7 +146,7 @@
 				{/each}
 			</div>
 		{:else}
-			<Error icon="quick_reference_all" message="Nothing found." />
+			<InfoMessage icon="quick_reference_all" message="Nothing found." />
 		{/if}
 	</div>
 {/await}

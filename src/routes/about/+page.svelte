@@ -25,13 +25,9 @@
 		<p class="font-semibold">Melbourne</p>
 	</div>
 	<div slot="actions" class="flex gap-2.5 sm:gap-3.5">
-		<Button href="#profile">
-			<span slot="text">Profile</span>
-			<Icon slot="icon" icon="person" />
-		</Button>
-		<Button href="#skills">
-			<span slot="text">Skills</span>
-			<Icon slot="icon" icon="school" />
+		<Button on:click={() => {}}>
+			<span slot="text">Resume</span>
+			<Icon slot="icon" icon="download" />
 		</Button>
 	</div>
 </PageHeader>
@@ -48,10 +44,8 @@
 		</div>
 	</Preload>
 	<div class="flex-1">
-		<a id="profile" />
 		<div class="markdown flex-1">
 			<SvelteMarkdown source={data.about} />
 		</div>
-		<a id="skills" />
 	</div>
 </div>
