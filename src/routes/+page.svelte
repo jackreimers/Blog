@@ -1,19 +1,20 @@
 <script lang="ts">
 	import Card from '$lib/components/interactivity/card.svelte';
 	import GradientText from '$lib/components/text/gradient-text.svelte';
+
+	const title = 'Jack Reimers';
+	const description =
+		"I'm a full stack Software Engineer who is passionate about web and video game development.";
 </script>
 
 <svelte:head>
-	<title>Jack Reimers</title>
-	<meta
-		name="description"
-		content="I'm a full stack Software Engineer who is passionate about web and video game development."
-	/>
-	<meta property="og:title" content="Jack Reimers" />
-	<meta
-		property="og:description"
-		content="I'm a full stack Software Engineer who is passionate about web and video game development."
-	/>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content="https://jackreimers.dev" />
+	<meta property="twitter:title" content={title} />
+	<meta property="twitter:description" content={description} />
 </svelte:head>
 
 <div class="mb-8 flex flex-col gap-1.5 sm:mb-9 sm:gap-2">

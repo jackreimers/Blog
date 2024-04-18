@@ -107,6 +107,7 @@ async function parseBlogPost(fetch: any, data: string): Promise<BlogPost> {
 		date: new Date(mappedMetadata['date'] as string),
 		tags: await parseTags(fetch, mappedMetadata['tags'] as string[]),
 		title: mappedMetadata['title'] as string,
+		description: mappedMetadata['description'] as string,
 		slug: mappedMetadata['slug'] as string,
 		intro: intro,
 		content: content

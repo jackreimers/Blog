@@ -13,9 +13,14 @@
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import GradientText from '$lib/components/text/gradient-text.svelte';
+	import { page } from '$app/stores';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
+
+	const title = 'Jack Reimers | Blog';
+	const description =
+		"I'm a full stack Software Engineer who is passionate about web and video game development.";
 
 	let modal: Modal;
 
@@ -64,7 +69,13 @@
 </script>
 
 <svelte:head>
-	<title>Jack Reimers | Blog</title>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content={'https://jackreimers.dev' + $page.url.pathname} />
+	<meta property="twitter:title" content={title} />
+	<meta property="twitter:description" content={description} />
 </svelte:head>
 
 <Modal bind:this={modal}>

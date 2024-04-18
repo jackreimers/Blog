@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { getDateString } from '$lib/common/functions';
 	import SvelteMarkdown from 'svelte-markdown';
 	import PageHeader from '$lib/components/layout/page-header.svelte';
@@ -9,10 +10,19 @@
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
+
+	const title = 'Jack Reimers | ' + data.post.title;
+	const description = data.post.description;
 </script>
 
 <svelte:head>
-	<title>Jack Reimers | {data.post.title}</title>
+	<title>{title}</title>
+	<meta name="description" content={description} />
+	<meta property="og:title" content={title} />
+	<meta property="og:description" content={description} />
+	<meta property="og:url" content={'https://jackreimers.dev' + $page.url.pathname} />
+	<meta property="twitter:title" content={title} />
+	<meta property="twitter:description" content={description} />
 </svelte:head>
 
 <PageHeader>
