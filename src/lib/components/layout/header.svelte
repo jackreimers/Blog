@@ -22,7 +22,12 @@
 	class="fixed z-10 w-full border-b-2 bg-gray-100 px-4 transition-all duration-300 sm:px-6 md:px-7
 		{scrolled ? 'border-gray-200 py-2 sm:py-3 md:py-4' : 'border-transparent py-4 sm:py-6 md:py-7'}"
 >
-	<div class="mx-auto flex">
+	<div class="mx-auto flex items-center">
+		<div>
+			<a href="/" class="inline-block">
+				<img src="/images/logo.svg" alt="Logo" class="h-[2.875rem] md:h-12" />
+			</a>
+		</div>
 		<div class="flex-1" />
 		<div class="hidden md:block">
 			<div class="flex gap-2.5 sm:gap-3.5">
@@ -38,7 +43,7 @@
 			</div>
 		</div>
 		<div class="flex items-center md:hidden">
-			<button on:click={navigation.open} class="mhover:hover:bg-gray-100 p-2">
+			<button on:click={navigation.open} class="p-2 mhover:hover:bg-gray-100">
 				<Icon
 					icon="menu"
 					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent"
