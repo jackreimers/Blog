@@ -48,6 +48,7 @@
 			query.append('tag', active.slug);
 		}
 
+		//TODO: Use specific function for replace state
 		await goto('/blog?' + query, { replaceState: true, invalidateAll: false });
 	}
 

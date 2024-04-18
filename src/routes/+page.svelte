@@ -5,6 +5,15 @@
 
 <svelte:head>
 	<title>Jack Reimers</title>
+	<meta
+		name="description"
+		content="I'm a full stack Software Engineer who is passionate about web and video game development."
+	/>
+	<meta property="og:title" content="Jack Reimers" />
+	<meta
+		property="og:description"
+		content="I'm a full stack Software Engineer who is passionate about web and video game development."
+	/>
 </svelte:head>
 
 <div class="mb-8 flex flex-col gap-1.5 sm:mb-9 sm:gap-2">
