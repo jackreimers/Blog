@@ -2,7 +2,7 @@
 date: 2024-04-18T19:41:00.000+10:00
 tags: [ "svelte", "javascript", "typescript" ]
 title: 7 Interesting Svelte Features
-description: A list of 7 interesting SvelteKit features that I found useful whilst learning the framework.
+description: A list of seven interesting SvelteKit features that I found useful whilst learning the framework.
 slug: svelte-features
 ---
 
