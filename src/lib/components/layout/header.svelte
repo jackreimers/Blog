@@ -19,7 +19,7 @@
 <Navigation bind:this={navigation} />
 
 <header
-	class="fixed z-10 w-full border-b-2 bg-gray-100 px-4 transition-all duration-300 sm:px-6 md:px-7
+	class="fixed z-10 w-full border-b-2 bg-gray-100 px-8 transition-all duration-300
 		{scrolled ? 'border-gray-200 py-2 sm:py-3 md:py-4' : 'border-transparent py-4 sm:py-6 md:py-7'}"
 >
 	<div class="mx-auto flex items-center">

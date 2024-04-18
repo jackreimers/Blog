@@ -12,7 +12,7 @@
 <div class="h-screen">
 	<div class="flex min-h-screen flex-col">
 		<Header />
-		<div class="container mx-auto max-w-3xl flex-1 p-8 sm:px-8 xl:max-w-5xl">
+		<div class="container mx-auto max-w-3xl flex-1 p-8 xl:max-w-5xl">
 			<slot />
 		</div>
 		<Footer />
