@@ -7,8 +7,7 @@ slug: svelte-features
 ---
 
 Having only recently started using SvelteKit I was really impressed with how easy it was to get started and how much I
-enjoyed using it.
-Here are some of the features that I found particularly useful whilst I was learning the framework.
+enjoyed using it. Here are some of the features that I found particularly useful whilst I was learning the framework.
 
 <!--endintro-->
 
@@ -45,7 +44,7 @@ it easy to control how the child content is rendered.
 </Component>
 ```
 
-## Element Binding
+## Element Binding Directive
 
 Getting a reference to an element can be frustrating in some frameworks, but Svelte makes it easy with the `bind:this`
 directive. Once you have the element reference you can access its exported properties and functions directly.
@@ -58,15 +57,29 @@ directive. Once you have the element reference you can access its exported prope
 <Component bind:this={element} />
 ```
 
-## Element Directives
+## Custom Component Directives
 
-## Component Directives
+Svelte allows you to emit custom events that can be subscribed to using the `on:` directive. I
+found this particularly useful when I wanted to trigger an action in a parent component or pass data out of a component.
+
+```svelte
+<script>
+    import { createEventDispatcher } from 'svelte';
+    
+    const dispatch = createEventDispatcher();
+    
+    function handleClick() {
+        dispatch('click', { message: 'Hello from the child component!' });
+    }
+</script>
+
+<button on:click={handleClick}>Trigger</button>
+```
 
 ## Exported Functions
 
 Using the `export` keyword you can export functions from a component that can be invoked from outside the component. I
-found this particularly useful when I wanted to trigger an action or pass data from a parent component into a child
-component.
+found this particularly useful when I wanted to trigger an action in a child component or pass data into a component.
 
 ```svelte
 <!-- component.svelte -->
@@ -87,6 +100,7 @@ component.
     }
 </script>
 
+<button on:click={handleClick}>Trigger</button>
 <Component bind:this={component} />
 ```
 
