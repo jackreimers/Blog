@@ -1,13 +1,13 @@
 ---
-date: 2024-04-18T19:41:00.000+10:00
+date: 2024-04-18T18:48:00.000+10:00
 tags: [ "svelte", "javascript", "typescript" ]
-title: 7 Interesting Svelte Features
-description: A list of seven interesting SvelteKit features that I found useful whilst learning the framework.
+title: 6 Interesting Svelte Features
+description: A list of six interesting SvelteKit features that I found useful whilst learning the framework.
 slug: svelte-features
 ---
 
 Having only recently started using SvelteKit I was really impressed with how easy it was to get started and how much I
-enjoyed using it. Here are some of the features that I found particularly useful whilst I was learning the framework.
+enjoyed using it. Here are six of the features that I found particularly useful whilst I was learning the framework.
 
 <!--endintro-->
 
@@ -39,7 +39,9 @@ it easy to control how the child content is rendered.
 
 <!-- +page.svelte -->
 <Component>
+    <!-- This will be rendered in the header slot -->
     <h1 slot="header">Header</h1>
+    <!-- This will be rendered in the content slot -->
     <p slot="content">Content</p>
 </Component>
 ```
@@ -47,7 +49,7 @@ it easy to control how the child content is rendered.
 ## Element Binding Directive
 
 Getting a reference to an element can be frustrating in some frameworks, but Svelte makes it easy with the `bind:this`
-directive. Once you have the element reference you can access its exported properties and functions directly.
+directive. Once you have the element reference you can access it's exported properties and functions directly.
 
 ```svelte
 <script>
@@ -63,6 +65,7 @@ Svelte allows you to emit custom events that can be subscribed to using the `on:
 found this particularly useful when I wanted to trigger an action in a parent component or pass data out of a component.
 
 ```svelte
+<!-- component.svelte -->
 <script>
     import { createEventDispatcher } from 'svelte';
     
@@ -74,7 +77,13 @@ found this particularly useful when I wanted to trigger an action in a parent co
 </script>
 
 <button on:click={handleClick}>Trigger</button>
+
+<!-- +page.svelte -->
+<Component on:click={e => console.log(e.detail.message)} />
+
 ```
+
+For more information see [the docs](https://svelte.dev/docs/component-directives).
 
 ## Exported Functions
 
@@ -104,6 +113,24 @@ found this particularly useful when I wanted to trigger an action in a child com
 <Component bind:this={component} />
 ```
 
-## Asynchronous Loading
-
 ## Transitions
+
+When using `#await` you can animate the new elements as they are added to the DOM using Svelte's in-built transitions.
+The transitions are applied to the element using the `in:` directive and can be easily customised.
+
+```svelte
+<script>
+    import { fade } from 'svelte/transition';
+    
+    let promise = new Promise(resolve => setTimeout(resolve, 2000));
+</script>
+
+{#await promise}
+    <p>Waiting...</p>
+{:then _}
+    <p in:fade>Loaded!</p>
+{/await}
+
+```
+
+For more information see [the docs](https://svelte.dev/docs/svelte-transition).
