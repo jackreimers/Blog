@@ -38,7 +38,7 @@
 			<p class="font-semibold">{getDateString(data.post.date)}</p>
 		</div>
 	</div>
-	<div slot="actions" class="flex gap-2.5 sm:gap-3.5">
+	<div slot="actions" class="flex flex-wrap gap-2.5 sm:gap-3.5">
 		{#each data.post.tags as tag}
 			<Button href="/blog?tag={tag.slug}">
 				<p slot="text">{tag.name}</p>

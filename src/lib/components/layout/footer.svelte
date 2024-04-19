@@ -3,7 +3,7 @@
 	import Button from '$lib/components/buttons/button-round.svelte';
 </script>
 
-<footer class="mx-auto mt-14">
+<footer class="mx-auto mt-7 sm:mt-9">
 	<div class="mb-2.5 flex flex-col gap-2.5 sm:mb-3.5 sm:gap-3.5">
 		<div class="flex gap-2.5 sm:gap-3.5">
 			<Button href="mailto:me@jackreimers.dev">
