@@ -21,7 +21,6 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={'https://jackreimers.dev' + $page.url.pathname} />
-	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:title" content={title} />
 	<meta property="twitter:description" content={description} />
 </svelte:head>
@@ -44,12 +43,12 @@
 	</div>
 </PageHeader>
 <div class="flex flex-col-reverse gap-4 sm:gap-6 md:flex-row md:gap-7">
-	<Preload src="/images/headshot-transparent.png">
+	<Preload src="/images/headshot.png">
 		<div
 			class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-white shadow"
 		>
 			<img
-				src="/images/headshot-transparent.png"
+				src="/images/headshot.png"
 				alt="Professional headshot of Jack Reimers"
 				class="mx-auto h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]"
 			/>

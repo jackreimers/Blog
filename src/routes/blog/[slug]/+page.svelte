@@ -21,7 +21,6 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={description} />
 	<meta property="og:url" content={'https://jackreimers.dev' + $page.url.pathname} />
-	<meta property="twitter:card" content="summary" />
 	<meta property="twitter:title" content={title} />
 	<meta property="twitter:description" content={description} />
 </svelte:head>
