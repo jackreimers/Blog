@@ -43,12 +43,12 @@
 	</div>
 </PageHeader>
 <div class="flex flex-col-reverse gap-4 sm:gap-6 md:flex-row md:gap-7">
-	<Preload src="/images/headshot.png">
+	<Preload src="/images/about/headshot.png">
 		<div
 			class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-white shadow"
 		>
 			<img
-				src="/images/headshot.png"
+				src="/images/about/headshot.png"
 				alt="Professional headshot of Jack Reimers"
 				class="mx-auto h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]"
 			/>

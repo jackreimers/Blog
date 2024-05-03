@@ -10,7 +10,7 @@
 </script>
 
 <svelte:head>
-	<meta property="og:image" content="https://jackreimers.dev/images/og.png" />
+	<meta property="og:image" content="https://jackreimers.dev/images/other/og.png" />
 	<meta property="twitter:card" content="summary" />
 </svelte:head>
 

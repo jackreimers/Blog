@@ -25,7 +25,11 @@
 	<div class="mx-auto flex items-center">
 		<div>
 			<a href="/" class="inline-block">
-				<img src="/images/logo.svg" alt="Logo" class="inline-block h-[2.875rem] sm:h-12" />
+				<img
+					src="/images/logos/logo.svg"
+					alt="Logo"
+					class="inline-block h-[2.875rem] sm:h-12"
+				/>
 			</a>
 		</div>
 		<div class="flex-1" />
