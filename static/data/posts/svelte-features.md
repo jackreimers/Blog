@@ -7,8 +7,8 @@ slug: svelte-features
 ---
 
 Having only recently started using SvelteKit I was impressed with how easy it was to get started and suprised by how
-much I
-enjoyed using it. Here are six of the features that I found particularly useful whilst I was learning the framework.
+much I enjoyed using it. Here are six of the features that I found particularly useful whilst I was learning the
+framework.
 
 <!--endintro-->
 
@@ -62,8 +62,8 @@ directive. Once you have the element reference you can access its exported prope
 
 ## 4. Custom Component Directives
 
-Svelte allows you to emit custom events that can be subscribed to using the `on:` directive. I
-found this particularly useful when I wanted to trigger an action in a parent component or pass data out of a component.
+Svelte allows you to emit custom events that can be subscribed to using the `on:` directive, making it easy to trigger
+an action in or pass data out of a parent component.
 
 ```svelte
 <!-- component.svelte -->
@@ -88,8 +88,8 @@ For more information see [the docs](https://svelte.dev/docs/component-directives
 
 ## 5. Exported Functions
 
-Using the `export` keyword you can export functions from a component that can be invoked from outside the component. I
-found this particularly useful when I wanted to trigger an action in a child component or pass data into a component.
+Using the `export` keyword you can export functions from a component that can be invoked from outside the component,
+making it very easy to trigger an action on or pass data into a child component.
 
 ```svelte
 <!-- component.svelte -->
