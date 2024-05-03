@@ -1,9 +1,9 @@
 ---
 date: 2024-04-18T18:48:00.000+10:00
 tags: [ "svelte", "javascript", "typescript" ]
-title: 6 Interesting Svelte Features
+title: Six Interesting Svelte Features
 description: A list of six interesting SvelteKit features that I found useful whilst learning the framework.
-slug: svelte-features
+slug: six-interesting-svelte-features
 ---
 
 Having only recently started using SvelteKit I was impressed with how easy it was to get started and suprised by how
