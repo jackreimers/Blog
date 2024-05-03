@@ -6,12 +6,13 @@ description: A list of six interesting SvelteKit features that I found useful wh
 slug: svelte-features
 ---
 
-Having only recently started using SvelteKit I was really impressed with how easy it was to get started and how much I
+Having only recently started using SvelteKit I was impressed with how easy it was to get started and suprised by how
+much I
 enjoyed using it. Here are six of the features that I found particularly useful whilst I was learning the framework.
 
 <!--endintro-->
 
-## Shorthand Properties
+## 1. Shorthand Properties
 
 When passing a property to an element or component you can use the shorthand syntax if the variable name is the same as
 the property name. This makes the code cleaner and easier to read, and saves you having to specify the property name.
@@ -24,7 +25,7 @@ the property name. This makes the code cleaner and easier to read, and saves you
 <a {href}>Link</a>
 ```
 
-## Named Slots
+## 2. Named Slots
 
 Svelte provides the `slot` element which allows you to pass child content to a component. If you want to have multiple
 slots on a component you can give each slot a name and then reference that name when passing content to the slot, making
@@ -46,10 +47,10 @@ it easy to control how the child content is rendered.
 </Component>
 ```
 
-## Element Binding Directive
+## 3. Element Binding Directive
 
 Getting a reference to an element can be frustrating in some frameworks, but Svelte makes it easy with the `bind:this`
-directive. Once you have the element reference you can access it's exported properties and functions directly.
+directive. Once you have the element reference you can access its exported properties and functions directly.
 
 ```svelte
 <script>
@@ -59,7 +60,7 @@ directive. Once you have the element reference you can access it's exported prop
 <Component bind:this={element} />
 ```
 
-## Custom Component Directives
+## 4. Custom Component Directives
 
 Svelte allows you to emit custom events that can be subscribed to using the `on:` directive. I
 found this particularly useful when I wanted to trigger an action in a parent component or pass data out of a component.
@@ -85,7 +86,7 @@ found this particularly useful when I wanted to trigger an action in a parent co
 
 For more information see [the docs](https://svelte.dev/docs/component-directives).
 
-## Exported Functions
+## 5. Exported Functions
 
 Using the `export` keyword you can export functions from a component that can be invoked from outside the component. I
 found this particularly useful when I wanted to trigger an action in a child component or pass data into a component.
@@ -113,7 +114,7 @@ found this particularly useful when I wanted to trigger an action in a child com
 <Component bind:this={component} />
 ```
 
-## Transitions
+## 6. Transitions
 
 When using `#await` you can animate the new elements as they are added to the DOM using Svelte's in-built transitions.
 The transitions are applied to the element using the `in:` directive and can be easily customised.
@@ -134,3 +135,9 @@ The transitions are applied to the element using the `in:` directive and can be 
 ```
 
 For more information see [the docs](https://svelte.dev/docs/svelte-transition).
+
+## Conclusion
+
+SvelteKit is a powerful and fully featured framework with comprehensive documentation and a very active community. This
+list only scratches the surface of all the cool feature packed in it. I would highly recommend
+you [give it a try](https://kit.svelte.dev/docs/creating-a-project) on your next project.
