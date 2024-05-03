@@ -17,7 +17,7 @@ export async function getAbout(fetch: any): Promise<string> {
 }
 
 export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
-	const response = await fetch(`/data/posts/${slug}.md`);
+	const response = await fetch(`/data/blog-posts/${slug}.md`);
 	const data = await response.text();
 
 	return parseBlogPost(fetch, data);
@@ -42,7 +42,7 @@ export async function getBlogPosts(
 
 	//TODO: Add pagination and only fetch the posts needed
 	for (let i = 0; i < fileNames.length; i++) {
-		const postResponse = await fetch(`/data/posts/${fileNames[i]}.md`);
+		const postResponse = await fetch(`/data/blog-posts/${fileNames[i]}.md`);
 		const postData = await postResponse.text();
 		const post = await parseBlogPost(fetch, postData);
 
