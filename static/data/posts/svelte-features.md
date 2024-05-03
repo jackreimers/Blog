@@ -89,7 +89,7 @@ For more information see [the docs](https://svelte.dev/docs/component-directives
 ## 5. Exported Functions
 
 Using the `export` keyword you can export functions from a component that can be invoked from outside the component,
-making it very easy to trigger an action on or pass data into a child component.
+making it easy to trigger an action on or pass data into a child component.
 
 ```svelte
 <!-- component.svelte -->
