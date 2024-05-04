@@ -141,4 +141,5 @@ For more information see [the docs](https://svelte.dev/docs/svelte-transition).
 SvelteKit is a powerful and fully featured framework with comprehensive documentation and a very active community. This
 list only scratches the surface of all the great features built in.
 
-I've personally fallen in love with it and would highly recommend you [give it a try](https://kit.svelte.dev/docs/creating-a-project) on your next project.
+I've personally fallen in love with it and would highly recommend
+you [give it a try](https://kit.svelte.dev/docs/creating-a-project) on your next project.

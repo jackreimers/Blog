@@ -37,13 +37,16 @@
 		<div class="flex-1" />
 		<div class="hidden md:block">
 			<HorizontalStack>
-				<Button active={$page.url.pathname === '/'} href="/">
+				<Button href="/" active={$page.url.pathname === '/'}>
 					<span slot="text">Home</span>
 				</Button>
-				<Button active={$page.url.pathname.startsWith('/blog')} href="/blog">
+				<Button href="/blog" active={$page.url.pathname.startsWith('/blog')}>
 					<span slot="text">Blog</span>
 				</Button>
-				<Button active={$page.url.pathname.startsWith('/about')} href="/about">
+				<Button href="/projects" active={$page.url.pathname.startsWith('/projects')}>
+					<span slot="text">Projects</span>
+				</Button>
+				<Button href="/about" active={$page.url.pathname.startsWith('/about')}>
 					<span slot="text">About</span>
 				</Button>
 			</HorizontalStack>

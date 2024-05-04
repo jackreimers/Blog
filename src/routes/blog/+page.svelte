@@ -65,13 +65,8 @@
 	}
 
 	function getPostSentences(text: string, number: number) {
-		let sentencePattern = /[.!?] [A-Z]/g;
-		let sentences = text.split(sentencePattern);
-		if (sentences.length > number) {
-			number = sentences.length;
-		}
-
-		return sentences.slice(0, number).join('');
+		let sentencePattern = /[.!?]/g;
+		return text.split(sentencePattern, number).join('.') + '.';
 	}
 </script>
 

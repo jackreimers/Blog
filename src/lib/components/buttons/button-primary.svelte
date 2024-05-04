@@ -3,9 +3,9 @@
 
 	const dispatch = createEventDispatcher();
 
-	export let active: boolean = false;
 	export let href: string | null = null;
 	export let target: string = '';
+	export let active: boolean = false;
 	export let classes: string = '';
 
 	function handleClick(event: MouseEvent) {
