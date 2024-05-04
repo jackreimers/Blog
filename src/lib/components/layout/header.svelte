@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import Navigation from '$lib/components/layout/navigation.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
@@ -19,7 +20,7 @@
 <Navigation bind:this={navigation} />
 
 <header
-	class="fixed z-10 w-full border-b-2 bg-gray-50 px-4 transition-all duration-300 sm:px-6 md:px-7
+	class="fixed z-10 w-full border-b-2 bg-gray-50 transition-all duration-300
 		{scrolled ? 'border-gray-200 py-2 sm:py-3 md:py-4' : 'border-transparent py-4 sm:py-6 md:py-7'}"
 >
 	<div class="mx-auto flex max-w-3xl items-center px-4 sm:px-6 md:px-7 xl:max-w-6xl">
@@ -35,23 +36,23 @@
 		<div class="flex-1" />
 		<div class="hidden md:block">
 			<div class="flex gap-2.5 sm:gap-3.5">
-				<Button href="/">
+				<Button active={$page.url.pathname === '/'} href="/">
 					<span slot="text">Home</span>
 				</Button>
-				<Button href="/blog">
+				<Button active={$page.url.pathname.startsWith('/blog')} href="/blog">
 					<span slot="text">Blog</span>
 				</Button>
-				<Button href="/about">
+				<Button active={$page.url.pathname.startsWith('/about')} href="/about">
 					<span slot="text">About</span>
 				</Button>
 			</div>
 		</div>
 		<div class="flex items-center md:hidden">
-			<button on:click={navigation.open} class="p-2 mhover:hover:bg-gray-100">
-				<Icon
-					icon="menu"
-					classes="bg-gradient-to-b from-blue-600 to-blue-900 bg-clip-text text-3xl text-transparent"
-				/>
+			<button
+				on:click={navigation.open}
+				class="rounded p-2 transition-colors duration-200 mhover:hover:bg-gray-200"
+			>
+				<Icon icon="menu" classes="text-3xl text-blue-800" />
 			</button>
 		</div>
 	</div>

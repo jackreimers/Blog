@@ -3,6 +3,7 @@
 
 	const dispatch = createEventDispatcher();
 
+	export let active: boolean = false;
 	export let href: string | null = null;
 	export let target: string = '';
 	export let classes: string = '';
@@ -17,9 +18,10 @@
 		on:click={handleClick}
 		{href}
 		{target}
-		class="group inline-flex items-center rounded bg-gray-200 transition-colors duration-200 mhover:hover:bg-gray-300 {classes} {$$slots.text
-			? 'px-3 py-2 sm:px-4 sm:py-2.5'
-			: 'p-1.5 sm:p-2.5'}"
+		class="group inline-flex items-center rounded transition-colors duration-200
+			{classes}
+			{active ? 'bg-blue-800 text-white' : 'bg-gray-200 mhover:hover:bg-gray-300'} 
+			{$$slots.text ? 'px-3 py-2 sm:px-4 sm:py-2.5' : 'p-1.5 sm:p-2.5'}"
 	>
 		<span
 			class="font-semibold {$$slots.icon
