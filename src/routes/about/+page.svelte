@@ -31,7 +31,7 @@
 		<Icon
 			icon="location_on"
 			weight={400}
-			classes="mr-2 rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:mr-2.5 sm:p-1.5"
+			classes="mr-2 rounded bg-blue-800 p-1 text-white sm:mr-2.5 sm:p-1.5"
 		/>
 		<p class="font-semibold">Melbourne</p>
 	</div>
@@ -45,7 +45,7 @@
 <div class="flex flex-col-reverse gap-4 sm:gap-6 md:flex-row md:gap-7">
 	<Preload src="/images/about/headshot.png">
 		<div
-			class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-white shadow"
+			class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-gray-200"
 		>
 			<img
 				src="/images/about/headshot.png"

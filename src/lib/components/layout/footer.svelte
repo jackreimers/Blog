@@ -7,13 +7,13 @@
 	<div class="mb-2.5 flex flex-col gap-2.5 sm:mb-3.5 sm:gap-3.5">
 		<div class="flex gap-2.5 sm:gap-3.5">
 			<Button href="mailto:me@jackreimers.dev">
-				<Mail />
+				<Mail strokeWidth={1.75} />
 			</Button>
 			<Button href="https://www.linkedin.com/in/jackreimers/" target="_blank">
-				<Linkedin />
+				<Linkedin strokeWidth={1.75} />
 			</Button>
 			<Button href="https://github.com/jackreimers" target="_blank">
-				<Github />
+				<Github strokeWidth={1.75} />
 			</Button>
 		</div>
 		<p class="text-center font-semibold">

@@ -12,7 +12,6 @@
 	import Card from '$lib/components/interactivity/card.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
-	import GradientText from '$lib/components/text/gradient-text.svelte';
 	import { page } from '$app/stores';
 
 	/** @type {import('./$types').PageData} */
@@ -98,7 +97,7 @@
 		<Icon
 			icon="description"
 			weight={400}
-			classes="mr-2 rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:mr-2.5 sm:p-1.5"
+			classes="mr-2 rounded bg-blue-800 p-1 text-white sm:mr-2.5 sm:p-1.5"
 		/>
 		{#await data.posts}
 			<Skeleton>
@@ -129,9 +128,9 @@
 			{#if tag}
 				<Button href="/blog">
 					<span slot="text" class="font-normal">{tag.name}</span>
-					<GradientText slot="icon" classes="from-red-600 to-red-800">
+					<span slot="icon" class="text-red-600">
 						<Icon icon="close" />
-					</GradientText>
+					</span>
 				</Button>
 			{/if}
 		{/await}

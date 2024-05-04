@@ -3,10 +3,6 @@
 	export let target: string = '';
 </script>
 
-<a
-	{href}
-	{target}
-	class="mhover:hover:border-gray-500 rounded-full border-2 border-transparent bg-white p-3 shadow transition-colors duration-200 sm:p-4"
->
+<a {href} {target} class="rounded-full bg-blue-800 p-3 text-white sm:p-4">
 	<slot />
 </a>

@@ -45,11 +45,8 @@
 		{/each}
 	</div>
 </PageHeader>
-<div class="mb-7 flex sm:mb-9">
-	<div class="w-[5px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800" />
-	<div class="flex-1 px-3 py-1 font-medium">
-		<SvelteMarkdown source={data.post.intro} />
-	</div>
+<div class="mb-7 flex font-medium sm:mb-9">
+	<SvelteMarkdown source={data.post.intro} />
 </div>
 <div class="markdown box-content">
 	<SvelteMarkdown source={data.post.content} renderers={{ code: BlockCodeRenderer }} />

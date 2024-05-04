@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Card from '$lib/components/interactivity/card.svelte';
-	import GradientText from '$lib/components/text/gradient-text.svelte';
 
 	const title = 'Jack Reimers';
 	const description =
@@ -19,8 +18,8 @@
 
 <div class="mb-8 flex flex-col gap-1.5 sm:mb-9 sm:gap-2">
 	<p class="text-sm text-gray-500 md:text-base">Hi, my name is</p>
-	<h1 class="text-5xl font-bold sm:text-6xl md:text-7xl xl:text-8xl">
-		<GradientText>Jack Reimers</GradientText>
+	<h1 class="text-5xl font-bold text-blue-800 sm:text-6xl md:text-7xl xl:text-8xl">
+		Jack Reimers
 	</h1>
 	<p class="font-medium md:text-2xl">I'm a full stack Software Engineer.</p>
 	<p class="max-w-prose text-gray-500">
