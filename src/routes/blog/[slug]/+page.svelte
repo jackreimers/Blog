@@ -32,7 +32,7 @@
 			<Icon
 				icon="calendar_month"
 				weight={400}
-				classes="mr-2 rounded bg-gradient-to-br from-blue-600 to-blue-800 p-1 text-white shadow sm:mr-2.5 sm:p-1.5"
+				classes="mr-2 rounded bg-blue-800 p-1 text-white sm:mr-2.5 sm:p-1.5"
 			/>
 			<p class="font-semibold">{getDateString(data.post.date)}</p>
 		</div>
