@@ -17,7 +17,7 @@
 <div class="h-[100dvh]">
 	<div class="flex min-h-screen flex-col">
 		<Header />
-		<div class="container mx-auto max-w-3xl flex-1 p-5 sm:p-6 md:p-7 xl:max-w-6xl">
+		<div class="container mx-auto max-w-6xl flex-1 p-5 sm:p-6 md:p-7">
 			<slot />
 		</div>
 		<Footer />
