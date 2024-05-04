@@ -1,23 +1,25 @@
 <script>
 	import { Mail, Linkedin, Github } from 'lucide-svelte';
+	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
+	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
 	import Button from '$lib/components/buttons/button-round.svelte';
 </script>
 
 <footer class="mx-auto mt-8 sm:mt-9">
-	<div class="mb-2.5 flex flex-col gap-2.5 sm:mb-3.5 sm:gap-3.5">
-		<div class="flex gap-2.5 sm:gap-3.5">
+	<VerticalStack classes="mb-2.5 sm:mb-3.5">
+		<HorizontalStack>
 			<Button href="mailto:me@jackreimers.dev">
-				<Mail strokeWidth={1.75} />
+				<Mail strokeWidth={2} />
 			</Button>
 			<Button href="https://www.linkedin.com/in/jackreimers/" target="_blank">
-				<Linkedin strokeWidth={1.75} />
+				<Linkedin strokeWidth={2} />
 			</Button>
 			<Button href="https://github.com/jackreimers" target="_blank">
-				<Github strokeWidth={1.75} />
+				<Github strokeWidth={2} />
 			</Button>
-		</div>
-		<p class="text-center font-semibold">
+		</HorizontalStack>
+		<p class="text-center font-bold">
 			Copyright © {new Date().getFullYear()}
 		</p>
-	</div>
+	</VerticalStack>
 </footer>

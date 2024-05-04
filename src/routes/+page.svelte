@@ -1,4 +1,5 @@
 <script lang="ts">
+	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
 	import Card from '$lib/components/interactivity/card.svelte';
 
 	const title = 'Jack Reimers';
@@ -26,7 +27,7 @@
 		I'm passionate about web and video game development and specialise in .NET development.
 	</p>
 </div>
-<div class="flex flex-col gap-2.5 sm:gap-3.5">
+<VerticalStack>
 	<Card href="/blog">
 		<h2 class="text-xl font-bold md:text-2xl">Blog</h2>
 		<p class="text-gray-500 md:text-lg">Read my latest posts.</p>
@@ -35,4 +36,4 @@
 		<h2 class="text-xl font-bold md:text-2xl">About</h2>
 		<p class="text-gray-500 md:text-lg">Learn more about me.</p>
 	</Card>
-</div>
+</VerticalStack>

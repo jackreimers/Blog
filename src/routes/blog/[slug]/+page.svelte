@@ -2,10 +2,9 @@
 	import { page } from '$app/stores';
 	import { getDateString } from '$lib/common/functions';
 	import SvelteMarkdown from 'svelte-markdown';
-	import PageHeader from '$lib/components/layout/page-header.svelte';
-	import PageTitle from '$lib/components/layout/page-header-title.svelte';
+	import Header from '$lib/components/layout/headers/header-page.svelte';
+	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
 	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -25,27 +24,16 @@
 	<meta property="twitter:description" content={description} />
 </svelte:head>
 
-<PageHeader>
-	<PageTitle slot="title">{data.post.title}</PageTitle>
-	<div slot="info">
-		<div class="flex items-center font-medium leading-none">
-			<Icon
-				icon="calendar_month"
-				weight={400}
-				classes="mr-2 rounded bg-blue-800 p-1 text-white sm:mr-2.5 sm:p-1.5"
-			/>
-			<p class="font-semibold sm:text-lg">{getDateString(data.post.date)}</p>
-		</div>
-	</div>
-	<div slot="actions" class="flex flex-wrap gap-2.5 sm:gap-3.5">
+<Header title={data.post.title} infoIcon="calendar_month" infoText={getDateString(data.post.date)}>
+	<HorizontalStack>
 		{#each data.post.tags as tag}
 			<Button href="/blog?tag={tag.slug}">
 				<p slot="text">{tag.name}</p>
 			</Button>
 		{/each}
-	</div>
-</PageHeader>
-<div class="font-medium">
+	</HorizontalStack>
+</Header>
+<div class="markdown box-content font-medium">
 	<SvelteMarkdown source={data.post.intro} />
 </div>
 <div class="markdown box-content">

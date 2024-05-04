@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import Navigation from '$lib/components/layout/navigation.svelte';
+	import Navigation from '$lib/components/layout/headers/header-navigation.svelte';
+	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
@@ -35,7 +36,7 @@
 		</div>
 		<div class="flex-1" />
 		<div class="hidden md:block">
-			<div class="flex gap-2.5 sm:gap-3.5">
+			<HorizontalStack>
 				<Button active={$page.url.pathname === '/'} href="/">
 					<span slot="text">Home</span>
 				</Button>
@@ -45,7 +46,7 @@
 				<Button active={$page.url.pathname.startsWith('/about')} href="/about">
 					<span slot="text">About</span>
 				</Button>
-			</div>
+			</HorizontalStack>
 		</div>
 		<div class="flex items-center md:hidden">
 			<button

@@ -1,18 +1,18 @@
 <script lang="ts">
 	import type { Tag } from '$lib/common/types';
+	import { page } from '$app/stores';
 	import { goto } from '$app/navigation';
 	import { fade } from 'svelte/transition';
 	import { getDateString } from '$lib/common/functions';
-	import PageHeader from '$lib/components/layout/page-header.svelte';
-	import PageTitle from '$lib/components/layout/page-header-title.svelte';
-	import Spinner from '$lib/components/loading/spinner.svelte';
-	import Skeleton from '$lib/components/loading/skeleton.svelte';
-	import InfoMessage from '$lib/components/loading/info-message.svelte';
+	import Header from '$lib/components/layout/headers/header-page.svelte';
+	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
+	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
 	import Modal from '$lib/components/interactivity/modal.svelte';
+	import Spinner from '$lib/components/loading/spinner.svelte';
 	import Card from '$lib/components/interactivity/card.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
-	import { page } from '$app/stores';
+	import InfoMessage from '$lib/components/loading/info-message.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -52,11 +52,19 @@
 			query.append('tag', active.slug);
 		}
 
-		//TODO: Use specific function for replace state
+		//TODO: Use svelte specific function for replace state
 		await goto('/blog?' + query, { replaceState: true, invalidateAll: false });
 	}
 
-	function getSentences(text: string, number: number) {
+	async function getPostCount(): Promise<string> {
+		return new Promise(async (resolve) => {
+			const posts = await data.posts;
+			const value = `${posts.length.toString()} ${posts.length === 1 ? ' Post' : ' Posts'}`;
+			resolve(value);
+		});
+	}
+
+	function getPostSentences(text: string, number: number) {
 		let sentencePattern = /[.!?] [A-Z]/g;
 		let sentences = text.split(sentencePattern);
 		if (sentences.length > number) {
@@ -91,26 +99,8 @@
 	{/await}
 </Modal>
 
-<PageHeader>
-	<PageTitle slot="title">Blog</PageTitle>
-	<div slot="info" class="flex items-center font-medium leading-none">
-		<Icon
-			icon="description"
-			weight={400}
-			classes="mr-2 rounded bg-blue-800 p-1 text-white sm:mr-2.5 sm:p-1.5"
-		/>
-		{#await data.posts}
-			<Skeleton>
-				<p class="text-lg">0 Posts</p>
-			</Skeleton>
-		{:then posts}
-			<p in:fade class="font-semibold sm:text-lg">
-				{posts.length.toString()}
-				{posts.length === 1 ? 'Post' : 'Posts'}
-			</p>
-		{/await}
-	</div>
-	<div slot="actions" class="flex flex-wrap gap-2.5 sm:gap-3.5">
+<Header title="Blog" infoIcon="description" infoText={getPostCount()}>
+	<HorizontalStack>
 		<Button on:click={handleSortClicked}>
 			<span slot="text">Date</span>
 			<span
@@ -134,8 +124,8 @@
 				</Button>
 			{/if}
 		{/await}
-	</div>
-</PageHeader>
+	</HorizontalStack>
+</Header>
 {#await data.posts}
 	<div class="flex justify-center pt-8 sm:pt-9">
 		<Spinner />
@@ -143,7 +133,7 @@
 {:then data}
 	<div in:fade>
 		{#if data.length > 0}
-			<div class="flex flex-col gap-3 sm:gap-4">
+			<VerticalStack>
 				{#each data as post}
 					<Card href="/blog/{post.slug}" arrow={false}>
 						<div class="flex flex-col gap-3 sm:gap-4">
@@ -153,11 +143,11 @@
 									{getDateString(post.date)}
 								</p>
 							</div>
-							<p>{getSentences(post.intro, 2)}</p>
+							<p>{getPostSentences(post.intro, 2)}</p>
 						</div>
 					</Card>
 				{/each}
-			</div>
+			</VerticalStack>
 		{:else}
 			<InfoMessage icon="quick_reference_all" message="Nothing found." />
 		{/if}

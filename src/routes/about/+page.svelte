@@ -2,8 +2,8 @@
 	import { page } from '$app/stores';
 	import SvelteMarkdown from 'svelte-markdown';
 	import Preload from '$lib/components/loading/preload.svelte';
-	import PageHeader from '$lib/components/layout/page-header.svelte';
-	import PageTitle from '$lib/components/layout/page-header-title.svelte';
+	import Header from '$lib/components/layout/headers/header-page.svelte';
+	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
@@ -25,24 +25,15 @@
 	<meta property="twitter:description" content={description} />
 </svelte:head>
 
-<PageHeader>
-	<PageTitle slot="title">About</PageTitle>
-	<div slot="info" class="flex items-center font-medium leading-none">
-		<Icon
-			icon="location_on"
-			weight={400}
-			classes="mr-2 rounded bg-blue-800 p-1 text-white sm:mr-2.5 sm:p-1.5"
-		/>
-		<p class="font-semibold sm:text-lg">Melbourne</p>
-	</div>
-	<div slot="actions" class="flex gap-2.5 sm:gap-3.5">
+<Header title="About" infoIcon="location_on" infoText="Melbourne">
+	<HorizontalStack>
 		<Button on:click={() => {}}>
 			<span slot="text">Resume</span>
 			<Icon slot="icon" icon="download" />
 		</Button>
-	</div>
-</PageHeader>
-<div class="flex flex-col-reverse gap-4 sm:gap-5 md:flex-row md:gap-7">
+	</HorizontalStack>
+</Header>
+<div class="flex flex-col-reverse gap-8 sm:gap-9 md:flex-row">
 	<Preload src="/images/about/headshot.png">
 		<div
 			class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-gray-200"

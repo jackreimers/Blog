@@ -2,8 +2,8 @@
 	import '../app.css';
 	import { inject } from '@vercel/analytics';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
-	import Header from '$lib/components/layout/header.svelte';
-	import Footer from '$lib/components/layout/footer.svelte';
+	import Header from '$lib/components/layout/headers/header.svelte';
+	import Footer from '$lib/components/layout/footers/footer.svelte';
 
 	inject();
 	injectSpeedInsights();
