@@ -11,11 +11,6 @@ export function getDateString(date: Date): string {
 		${date.getFullYear()}`;
 }
 
-export async function getAbout(fetch: any): Promise<string> {
-	const response = await fetch('/data/about/about.md');
-	return await response.text();
-}
-
 export async function getBlogPost(fetch: any, slug: string): Promise<BlogPost> {
 	const response = await fetch(`/data/blog-posts/${slug}.md`);
 	const data = await response.text();
@@ -66,6 +61,15 @@ export async function getTag(fetch: any, tag: string | null): Promise<Tag | null
 export async function getTags(fetch: any): Promise<Tag[]> {
 	const response = await fetch('/data/tags.json');
 	return await response.json();
+}
+
+export async function getProjectPost() {}
+
+export async function getProjectPosts() {}
+
+export async function getAbout(fetch: any): Promise<string> {
+	const response = await fetch('/data/about/about.md');
+	return await response.text();
 }
 
 async function parseTags(fetch: any, data: string[]): Promise<Tag[]> {

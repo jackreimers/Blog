@@ -34,7 +34,7 @@
 				weight={400}
 				classes="mr-2 rounded bg-blue-800 p-1 text-white sm:mr-2.5 sm:p-1.5"
 			/>
-			<p class="font-semibold">{getDateString(data.post.date)}</p>
+			<p class="font-semibold sm:text-lg">{getDateString(data.post.date)}</p>
 		</div>
 	</div>
 	<div slot="actions" class="flex flex-wrap gap-2.5 sm:gap-3.5">
@@ -45,7 +45,7 @@
 		{/each}
 	</div>
 </PageHeader>
-<div class="mb-7 flex font-medium sm:mb-9">
+<div class="font-medium">
 	<SvelteMarkdown source={data.post.intro} />
 </div>
 <div class="markdown box-content">

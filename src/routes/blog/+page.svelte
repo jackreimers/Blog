@@ -101,10 +101,10 @@
 		/>
 		{#await data.posts}
 			<Skeleton>
-				<p>0 Posts</p>
+				<p class="text-lg">0 Posts</p>
 			</Skeleton>
 		{:then posts}
-			<p in:fade class="font-semibold">
+			<p in:fade class="font-semibold sm:text-lg">
 				{posts.length.toString()}
 				{posts.length === 1 ? 'Post' : 'Posts'}
 			</p>
@@ -148,8 +148,10 @@
 					<Card href="/blog/{post.slug}" arrow={false}>
 						<div class="flex flex-col gap-3 sm:gap-4">
 							<div>
-								<p class="font-bold sm:text-2xl">{post.title}</p>
-								<p class="text-gray-500">{getDateString(post.date)}</p>
+								<p class="text-xl font-bold md:text-2xl">{post.title}</p>
+								<p class="text-gray-500 md:text-lg">
+									{getDateString(post.date)}
+								</p>
 							</div>
 							<p>{getSentences(post.intro, 2)}</p>
 						</div>

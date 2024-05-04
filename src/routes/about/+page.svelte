@@ -33,7 +33,7 @@
 			weight={400}
 			classes="mr-2 rounded bg-blue-800 p-1 text-white sm:mr-2.5 sm:p-1.5"
 		/>
-		<p class="font-semibold">Melbourne</p>
+		<p class="font-semibold sm:text-lg">Melbourne</p>
 	</div>
 	<div slot="actions" class="flex gap-2.5 sm:gap-3.5">
 		<Button on:click={() => {}}>
@@ -42,7 +42,7 @@
 		</Button>
 	</div>
 </PageHeader>
-<div class="flex flex-col-reverse gap-4 sm:gap-6 md:flex-row md:gap-7">
+<div class="flex flex-col-reverse gap-4 sm:gap-5 md:flex-row md:gap-7">
 	<Preload src="/images/about/headshot.png">
 		<div
 			class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-gray-200"

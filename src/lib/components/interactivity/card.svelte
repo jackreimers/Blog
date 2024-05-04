@@ -7,14 +7,14 @@
 
 <a
 	{href}
-	class="mhover:hover:border-gray-500 group flex rounded border-2 border-transparent bg-white p-4 shadow transition-colors duration-200 sm:p-6 md:p-7"
+	class="group flex rounded border-2 border-transparent bg-white p-4 shadow transition-colors duration-200 sm:p-5 md:p-7 mhover:hover:border-gray-500"
 >
 	<span class="flex-1">
 		<slot />
 	</span>
 	{#if arrow}
 		<span
-			class="mhover:group-hover:mr-1.5 mhover:group-hover:text-gray-700 mr-3 flex items-center text-gray-400 transition-all duration-200"
+			class="mr-3 flex items-center text-gray-400 transition-all duration-200 mhover:group-hover:mr-1.5 mhover:group-hover:text-gray-700"
 		>
 			<MoveRight />
 		</span>

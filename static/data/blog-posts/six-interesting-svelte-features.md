@@ -12,7 +12,7 @@ framework.
 
 <!--endintro-->
 
-## 1. Shorthand Properties
+## Shorthand Properties
 
 When passing a property to an element or component you can use the shorthand syntax if the variable name is the same as
 the property name. This makes the code cleaner and easier to read, and saves you having to specify the property name.
@@ -25,7 +25,7 @@ the property name. This makes the code cleaner and easier to read, and saves you
 <a {href}>Link</a>
 ```
 
-## 2. Named Slots
+## Named Slots
 
 Svelte provides the `slot` element which allows you to pass child content to a component. If you want to have multiple
 slots on a component you can give each slot a name and then reference that name when passing content to the slot, making
@@ -47,7 +47,7 @@ it easy to control how the child content is rendered.
 </Component>
 ```
 
-## 3. Element Binding Directive
+## Element Binding Directive
 
 Getting a reference to an element can be frustrating in some frameworks, but Svelte makes it easy with the `bind:this`
 directive. Once you have the element reference you can access its exported properties and functions directly.
@@ -60,7 +60,7 @@ directive. Once you have the element reference you can access its exported prope
 <Component bind:this={element} />
 ```
 
-## 4. Custom Component Directives
+## Custom Component Directives
 
 Svelte allows you to emit custom events that can be subscribed to using the `on:` directive, making it easy to trigger
 an action in or pass data out of a parent component.
@@ -86,7 +86,7 @@ an action in or pass data out of a parent component.
 
 For more information see [the docs](https://svelte.dev/docs/component-directives).
 
-## 5. Exported Functions
+## Exported Functions
 
 Using the `export` keyword you can export functions from a component that can be invoked from outside the component,
 making it easy to trigger an action on or pass data into a child component.
@@ -114,7 +114,7 @@ making it easy to trigger an action on or pass data into a child component.
 <Component bind:this={component} />
 ```
 
-## 6. Transitions
+## Transitions
 
 When using `#await` you can animate the new elements as they are added to the DOM using Svelte's in-built transitions.
 The transitions are applied to the element using the `in:` directive and can be easily customised.

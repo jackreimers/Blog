@@ -23,7 +23,7 @@
 	class="fixed z-10 w-full border-b-2 bg-gray-50 transition-all duration-300
 		{scrolled ? 'border-gray-200 py-2 sm:py-3 md:py-4' : 'border-transparent py-4 sm:py-6 md:py-7'}"
 >
-	<div class="mx-auto flex max-w-3xl items-center px-4 sm:px-6 md:px-7 xl:max-w-6xl">
+	<div class="mx-auto flex max-w-3xl items-center px-5 sm:px-6 md:px-7 xl:max-w-6xl">
 		<div>
 			<a href="/" class="inline-block">
 				<img
