@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
+	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
 	import Skeleton from '$lib/components/loading/skeleton.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
@@ -8,7 +9,7 @@
 	export let infoText: Promise<string> | string = 'Empty';
 </script>
 
-<div class="mb-8 flex flex-col gap-2.5 border-b-2 border-gray-200 pb-8 sm:mb-9 sm:gap-3.5 sm:pb-9">
+<VerticalStack classes="mb-8 border-b-2 border-gray-200 pb-8 sm:mb-9 sm:pb-9">
 	<h1 class="text-4xl font-bold leading-none sm:text-5xl md:text-6xl">
 		{title}
 	</h1>
@@ -27,4 +28,4 @@
 		{/await}
 	</div>
 	<slot />
-</div>
+</VerticalStack>

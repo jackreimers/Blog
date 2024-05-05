@@ -131,7 +131,7 @@
 			<VerticalStack>
 				{#each data as post}
 					<Card href="/blog/{post.slug}" arrow={false}>
-						<div class="flex flex-col gap-3 sm:gap-4">
+						<VerticalStack>
 							<div>
 								<p class="text-xl font-bold md:text-2xl">{post.title}</p>
 								<p class="text-gray-500 md:text-lg">
@@ -139,7 +139,7 @@
 								</p>
 							</div>
 							<p>{getPostSentences(post.intro, 2)}</p>
-						</div>
+						</VerticalStack>
 					</Card>
 				{/each}
 			</VerticalStack>
