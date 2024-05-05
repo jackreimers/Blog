@@ -11,7 +11,7 @@
 	<title>Jack Reimers | Projects</title>
 </svelte:head>
 
-<Header title="Projects">
+<Header title="Projects" infoIcon="quick_reference_all">
 	<HorizontalStack>
 		<Button on:click={handleSortClicked}>
 			<span slot="text">Date</span>

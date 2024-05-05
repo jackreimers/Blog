@@ -9,10 +9,10 @@
 	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
 	import Modal from '$lib/components/interactivity/modal.svelte';
 	import Spinner from '$lib/components/loading/spinner.svelte';
+	import EmptyMessage from '$lib/components/loading/empty-message.svelte';
 	import Card from '$lib/components/interactivity/card.svelte';
 	import Button from '$lib/components/buttons/button-primary.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
-	import InfoMessage from '$lib/components/loading/info-message.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -94,7 +94,7 @@
 	{/await}
 </Modal>
 
-<Header title="Blog" infoIcon="description" infoText={getPostCount()}>
+<Header title="Blog" infoIcon="quick_reference_all" infoText={getPostCount()}>
 	<HorizontalStack>
 		<Button on:click={handleSortClicked}>
 			<span slot="text">Date</span>
@@ -144,7 +144,7 @@
 				{/each}
 			</VerticalStack>
 		{:else}
-			<InfoMessage icon="quick_reference_all" message="Nothing found." />
+			<EmptyMessage />
 		{/if}
 	</div>
 {/await}
