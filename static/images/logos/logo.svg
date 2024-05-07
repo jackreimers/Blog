@@ -4,10 +4,4 @@
           fill="white"/>
     <circle cx="30.5" cy="71.5" r="8.5" stroke="white" stroke-width="6"/>
     <circle cx="107.5" cy="100.5" r="8.5" stroke="white" stroke-width="6"/>
-    <defs>
-        <linearGradient id="0" x1="0.15" y1="0.15" x2="0.85" y2="0.85">
-            <stop offset="0%" stop-color="#2563eb"/>
-            <stop offset="100%" stop-color="#1e40af"/>
-        </linearGradient>
-    </defs>
 </svg>
