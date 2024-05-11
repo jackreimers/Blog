@@ -32,6 +32,10 @@
 		<h2 class="text-xl font-bold md:text-2xl">Blog</h2>
 		<p class="text-gray-500 md:text-lg">Read my latest posts.</p>
 	</Card>
+	<Card href="/projects">
+		<h2 class="text-xl font-bold md:text-2xl">Projects</h2>
+		<p class="text-gray-500 md:text-lg">See my past projects.</p>
+	</Card>
 	<Card href="/about">
 		<h2 class="text-xl font-bold md:text-2xl">About</h2>
 		<p class="text-gray-500 md:text-lg">Learn more about me.</p>

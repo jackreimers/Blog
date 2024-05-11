@@ -43,6 +43,9 @@
 				<Button href="/blog" active={$page.url.pathname.startsWith('/blog')}>
 					<span slot="text">Blog</span>
 				</Button>
+				<Button href="/projects" active={$page.url.pathname.startsWith('/projects')}>
+					<span slot="text">Projects</span>
+				</Button>
 				<Button href="/about" active={$page.url.pathname.startsWith('/about')}>
 					<span slot="text">About</span>
 				</Button>
