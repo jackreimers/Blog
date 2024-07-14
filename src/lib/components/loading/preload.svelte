@@ -6,9 +6,6 @@
 	export let classes: string = '';
 
 	async function preload() {
-		//Debugging purposes only
-		await new Promise((resolve) => setTimeout(resolve, 500));
-
 		if (src instanceof Array) {
 			await handlePreloadMultiple(src);
 		} else {
@@ -34,7 +31,7 @@
 		<slot />
 	</Skeleton>
 {:then _}
-	<div in:fade class={classes}>
+	<div class={classes}>
 		<slot />
 	</div>
 {/await}

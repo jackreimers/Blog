@@ -1,53 +1,55 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import SvelteMarkdown from 'svelte-markdown';
+	import Head from '$lib/components/seo/head.svelte';
 	import Preload from '$lib/components/loading/preload.svelte';
-	import Header from '$lib/components/layout/headers/header-page.svelte';
 	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
-	import Button from '$lib/components/buttons/button-primary.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
-
-	/** @type {import('./$types').PageData} */
-	export let data: any;
-
-	const title = 'Jack Reimers | About';
-	const description =
-		"I'm a full stack Software Engineer who is passionate about web and video game development.";
+	import Hero from '$lib/components/layout/headers/hero.svelte';
+	import Container from '$lib/components/layout/container.svelte';
+	import Section from '$lib/components/layout/elements/section.svelte';
+	import SocialLinks from '$lib/components/layout/elements/social-links.svelte';
 </script>
 
-<svelte:head>
-	<title>{title}</title>
-	<meta name="description" content={description} />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
-	<meta property="og:url" content={'https://jackreimers.dev' + $page.url.pathname} />
-	<meta property="twitter:title" content={title} />
-	<meta property="twitter:description" content={description} />
-</svelte:head>
+<Head
+	title="Jack Reimers | About"
+	description="I'm a full stack Software Engineer who is passionate about web and video game development."
+/>
 
-<Header title="About" infoIcon="location_on" infoText="Melbourne">
-	<HorizontalStack>
-		<Button on:click={() => {}}>
-			<span slot="text">Resume</span>
-			<Icon slot="icon" icon="download" />
-		</Button>
-	</HorizontalStack>
-</Header>
-<div class="flex flex-col-reverse gap-8 sm:gap-9 md:flex-row">
-	<Preload src="/images/about/headshot.png">
-		<div
-			class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-gray-200"
-		>
-			<img
-				src="/images/about/headshot.png"
-				alt="Professional headshot of Jack Reimers"
-				class="mx-auto h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]"
-			/>
-		</div>
-	</Preload>
-	<div class="flex-1">
-		<div class="markdown flex-1">
-			<SvelteMarkdown source={data.about} />
-		</div>
-	</div>
-</div>
+<Hero
+	title="About"
+	subtitle="Dive deeper into my professional background and expertise, and find out how to stay connected or reach out."
+>
+	<SocialLinks />
+</Hero>
+<Container>
+	<Section>
+		<HorizontalStack classes="gap-5 sm:gap-7">
+			<Preload src="/images/about/headshot.png">
+				<div
+					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-gray-200"
+				>
+					<img
+						src="/images/about/headshot.png"
+						alt="Professional headshot of Jack Reimers"
+						class="mx-auto h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]"
+					/>
+				</div>
+			</Preload>
+			<div class="flex-1">
+				<p class="mb-4">
+					My name is Jack Reimers and I am currently living and working in Melbourne,
+					Australia.
+				</p>
+
+				<p class="mb-4">
+					I'm passionate about all things web and video game development and specialise in
+					full stack .NET and JavaScript development with a focus on web-based
+					technologies such as ASP.NET Core, Entity Framework Core, Blazor, and Angular.
+				</p>
+
+				<p class="mb-4">
+					I also have extensive professional experience working with Artifical
+					Intelligence and building custom AI solutions.
+				</p>
+			</div>
+		</HorizontalStack>
+	</Section>
+</Container>

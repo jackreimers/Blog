@@ -18,7 +18,7 @@
 				<Github strokeWidth={2} />
 			</Button>
 		</HorizontalStack>
-		<p class="text-center font-bold">
+		<p class="text-center font-semibold">
 			Copyright © {new Date().getFullYear()}
 		</p>
 	</VerticalStack>

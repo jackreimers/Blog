@@ -4,9 +4,11 @@ tags: [ "svelte", "javascript", "typescript" ]
 title: Six Interesting Svelte Features
 description: A list of six interesting SvelteKit features that I found useful whilst learning the framework.
 slug: six-interesting-svelte-features
+imageHref: /images/posts/svelte.png
+imageAlt: The SvelteKit logo.
 ---
 
-Having only recently started using SvelteKit I was impressed with how easy it was to get started and suprised by how
+Having only recently started using SvelteKit I was impressed with how easy it was to get started and surprised by how
 much I enjoyed using it. Here are six of the features that I found particularly useful whilst I was learning the
 framework.
 
