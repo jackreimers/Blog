@@ -7,14 +7,14 @@
 
 @layer base {
     body {
-        @apply text-gray-700 bg-gray-50;
+        @apply text-gray-800 bg-gray-50;
         font-family: Inter, sans-serif;
     }
 
     .markdown *:last-child {
         @apply mb-0;
     }
-    
+
     .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
         @apply mb-3;
     }
@@ -46,7 +46,7 @@
     .markdown table {
         @apply mb-5 border border-gray-500;
     }
-    
+
     .markdown code {
         @apply rounded bg-white px-1.5 py-1;
     }
