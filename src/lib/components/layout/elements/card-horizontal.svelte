@@ -25,15 +25,17 @@
 	{/if}
 	<div class="col-start-2 col-end-5 flex flex-col px-7 py-6">
 		<div class="mb-2">
-			<a
-				{href}
-				class="text-2xl font-medium underline decoration-transparent transition-colors duration-200 hover:decoration-gray-500"
-			>
-				{title}
-			</a>
 			<p class="font-medium text-gray-500">{subtitle}</p>
+			<span class="line-clamp-1 overflow-ellipsis">
+				<a
+					{href}
+					class="border-b-2 border-transparent text-2xl font-semibold transition-colors duration-200 hover:border-gray-800"
+				>
+					{title}
+				</a>
+			</span>
 		</div>
-		<p class="line-clamp-3 font-light text-gray-500">{content}</p>
+		<p class="line-clamp-3 text-gray-500">{content}</p>
 		<div class="flex-1" />
 		<div class="mt-6 flex gap-2">
 			{#each tags as tag}

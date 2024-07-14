@@ -17,7 +17,7 @@
 	const smallClasses = icon && !text ? 'p-2' : 'px-4 py-2 text-sm';
 	const largeClasses = icon && !text ? 'p-2' : 'px-3 py-2 sm:px-4 sm:py-2.5';
 	const blueClasses = 'bg-blue-100 text-blue-900 hover:bg-blue-200 hover:text-blue-950';
-	const orangeClasses = 'bg-orange-100 text-orange-800 hover:bg-orange-200 hover:text-orange-900';
+	const orangeClasses = 'bg-orange-100 text-orange-900 hover:bg-orange-200 hover:text-orange-900';
 	const redClasses = 'bg-red-600 text-white hover:bg-red-700';
 	const headerClasses = 'hover:bg-gray-300';
 	const headerActiveClasses = 'bg-gray-200 hover:bg-gray-300';
@@ -32,7 +32,7 @@
 		on:click={handleClick}
 		{href}
 		{target}
-		class="group inline-flex items-center rounded transition-colors duration-200
+		class="group inline-block rounded transition-colors duration-200
 			{classes}
 			{size === 'Small' ? smallClasses : ''}
 			{size === 'Large' ? largeClasses : ''}
@@ -42,7 +42,7 @@
 			{color === 'Header' ? (active ? headerActiveClasses : headerClasses) : ''}"
 	>
 		{#if text}
-			<span class="font-medium {icon ? 'mr-2 sm:mr-3' : ''}">
+			<span class="font-medium {icon ? '' : ''}">
 				{text}
 			</span>
 		{/if}
@@ -53,7 +53,7 @@
 {:else}
 	<button
 		on:click={handleClick}
-		class="group inline-flex items-center rounded transition-colors duration-200
+		class="group inline-block rounded transition-colors duration-200
 			{classes}
 			{size === 'Small' ? smallClasses : ''}
 			{size === 'Large' ? largeClasses : ''}

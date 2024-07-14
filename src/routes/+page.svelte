@@ -5,12 +5,12 @@
 	import Section from '$lib/components/layout/elements/section.svelte';
 	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
-	import Subheader from '$lib/components/layout/elements/subheader.svelte';
 	import Card from '$lib/components/layout/elements/card.svelte';
 	import CardEmpty from '$lib/components/layout/elements/card-empty.svelte';
 	import CardGrid from '$lib/components/layout/elements/card-grid.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import SocialLinks from '$lib/components/layout/elements/social-links.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -31,20 +31,8 @@
 	<Section>
 		<VerticalStack>
 			<HorizontalStack classes="justify-end">
-				<a
-					href="/tags"
-					class="rounded bg-blue-100 px-3 py-2 text-blue-800 transition-colors duration-300 hover:bg-blue-200 hover:text-blue-900 sm:px-5 sm:py-2.5"
-				>
-					<span class="font-medium">Tags</span>
-					<Icon icon="tune" weight={400} classes="text-2xl" />
-				</a>
-				<a
-					href="/blog"
-					class="rounded bg-blue-100 px-3 py-2 text-blue-800 transition-colors duration-300 hover:bg-blue-200 hover:text-blue-900 sm:px-5 sm:py-2.5"
-				>
-					<span class="font-medium">More</span>
-					<Icon icon="arrow_right_alt" weight={400} classes="text-2xl" />
-				</a>
+				<Button href="/tags" text="Tags" icon="tune" />
+				<Button href="/blog" text="More" icon="arrow_forward" />
 			</HorizontalStack>
 			<HorizontalStack>
 				<CardGrid>

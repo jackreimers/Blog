@@ -10,26 +10,15 @@
 	import Hero from '$lib/components/layout/headers/hero.svelte';
 	import Section from '$lib/components/layout/elements/section.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
-	import { Github, Linkedin, Mail } from 'lucide-svelte';
-	import Subheader from '$lib/components/layout/elements/subheader.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
-
-	let modal: Modal;
 </script>
 
 <Head
 	title="Jack Reimers | Blog"
 	description="I'm a full stack Software Engineer who is passionate about web and video game development."
 />
-<Modal bind:this={modal}>
-	<div class="flex flex-col gap-2.5 sm:gap-3.5">
-		{#each data.tags as tag}
-			<Button href="/tag/{tag.slug}" color="Header" text={tag.name} />
-		{/each}
-	</div>
-</Modal>
 <Hero
 	title="Blog"
 	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."

@@ -1,14 +1,22 @@
 [
   {
     "name": "JavaScript",
-    "slug": "javascript"
+    "slug": "javascript",
+    "icon": "devicon-javascript-plain"
   },
   {
     "name": "TypeScript",
-    "slug": "typescript"
+    "slug": "typescript",
+    "icon": "devicon-typescript-plain"
   },
   {
     "name": "Svelte",
-    "slug": "svelte"
+    "slug": "svelte",
+    "icon": "devicon-svelte-plain"
+  },
+  {
+    "name": "C#",
+    "slug": "csharp",
+    "icon": "devicon-csharp-plain"
   }
 ]

@@ -42,7 +42,8 @@
 					color="Header"
 					text="Blog"
 					href="/blog"
-					active={$page.url.pathname.startsWith('/blog')}
+					active={$page.url.pathname.startsWith('/blog') ||
+						$page.url.pathname.startsWith('/tags')}
 				/>
 				<!--
 				<Button

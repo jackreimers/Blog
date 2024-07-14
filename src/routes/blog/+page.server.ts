@@ -20,7 +20,6 @@ export async function load({ fetch }) {
 	}
 
 	return {
-		posts: posts,
-		tags: tags
+		posts: posts
 	};
 }

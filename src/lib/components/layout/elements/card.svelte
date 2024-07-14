@@ -23,17 +23,19 @@
 	{/if}
 	<div class="p-4">
 		<div class="mb-2">
-			<a
-				{href}
-				class="line-clamp-1 overflow-ellipsis text-xl font-semibold underline decoration-transparent transition-colors duration-200 hover:decoration-gray-500"
-			>
-				{title}
-			</a>
 			<p class="font-medium text-gray-500">{subtitle}</p>
+			<span class="line-clamp-1 overflow-ellipsis">
+				<a
+					{href}
+					class="border-b-2 border-transparent text-2xl font-semibold transition-colors duration-200 hover:border-gray-800"
+				>
+					{title}
+				</a>
+			</span>
 		</div>
-		<p class="line-clamp-3 font-light text-gray-500">{content}</p>
+		<p class="line-clamp-3 text-gray-500">{content}</p>
 		<div class="mt-6">
-			<Button size="Small" text="Read More" {href} />
+			<Button size="Small" color="Orange" text="Read More" {href} />
 		</div>
 	</div>
 </div>
