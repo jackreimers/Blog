@@ -19,7 +19,7 @@
 		isMobileNavigationOpen.set(false);
 	}
 
-	function onClickOutside(_) {
+	function onClickOutside(_: any) {
 		if (get(isContactOpen)) {
 			return;
 		}
