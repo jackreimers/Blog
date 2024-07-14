@@ -17,7 +17,9 @@
 <div class="h-[100dvh]">
 	<div class="flex min-h-[100dvh] flex-col">
 		<Header />
-		<slot />
+		<div class="flex-1">
+			<slot />
+		</div>
 		<Footer />
 	</div>
 </div>
