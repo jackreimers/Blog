@@ -11,13 +11,15 @@
 	export let content: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 </script>
 
-<div class="flex flex-col overflow-hidden rounded-lg bg-white">
+<div
+	class="hover: flex flex-col overflow-hidden rounded-lg bg-white shadow transition-all duration-300 mhover:hover:scale-[1.015] mhover:hover:shadow-lg"
+>
 	{#if imageHref}
-		<Preload src={imageHref}>
+		<Preload src={imageHref} classes="aspect-square">
 			<img src={imageHref} alt={imageAlt} />
 		</Preload>
 	{:else}
-		<div class="flex items-center justify-center bg-gray-100">
+		<div class="flex aspect-square items-center justify-center bg-gray-100">
 			<Icon icon="image" classes="text-7xl text-gray-300" />
 		</div>
 	{/if}

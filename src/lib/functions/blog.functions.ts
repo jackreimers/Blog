@@ -5,6 +5,29 @@ import { error } from '@sveltejs/kit';
 const metadataPattern = /^---([\s\S]*?)---/;
 const arrayPattern = /^\[.*]$/;
 
+export async function getBlogPostsAndTags(fetch: any) {
+	const directoryResponse = await fetch('/data/directory.json');
+	const directoryData = await directoryResponse.json();
+
+	const tagsResponse = await fetch(`/data/tags.json`);
+	const tags = await tagsResponse.json();
+
+	const fileNames = directoryData.posts;
+	const posts: BlogPost[] = [];
+
+	for (let i = 0; i < fileNames.length; i++) {
+		const postResponse = await fetch(`/data/posts-blog/${fileNames[i]}.md`);
+		const postData = await postResponse.text();
+
+		posts.push(parseBlogPost(postData, tags));
+	}
+
+	return {
+		posts: posts,
+		tags: tags
+	};
+}
+
 export function parseBlogPost(data: string, tags: Tag[]): BlogPost {
 	const matched = data.match(metadataPattern);
 

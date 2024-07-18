@@ -22,7 +22,7 @@
 
 <header
 	class="fixed z-10 w-full transition-all duration-300
-		{scrolled ? 'py-2 sm:py-3 md:py-4' : 'py-4 sm:py-6 md:py-7'}"
+		{scrolled ? 'bg-gray-50 py-2 shadow sm:py-3 md:py-4' : 'py-4 sm:py-6 md:py-7'}"
 >
 	<div class="mx-auto flex items-center px-5 sm:px-6 md:px-7 lg:max-w-5xl xl:max-w-6xl">
 		<div>
@@ -37,9 +37,9 @@
 		<div class="flex-1" />
 		<div class="hidden md:block">
 			<HorizontalStack>
-				<Button color="Header" text="Home" href="/" active={$page.url.pathname === '/'} />
+				<Button color="Gray" text="Home" href="/" active={$page.url.pathname === '/'} />
 				<Button
-					color="Header"
+					color="Gray"
 					text="Blog"
 					href="/blog"
 					active={$page.url.pathname.startsWith('/blog') ||
@@ -60,7 +60,7 @@
 				/>
 				-->
 				<Button
-					color="Header"
+					color="Gray"
 					text="About"
 					href="/about"
 					active={$page.url.pathname.startsWith('/about')}

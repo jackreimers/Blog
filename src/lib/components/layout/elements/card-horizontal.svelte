@@ -13,17 +13,19 @@
 	export let content: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 </script>
 
-<div class="grid grid-cols-4 overflow-hidden rounded-lg bg-white">
+<div
+	class="flex overflow-hidden rounded-lg bg-white shadow transition-all duration-300 mhover:hover:scale-[1.015] mhover:hover:shadow-lg"
+>
 	{#if imageHref}
-		<Preload src={imageHref}>
+		<Preload src={imageHref} classes="aspect-square flex-1">
 			<img src={imageHref} alt={imageAlt} />
 		</Preload>
 	{:else}
-		<div class="flex items-center justify-center bg-gray-100">
+		<div class="flex flex-1 items-center justify-center bg-gray-100">
 			<Icon icon="image" classes="text-7xl text-gray-300" />
 		</div>
 	{/if}
-	<div class="col-start-2 col-end-5 flex flex-col px-7 py-6">
+	<div class="flex flex-[3] flex-col px-7 py-6">
 		<div class="mb-2">
 			<p class="font-medium text-gray-500">{subtitle}</p>
 			<span class="line-clamp-1 overflow-ellipsis">

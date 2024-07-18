@@ -3,8 +3,9 @@
 	import type { Tag } from '$lib/interfaces/tag';
 	import Container from '$lib/components/layout/container.svelte';
 	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
-	import TagBar from '$lib/components/layout/elements/bar-tags.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
+	import HoriontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 
 	export let title: string;
 	export let subtitle: string;
@@ -18,14 +19,16 @@
 			<div class="flex items-center gap-3">
 				<h1 class="text-4xl font-bold sm:text-6xl">{title}</h1>
 			</div>
-			<!--
 			{#if subtitle}
 				<p class="max-w-prose text-sm text-gray-500 sm:text-base">
 					{subtitle}
 				</p>
 			{/if}
-			-->
-			<TagBar {tags} />
+			<HoriontalStack>
+				{#each tags as tag}
+					<Button href="/tag/{tag.slug}" color="Orange" text={tag.name} />
+				{/each}
+			</HoriontalStack>
 			<slot />
 		</div>
 	</Container>

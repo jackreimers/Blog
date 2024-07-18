@@ -6,15 +6,22 @@
 	import Section from '$lib/components/layout/elements/section.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Hero from '$lib/components/layout/headers/hero.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
+	import Icon from '$lib/components/text/icon.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 </script>
 
 <Hero
-	title={data.tag.name}
+	title="Blog"
 	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."
-/>
+>
+	<HorizontalStack>
+		<Button href="/" color="BlueSolid" icon="rss_feed" />
+		<Button color="Red" href="/blog" text={data.tag.name} icon="close" />
+	</HorizontalStack>
+</Hero>
 <Container>
 	<Section>
 		<VerticalStack>

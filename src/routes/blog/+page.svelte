@@ -24,12 +24,7 @@
 	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."
 >
 	<HorizontalStack>
-		<a
-			href="mailto:me@jackreimers.dev"
-			class="rounded bg-blue-900 p-3 text-white transition-colors duration-200 hover:bg-blue-950"
-		>
-			<Icon icon="rss_feed" />
-		</a>
+		<Button href="/" color="BlueSolid" icon="rss_feed" iconWeight={500} />
 	</HorizontalStack>
 </Hero>
 <Container>
@@ -37,13 +32,7 @@
 	<Section>
 		<VerticalStack>
 			<HorizontalStack classes="justify-end">
-				<a
-					href="/tags"
-					class="rounded bg-blue-100 px-3 py-2 text-blue-800 transition-colors duration-300 hover:bg-blue-200 hover:text-blue-900 sm:px-5 sm:py-2.5"
-				>
-					<span class="font-medium">Tags</span>
-					<Icon icon="tune" weight={400} classes="text-2xl" />
-				</a>
+				<Button href="/tags" text="Tags" icon="tune" />
 			</HorizontalStack>
 			<HorizontalStack>
 				<!-- TODO: May need it's own grid component -->

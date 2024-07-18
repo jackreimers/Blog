@@ -47,7 +47,6 @@
 						/>
 					{/each}
 					<CardEmpty />
-					<CardEmpty />
 				</CardGrid>
 			</HorizontalStack>
 		</VerticalStack>

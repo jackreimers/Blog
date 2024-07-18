@@ -13,10 +13,5 @@
     "name": "Svelte",
     "slug": "svelte",
     "icon": "devicon-svelte-plain"
-  },
-  {
-    "name": "C#",
-    "slug": "csharp",
-    "icon": "devicon-csharp-plain"
   }
 ]
