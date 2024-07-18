@@ -16,3 +16,9 @@ export async function load({ fetch, params }) {
 		post: post
 	};
 }
+
+/** @type {import('./$types').EntryGenerator} */
+export async function entries() {
+	//TODO: Investigate making this dynamically populated
+	return [{ slug: 'sending-emails-with-exchange' }, { slug: 'six-interesting-svelte-features' }];
+}
