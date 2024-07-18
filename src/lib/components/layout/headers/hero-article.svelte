@@ -26,7 +26,7 @@
 			{/if}
 			<HoriontalStack>
 				{#each tags as tag}
-					<Button href="/tag/{tag.slug}" color="Orange" text={tag.name} />
+					<Button href="/tags/{tag.slug}" color="Orange" text={tag.name} />
 				{/each}
 			</HoriontalStack>
 			<slot />
