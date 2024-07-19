@@ -22,7 +22,7 @@
 						name="name"
 						placeholder="Name"
 						autocomplete="name"
-						class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 hover:border-gray-300 focus:border-blue-800"
+						class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 mhover:hover:border-gray-300 focus:border-blue-800"
 					/>
 				</div>
 				<div class="flex-1">
@@ -37,7 +37,7 @@
 						name="email"
 						placeholder="Email"
 						autocomplete="email"
-						class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 hover:border-gray-300 focus:border-blue-800"
+						class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 mhover:hover:border-gray-300 focus:border-blue-800"
 					/>
 				</div>
 			</HorizontalStack>
@@ -53,7 +53,7 @@
 					name="subject"
 					placeholder="Subject"
 					autocomplete="off"
-					class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 hover:border-gray-300 focus:border-blue-800"
+					class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 mhover:hover:border-gray-300 focus:border-blue-800"
 				/>
 			</div>
 			<div>
@@ -65,13 +65,13 @@
 					placeholder="Message (optional)"
 					autocomplete="off"
 					rows="3"
-					class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 hover:border-gray-300 focus:border-blue-800"
+					class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 mhover:hover:border-gray-300 focus:border-blue-800"
 				/>
 			</div>
 			<div class="mt-3 text-right sm:mt-4">
 				<input
 					type="submit"
-					class="rounded bg-blue-100 px-3 py-2 font-semibold text-blue-800 transition-colors duration-300 hover:cursor-pointer hover:bg-blue-200 hover:text-blue-900 sm:px-5 sm:py-2.5"
+					class="rounded bg-blue-100 px-3 py-2 font-semibold text-blue-800 transition-colors duration-300 mhover:hover:cursor-pointer mhover:hover:bg-blue-200 mhover:hover:text-blue-900 sm:px-5 sm:py-2.5"
 				/>
 			</div>
 		</VerticalStack>

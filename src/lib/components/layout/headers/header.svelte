@@ -66,10 +66,9 @@
 				/>
 				<!--
 				<Button
-					color="Blue"
+					color="SolidBlue"
 					text="Contact"
-					href="/about"
-					classes="!bg-blue-900 !text-white transition-colors hover:!bg-blue-950"
+					href="/"
 				/>
 				-->
 			</HorizontalStack>
