@@ -13,7 +13,6 @@
 	title="Jack Reimers | About"
 	description="I'm a full stack Software Engineer who is passionate about web and video game development."
 />
-
 <Hero
 	title="About"
 	subtitle="Dive deeper into my professional background and expertise, and find out how to stay connected or reach out."

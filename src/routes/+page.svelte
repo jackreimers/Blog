@@ -18,7 +18,6 @@
 	title="Jack Reimers"
 	description="I'm a full stack Software Engineer who is passionate about web and video game development."
 />
-
 <Hero
 	title="Jack Reimers"
 	subtitle="I'm a full-stack software engineer who is passionate about web and video game development and specialises in .NET and JavaScript development."

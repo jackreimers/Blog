@@ -8,11 +8,16 @@
 	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 	import Card from '$lib/components/layout/elements/card.svelte';
+	import Head from '$lib/components/seo/head.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 </script>
 
+<Head
+	title="Jack Reimers | {data.tag.name}"
+	description="Read my blog where I talk about web and game development."
+/>
 <Hero
 	title="Blog"
 	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."

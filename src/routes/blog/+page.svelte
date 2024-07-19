@@ -2,14 +2,12 @@
 	import Head from '$lib/components/seo/head.svelte';
 	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
-	import Modal from '$lib/components/interactivity/modal.svelte';
 	import Card from '$lib/components/layout/elements/card.svelte';
 	import CardGrid from '$lib/components/layout/elements/card-grid.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Hero from '$lib/components/layout/headers/hero.svelte';
 	import Section from '$lib/components/layout/elements/section.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -17,7 +15,7 @@
 
 <Head
 	title="Jack Reimers | Blog"
-	description="I'm a full stack Software Engineer who is passionate about web and video game development."
+	description="Read my blog where I talk about web and game development."
 />
 <Hero
 	title="Blog"

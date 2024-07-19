@@ -14,7 +14,6 @@
 </script>
 
 <Head title="Jack Reimers | {data.post.title}" description={data.post.description} />
-
 <Hero title={data.post.title} subtitle={data.post.description} smallerTitle={true}>
 	<HoriontalStack classes="flex-wrap">
 		{#each data.post.tags as tag}
