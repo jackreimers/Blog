@@ -4,7 +4,6 @@
 	import Navigation from '$lib/components/layout/headers/header-navigation.svelte';
 	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
 
 	let navigation: Navigation;
 	let scrolled: boolean;
@@ -65,12 +64,14 @@
 					href="/about"
 					active={$page.url.pathname.startsWith('/about')}
 				/>
+				<!--
 				<Button
 					color="Blue"
 					text="Contact"
 					href="/about"
 					classes="!bg-blue-900 !text-white transition-colors hover:!bg-blue-950"
 				/>
+				-->
 			</HorizontalStack>
 		</div>
 		<div class="flex items-center md:hidden">

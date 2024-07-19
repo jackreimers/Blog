@@ -18,7 +18,7 @@
 	subtitle="Discover posts that match your interests by filtering through post tags, or explore the range of topics I cover."
 >
 	<HorizontalStack>
-		<Button href="/" color="BlueSolid" icon="rss_feed" />
+		<Button href="/rss" color="BlueSolid" icon="rss_feed" />
 	</HorizontalStack>
 </Hero>
 <Container>

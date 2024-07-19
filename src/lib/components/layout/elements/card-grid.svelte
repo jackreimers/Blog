@@ -12,8 +12,13 @@
 	{classes}"
 >
 	<slot />
-	<EmptyCard
-		classes="hidden
-		{!horizontal && itemCount % 2 === 0 ? 'md:inline-flex' : 'sm:inline-flex md:hidden'}"
-	/>
+	{#if horizontal}
+		{#each { length: itemCount % 2 } as _}
+			<EmptyCard classes="hidden sm:inline-flex md:hidden" />
+		{/each}
+	{:else}
+		{#each { length: 3 - (itemCount % 3) } as _}
+			<EmptyCard classes="hidden md:inline-flex" />
+		{/each}
+	{/if}
 </div>
