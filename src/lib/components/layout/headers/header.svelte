@@ -20,8 +20,8 @@
 <Navigation bind:this={navigation} />
 
 <header
-	class="fixed z-10 w-full transition-all duration-300
-		{scrolled ? 'bg-gray-50 py-2 shadow sm:py-3 md:py-4' : 'py-4 sm:py-6 md:py-7'}"
+	class="fixed z-10 w-full transition-all duration-300 bg-gray-50
+		{scrolled ? 'py-2 shadow sm:py-3 md:py-4' : 'py-4 sm:py-6 md:py-7'}"
 >
 	<div class="mx-auto flex items-center px-5 sm:px-6 md:px-7 lg:max-w-5xl xl:max-w-6xl">
 		<div>
