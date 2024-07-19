@@ -7,7 +7,7 @@
 
 <a
 	href="/tags/{tag.slug}"
-	class="flex flex-col rounded-lg bg-white shadow transition-all duration-300 hover:scale-[1.015] hover:shadow-lg sm:aspect-square"
+	class="flex flex-col rounded-lg bg-white shadow transition-all duration-300 sm:aspect-square mhover:hover:scale-[1.015] mhover:hover:shadow-lg"
 >
 	<span class="flex aspect-square flex-1 items-center justify-center sm:aspect-auto">
 		<span class="w-1/2 overflow-hidden rounded-lg sm:w-2/5">
@@ -18,10 +18,8 @@
 		<span class="flex flex-1 flex-col">
 			<span class="text-lg font-semibold sm:text-xl">{tag.name}</span>
 		</span>
-		<span
-			class="flex items-center gap-0.5 rounded-lg bg-blue-100 p-1 text-sm text-blue-900 md:text-base"
-		>
-			<span class="ml-2 text-sm font-medium sm:text-base">
+		<span class="flex gap-0.5 rounded bg-blue-100 px-1 py-1.5 text-sm text-blue-900">
+			<span class="ml-2 text-sm font-semibold">
 				{#if tag.count}
 					{tag.count}
 					{tag.count === 1 ? 'Post' : 'Posts'}

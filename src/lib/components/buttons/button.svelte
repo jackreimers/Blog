@@ -17,7 +17,7 @@
 	const dispatch = createEventDispatcher();
 
 	const smallClasses = icon && !text ? 'p-1.5 sm:p-2' : 'py-2 px-3 sm:px-4 text-sm';
-	const largeClasses = icon && !text ? 'p-2 sm:p-3' : 'py-2 px-3.5 sm:py-3 sm:px-4';
+	const largeClasses = icon && !text ? 'p-2 sm:p-3' : 'py-2 px-3 sm:py-3 sm:px-4';
 	const blueClasses =
 		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200 mhover:hover:text-blue-950';
 	const orangeClasses =

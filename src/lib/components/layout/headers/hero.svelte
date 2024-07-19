@@ -7,6 +7,7 @@
 	export let title: string;
 	export let subtitle: string | null = null;
 	export let icon: string | null = null;
+	export let smallerTitle: boolean = false;
 
 	const blueColors = 'bg-blue-100 text-blue-800';
 	const orangeColors = 'bg-orange-100 text-orange-800';
@@ -27,7 +28,13 @@
 						<Icon {icon} classes="text-7xl" />
 					</div>
 				{/if}
-				<h1 class="text-5xl font-bold sm:text-6xl md:text-7xl">{title}</h1>
+				<h1
+					class="font-bold {smallerTitle
+						? 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl'
+						: 'text-5xl sm:text-6xl md:text-7xl'}"
+				>
+					{title}
+				</h1>
 			</div>
 			{#if subtitle}
 				<p class="max-w-prose text-sm text-gray-500 sm:text-base">
