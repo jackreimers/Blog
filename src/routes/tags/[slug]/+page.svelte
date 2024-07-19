@@ -1,13 +1,13 @@
 <script lang="ts">
 	import CardGrid from '$lib/components/layout/elements/card-grid.svelte';
 	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
-	import CardHorizontal from '$lib/components/layout/elements/card-horizontal.svelte';
 	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 	import Section from '$lib/components/layout/elements/section.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Hero from '$lib/components/layout/headers/hero.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
+	import Card from '$lib/components/layout/elements/card.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -29,27 +29,27 @@
 				<Button href="/tags" text="Tags" icon="tune" />
 			</HorizontalStack>
 			<HorizontalStack>
-				<!-- TODO: May need it's own grid component -->
-				<CardGrid classes="!grid-cols-1">
+				<CardGrid itemCount={data.posts.length} horizontal={true}>
 					{#each data.posts as post}
-						<CardHorizontal
+						<Card
 							href="/blog/{post.slug}"
 							imageHref={post.imageHref}
 							title={post.title}
 							subtitle={post.dateString}
-							tags={post.tags}
 							content={post.intro}
+							horizontal={true}
 						>
-							<VerticalStack>
-								<div>
-									<p class="text-xl font-bold md:text-2xl">{post.title}</p>
-									<p class="text-gray-500 md:text-lg">
-										{post.dateString}
-									</p>
-								</div>
-								<p>{post.intro}</p>
-							</VerticalStack>
-						</CardHorizontal>
+							<HorizontalStack classes="!gap-2 overflow-auto">
+								{#each post.tags as tag}
+									<Button
+										size="Small"
+										color="Orange"
+										href="/tags/{tag.slug}"
+										text={tag.name}
+									/>
+								{/each}
+							</HorizontalStack>
+						</Card>
 					{/each}
 				</CardGrid>
 			</HorizontalStack>

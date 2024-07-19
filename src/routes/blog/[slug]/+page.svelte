@@ -30,7 +30,7 @@
 		</div>
 		-->
 		{#each data.post.tags as tag}
-			<Button color="Blue" href="/tags/{tag.slug}" text={tag.name} />
+			<Button color="Orange" href="/tags/{tag.slug}" text={tag.name} />
 		{/each}
 	</HoriontalStack>
 </Hero>

@@ -10,7 +10,6 @@
 	export let text: string | null = null;
 	export let icon: string | null = null;
 	export let iconWeight: number = 400;
-	export let iconSide: 'Left' | 'Right' = 'Right';
 	export let active: boolean = false;
 	export let classes: string = '';
 
@@ -40,7 +39,6 @@
 		{target}
 		class="group inline-flex items-center gap-1.5 rounded transition-colors duration-200
 			{classes}
-			{iconSide === 'Left' ? 'flex-row-reverse' : ''}
 			{size === 'Small' ? smallClasses : ''}
 			{size === 'Large' ? largeClasses : ''}
 			{color === 'Blue' ? blueClasses : ''}
