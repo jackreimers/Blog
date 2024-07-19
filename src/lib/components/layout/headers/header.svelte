@@ -74,12 +74,7 @@
 			</HorizontalStack>
 		</div>
 		<div class="flex items-center md:hidden">
-			<button
-				on:click={navigation.open}
-				class="rounded p-2 transition-colors duration-200 mhover:hover:bg-gray-200"
-			>
-				<Icon icon="menu" classes="text-3xl text-blue-800" />
-			</button>
+			<Button on:click={navigation.open} color="Blue" icon="menu" iconWeight={500} />
 		</div>
 	</div>
 </header>

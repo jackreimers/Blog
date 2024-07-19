@@ -6,7 +6,7 @@
 	import Icon from '$lib/components/text/icon.svelte';
 	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
 	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
-	import CardGrid from '$lib/components/layout/elements/card-grid.svelte';
+	import CardGrid from '$lib/components/layout/elements/card-grid-tag.svelte';
 	import CardTag from '$lib/components/layout/elements/card-tag.svelte';
 
 	/** @type {import('./$types').PageData} */

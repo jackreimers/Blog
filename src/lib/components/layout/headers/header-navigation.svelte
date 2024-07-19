@@ -3,7 +3,10 @@
 	import { goto } from '$app/navigation';
 	import { createEventDispatcher, onMount } from 'svelte';
 	import Blocker from '$lib/components/interactivity/blocker.svelte';
+	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
+	import NavigationButton from '$lib/components/buttons/button-navigation.svelte';
 
 	//TODO: Not sure this is needed at this stage
 	const dispatch = createEventDispatcher();
@@ -31,12 +34,6 @@
 		isOpen = false;
 	}
 
-	function navigate(path: string) {
-		dispatch('navigate', path);
-		goto(path);
-		close();
-	}
-
 	function onScroll() {
 		//Lock the window scroll location if the menu is open
 		if (isOpen) window.scrollTo(scrollLeft, scrollTop);
@@ -47,62 +44,41 @@
 
 <div
 	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-gray-100 transition-all duration-500 {isOpen
-		? 'w-[320px] lg:w-[500px]'
+		? 'w-[320px]'
 		: 'w-0'}"
 >
-	<div class="w-[320px] lg:w-[500px]">
-		<div
-			class="p-4 transition-spacing delay-100 duration-700 lg:px-12 lg:py-8 {isOpen
-				? 'ml-0'
-				: 'ml-4'}"
-		>
-			<div class="mb-8 flex">
-				<div class="flex-1" />
-				<button on:click={close} class="mhover:hover:bg-gray-100 rounded p-2 duration-500">
-					<Icon
-						icon="close"
-						classes="bg-gradient-to-b from-red-600 to-red-800 bg-clip-text text-3xl text-transparent sm:text-4xl"
-					/>
-				</button>
+	<div class="w-[320px]">
+		<!-- TODO: Try get this to not affect inner layout width -->
+		<div class="p-4 transition-spacing delay-100 duration-700 {isOpen ? 'ml-0' : 'ml-4'}">
+			<div class="mb-8 flex h-[2.875rem] justify-end align-middle sm:h-12">
+				<div>
+					<Button on:click={close} color="Red" icon="close" iconWeight={500} />
+				</div>
 			</div>
-			<div class="grid gap-2 px-4 sm:gap-4">
-				<button
-					on:click={() => {
-						navigate('/');
-					}}
-					class="group flex text-left font-semibold sm:text-2xl"
-				>
-					<span
-						class:opacity-100={$page.url.pathname === '/'}
-						class="group-mhover:hover:opacity-100 h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300"
-					/>
-					<span class="px-3.5 py-2">Home</span>
-				</button>
-				<button
-					on:click={() => {
-						navigate('/blog');
-					}}
-					class="group flex text-left font-semibold sm:text-2xl"
-				>
-					<span
-						class:opacity-100={$page.url.pathname.startsWith('/blog')}
-						class="group-mhover:hover:opacity-100 h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300"
-					/>
-					<span class="px-3.5 py-2">Blog</span>
-				</button>
-				<button
-					on:click={() => {
-						navigate('/about');
-					}}
-					class="group flex text-left font-semibold sm:text-2xl"
-				>
-					<span
-						class:opacity-100={$page.url.pathname.startsWith('/about')}
-						class="group-mhover:hover:opacity-100 h-full w-[4px] rounded-full bg-gradient-to-b from-blue-600 to-blue-800 opacity-0 transition-opacity duration-300"
-					/>
-					<span class="px-3.5 py-2">About</span>
-				</button>
-			</div>
+			<VerticalStack>
+				<NavigationButton
+					on:click={close}
+					href="/"
+					text="Home"
+					icon="home"
+					active={$page.url.pathname === '/'}
+				/>
+				<NavigationButton
+					on:click={close}
+					href="/blog"
+					text="Blog"
+					icon="article"
+					active={$page.url.pathname.startsWith('/blog') ||
+						$page.url.pathname.startsWith('/tags')}
+				/>
+				<NavigationButton
+					on:click={close}
+					href="/about"
+					text="About"
+					icon="person"
+					active={$page.url.pathname.startsWith('/about')}
+				/>
+			</VerticalStack>
 		</div>
 	</div>
 </div>

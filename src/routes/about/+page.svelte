@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Head from '$lib/components/seo/head.svelte';
 	import Preload from '$lib/components/loading/preload.svelte';
+	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
 	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 	import Hero from '$lib/components/layout/headers/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
@@ -21,10 +22,10 @@
 </Hero>
 <Container>
 	<Section>
-		<HorizontalStack classes="gap-5 sm:gap-7">
+		<VerticalStack classes="gap-5 sm:flex-row sm:gap-7">
 			<Preload src="/images/about/headshot.png">
 				<div
-					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded bg-gray-200"
+					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center rounded-lg bg-gray-200"
 				>
 					<img
 						src="/images/about/headshot.png"
@@ -50,6 +51,6 @@
 					Intelligence and building custom AI solutions.
 				</p>
 			</div>
-		</HorizontalStack>
+		</VerticalStack>
 	</Section>
 </Container>

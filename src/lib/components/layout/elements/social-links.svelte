@@ -7,21 +7,21 @@
 <HorizontalStack>
 	<a
 		href="mailto:me@jackreimers.dev"
-		class="rounded bg-blue-900 p-3 text-white transition-colors duration-200 hover:bg-blue-950"
+		class="rounded bg-blue-900 p-2 text-white transition-colors duration-200 hover:bg-blue-950 sm:p-3"
 	>
 		<Icon icon="mail" weight={400} />
 	</a>
 	<a
 		href="https://www.linkedin.com/in/jackreimers/"
 		target="_blank"
-		class="rounded bg-blue-900 p-3 text-white transition-colors duration-200 hover:bg-blue-950"
+		class="rounded bg-blue-900 p-2 text-white transition-colors duration-200 hover:bg-blue-950 sm:p-3"
 	>
 		<Linkedin strokeWidth={2} />
 	</a>
 	<a
 		href="https://github.com/jackreimers"
 		target="_blank"
-		class="rounded bg-blue-900 p-3 text-white transition-colors duration-200 hover:bg-blue-950"
+		class="rounded bg-blue-900 p-2 text-white transition-colors duration-200 hover:bg-blue-950 sm:p-3"
 	>
 		<Github strokeWidth={2} />
 	</a>
