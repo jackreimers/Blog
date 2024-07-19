@@ -21,8 +21,8 @@
 	const blueClasses =
 		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200 mhover:hover:text-blue-950';
 	const orangeClasses =
-		'bg-orange-100 text-orange-900 mhover:hover:bg-orange-200 mhover:hover:text-orange-900';
-	const redClasses = 'bg-red-100 text-red-800 mhover:hover:bg-red-200 mhover:hover:text-red-900';
+		'bg-orange-100 text-orange-900 mhover:hover:bg-orange-200 mhover:hover:text-orange-950';
+	const redClasses = 'bg-red-100 text-red-900 mhover:hover:bg-red-200 mhover:hover:text-red-950';
 	const grayClasses = 'mhover:hover:bg-gray-300';
 	const grayActiveClasses = 'bg-gray-200 mhover:hover:bg-gray-300';
 	const blueSolidClasses = 'bg-blue-900 text-white mhover:hover:bg-blue-950';

@@ -25,11 +25,9 @@
 <Container>
 	<Section>
 		<VerticalStack>
-			<!--
-        <div class="flex justify-end">
-            <Button on:click={() => modal.open()} text="Filter" icon="tune" />
-        </div>
-        -->
+			<HorizontalStack classes="justify-end">
+				<Button href="/tags" text="Tags" icon="tune" />
+			</HorizontalStack>
 			<HorizontalStack>
 				<!-- TODO: May need it's own grid component -->
 				<CardGrid classes="!grid-cols-1">

@@ -23,15 +23,10 @@
 </Hero>
 <Container>
 	<Section>
-		<VerticalStack>
-			<HorizontalStack classes="justify-end">
-				<Button href="/blog" text="Posts" icon="article" />
-			</HorizontalStack>
-			<CardGrid>
-				{#each data.tags as tag}
-					<CardTag {tag} />
-				{/each}
-			</CardGrid>
-		</VerticalStack>
+		<CardGrid>
+			{#each data.tags as tag}
+				<CardTag {tag} />
+			{/each}
+		</CardGrid>
 	</Section>
 </Container>
