@@ -21,7 +21,14 @@
 		<span
 			class="flex items-center gap-0.5 rounded-lg bg-blue-100 p-1 text-sm text-blue-900 md:text-base"
 		>
-			<span class="ml-2 text-sm font-medium sm:text-base">{tag.count}</span>
+			<span class="ml-2 text-sm font-medium sm:text-base">
+				{#if tag.count}
+					{tag.count}
+					{tag.count === 1 ? 'Post' : 'Posts'}
+				{:else}
+					0 Posts
+				{/if}
+			</span>
 			<Icon icon="chevron_right" classes="text-xl" />
 		</span>
 	</span>

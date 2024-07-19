@@ -4,7 +4,6 @@
 	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
 	import Modal from '$lib/components/interactivity/modal.svelte';
 	import CardHorizontal from '$lib/components/layout/elements/card-horizontal.svelte';
-	import CardGrid from '$lib/components/layout/elements/card-grid.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Hero from '$lib/components/layout/headers/hero.svelte';
@@ -36,7 +35,7 @@
 			</HorizontalStack>
 			<HorizontalStack>
 				<!-- TODO: May need it's own grid component -->
-				<CardGrid classes="!grid-cols-1">
+				<VerticalStack>
 					{#each data.posts as post}
 						<CardHorizontal
 							href="/blog/{post.slug}"
@@ -57,7 +56,7 @@
 							</VerticalStack>
 						</CardHorizontal>
 					{/each}
-				</CardGrid>
+				</VerticalStack>
 			</HorizontalStack>
 		</VerticalStack>
 	</Section>
