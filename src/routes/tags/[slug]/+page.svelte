@@ -18,7 +18,7 @@
 	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."
 >
 	<HorizontalStack>
-		<Button href="/rss" color="BlueSolid" icon="rss_feed" />
+		<Button href="/" color="BlueSolid" icon="rss_feed" />
 		<Button color="Red" href="/blog" text={data.tag.name} icon="close" />
 	</HorizontalStack>
 </Hero>

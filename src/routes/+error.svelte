@@ -19,7 +19,7 @@
 			color="Red"
 			href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}"
 			target="_blank"
-			text={$page.status}
+			text={$page.status.toString()}
 			icon="error"
 			iconWeight={500}
 		/>
