@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Tag } from '$lib/interfaces/tag';
+	import Preload from '$lib/components/loading/preload.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
 	export let tag: Tag;
@@ -11,7 +12,9 @@
 >
 	<span class="flex aspect-square flex-1 items-center justify-center sm:aspect-auto">
 		<span class="w-1/2 overflow-hidden rounded-lg sm:w-2/5">
-			<img src={tag.icon} alt="The {tag.name} logo." />
+			<Preload src={tag.icon}>
+				<img src={tag.icon} alt="The {tag.name} logo." />
+			</Preload>
 		</span>
 	</span>
 	<span class="flex flex-col items-center gap-2.5 p-3 sm:flex-row sm:gap-0 sm:p-4">
