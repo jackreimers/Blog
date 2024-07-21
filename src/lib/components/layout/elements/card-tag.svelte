@@ -7,13 +7,13 @@
 </script>
 
 <a
-	href="/tags/{tag.slug}"
 	class="flex flex-col rounded-lg bg-white shadow transition-all duration-300 sm:aspect-square mhover:hover:scale-[1.015] mhover:hover:shadow-lg"
+	href="/tags/{tag.slug}"
 >
 	<span class="flex aspect-square flex-1 items-center justify-center sm:aspect-auto">
 		<span class="w-1/2 overflow-hidden rounded-lg sm:w-2/5">
 			<Preload src={tag.icon}>
-				<img src={tag.icon} alt="The {tag.name} logo." />
+				<img alt="The {tag.name} logo." src={tag.icon} />
 			</Preload>
 		</span>
 	</span>
@@ -30,7 +30,7 @@
 					0 Posts
 				{/if}
 			</span>
-			<Icon icon="chevron_right" classes="text-xl" />
+			<Icon classes="text-xl" icon="chevron_right" />
 		</span>
 	</span>
 </a>

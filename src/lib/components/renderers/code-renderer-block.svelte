@@ -29,8 +29,8 @@
 			{@html Prism.highlight(text, Prism.languages[lang], lang)}
 		</code>
 		<button
-			on:click={copy}
 			class="absolute right-3 top-3 rounded p-1.5 text-gray-400 opacity-0 transition-all duration-200 sm:right-4 sm:top-4 sm:p-2.5 mhover:hover:bg-gray-100 mhover:group-hover:opacity-100"
+			on:click={copy}
 		>
 			{#if copied}
 				<span in:fade>

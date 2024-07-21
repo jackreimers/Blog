@@ -13,9 +13,16 @@
 	export let data: any;
 </script>
 
-<Head title="Jack Reimers | {data.post.title}" description={data.post.description} />
-<Hero title={data.post.title} subtitle={data.post.description} smallerTitle={true}>
-	<HoriontalStack classes="flex-wrap">
+<Head description={data.post.description} title="Jack Reimers | {data.post.title}" />
+<Hero smallerTitle={true} title={data.post.title}>
+	<div class="">
+		<div
+			class="inline-flex rounded items-center bg-gray-100 px-3 shadow-inner py-2 text-sm font-medium sm:px-4 sm:py-3 sm:text-base"
+		>
+			<p class="">Posted {data.post.dateString}</p>
+		</div>
+	</div>
+	<HoriontalStack classes="overflow-auto">
 		{#each data.post.tags as tag}
 			<Button color="Blue" href="/tags/{tag.slug}" text={tag.name} />
 		{/each}
@@ -31,7 +38,7 @@
 	</Section>
 	<Section>
 		<div class="markdown box-content">
-			<SvelteMarkdown source={data.post.content} renderers={{ code: BlockCodeRenderer }} />
+			<SvelteMarkdown renderers={{ code: BlockCodeRenderer }} source={data.post.content} />
 		</div>
 	</Section>
 </Container>
