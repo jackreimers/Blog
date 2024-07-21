@@ -8,6 +8,7 @@
 	import SvelteMarkdown from 'svelte-markdown';
 	import HoriontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
+	import { Calendar } from 'lucide-svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -17,9 +18,10 @@
 <Hero smallerTitle={true} title={data.post.title}>
 	<div class="">
 		<div
-			class="inline-flex rounded items-center bg-gray-100 px-3 shadow-inner py-2 text-sm font-medium sm:px-4 sm:py-3 sm:text-base"
+			class="inline-flex rounded text-gray-500 items-center bg-gray-100 px-3 shadow-inner py-2 text-sm font-medium sm:px-4 sm:py-3 sm:text-base"
 		>
-			<p class="">Posted {data.post.dateString}</p>
+			<Calendar />
+			<p class="ml-1.5 mr-1">{data.post.dateString}</p>
 		</div>
 	</div>
 	<HoriontalStack classes="overflow-auto">
