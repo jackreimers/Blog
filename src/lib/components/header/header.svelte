@@ -25,7 +25,7 @@
 >
 	<div class="mx-auto flex items-center px-5 sm:px-6 md:px-7 lg:max-w-5xl xl:max-w-6xl">
 		<div>
-			<a class="inline-block" href="/static">
+			<a class="inline-block" href="/">
 				<img
 					alt="Logo"
 					class="inline-block h-[2.875rem] sm:h-12"
