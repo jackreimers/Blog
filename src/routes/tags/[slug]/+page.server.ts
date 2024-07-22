@@ -1,5 +1,5 @@
 import type { Tag } from '$lib/interfaces/tag';
-import { getBlogPostsAndTags } from '$lib/functions/blog.functions';
+import { getBlogPostsAndTags } from '$lib/functions/functions.blog';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, params }) {

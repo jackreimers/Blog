@@ -1,6 +1,6 @@
 <script lang="ts">
-	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
-	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
+	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
+	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 </script>
 
 <VerticalStack classes="max-w-[650px]">
@@ -18,11 +18,11 @@
 					</label>
 					-->
 					<input
-						type="text"
-						name="name"
-						placeholder="Name"
 						autocomplete="name"
 						class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 mhover:hover:border-gray-300 focus:border-blue-800"
+						name="name"
+						placeholder="Name"
+						type="text"
 					/>
 				</div>
 				<div class="flex-1">
@@ -33,11 +33,11 @@
 					</label>
 					-->
 					<input
-						type="email"
-						name="email"
-						placeholder="Email"
 						autocomplete="email"
 						class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 mhover:hover:border-gray-300 focus:border-blue-800"
+						name="email"
+						placeholder="Email"
+						type="email"
 					/>
 				</div>
 			</HorizontalStack>
@@ -49,11 +49,11 @@
 				</label>
 				-->
 				<input
-					type="text"
-					name="subject"
-					placeholder="Subject"
 					autocomplete="off"
 					class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 mhover:hover:border-gray-300 focus:border-blue-800"
+					name="subject"
+					placeholder="Subject"
+					type="text"
 				/>
 			</div>
 			<div>
@@ -61,17 +61,17 @@
 				<label for="message" class="font-medium">Message</label>
 				-->
 				<textarea
+					autocomplete="off"
+					class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 mhover:hover:border-gray-300 focus:border-blue-800"
 					name="message"
 					placeholder="Message (optional)"
-					autocomplete="off"
 					rows="3"
-					class="block w-full rounded-lg border-2 border-transparent bg-gray-100 px-3 py-2.5 outline-none transition-colors duration-300 mhover:hover:border-gray-300 focus:border-blue-800"
 				/>
 			</div>
 			<div class="mt-3 text-right sm:mt-4">
 				<input
-					type="submit"
 					class="rounded bg-blue-100 px-3 py-2 font-semibold text-blue-800 transition-colors duration-300 mhover:hover:cursor-pointer mhover:hover:bg-blue-200 mhover:hover:text-blue-900 sm:px-5 sm:py-2.5"
+					type="submit"
 				/>
 			</div>
 		</VerticalStack>

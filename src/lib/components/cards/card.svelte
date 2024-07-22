@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Preload from '$lib/components/loading/preload.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
 	import Icon from '$lib/components/text/icon.svelte';
 
 	export let href: string = '/';
@@ -36,8 +35,8 @@
 			<p class="font-medium text-gray-500">{subtitle}</p>
 			<span class="line-clamp-1 overflow-ellipsis">
 				<a
-					{href}
 					class="border-b-2 border-transparent text-xl font-semibold transition-colors duration-200 sm:text-2xl mhover:hover:border-gray-800"
+					{href}
 				>
 					{title}
 				</a>

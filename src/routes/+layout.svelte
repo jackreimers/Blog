@@ -2,16 +2,16 @@
 	import '../app.css';
 	import { inject } from '@vercel/analytics';
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
-	import Header from '$lib/components/layout/headers/header.svelte';
-	import Footer from '$lib/components/layout/footers/footer.svelte';
+	import Header from '$lib/components/header/header.svelte';
+	import Footer from '$lib/components/footer/footer.svelte';
 
 	inject();
 	injectSpeedInsights();
 </script>
 
 <svelte:head>
-	<meta property="og:image" content="https://jackreimers.dev/images/other/og.png" />
-	<meta property="twitter:card" content="summary" />
+	<meta content="https://jackreimers.dev/images/other/og.png" property="og:image" />
+	<meta content="summary" property="twitter:card" />
 </svelte:head>
 
 <div class="h-[100dvh]">

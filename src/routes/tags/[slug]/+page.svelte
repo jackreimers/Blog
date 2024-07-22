@@ -1,40 +1,39 @@
 <script lang="ts">
-	import CardGrid from '$lib/components/layout/elements/card-grid.svelte';
-	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
-	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
-	import Section from '$lib/components/layout/elements/section.svelte';
-	import Container from '$lib/components/layout/container.svelte';
-	import Hero from '$lib/components/layout/headers/hero.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
-	import Card from '$lib/components/layout/elements/card.svelte';
 	import Head from '$lib/components/seo/head.svelte';
+	import Container from '$lib/components/page/container.svelte';
+	import Section from '$lib/components/page/section.svelte';
+	import Hero from '$lib/components/hero/hero.svelte';
+	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
+	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
+	import Card from '$lib/components/cards/card.svelte';
+	import CardGrid from '$lib/components/grids/grid-card.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 </script>
 
 <Head
-	title="Jack Reimers | {data.tag.name}"
 	description="Read my blog where I talk about web and game development."
+	title="Jack Reimers | {data.tag.name}"
 />
 <Hero
-	title="Blog"
 	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."
+	title="Blog"
 >
 	<HorizontalStack>
-		<Button href="/" color="BlueSolid" icon="rss_feed" />
-		<Button color="Red" href="/blog" text={data.tag.name} icon="close" />
+		<Button color="BlueSolid" href="/" icon="rss_feed" />
+		<Button color="Red" href="/blog" icon="close" text={data.tag.name} />
 	</HorizontalStack>
 </Hero>
 <Container>
 	<Section>
 		<VerticalStack>
 			<HorizontalStack classes="justify-end">
-				<Button href="/tags" text="Tags" icon="tune" />
+				<Button href="/tags" icon="tune" text="Tags" />
 			</HorizontalStack>
 			<HorizontalStack>
-				<CardGrid itemCount={data.posts.length} horizontal={true}>
+				<CardGrid horizontal={true} itemCount={data.posts.length}>
 					{#each data.posts as post}
 						<Card
 							href="/blog/{post.slug}"

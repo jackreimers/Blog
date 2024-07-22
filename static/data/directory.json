@@ -1,5 +1,8 @@
 {
-  "posts": [
+  "blog": [
     "six-interesting-svelte-features"
+  ],
+  "projects": [
+    "myrtle-creative"
   ]
 }

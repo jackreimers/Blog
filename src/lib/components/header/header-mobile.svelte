@@ -1,15 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { goto } from '$app/navigation';
-	import { createEventDispatcher, onMount } from 'svelte';
-	import Blocker from '$lib/components/interactivity/blocker.svelte';
-	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
+	import { onMount } from 'svelte';
+	import Blocker from '$lib/components/page/blocker.svelte';
+	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
-	import NavigationButton from '$lib/components/buttons/button-navigation.svelte';
-
-	//TODO: Not sure this is needed at this stage
-	const dispatch = createEventDispatcher();
+	import MobileButton from '$lib/components/buttons/button-mobile.svelte';
 
 	let blocker: Blocker;
 	let isOpen: boolean = false;
@@ -40,7 +35,7 @@
 	}
 </script>
 
-<Blocker bind:this={blocker} on:click={close} classes="z-20" />
+<Blocker bind:this={blocker} classes="z-20" on:click={close} />
 
 <div
 	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-gray-100 transition-all duration-500 {isOpen
@@ -52,31 +47,31 @@
 		<div class="p-4 transition-spacing delay-100 duration-700 {isOpen ? 'ml-0' : 'ml-4'}">
 			<div class="mb-8 flex h-[2.875rem] justify-end align-middle sm:h-12">
 				<div>
-					<Button on:click={close} color="Red" icon="close" iconWeight={500} />
+					<Button color="Red" icon="close" iconWeight={500} on:click={close} />
 				</div>
 			</div>
 			<VerticalStack>
-				<NavigationButton
-					on:click={close}
-					href="/"
-					text="Home"
-					icon="home"
+				<MobileButton
 					active={$page.url.pathname === '/'}
-				/>
-				<NavigationButton
+					href="/"
+					icon="home"
 					on:click={close}
-					href="/blog"
-					text="Blog"
-					icon="article"
+					text="Home"
+				/>
+				<MobileButton
 					active={$page.url.pathname.startsWith('/blog') ||
 						$page.url.pathname.startsWith('/tags')}
-				/>
-				<NavigationButton
+					href="/blog"
+					icon="article"
 					on:click={close}
-					href="/about"
-					text="About"
-					icon="person"
+					text="Blog"
+				/>
+				<MobileButton
 					active={$page.url.pathname.startsWith('/about')}
+					href="/about"
+					icon="person"
+					on:click={close}
+					text="About"
 				/>
 			</VerticalStack>
 		</div>

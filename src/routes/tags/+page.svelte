@@ -1,11 +1,11 @@
 <script lang="ts">
-	import Container from '$lib/components/layout/container.svelte';
-	import Section from '$lib/components/layout/elements/section.svelte';
-	import Hero from '$lib/components/layout/headers/hero.svelte';
-	import CardGrid from '$lib/components/layout/elements/card-grid-tag.svelte';
-	import CardTag from '$lib/components/layout/elements/card-tag.svelte';
 	import Head from '$lib/components/seo/head.svelte';
-	import SocialLinks from '$lib/components/layout/elements/social-links.svelte';
+	import Container from '$lib/components/page/container.svelte';
+	import Section from '$lib/components/page/section.svelte';
+	import Hero from '$lib/components/hero/hero.svelte';
+	import Card from '$lib/components/cards/card-tag.svelte';
+	import CardGrid from '$lib/components/grids/grid-tag.svelte';
+	import SocialLinks from '$lib/components/contact/social.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -25,7 +25,7 @@
 	<Section>
 		<CardGrid>
 			{#each data.tags as tag}
-				<CardTag {tag} />
+				<Card {tag} />
 			{/each}
 		</CardGrid>
 	</Section>

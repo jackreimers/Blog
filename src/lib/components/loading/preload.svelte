@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { fade, blur, crossfade } from 'svelte/transition';
 	import Skeleton from '$lib/components/loading/skeleton.svelte';
 
 	export let src: string | string[];
@@ -14,7 +13,7 @@
 	}
 
 	function handlePreload(src: string) {
-		return new Promise(function (resolve) {
+		return new Promise(function(resolve) {
 			let image = new Image();
 			image.onload = resolve;
 			image.src = src;

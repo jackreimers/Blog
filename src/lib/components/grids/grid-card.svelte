@@ -1,5 +1,5 @@
 <script lang="ts">
-	import EmptyCard from '$lib/components/layout/elements/card-empty.svelte';
+	import EmptyCard from '$lib/components/cards/card-empty.svelte';
 
 	export let itemCount: number;
 	export let horizontal: boolean = false;

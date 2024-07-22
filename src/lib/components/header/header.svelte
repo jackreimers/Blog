@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import Navigation from '$lib/components/layout/headers/header-navigation.svelte';
-	import HorizontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
+	import Navigation from '$lib/components/header/header-mobile.svelte';
+	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	let navigation: Navigation;
@@ -25,44 +25,38 @@
 >
 	<div class="mx-auto flex items-center px-5 sm:px-6 md:px-7 lg:max-w-5xl xl:max-w-6xl">
 		<div>
-			<a href="/" class="inline-block">
+			<a class="inline-block" href="/static">
 				<img
-					src="/images/logos/logo.svg"
 					alt="Logo"
 					class="inline-block h-[2.875rem] sm:h-12"
+					src="/images/logo/logo-light.svg"
 				/>
 			</a>
 		</div>
 		<div class="flex-1" />
 		<div class="hidden md:block">
 			<HorizontalStack>
-				<Button color="Gray" text="Home" href="/" active={$page.url.pathname === '/'} />
+				<Button active={$page.url.pathname === '/'} color="Gray" href="/" text="Home" />
 				<Button
-					color="Gray"
-					text="Blog"
-					href="/blog"
 					active={$page.url.pathname.startsWith('/blog') ||
 						$page.url.pathname.startsWith('/tags')}
+					color="Gray"
+					href="/blog"
+					text="Blog"
 				/>
 				<!--
 				<Button
-					color="Header"
-					text="Projects"
-					href="/projects"
 					active={$page.url.pathname.startsWith('/projects')}
-				/>
-				<Button
-					color="Header"
-					text="Services"
-					href="/services"
-					active={$page.url.pathname.startsWith('/services')}
+					color="Gray"
+					href="/projects"
+					text="Projects"
 				/>
 				-->
 				<Button
-					color="Gray"
-					text="About"
-					href="/about"
 					active={$page.url.pathname.startsWith('/about')}
+					color="Gray"
+					href="/about"
+					text="About"
 				/>
 				<!--
 				<Button
@@ -74,7 +68,7 @@
 			</HorizontalStack>
 		</div>
 		<div class="flex items-center md:hidden">
-			<Button on:click={navigation.open} color="Blue" icon="menu" iconWeight={500} />
+			<Button color="Blue" icon="menu" iconWeight={500} on:click={navigation.open} />
 		</div>
 	</div>
 </header>

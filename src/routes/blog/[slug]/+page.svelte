@@ -1,14 +1,14 @@
 <script lang="ts">
-	import Head from '$lib/components/seo/head.svelte';
-	import Container from '$lib/components/layout/container.svelte';
-	import Hero from '$lib/components/layout/headers/hero.svelte';
-	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
-	import Section from '$lib/components/layout/elements/section.svelte';
-	import VerticalStack from '$lib/components/layout/stacks/stack-vertical.svelte';
-	import SvelteMarkdown from 'svelte-markdown';
-	import HoriontalStack from '$lib/components/layout/stacks/stack-horizontal.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
 	import { Calendar } from 'lucide-svelte';
+	import SvelteMarkdown from 'svelte-markdown';
+	import Head from '$lib/components/seo/head.svelte';
+	import Container from '$lib/components/page/container.svelte';
+	import Section from '$lib/components/page/section.svelte';
+	import Hero from '$lib/components/hero/hero.svelte';
+	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
+	import HoriontalStack from '$lib/components/stacks/stack-horizontal.svelte';
+	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -16,9 +16,9 @@
 
 <Head description={data.post.description} title="Jack Reimers | {data.post.title}" />
 <Hero smallerTitle={true} title={data.post.title}>
-	<div class="">
+	<div>
 		<div
-			class="inline-flex rounded text-gray-500 items-center bg-gray-100 px-3 shadow-inner py-2 text-sm font-medium sm:px-4 sm:py-3 sm:text-base"
+			class="inline-flex rounded text-gray-600 items-center bg-gray-100 px-3 shadow-inner py-2 text-sm font-medium sm:px-4 sm:py-3 sm:text-base"
 		>
 			<Calendar />
 			<p class="ml-1.5 mr-1">{data.post.dateString}</p>

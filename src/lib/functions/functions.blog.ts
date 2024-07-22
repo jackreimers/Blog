@@ -1,4 +1,4 @@
-import type { BlogPost } from '$lib/interfaces/post-blog';
+import type { BlogPost } from '$lib/interfaces/post.blog';
 import type { Tag } from '$lib/interfaces/tag';
 import { error } from '@sveltejs/kit';
 
@@ -12,11 +12,11 @@ export async function getBlogPostsAndTags(fetch: any) {
 	const tagsResponse = await fetch(`/data/tags.json`);
 	const tags = await tagsResponse.json();
 
-	const fileNames = directoryData.posts;
+	const fileNames = directoryData.blog;
 	const posts: BlogPost[] = [];
 
 	for (let i = 0; i < fileNames.length; i++) {
-		const postResponse = await fetch(`/data/posts-blog/${fileNames[i]}.md`);
+		const postResponse = await fetch(`/data/blog/${fileNames[i]}.md`);
 		const postData = await postResponse.text();
 
 		posts.push(parseBlogPost(postData, tags));

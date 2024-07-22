@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import Container from '$lib/components/layout/container.svelte';
-	import Section from '$lib/components/layout/elements/section.svelte';
-	import Hero from '$lib/components/layout/headers/hero.svelte';
+	import Container from '$lib/components/page/container.svelte';
+	import Section from '$lib/components/page/section.svelte';
+	import Hero from '$lib/components/hero/hero.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 </script>
 
@@ -11,17 +11,17 @@
 </svelte:head>
 
 <Hero
-	title="Oops..."
 	subtitle="An error occured whilst processing your request, please try again later or contact me if the issue persists."
+	title="Oops..."
 >
 	<div>
 		<Button
 			color="Red"
 			href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}"
-			target="_blank"
-			text={$page.status.toString()}
 			icon="error"
 			iconWeight={500}
+			target="_blank"
+			text={$page.status.toString()}
 		/>
 	</div>
 </Hero>
