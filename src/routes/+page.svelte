@@ -15,12 +15,12 @@
 </script>
 
 <Head
-	title="Jack Reimers"
 	description="I'm a full stack Software Engineer who is passionate about web and video game development."
+	title="Jack Reimers"
 />
 <Hero
+	subtitle="I'm a passionate full-stack engineer specialising in .NET and JavaScript, with an interest in web and game development."
 	title="Jack Reimers"
-	subtitle="I'm a full-stack software engineer who is passionate about web and video game development and specialises in .NET and JavaScript development."
 >
 	<SocialLinks />
 </Hero>
@@ -28,8 +28,8 @@
 	<Section>
 		<VerticalStack>
 			<HorizontalStack classes="justify-end">
-				<Button href="/tags" text="Tags" icon="tune" />
-				<Button href="/blog" text="More" icon="arrow_forward" />
+				<Button href="/tags" icon="tune" text="Tags" />
+				<Button href="/blog" icon="arrow_forward" text="More" />
 			</HorizontalStack>
 			<HorizontalStack>
 				<CardGrid itemCount={data.posts.length}>

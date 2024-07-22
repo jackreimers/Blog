@@ -8,32 +8,31 @@
 	import Container from '$lib/components/layout/container.svelte';
 	import Hero from '$lib/components/layout/headers/hero.svelte';
 	import Section from '$lib/components/layout/elements/section.svelte';
+	import SocialLinks from '$lib/components/layout/elements/social-links.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 </script>
 
 <Head
-	title="Jack Reimers | Blog"
 	description="Read my blog where I talk about web and game development."
+	title="Jack Reimers | Blog"
 />
 <Hero
-	title="Blog"
 	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."
+	title="Blog"
 >
-	<HorizontalStack>
-		<Button href="/" color="BlueSolid" icon="rss_feed" iconWeight={500} />
-	</HorizontalStack>
+	<SocialLinks />
 </Hero>
 <Container>
 	<!-- TODO: Should this be it's own component so it can be reused for tags? -->
 	<Section>
 		<VerticalStack>
 			<HorizontalStack classes="justify-end">
-				<Button href="/tags" text="Tags" icon="tune" />
+				<Button href="/tags" icon="tune" text="Tags" />
 			</HorizontalStack>
 			<HorizontalStack>
-				<CardGrid itemCount={data.posts.length} horizontal={true}>
+				<CardGrid horizontal={true} itemCount={data.posts.length}>
 					{#each data.posts as post}
 						<Card
 							href="/blog/{post.slug}"
