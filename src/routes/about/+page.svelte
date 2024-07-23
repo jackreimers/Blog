@@ -9,7 +9,8 @@
 	import SocialLinks from '$lib/components/contact/social.svelte';
 
 	/** @type {import('./$types').PageData} */
-	export let data: any;</script>
+	export let data: any;
+</script>
 
 <Head
 	description="I'm a full stack Software Engineer who is passionate about web and video game development."
