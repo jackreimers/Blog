@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { vs } from 'svelte-highlight/styles';
 
 	export let title: string;
 	export let description: string;
@@ -7,10 +8,11 @@
 
 <svelte:head>
 	<title>{title}</title>
-	<meta name="description" content={description} />
-	<meta property="og:title" content={title} />
-	<meta property="og:description" content={description} />
-	<meta property="og:url" content={'https://jackreimers.dev' + $page.url.pathname} />
-	<meta property="twitter:title" content={title} />
-	<meta property="twitter:description" content={description} />
+	<meta content={description} name="description" />
+	<meta content={title} property="og:title" />
+	<meta content={description} property="og:description" />
+	<meta content={'https://jackreimers.dev' + $page.url.pathname} property="og:url" />
+	<meta content={title} property="twitter:title" />
+	<meta content={description} property="twitter:description" />
+	{@html vs}
 </svelte:head>
