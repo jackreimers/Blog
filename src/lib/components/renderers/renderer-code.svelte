@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
-	import Prism from 'prismjs';
+	import { Highlight, HighlightSvelte } from 'svelte-highlight';
+	import { coffeescript, typescript } from 'svelte-highlight/languages';
 	import Icon from '$lib/components/text/icon.svelte';
-	import 'prismjs/themes/prism.css';
-	import 'prismjs/components/prism-csharp';
-	import 'prism-svelte';
 
 	export let lang: string = '';
 	export let text: string = '';
@@ -22,12 +20,16 @@
 </script>
 
 <div class="group mb-4">
-	<div
-		class="relative inline-block w-full overflow-hidden overflow-x-auto rounded bg-white p-3 shadow sm:p-4"
-	>
-		<code class="{lang} whitespace-pre">
-			{@html Prism.highlight(text, Prism.languages[lang], lang)}
-		</code>
+	<div class="relative inline-block w-full overflow-hidden overflow-x-auto rounded shadow">
+		{#if lang === 'svelte'}
+			<HighlightSvelte code={text} />
+		{:else if lang === 'typescript'}
+			<Highlight language={typescript} code={text} />
+		{:else if lang === 'bash'}
+			<Highlight language={coffeescript} code={text} />
+		{:else}
+			<p>Missing language!</p>
+		{/if}
 		<button
 			class="absolute right-3 top-3 rounded p-1.5 text-gray-400 opacity-0 transition-all duration-200 sm:right-4 sm:top-4 sm:p-2.5 mhover:hover:bg-gray-100 mhover:group-hover:opacity-100"
 			on:click={copy}
