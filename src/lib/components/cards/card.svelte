@@ -18,7 +18,7 @@
 		{classes}"
 >
 	{#if imageHref}
-		<a {href} class={horizontal ? 'flex-1 md:min-h-full' : ''}>
+		<a {href} class={horizontal ? 'aspect-square flex-1 md:min-h-full' : ''}>
 			<Preload src={imageHref} classes="flex aspect-square">
 				<img src={imageHref} alt={imageAlt} />
 			</Preload>
