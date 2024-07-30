@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import SocialLinks from '$lib/components/contact/social.svelte';
 </script>

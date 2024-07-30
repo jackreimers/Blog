@@ -16,7 +16,7 @@
 	title="Jack Reimers | Tags"
 />
 <Hero
-	subtitle="Discover posts that match your interests by filtering through post tags, or explore the range of topics I cover."
+	subtitle="Discover posts that match your interests by filtering through post tags, or explore the range of topics I talk about."
 	title="Tags"
 >
 	<SocialLinks />

@@ -36,7 +36,7 @@
 					/>
 				</div>
 			</Preload>
-			<div class="flex-1 markdown">
+			<div class="markdown flex-1">
 				<SvelteMarkdown source={data.about} />
 			</div>
 		</VerticalStack>

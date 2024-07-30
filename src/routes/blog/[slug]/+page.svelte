@@ -7,7 +7,7 @@
 	import Hero from '$lib/components/hero/hero.svelte';
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import HoriontalStack from '$lib/components/stacks/stack-horizontal.svelte';
-	import BlockCodeRenderer from '$lib/components/renderers/code-renderer-block.svelte';
+	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */

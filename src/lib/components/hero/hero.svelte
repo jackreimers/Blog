@@ -9,7 +9,7 @@
 <Container classes="flex flex-col justify-center gap-4 sm:min-h-[400px] bg-gray-50 my-6 overflow-hidden">
 	<h1
 		class="font-bold {smallerTitle
-			? 'text-4xl sm:text-5xl md:text-6xl lg:text-7xl'
+			? 'text-4xl sm:text-5xl md:text-6xl'
 			: 'text-5xl sm:text-6xl md:text-7xl'}"
 	>
 		{title}

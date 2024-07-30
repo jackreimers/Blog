@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import { Github, Linkedin, Mail } from 'lucide-svelte';
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 </script>

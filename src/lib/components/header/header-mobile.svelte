@@ -1,27 +1,16 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
-	import Blocker from '$lib/components/page/blocker.svelte';
+	import Blocker from '$lib/components/modal/blocker.svelte';
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 	import MobileButton from '$lib/components/buttons/button-mobile.svelte';
 
 	let blocker: Blocker;
 	let isOpen: boolean = false;
-	let scrollTop: number = 0;
-	let scrollLeft: number = 0;
-
-	onMount(() => {
-		onScroll();
-	});
 
 	export function open() {
 		blocker.open();
 		isOpen = true;
-
-		//Store the window scroll location
-		scrollTop = window.scrollY || window.document.documentElement.scrollTop;
-		scrollLeft = window.scrollX || window.document.documentElement.scrollLeft;
 	}
 
 	export function close() {
@@ -29,10 +18,6 @@
 		isOpen = false;
 	}
 
-	function onScroll() {
-		//Lock the window scroll location if the menu is open
-		if (isOpen) window.scrollTo(scrollLeft, scrollTop);
-	}
 </script>
 
 <Blocker bind:this={blocker} classes="z-20" on:click={close} />
@@ -77,5 +62,3 @@
 		</div>
 	</div>
 </div>
-
-<svelte:window on:scroll={() => onScroll()} />

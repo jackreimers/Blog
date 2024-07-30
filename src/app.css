@@ -11,7 +11,7 @@
         font-family: Inter, sans-serif;
     }
 
-    .markdown *:last-child {
+    .markdown > *:last-child {
         @apply mb-0;
     }
 

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import Icon from '$lib/components/text/icon.svelte';
 
 	export let classes = '';

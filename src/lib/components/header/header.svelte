@@ -44,14 +44,6 @@
 					href="/blog"
 					text="Blog"
 				/>
-				<!--
-				<Button
-					active={$page.url.pathname.startsWith('/projects')}
-					color="Gray"
-					href="/projects"
-					text="Projects"
-				/>
-				-->
 				<Button
 					active={$page.url.pathname.startsWith('/about')}
 					color="Gray"

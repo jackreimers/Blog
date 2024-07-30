@@ -17,10 +17,12 @@
 
 	export function open() {
 		isOpen = true;
+		document.querySelector('body')?.classList.add('overflow-hidden');
 	}
 
 	export function close() {
 		isOpen = false;
+		document.querySelector('body')?.classList.remove('overflow-hidden');
 	}
 
 	function handleClick(event: MouseEvent) {
@@ -30,8 +32,8 @@
 </script>
 
 <button
-	on:click={handleClick}
 	class="fixed left-0 top-0 h-full w-full bg-black bg-opacity-50 {classes} {isOpen
 		? ''
 		: 'invisible opacity-0'}"
+	on:click={handleClick}
 />
