@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { blur } from 'svelte/transition';
 	import Skeleton from '$lib/components/loading/skeleton.svelte';
 
 	export let src: string | string[];
@@ -13,7 +14,7 @@
 	}
 
 	function handlePreload(src: string) {
-		return new Promise(function(resolve) {
+		return new Promise(function (resolve) {
 			let image = new Image();
 			image.onload = resolve;
 			image.src = src;
@@ -25,12 +26,14 @@
 	}
 </script>
 
-{#await preload()}
-	<Skeleton {classes}>
-		<slot />
-	</Skeleton>
-{:then _}
-	<span class={classes}>
-		<slot />
-	</span>
-{/await}
+<span class="bg-gray-300 {classes}">
+	{#await preload()}
+		<Skeleton >
+			<slot />
+		</Skeleton>
+	{:then _}
+		<span in:blur>
+			<slot />
+		</span>
+	{/await}
+</span>
