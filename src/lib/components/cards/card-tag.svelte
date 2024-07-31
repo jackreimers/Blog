@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { Tag } from '$lib/interfaces/tag';
+	import { ChevronRight } from 'lucide-svelte';
 	import Preload from '$lib/components/loading/preload.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
 
 	export let tag: Tag;
 </script>
@@ -30,7 +30,7 @@
 					0 Posts
 				{/if}
 			</span>
-			<Icon classes="text-xl" icon="chevron_right" />
+			<ChevronRight size="20" />
 		</span>
 	</span>
 </a>

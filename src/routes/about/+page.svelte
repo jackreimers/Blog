@@ -24,7 +24,7 @@
 </Hero>
 <Container>
 	<Section>
-		<VerticalStack classes="gap-5 sm:gap-7 md:flex-row">
+		<VerticalStack classes="gap-8 sm:gap-10 md:flex-row">
 			<Preload classes="overflow-hidden rounded-lg" src="/images/about/headshot.png">
 				<div
 					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center bg-gray-200"

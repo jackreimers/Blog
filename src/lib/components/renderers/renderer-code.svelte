@@ -31,17 +31,13 @@
 			<p>Missing language!</p>
 		{/if}
 		<button
-			class="absolute right-3 top-3 rounded p-1.5 text-gray-400 opacity-0 transition-all duration-200 sm:right-4 sm:top-4 sm:p-2.5 mhover:hover:bg-gray-100 mhover:group-hover:opacity-100"
+			class="absolute right-3 top-3 rounded p-1.5 text-gray-400 opacity-0 transition-all duration-200 sm:right-4 sm:top-4 sm:p-2 mhover:hover:bg-gray-100 mhover:group-hover:opacity-100"
 			on:click={copy}
 		>
 			{#if copied}
-				<span in:fade>
-					<Icon icon="check" weight={400} />
-				</span>
+				<ClipboardCheck />
 			{:else}
-				<span in:fade>
-					<Icon icon="content_copy" weight={400} />
-				</span>
+				<Clipboard />
 			{/if}
 		</button>
 	</div>

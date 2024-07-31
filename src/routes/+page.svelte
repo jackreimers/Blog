@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { ArrowRight, Tags } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/page/container.svelte';
 	import Section from '$lib/components/page/section.svelte';
@@ -28,8 +29,12 @@
 	<Section>
 		<VerticalStack>
 			<HorizontalStack classes="justify-end">
-				<Button href="/tags" icon="tune" text="Tags" />
-				<Button href="/blog" icon="arrow_forward" text="More" />
+				<Button href="/tags" text="Tags">
+					<Tags />
+				</Button>
+				<Button href="/blog" text="More">
+					<ArrowRight />
+				</Button>
 			</HorizontalStack>
 			<HorizontalStack>
 				<CardGrid itemCount={data.posts.length}>

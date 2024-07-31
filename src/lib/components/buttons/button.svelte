@@ -1,22 +1,20 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
-	import Icon from '$lib/components/text/icon.svelte';
 
 	export let size: 'Small' | 'Large' = 'Large';
 	export let color: 'Blue' | 'Orange' | 'Red' | 'Gray' | 'BlueSolid' | 'RedSolid' = 'Blue';
 
 	export let href: string | null = null;
 	export let target: string = '';
+	export let type: 'button' | 'submit' | 'reset' = 'button';
 	export let text: string | null = null;
-	export let icon: string | null = null;
-	export let iconWeight: number = 400;
 	export let active: boolean = false;
 	export let classes: string = '';
 
 	const dispatch = createEventDispatcher();
 
-	const smallClasses = icon && !text ? 'p-1.5 sm:p-2' : 'py-2 px-3 sm:px-4 text-sm';
-	const largeClasses = icon && !text ? 'p-2 sm:p-3' : 'py-2 px-3 sm:py-3 sm:px-4';
+	const smallClasses = !text ? 'p-1.5 sm:p-2' : 'py-2 px-3 sm:px-4 text-sm';
+	const largeClasses = !text ? 'p-2 sm:p-3' : 'py-2 px-3 sm:py-3 sm:px-4';
 	const blueClasses =
 		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200 mhover:hover:text-blue-950';
 	const orangeClasses =
@@ -37,7 +35,8 @@
 		on:click={handleClick}
 		{href}
 		{target}
-		class="group inline-flex items-center gap-1.5 rounded transition-colors duration-200
+		{type}
+		class="group inline-flex items-center gap-2 rounded transition-colors duration-200
 			{classes}
 			{size === 'Small' ? smallClasses : ''}
 			{size === 'Large' ? largeClasses : ''}
@@ -49,18 +48,17 @@
 			{color === 'RedSolid' ? redSolidClasses : ''}"
 	>
 		{#if text}
-			<span class="font-medium {icon ? '' : ''}">
+			<span class="font-medium">
 				{text}
 			</span>
 		{/if}
-		{#if icon}
-			<Icon {icon} weight={iconWeight} />
-		{/if}
+		<slot />
 	</a>
 {:else}
 	<button
 		on:click={handleClick}
-		class="group inline-flex gap-1.5 rounded transition-colors duration-200
+		{type}
+		class="group inline-flex gap-2 rounded transition-colors duration-200
 			{classes}
 			{size === 'Small' ? smallClasses : ''}
 			{size === 'Large' ? largeClasses : ''}
@@ -72,12 +70,10 @@
 			{color === 'RedSolid' ? redSolidClasses : ''}"
 	>
 		{#if text}
-			<span class="font-medium {icon ? 'mr-1.5' : ''}">
+			<span class="font-medium">
 				{text}
 			</span>
 		{/if}
-		{#if icon}
-			<Icon {icon} weight={iconWeight} />
-		{/if}
+		<slot />
 	</button>
 {/if}

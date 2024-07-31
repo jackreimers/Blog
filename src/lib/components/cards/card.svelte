@@ -1,6 +1,6 @@
 <script lang="ts">
+	import { Image } from 'lucide-svelte';
 	import Preload from '$lib/components/loading/preload.svelte';
-	import Icon from '$lib/components/text/icon.svelte';
 
 	export let href: string = '/';
 	export let imageHref: string | null = null;
@@ -25,8 +25,8 @@
 		</a>
 	{:else}
 		<a {href} class={horizontal ? 'aspect-square flex-1 md:min-h-full' : ''}>
-			<span class="flex aspect-square items-center justify-center bg-gray-100">
-				<Icon icon="image" classes="text-7xl text-gray-300" />
+			<span class="flex aspect-square items-center justify-center bg-gray-100 text-gray-300">
+				<Image size="72" />
 			</span>
 		</a>
 	{/if}
