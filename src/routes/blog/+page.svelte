@@ -48,8 +48,8 @@
 							<HorizontalStack classes="!gap-2 overflow-auto">
 								{#each post.tags as tag}
 									<Button
-										size="Small"
-										color="Orange"
+										size="small"
+										color="orange"
 										href="/tags/{tag.slug}"
 										text={tag.name}
 									/>

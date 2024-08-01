@@ -47,8 +47,8 @@
 							content={post.intro}
 						>
 							<Button
-								size="Small"
-								color="Orange"
+								size="small"
+								color="orange"
 								href="/blog/{post.slug}"
 								text="Read More"
 							/>

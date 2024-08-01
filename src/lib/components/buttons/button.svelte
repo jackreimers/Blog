@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 
-	export let size: 'Small' | 'Large' = 'Large';
-	export let color: 'Blue' | 'Orange' | 'Red' | 'Gray' | 'BlueSolid' | 'RedSolid' = 'Blue';
+	export let size: 'small' | 'large' = 'large';
+	export let color: 'blue' | 'orange' | 'red' | 'gray' | 'blueSolid' | 'redSolid' = 'blue';
 
 	export let href: string | null = null;
 	export let target: string = '';
 	export let type: 'button' | 'submit' | 'reset' = 'button';
 	export let text: string | null = null;
+	export let iconAlign: 'left' | 'right' = 'right';
 	export let active: boolean = false;
 	export let classes: string = '';
 
@@ -38,14 +39,15 @@
 		{type}
 		class="group inline-flex items-center gap-2 rounded transition-colors duration-200
 			{classes}
-			{size === 'Small' ? smallClasses : ''}
-			{size === 'Large' ? largeClasses : ''}
-			{color === 'Blue' ? blueClasses : ''}
-			{color === 'Orange' ? orangeClasses : ''}
-			{color === 'Red' ? redClasses : ''}
-			{color === 'Gray' ? (active ? grayActiveClasses : grayClasses) : ''}
-			{color === 'BlueSolid' ? blueSolidClasses : ''}
-			{color === 'RedSolid' ? redSolidClasses : ''}"
+			{iconAlign === 'left' ? 'flex-row-reverse' : ''}
+			{size === 'small' ? smallClasses : ''}
+			{size === 'large' ? largeClasses : ''}
+			{color === 'blue' ? blueClasses : ''}
+			{color === 'orange' ? orangeClasses : ''}
+			{color === 'red' ? redClasses : ''}
+			{color === 'gray' ? (active ? grayActiveClasses : grayClasses) : ''}
+			{color === 'blueSolid' ? blueSolidClasses : ''}
+			{color === 'redSolid' ? redSolidClasses : ''}"
 	>
 		{#if text}
 			<span class="font-medium">
@@ -58,16 +60,17 @@
 	<button
 		on:click={handleClick}
 		{type}
-		class="group inline-flex gap-2 rounded transition-colors duration-200
+		class="group inline-flex items-center gap-2 rounded transition-colors duration-200
 			{classes}
-			{size === 'Small' ? smallClasses : ''}
-			{size === 'Large' ? largeClasses : ''}
-			{color === 'Blue' ? blueClasses : ''}
-			{color === 'Orange' ? orangeClasses : ''}
-			{color === 'Red' ? redClasses : ''}
-			{color === 'Gray' ? (active ? grayActiveClasses : grayClasses) : ''}
-			{color === 'BlueSolid' ? blueSolidClasses : ''}
-			{color === 'RedSolid' ? redSolidClasses : ''}"
+			{iconAlign === 'left' ? 'flex-row-reverse' : ''}
+			{size === 'small' ? smallClasses : ''}
+			{size === 'large' ? largeClasses : ''}
+			{color === 'blue' ? blueClasses : ''}
+			{color === 'orange' ? orangeClasses : ''}
+			{color === 'red' ? redClasses : ''}
+			{color === 'gray' ? (active ? grayActiveClasses : grayClasses) : ''}
+			{color === 'blueSolid' ? blueSolidClasses : ''}
+			{color === 'redSolid' ? redSolidClasses : ''}"
 	>
 		{#if text}
 			<span class="font-medium">

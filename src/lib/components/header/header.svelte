@@ -38,17 +38,17 @@
 		<div class="flex-1" />
 		<div class="hidden md:block">
 			<HorizontalStack>
-				<Button active={$page.url.pathname === '/'} color="Gray" href="/" text="Home" />
+				<Button active={$page.url.pathname === '/'} color="gray" href="/" text="Home" />
 				<Button
 					active={$page.url.pathname.startsWith('/blog') ||
 						$page.url.pathname.startsWith('/tags')}
-					color="Gray"
+					color="gray"
 					href="/blog"
 					text="Blog"
 				/>
 				<Button
 					active={$page.url.pathname.startsWith('/about')}
-					color="Gray"
+					color="gray"
 					href="/about"
 					text="About"
 				/>
@@ -62,7 +62,7 @@
 			</HorizontalStack>
 		</div>
 		<div class="flex items-center md:hidden">
-			<Button color="Blue" on:click={navigation.open}>
+			<Button color="blue" on:click={navigation.open}>
 				<Menu />
 			</Button>
 		</div>

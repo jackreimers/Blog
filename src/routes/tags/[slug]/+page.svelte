@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { Tags, X } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/page/container.svelte';
 	import Section from '$lib/components/page/section.svelte';
@@ -7,6 +8,7 @@
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import Card from '$lib/components/cards/card.svelte';
 	import CardGrid from '$lib/components/grids/grid-card.svelte';
+	import SocialLinks from '$lib/components/contact/social.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -22,15 +24,19 @@
 	title="Blog"
 >
 	<HorizontalStack>
-		<Button color="BlueSolid" href="/" icon="rss_feed" />
-		<Button color="Red" href="/blog" icon="close" text={data.tag.name} />
+		<SocialLinks />
+		<Button color="red" href="/blog" text={data.tag.name}>
+			<X />
+		</Button>
 	</HorizontalStack>
 </Hero>
 <Container>
 	<Section>
 		<VerticalStack>
 			<HorizontalStack classes="justify-end">
-				<Button href="/tags" icon="tune" text="Tags" />
+				<Button href="/tags" text="Tags">
+					<Tags />
+				</Button>
 			</HorizontalStack>
 			<HorizontalStack>
 				<CardGrid horizontal={true} itemCount={data.posts.length}>
@@ -46,8 +52,8 @@
 							<HorizontalStack classes="!gap-2 overflow-auto">
 								{#each post.tags as tag}
 									<Button
-										size="Small"
-										color="Orange"
+										size="small"
+										color="orange"
 										href="/tags/{tag.slug}"
 										text={tag.name}
 									/>

@@ -3,7 +3,6 @@
 
 	export let href: string;
 	export let text: string;
-	export let icon: string;
 	export let active: boolean = false;
 	export let classes: string = '';
 

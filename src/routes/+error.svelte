@@ -16,10 +16,8 @@
 >
 	<div>
 		<Button
-			color="Red"
+			color="red"
 			href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}"
-			icon="error"
-			iconWeight={500}
 			target="_blank"
 			text={$page.status.toString()}
 		/>

@@ -18,7 +18,7 @@
 <Hero smallerTitle={true} title={data.post.title}>
 	<div>
 		<div
-			class="inline-flex rounded text-gray-600 items-center bg-gray-100 px-3 shadow-inner py-2 text-sm font-medium sm:px-4 sm:py-3 sm:text-base"
+			class="inline-flex items-center rounded bg-gray-100 px-3 py-2 text-sm font-medium text-gray-600 shadow-inner sm:px-4 sm:py-3 sm:text-base"
 		>
 			<Calendar />
 			<p class="ml-1.5 mr-1">{data.post.dateString}</p>
@@ -26,7 +26,7 @@
 	</div>
 	<HoriontalStack classes="overflow-auto">
 		{#each data.post.tags as tag}
-			<Button color="Blue" href="/tags/{tag.slug}" text={tag.name} />
+			<Button color="blue" href="/tags/{tag.slug}" text={tag.name} />
 		{/each}
 	</HoriontalStack>
 </Hero>
