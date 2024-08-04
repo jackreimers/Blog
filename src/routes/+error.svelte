@@ -4,6 +4,7 @@
 	import Section from '$lib/components/page/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
+	import { AlertCircle } from 'lucide-svelte';
 </script>
 
 <svelte:head>
@@ -18,15 +19,17 @@
 		<Button
 			color="red"
 			href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}"
+			iconAlign="left"
 			target="_blank"
 			text={$page.status.toString()}
-		/>
+		>
+			<AlertCircle />
+		</Button>
 	</div>
 </Hero>
 
 <Container>
 	<Section>
-		<p class="max-w-prose"></p>
 		<p>
 			{$page.status === 404
 				? 'The requested resource was not found.'

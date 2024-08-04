@@ -50,7 +50,7 @@
 			{color === 'redSolid' ? redSolidClasses : ''}"
 	>
 		{#if text}
-			<span class="font-medium">
+			<span class="font-medium {iconAlign === 'left' ? 'mr-1' : ''}">
 				{text}
 			</span>
 		{/if}
@@ -73,7 +73,7 @@
 			{color === 'redSolid' ? redSolidClasses : ''}"
 	>
 		{#if text}
-			<span class="font-medium">
+			<span class="font-medium {iconAlign === 'left' ? 'mr-1' : ''}">
 				{text}
 			</span>
 		{/if}
