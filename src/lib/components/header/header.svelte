@@ -1,13 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { Menu } from 'lucide-svelte';
 	import { onMount } from 'svelte';
+	import { Menu, UserRound } from 'lucide-svelte';
 	import Navigation from '$lib/components/header/header-mobile.svelte';
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import Modal from '$lib/components/modal/modal-contact.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	let navigation: Navigation;
+	let modal: Modal;
 	let scrolled: boolean;
 
 	onMount(() => {
@@ -20,7 +21,7 @@
 </script>
 
 <Navigation bind:this={navigation} />
-
+<Modal bind:this={modal} />
 <header
 	class="fixed z-10 w-full bg-gray-50 transition-all duration-300
 		{scrolled ? 'py-2.5 shadow sm:py-3.5' : 'py-5 sm:py-7'}"
@@ -52,13 +53,9 @@
 					href="/about"
 					text="About"
 				/>
-				<!--
-				<Button
-					color="SolidBlue"
-					text="Contact"
-					href="/"
-				/>
-				-->
+				<Button color="blueSolid" on:click={() => modal.open()} text="Contact">
+					<UserRound />
+				</Button>
 			</HorizontalStack>
 		</div>
 		<div class="flex items-center md:hidden">
