@@ -8,6 +8,7 @@
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import HoriontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
+	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -40,7 +41,10 @@
 	</Section>
 	<Section>
 		<div class="markdown box-content">
-			<SvelteMarkdown renderers={{ code: BlockCodeRenderer }} source={data.post.content} />
+			<SvelteMarkdown
+				renderers={{ code: CodeRenderer, blockquote: BlockquoteRenderer }}
+				source={data.post.content}
+			/>
 		</div>
 	</Section>
 </Container>

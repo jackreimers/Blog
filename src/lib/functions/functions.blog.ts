@@ -16,7 +16,7 @@ export async function getBlogPostsAndTags(fetch: any) {
 	const posts: BlogPost[] = [];
 
 	for (let i = 0; i < fileNames.length; i++) {
-		const postResponse = await fetch(`/data/blog/${fileNames[i]}.md`);
+		const postResponse = await fetch(`/data/blog/${fileNames[i]}/post.md`);
 		const postData = await postResponse.text();
 
 		posts.push(parseBlogPost(postData, tags));

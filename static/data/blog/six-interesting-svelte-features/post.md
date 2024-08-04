@@ -4,7 +4,7 @@ tags: [ "svelte", "javascript", "typescript" ]
 title: Six Interesting Svelte Features
 description: A list of six interesting SvelteKit features that I found useful whilst learning the framework.
 slug: six-interesting-svelte-features
-imageHref: /images/blog/svelte.png
+imageHref: data/blog/six-interesting-svelte-features/images/cover.png
 imageAlt: The SvelteKit logo.
 ---
 
@@ -83,7 +83,6 @@ an action in or pass data out of a parent component.
 
 <!-- +page.svelte -->
 <Component on:click={e => console.log(e.detail.message)} />
-
 ```
 
 For more information see [the docs](https://svelte.dev/docs/component-directives).
@@ -133,7 +132,6 @@ The transitions are applied to the element using the `in:` directive and can be 
 {:then _}
     <p in:fade>Loaded!</p>
 {/await}
-
 ```
 
 For more information see [the docs](https://svelte.dev/docs/svelte-transition).
