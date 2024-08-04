@@ -1,8 +1,7 @@
 <script lang="ts">
-	import { fade } from 'svelte/transition';
-	import { Highlight, HighlightSvelte } from 'svelte-highlight';
+	import { Highlight, HighlightSvelte, LineNumbers } from 'svelte-highlight';
 	import { coffeescript, typescript } from 'svelte-highlight/languages';
-	import Icon from '$lib/components/text/icon.svelte';
+	import { Clipboard, ClipboardCheck } from 'lucide-svelte';
 
 	export let lang: string = '';
 	export let text: string = '';
@@ -15,16 +14,31 @@
 
 		setTimeout(() => {
 			copied = false;
-		}, 2500);
+		}, 3000);
 	}
 </script>
 
 <div class="group mb-4">
-	<div class="relative inline-block w-full overflow-hidden overflow-x-auto rounded shadow">
+	<div
+		class="relative inline-block w-full overflow-hidden overflow-x-auto rounded text-gray-400 shadow"
+	>
 		{#if lang === 'svelte'}
-			<HighlightSvelte code={text} />
+			<HighlightSvelte code={text} let:highlighted>
+				<LineNumbers
+					--line-number-color="rgb(156 163 175)"
+					--border-color="rgb(156 163 175)"
+					hideBorder
+					{highlighted}
+				/>
+			</HighlightSvelte>
 		{:else if lang === 'typescript'}
-			<Highlight language={typescript} code={text} />
+			<Highlight language={typescript} code={text} let:highlighted>
+				<LineNumbers
+					--line-number-color="rgb(156 163 175)"
+					--border-color="rgb(156 163 175)"
+					{highlighted}
+				/>
+			</Highlight>
 		{:else if lang === 'bash'}
 			<Highlight language={coffeescript} code={text} />
 		{:else}
