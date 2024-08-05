@@ -46,7 +46,7 @@
 	<div class="flex h-full flex-col" slot="overlay">
 		<VerticalStack classes="flex-1">
 			<div>
-				<div class="inline-block rounded-full bg-green-100 p-4 text-green-900 sm:p-5">
+				<div class="inline-block rounded-full bg-green-100 p-4 text-green-900 md:p-5">
 					<div class="hidden sm:block">
 						<MailCheck size="60" />
 					</div>
@@ -81,9 +81,12 @@
 			};
 		}}
 	>
-		<p class="mb-6 text-gray-500 sm:mb-8">
+		<p class="mb-6 sm:mb-8">
 			Email me directly at
-			<a class="font-medium text-gray-800 underline" href="mailto:me@jackreimers.dev">
+			<a
+				class="border-b border-gray-300 font-medium transition-colors duration-200 mhover:hover:border-gray-800"
+				href="mailto:me@jackreimers.dev"
+			>
 				me@jackreimers.dev
 			</a>
 			or use the form below to get in touch.
