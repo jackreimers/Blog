@@ -23,8 +23,10 @@
 		>
 			<AlertCircle />
 		</Button>
-		<Button active={true} color="gray" href="/" text="Back to Homepage">
-			<Undo2 />
-		</Button>
+		{#if $page.url.pathname !== '/'}
+			<Button active={true} color="gray" href="/" text="Return Home">
+				<Undo2 />
+			</Button>
+		{/if}
 	</HorizontalStack>
 </Hero>
