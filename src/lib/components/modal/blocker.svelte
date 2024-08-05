@@ -31,9 +31,9 @@
 	}
 
 	function handleKeyDown(event: KeyboardEvent) {
-		dispatch('close', event);
-
 		if (event.key === 'Escape') {
+			event.preventDefault();
+			dispatch('close', event);
 			close();
 		}
 	}
@@ -46,4 +46,4 @@
 	on:click={handleClick}
 />
 
-<svelte:window on:keydown|preventDefault={handleKeyDown} />
+<svelte:window on:keydown={handleKeyDown} />
