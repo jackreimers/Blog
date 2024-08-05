@@ -23,32 +23,42 @@
     }
 
     .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
-        @apply text-2xl font-medium;
+        @apply text-xl font-semibold mt-6 sm:mt-7;
     }
 
     .markdown p {
-        @apply mb-4;
+        @apply mb-5 sm:mb-6;
+    }
+
+    .markdown p > code {
+        @apply bg-white shadow;
+    }
+
+    .markdown blockquote p {
+        margin: unset;
     }
 
     .markdown a {
-        @apply underline;
         @apply border-b border-gray-300 font-medium transition-colors duration-200 mhover:hover:border-gray-800;
-    }
-    }
-
-    .markdown ul, .markdown ol {
-        @apply mb-5;
-    }
-
-    .markdown li {
-        @apply list-disc pl-5;
-    }
-
-    .markdown table {
-        @apply mb-5 border border-gray-500;
     }
 
     .markdown code {
-        @apply rounded bg-white px-1.5 py-1;
+        @apply rounded text-base px-1.5 py-1;
+    }
+
+    .markdown ul, .markdown ol {
+        @apply mb-5 pl-5;
+    }
+
+    .markdown ul li {
+        @apply list-disc pl-2;
+    }
+
+    .markdown ol li {
+        @apply list-decimal pl-2;
+    }
+
+    .markdown img {
+        @apply mx-auto my-6 sm:my-7 rounded-lg;
     }
 }
