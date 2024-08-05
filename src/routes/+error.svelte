@@ -33,7 +33,7 @@
 		<p>
 			{$page.status === 404
 				? 'The requested resource was not found.'
-				: 'An error occurred while trying to load the page.'}
+				: ($page?.error?.message ?? 'Something went wrong.')}
 		</p>
 	</Section>
 </Container>
