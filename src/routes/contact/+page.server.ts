@@ -1,9 +1,11 @@
+import { error } from '@sveltejs/kit';
 import { getGraphClient } from '$lib/functions/functions.email';
 import {
 	PRIVATE_EXCHANGE_CLIENT_ID,
 	PRIVATE_EXCHANGE_CLIENT_SECRET,
 	PRIVATE_EXCHANGE_TENANT_ID
 } from '$env/static/private';
+import { PUBLIC_GRAPH_ENDPOINT } from '$env/static/public';
 
 export const prerender = false;
 
@@ -15,18 +17,18 @@ export const actions = {
 		const email = data.get('email');
 		const message = data.get('message');
 
-		//TODO: Fine grained error messages
+		//TODO: Handle invalid inputs instead of throwing exceptions
 		if (!name || name === '') {
-			return { success: false };
+			error(400, 'Name is required.');
 		}
 
 		//TODO: Validate email format
 		if (!email || email === '') {
-			return { success: false };
+			error(400, 'Email is required.');
 		}
 
 		if (!message || message === '') {
-			return { success: false };
+			error(400, 'Message is required.');
 		}
 
 		const client = await getGraphClient(
@@ -37,10 +39,10 @@ export const actions = {
 
 		const payload = {
 			message: {
-				subject: `Contact Form Submission`,
+				subject: 'New Contact Form Submission',
 				body: {
 					contentType: 'Text',
-					content: `Name: ${name}\nEmail: ${email}\n\nMessage: ${message}`
+					content: `Name: ${name}\nEmail: ${email}\n\n${message}`
 				},
 				toRecipients: [
 					{
@@ -53,7 +55,12 @@ export const actions = {
 			saveToSentItems: 'false'
 		};
 
-		//const result = await client.api(PUBLIC_GRAPH_ENDPOINT).post(payload);
+		try {
+			await client.api(PUBLIC_GRAPH_ENDPOINT).post(payload);
+		} catch (e) {
+			error(500, 'Failed to send message.');
+		}
+
 		return { success: true };
 	}
 };
