@@ -26,8 +26,16 @@
 	}
 
 	function handleClick(event: MouseEvent) {
-		dispatch('click', event);
+		dispatch('close', event);
 		close();
+	}
+
+	function handleKeyDown(event: KeyboardEvent) {
+		dispatch('close', event);
+
+		if (event.key === 'Escape') {
+			close();
+		}
 	}
 </script>
 
@@ -37,3 +45,5 @@
 		: 'invisible opacity-0'}"
 	on:click={handleClick}
 />
+
+<svelte:window on:keydown|preventDefault={handleKeyDown} />

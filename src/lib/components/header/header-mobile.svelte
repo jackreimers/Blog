@@ -20,7 +20,7 @@
 	}
 </script>
 
-<Blocker bind:this={blocker} classes="z-20" on:click={close} />
+<Blocker bind:this={blocker} classes="z-20" on:close={close} />
 
 <div
 	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-gray-100 transition-all duration-500 {isOpen
@@ -32,7 +32,7 @@
 		<div class="p-4 transition-spacing delay-100 duration-700 {isOpen ? 'ml-0' : 'ml-4'}">
 			<div class="mb-8 flex h-[2.875rem] justify-end align-middle sm:h-12">
 				<div>
-					<Button color="Red" on:click={close}>
+					<Button color="red" on:click={close}>
 						<X />
 					</Button>
 				</div>

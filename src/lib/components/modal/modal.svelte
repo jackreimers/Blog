@@ -29,7 +29,7 @@
 	let isOpen: boolean = false;
 </script>
 
-<Blocker bind:this={blocker} classes="z-20" on:click={close} />
+<Blocker bind:this={blocker} classes="z-20" on:close={close} />
 <div
 	class="root fixed left-1/2 top-1/2 z-30 min-w-[300px] max-w-xl -translate-x-1/2 -translate-y-1/2 transform overflow-hidden rounded-lg bg-gray-50 shadow {classes} {isOpen
 		? ''
