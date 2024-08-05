@@ -44,7 +44,7 @@
 		<div class="flex-1">
 			<slot name="header" />
 		</div>
-		<Button color="red" on:click={close}>
+		<Button color="gray" on:click={close}>
 			<X />
 		</Button>
 	</div>
