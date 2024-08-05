@@ -37,7 +37,10 @@
 >
 	<div class="w-full overflow-hidden rounded-lg bg-gray-50 shadow {classes}">
 		{#if showOverlay}
-			<div in:blur class="absolute z-20 h-full w-full bg-gray-50 p-6 sm:p-8">
+			<div
+				in:blur
+				class="absolute z-20 h-full w-full overflow-hidden rounded-lg bg-gray-50 p-6 sm:p-8"
+			>
 				<slot name="overlay" />
 			</div>
 		{/if}
@@ -49,7 +52,7 @@
 				<X />
 			</Button>
 		</div>
-		<div class="relative m-6 flex flex-col gap-4 sm:m-8">
+		<div class="relative flex flex-col gap-4 p-6 sm:p-8">
 			<slot name="body" />
 		</div>
 	</div>

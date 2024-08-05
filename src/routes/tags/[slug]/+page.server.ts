@@ -14,6 +14,7 @@ export async function load({ fetch, params }) {
 
 /** @type {import('./$types').EntryGenerator} */
 export async function entries() {
+	//TODO: Is this even needed?
 	//TODO: Investigate making this dynamically populated
 	return [{ slug: 'javascript' }, { slug: 'typescript' }, { slug: 'svelte' }];
 }

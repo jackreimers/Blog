@@ -1,10 +1,10 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { AlertCircle } from 'lucide-svelte';
 	import Container from '$lib/components/page/container.svelte';
 	import Section from '$lib/components/page/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
-	import { AlertCircle } from 'lucide-svelte';
 </script>
 
 <svelte:head>
