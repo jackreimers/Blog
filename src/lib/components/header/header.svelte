@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { Menu, UserRound } from 'lucide-svelte';
+	import { Menu } from 'lucide-svelte';
 	import Navigation from '$lib/components/header/header-mobile.svelte';
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import Modal from '$lib/components/modal/modal-contact.svelte';
@@ -53,9 +53,7 @@
 					href="/about"
 					text="About"
 				/>
-				<Button color="blueSolid" on:click={() => modal.open()} text="Contact">
-					<UserRound />
-				</Button>
+				<Button color="blueSolid" on:click={() => modal.open()} text="Contact" />
 			</HorizontalStack>
 		</div>
 		<div class="flex items-center md:hidden">
