@@ -26,7 +26,6 @@
 	<SocialLinks />
 </Hero>
 <Container>
-	<!-- TODO: Should this be it's own component so it can be reused for tags? -->
 	<Section>
 		<VerticalStack>
 			<HorizontalStack classes="justify-end">

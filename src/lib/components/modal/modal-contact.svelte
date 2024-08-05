@@ -42,7 +42,7 @@
 </script>
 
 <div class=""></div>
-<Modal bind:this={modal} classes="w-11/12 sm:w-[576px]" showOverlay={$page.form?.success}>
+<Modal bind:this={modal} showOverlay={$page.form?.success}>
 	<p class="text-2xl font-bold leading-none sm:text-3xl" slot="header">Contact</p>
 	<div class="flex h-full flex-col" slot="overlay">
 		<VerticalStack classes="flex-1">

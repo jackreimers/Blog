@@ -31,24 +31,26 @@
 
 <Blocker bind:this={blocker} classes="z-20" on:close={close} />
 <div
-	class="root fixed left-1/2 top-1/2 z-30 min-w-[300px] max-w-xl -translate-x-1/2 -translate-y-1/2 transform overflow-hidden rounded-lg bg-gray-50 shadow {classes} {isOpen
+	class="root fixed left-1/2 top-1/2 z-30 w-full -translate-x-1/2 -translate-y-1/2 transform p-5 sm:max-w-xl md:max-w-2xl {isOpen
 		? ''
 		: 'invisible opacity-0'}"
 >
-	{#if showOverlay}
-		<div in:blur class="absolute z-20 h-full w-full bg-gray-50 p-6 sm:p-8">
-			<slot name="overlay" />
+	<div class="w-full overflow-hidden rounded-lg bg-gray-50 shadow {classes}">
+		{#if showOverlay}
+			<div in:blur class="absolute z-20 h-full w-full bg-gray-50 p-6 sm:p-8">
+				<slot name="overlay" />
+			</div>
+		{/if}
+		<div class="flex items-center px-6 pt-6 sm:px-8 sm:pt-8">
+			<div class="flex-1">
+				<slot name="header" />
+			</div>
+			<Button color="gray" on:click={close}>
+				<X />
+			</Button>
 		</div>
-	{/if}
-	<div class="flex items-center px-6 pt-6 sm:px-8 sm:pt-8">
-		<div class="flex-1">
-			<slot name="header" />
+		<div class="relative m-6 flex flex-col gap-4 sm:m-8">
+			<slot name="body" />
 		</div>
-		<Button color="gray" on:click={close}>
-			<X />
-		</Button>
-	</div>
-	<div class="relative m-6 flex flex-col gap-4 sm:m-8">
-		<slot name="body" />
 	</div>
 </div>
