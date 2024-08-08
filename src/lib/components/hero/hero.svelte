@@ -9,18 +9,21 @@
 
 <Container classes="my-6 flex items-center bg-gray-50 sm:min-h-[400px]">
 	<VerticalStack>
-		<h1
-			class="font-bold leading-none {smallerTitle
-				? 'text-4xl sm:text-5xl md:text-6xl'
-				: 'text-5xl sm:text-6xl md:text-7xl'}"
-		>
-			{title}
-		</h1>
+		<slot name="above" />
+		<div>
+			<h1
+				class="font-bold {smallerTitle
+					? 'text-4xl sm:text-5xl md:text-6xl'
+					: 'text-5xl sm:text-6xl md:text-7xl'}"
+			>
+				{title}
+			</h1>
+		</div>
 		{#if subtitle}
 			<p class="max-w-prose text-sm text-gray-500 sm:text-base">
 				{subtitle}
 			</p>
 		{/if}
-		<slot />
+		<slot name="below" />
 	</VerticalStack>
 </Container>

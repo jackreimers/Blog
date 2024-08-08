@@ -23,7 +23,7 @@
 	subtitle="I'm a passionate full-stack engineer specialising in .NET and JavaScript, with an interest in web and game development."
 	title="Jack Reimers"
 >
-	<SocialLinks />
+	<SocialLinks slot="below" />
 </Hero>
 <Container>
 	<Section>

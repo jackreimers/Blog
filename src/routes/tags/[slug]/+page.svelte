@@ -23,7 +23,7 @@
 	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."
 	title="Blog"
 >
-	<HorizontalStack>
+	<HorizontalStack slot="below">
 		<SocialLinks />
 		<Button color="red" href="/blog" text={data.tag.name}>
 			<X />

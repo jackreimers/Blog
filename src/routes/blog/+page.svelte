@@ -23,7 +23,7 @@
 	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."
 	title="Blog"
 >
-	<SocialLinks />
+	<SocialLinks slot="below" />
 </Hero>
 <Container>
 	<Section>

@@ -20,7 +20,7 @@
 	subtitle="Dive deeper into my professional background and expertise, and find out how to stay connected or reach out."
 	title="Contact"
 >
-	<SocialLinks />
+	<SocialLinks slot="below" />
 </Hero>
 <Container>
 	<Section>

@@ -23,7 +23,7 @@
 	subtitle="Discover posts that match your interests by filtering through post tags, or explore the range of topics I talk about."
 	title="Tags"
 >
-	<SocialLinks />
+	<SocialLinks slot="below" />
 </Hero>
 <Container>
 	<VerticalStack>

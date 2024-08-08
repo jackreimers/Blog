@@ -14,7 +14,7 @@
 	subtitle="An error occured whilst processing your request, please try again later or contact me if the issue persists."
 	title="Oops..."
 >
-	<HorizontalStack>
+	<HorizontalStack slot="below">
 		<Button
 			color="red"
 			href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}"
