@@ -8,14 +8,13 @@
 	export let target: string = '';
 	export let type: 'button' | 'submit' | 'reset' = 'button';
 	export let text: string | null = null;
-	export let iconAlign: 'left' | 'right' = 'right';
 	export let active: boolean = false;
 	export let classes: string = '';
 
 	const dispatch = createEventDispatcher();
 
-	const smallClasses = !text ? 'p-1.5 sm:p-2' : 'py-2 px-3 sm:px-4 text-sm';
-	const largeClasses = !text ? 'p-2 sm:p-3' : 'py-2 px-3 sm:py-3 sm:px-4';
+	const smallClasses = !text ? 'p-2' : 'py-2 px-3 text-sm';
+	const largeClasses = !text ? 'p-2.5 sm:p-3' : 'py-2.5 px-3.5 sm:py-3 sm:px-4';
 	const blueClasses =
 		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200 mhover:hover:text-blue-950';
 	const orangeClasses =
@@ -39,7 +38,6 @@
 		{type}
 		class="group inline-flex items-center gap-2 rounded transition-colors duration-200
 			{classes}
-			{iconAlign === 'left' ? 'flex-row-reverse' : ''}
 			{size === 'small' ? smallClasses : ''}
 			{size === 'large' ? largeClasses : ''}
 			{color === 'blue' ? blueClasses : ''}
@@ -50,7 +48,7 @@
 			{color === 'redSolid' ? redSolidClasses : ''}"
 	>
 		{#if text}
-			<span class="font-medium {iconAlign === 'left' ? 'mr-1' : ''}">
+			<span class="font-medium">
 				{text}
 			</span>
 		{/if}
@@ -62,7 +60,6 @@
 		{type}
 		class="group inline-flex items-center gap-2 rounded transition-colors duration-200
 			{classes}
-			{iconAlign === 'left' ? 'flex-row-reverse' : ''}
 			{size === 'small' ? smallClasses : ''}
 			{size === 'large' ? largeClasses : ''}
 			{color === 'blue' ? blueClasses : ''}
@@ -73,7 +70,7 @@
 			{color === 'redSolid' ? redSolidClasses : ''}"
 	>
 		{#if text}
-			<span class="font-medium {iconAlign === 'left' ? 'mr-1' : ''}">
+			<span class="font-medium">
 				{text}
 			</span>
 		{/if}
