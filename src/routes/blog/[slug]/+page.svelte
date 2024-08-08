@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Calendar } from 'lucide-svelte';
 	import SvelteMarkdown from 'svelte-markdown';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/page/container.svelte';
@@ -10,6 +9,7 @@
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
 	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
+	import Author from '$lib/components/contact/author.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -17,24 +17,21 @@
 
 <Head description={data.post.description} title="Jack Reimers | {data.post.title}" />
 <Hero smallerTitle={true} title={data.post.title}>
-	<div>
-		<div
-			class="inline-flex items-center rounded bg-gray-100 px-3 py-2 text-sm font-medium text-gray-600 shadow-inner sm:px-4 sm:py-3 sm:text-base"
-		>
-			<Calendar />
-			<p class="ml-1.5 mr-1">{data.post.dateString}</p>
-		</div>
-	</div>
-	<HoriontalStack classes="overflow-auto">
-		{#each data.post.tags as tag}
-			<Button color="blue" href="/tags/{tag.slug}" text={tag.name} />
-		{/each}
-	</HoriontalStack>
+	<p class="text-sm text-gray-500 sm:text-base" slot="above">
+		Published on {data.post.dateString}
+	</p>
+	<Author slot="below" />
 </Hero>
 <Container>
 	<Section>
 		<VerticalStack>
+			<HoriontalStack classes="overflow-auto sm:justify-end">
+				{#each data.post.tags as tag}
+					<Button color="blue" href="/tags/{tag.slug}" text={tag.name} />
+				{/each}
+			</HoriontalStack>
 			<div class="markdown box-content">
+				<h2 id="introduction">Introduction</h2>
 				<SvelteMarkdown source={data.post.intro} />
 			</div>
 		</VerticalStack>
