@@ -59,7 +59,7 @@ export function parseBlogPost(data: string, tags: Tag[]): BlogPost {
 	const content = split[1] || '';
 
 	const date = new Date(mappedMetadata['date'] as string);
-	const dateString = `${date.getDate()} ${date.toLocaleString('default', { month: 'long' })} ${date.getFullYear()}`;
+	const dateString = `${date.toLocaleString('default', { month: 'long' })} ${date.getDate()}, ${date.getFullYear()}`;
 
 	const tagSlugs = mappedMetadata['tags'] as string[];
 	const filteredTags = tags.filter((tag) => tagSlugs.includes(tag.slug));
