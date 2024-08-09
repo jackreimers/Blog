@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Tag } from '$lib/interfaces/tag';
-	import { ChevronRight } from 'lucide-svelte';
+	import { ArrowRight } from 'lucide-svelte';
+	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import Preload from '$lib/components/loading/preload.svelte';
 
 	export let tag: Tag;
@@ -17,12 +18,12 @@
 			</Preload>
 		</span>
 	</span>
-	<span class="flex flex-col items-center gap-2.5 p-3 sm:flex-row sm:gap-0 sm:p-4">
+	<VerticalStack classes="items-center p-4 sm:flex-row md:p-5">
 		<span class="flex flex-1 flex-col">
 			<span class="text-lg font-semibold sm:text-xl">{tag.name}</span>
 		</span>
-		<span class="flex gap-0.5 rounded bg-blue-100 px-1 py-1.5 text-sm text-blue-900">
-			<span class="ml-2 text-sm font-semibold">
+		<span class="flex gap-2 rounded bg-blue-100 px-3 py-2 text-sm text-blue-900">
+			<span class="text-sm font-semibold">
 				{#if tag.count}
 					{tag.count}
 					{tag.count === 1 ? 'Post' : 'Posts'}
@@ -30,7 +31,7 @@
 					0 Posts
 				{/if}
 			</span>
-			<ChevronRight size="20" />
+			<ArrowRight size="20" />
 		</span>
-	</span>
+	</VerticalStack>
 </a>

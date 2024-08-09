@@ -31,7 +31,7 @@
 		</a>
 	{/if}
 	<div class="flex flex-1 flex-col p-4 md:p-5 {horizontal ? ' md:flex-[3]' : ''}">
-		<div class="mb-2">
+		<div class="mb-2 sm:mb-2.5">
 			<p class="font-medium text-gray-500">{subtitle}</p>
 			<span class="line-clamp-1 overflow-ellipsis">
 				<a
