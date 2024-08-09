@@ -31,7 +31,7 @@
 				{/each}
 			</HoriontalStack>
 			<div class="markdown box-content">
-				<h2 id="introduction">Introduction</h2>
+				<h2 class="!mt-4" id="introduction">Introduction</h2>
 				<SvelteMarkdown source={data.post.intro} />
 			</div>
 		</VerticalStack>

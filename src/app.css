@@ -10,44 +10,32 @@
         font-family: Inter, sans-serif;
     }
 
-    .markdown > *:last-child {
-        @apply mb-0;
-    }
-
-    .markdown h1, .markdown h2, .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
-        @apply mb-3;
+    .markdown > *:first-child {
+        @apply mt-0;
     }
 
     .markdown h1, .markdown h2 {
-        @apply text-xl md:text-2xl mt-8 sm:mt-9 font-bold;
+        @apply text-xl sm:text-2xl md:text-3xl font-bold mt-10 sm:mt-12;
     }
 
     .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
-        @apply text-xl font-semibold mt-6 sm:mt-7;
+        @apply text-lg sm:text-xl font-semibold md:text-2xl mt-6 sm:mt-8;
     }
 
     .markdown p {
-        @apply mb-5 sm:mb-6;
+        @apply mt-4;
     }
 
     .markdown p > code {
         @apply bg-white shadow;
     }
 
-    .markdown blockquote p {
-        margin: unset;
-    }
-
     .markdown a {
         @apply border-b border-gray-300 font-medium transition-colors duration-200 mhover:hover:border-gray-800;
     }
 
-    .markdown code {
-        @apply rounded text-base px-1.5 py-1;
-    }
-
     .markdown ul, .markdown ol {
-        @apply mb-5 pl-5;
+        @apply my-3 pl-7 sm:my-4;
     }
 
     .markdown ul li {
@@ -55,10 +43,10 @@
     }
 
     .markdown ol li {
-        @apply list-decimal pl-2;
+        @apply list-decimal;
     }
 
     .markdown img {
-        @apply mx-auto my-6 sm:my-7 rounded-lg;
+        @apply mx-auto rounded-lg my-4 sm:my-6;
     }
 }
