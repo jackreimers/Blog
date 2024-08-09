@@ -25,14 +25,14 @@
 <Container>
 	<Section>
 		<VerticalStack classes="!gap-6 sm:!gap-8 md:flex-row">
-			<Preload classes="overflow-hidden rounded-lg" src="/images/about/headshot.png">
+			<Preload classes="overflow-hidden rounded-lg" src="/images/about/headshot-600px.png">
 				<div
 					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center bg-gray-200"
 				>
 					<img
 						alt="Professional headshot of Jack Reimers"
 						class="mx-auto h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]"
-						src="/images/about/headshot.png"
+						src="/images/about/headshot-600px.png"
 					/>
 				</div>
 			</Preload>
