@@ -27,7 +27,7 @@
     }
 
     .markdown p > code {
-        @apply bg-white shadow;
+        @apply bg-gray-200 px-1.5 py-0.5 rounded;
     }
 
     .markdown a {
