@@ -8,7 +8,7 @@ slug: sending-emails-with-ms-graph
 
 Recently I have been exploring options for sending emails programmatically for a contact form and found that most
 email services are expensive and include a lot of marketing focused features that I don't need. I instead opted to use
-a cheap Exhange Online plan and the Microsoft Graph API. Here's how you can do it too!
+a cheap Exchange Online plan and the Microsoft Graph API. Here's how you can do it too!
 
 <!--endintro-->
 
