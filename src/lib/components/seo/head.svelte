@@ -12,6 +12,8 @@
 	<meta content={title} property="og:title" />
 	<meta content={description} property="og:description" />
 	<meta content={'https://jackreimers.dev' + $page.url.pathname} property="og:url" />
+	<meta content="https://jackreimers.dev/images/other/og.png" property="og:image" />
+	<meta content="summary" property="twitter:card" />
 	<meta content={title} property="twitter:title" />
 	<meta content={description} property="twitter:description" />
 	{@html vs}

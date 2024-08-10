@@ -9,11 +9,6 @@
 	injectSpeedInsights();
 </script>
 
-<svelte:head>
-	<meta content="https://jackreimers.dev/images/other/og.png" property="og:image" />
-	<meta content="summary" property="twitter:card" />
-</svelte:head>
-
 <div class="h-[100dvh]">
 	<div class="flex min-h-[100dvh] flex-col">
 		<Header />
