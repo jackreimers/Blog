@@ -6,6 +6,7 @@
 	import Hero from '$lib/components/hero/hero.svelte';
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import HoriontalStack from '$lib/components/stacks/stack-horizontal.svelte';
+	import ImageRenderer from '$lib/components/renderers/renderer-image.svelte';
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
 	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
@@ -39,7 +40,11 @@
 	<Section>
 		<div class="markdown box-content">
 			<SvelteMarkdown
-				renderers={{ code: CodeRenderer, blockquote: BlockquoteRenderer }}
+				renderers={{
+					image: ImageRenderer,
+					code: CodeRenderer,
+					blockquote: BlockquoteRenderer
+				}}
 				source={data.post.content}
 			/>
 		</div>

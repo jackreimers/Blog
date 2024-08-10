@@ -45,8 +45,4 @@
     .markdown ol li {
         @apply list-decimal;
     }
-
-    .markdown img {
-        @apply mx-auto rounded-lg my-4 sm:my-6;
-    }
 }

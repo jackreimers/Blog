@@ -9,7 +9,7 @@
 			<Preload classes="overflow-hidden rounded-full" src="/images/about/headshot-128px.png">
 				<img
 					alt="Professional headshot of Jack Reimers"
-					class="h-14 bg-gray-200 sm:h-16"
+					class="h-14 w-14 bg-gray-200 sm:h-16 sm:w-16"
 					src="/images/about/headshot-128px.png"
 				/>
 			</Preload>

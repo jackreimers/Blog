@@ -28,7 +28,7 @@
 
 <span class="bg-gray-300 {classes}">
 	{#await preload()}
-		<Skeleton >
+		<Skeleton>
 			<slot />
 		</Skeleton>
 	{:then _}
