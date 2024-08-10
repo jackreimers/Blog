@@ -20,7 +20,7 @@
 	}
 </script>
 
-<div class="group mt-4">
+<div class="group my-4 sm:my-6">
 	<div
 		class="relative inline-block w-full overflow-hidden overflow-x-auto rounded-lg text-sm text-gray-300 sm:text-base"
 	>

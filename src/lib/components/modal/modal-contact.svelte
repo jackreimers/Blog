@@ -71,12 +71,13 @@
 		action="/contact"
 		method="POST"
 		slot="body"
-		use:enhance={() => {
-			return async ({ result }) => {
-				if (!validate()) {
-					return;
-				}
+		use:enhance={(event) => {
+			if (!validate()) {
+				event.cancel();
+				return;
+			}
 
+			return async ({ result }) => {
 				await applyAction(result);
 			};
 		}}
