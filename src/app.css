@@ -30,10 +30,6 @@
         @apply bg-gray-200 px-1.5 py-0.5 rounded;
     }
 
-    .markdown a {
-        @apply border-b border-gray-300 font-medium transition-colors duration-200 mhover:hover:border-gray-800;
-    }
-
     .markdown ul, .markdown ol {
         @apply my-3 pl-7 sm:my-4;
     }
