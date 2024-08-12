@@ -114,20 +114,20 @@ You should already have your client secret from the previous step. To find the r
 
 ### 2. Install Packages
 
-Install the packages below using your package manager of choice.
+If you haven't already, create a new project and install the packages below using your package manager of choice.
 
 ```bash
 npm install @azure/identity
 npm install @microsoft/microsoft-graph-client
 ```
 
-### 3. Create a Client
+### 3. Create the Graph Client
 
-When creating a client you will need to provide the three secrets required to authenticate with Azure. Ensure that you
-store and handle these secrets securely and never use them on the frontend.
+When creating a graph client you will need to provide the three secrets required to authenticate with Azure. Ensure that
+you store and handle these secrets securely and never use them on the frontend.
 
-I recommend using a utility function to create the client like I do below. This will make it easier to reuse the code if
-you need to create clients in more than one place.
+I recommend using a utility function to create the graph client like I do below. This will make it easier to reuse the
+code if you need to create it in more than one place.
 
 > All code in this guide must be run on a server or backend service as it requires access to the client secrets.
 
@@ -154,8 +154,8 @@ export async function getGraphClient(tenantId: string, clientId: string, clientS
 
 ### 4. Send an Email
 
-Once you have the client, you will need to construct a payload that represents the email you want to send. Microsoft
-maintains the [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) which is invaluable
+Once you have the graph client, you will need to construct a payload that represents the email you want to send.
+Microsoft maintains the [Graph Explorer](https://developer.microsoft.com/en-us/graph/graph-explorer) which is invaluable
 for testing and debugging your requests and provides examples for payloads.
 
 ```typescript
