@@ -17,19 +17,17 @@
 		{horizontal ? 'md:flex-row' : ''}
 		{classes}"
 >
-	{#if imageHref}
-		<a {href} class={horizontal ? 'aspect-square flex-1 md:min-h-full' : ''}>
+	<a class="hidden sm:block {horizontal ? 'aspect-square flex-1 md:min-h-full' : ''}" {href}>
+		{#if imageHref}
 			<Preload src={imageHref} classes="flex aspect-square">
 				<img src={imageHref} alt={imageAlt} />
 			</Preload>
-		</a>
-	{:else}
-		<a {href} class={horizontal ? 'aspect-square flex-1 md:min-h-full' : ''}>
+		{:else}
 			<span class="flex aspect-square items-center justify-center bg-gray-100 text-gray-300">
 				<Image size="72" />
 			</span>
-		</a>
-	{/if}
+		{/if}
+	</a>
 	<div class="flex flex-1 flex-col p-4 md:p-5 {horizontal ? ' md:flex-[3]' : ''}">
 		<div class="mb-2 sm:mb-2.5">
 			<p class="font-medium text-gray-500">{subtitle}</p>
