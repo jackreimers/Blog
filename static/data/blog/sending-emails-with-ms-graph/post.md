@@ -4,6 +4,8 @@ tags: [ "azure", "graphql", "javascript", "typescript" ]
 title: Sending Emails with the Microsoft Graph API
 description: A guide on how to send emails programmatically using the Microsoft Graph API.
 slug: sending-emails-with-ms-graph
+imageHref: /data/blog/sending-emails-with-ms-graph/images/cover.png
+imageAlt: The Microsoft Entra ID logo.
 ---
 
 Recently I have been exploring options for sending emails programmatically for a contact form and found that most
