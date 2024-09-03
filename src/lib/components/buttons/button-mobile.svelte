@@ -14,7 +14,7 @@
 	}
 </script>
 
-<a class="flex items-center gap-3 py-1 {classes}" {href} on:click={handleClick}>
+<a class="flex items-center gap-2.5 py-1 {classes}" {href} on:click={handleClick}>
 	<span
 		class="items-center rounded-full p-1.5 transition-colors duration-200 {active
 			? 'bg-blue-100 text-blue-900'
