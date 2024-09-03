@@ -35,7 +35,7 @@
 		? ''
 		: 'invisible opacity-0'}"
 >
-	<div class="w-full overflow-hidden rounded-lg bg-gray-50 shadow {classes}">
+	<div class="relative w-full overflow-hidden rounded-lg bg-gray-50 shadow {classes}">
 		{#if showOverlay}
 			<div
 				in:blur

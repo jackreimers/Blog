@@ -82,10 +82,10 @@
 			};
 		}}
 	>
-		<p class="mb-6 sm:mb-8">
+		<p class="mb-6 text-gray-500 sm:mb-8">
 			Email me directly at
 			<a
-				class="border-b border-gray-300 font-medium transition-colors duration-200 mhover:hover:border-gray-800"
+				class="border-b border-gray-300 font-medium text-gray-800 transition-colors duration-200 mhover:hover:border-gray-800"
 				href="mailto:me@jackreimers.dev"
 			>
 				me@jackreimers.dev
@@ -99,7 +99,6 @@
 					bind:this={nameInput}
 					label="Name"
 					name="name"
-					placeholder="Enter your name"
 					required={true}
 				/>
 				<Input
@@ -107,7 +106,6 @@
 					bind:this={emailInput}
 					label="Email"
 					name="email"
-					placeholder="Enter your email"
 					required={true}
 					type="email"
 				/>
@@ -116,7 +114,6 @@
 					classes="resize-none"
 					label="Message"
 					name="message"
-					placeholder="Enter your message"
 					required={true}
 					type="textarea"
 				/>
