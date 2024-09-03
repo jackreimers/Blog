@@ -53,9 +53,7 @@
 					href="/about"
 					text="About"
 				/>
-				<!--
 				<Button color="blueSolid" on:click={() => modal.open()} text="Contact" />
-				-->
 			</HorizontalStack>
 		</div>
 		<div class="flex items-center md:hidden">
