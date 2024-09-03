@@ -1,11 +1,11 @@
-import { error } from '@sveltejs/kit';
-import { getGraphClient } from '$lib/functions/functions.email';
 import {
 	PRIVATE_EXCHANGE_CLIENT_ID,
 	PRIVATE_EXCHANGE_CLIENT_SECRET,
 	PRIVATE_EXCHANGE_TENANT_ID
 } from '$env/static/private';
-//import { PUBLIC_GRAPH_ENDPOINT } from '$env/static/public';
+import { PUBLIC_GRAPH_ENDPOINT } from '$env/static/public';
+import { error } from '@sveltejs/kit';
+import { getGraphClient } from '$lib/functions/functions.email';
 
 export const prerender = false;
 
@@ -56,7 +56,7 @@ export const actions: import('./$types').Actions = {
 		};
 
 		try {
-			//await client.api(PUBLIC_GRAPH_ENDPOINT).post(payload);
+			await client.api(PUBLIC_GRAPH_ENDPOINT).post(payload);
 		} catch (e) {
 			error(500, 'Failed to send message.');
 		}

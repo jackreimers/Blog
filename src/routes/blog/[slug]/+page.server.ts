@@ -1,7 +1,5 @@
 import { parseBlogPost } from '$lib/functions/functions.blog';
 
-export const prerender = true;
-
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, params }) {
 	const postResponse = await fetch(`/data/blog/${params.slug}/post.md`);
