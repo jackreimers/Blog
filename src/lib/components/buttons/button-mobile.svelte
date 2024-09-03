@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { GitCommitVertical } from 'lucide-svelte';
 	import { createEventDispatcher } from 'svelte';
 
 	export let href: string;
@@ -13,17 +14,13 @@
 	}
 </script>
 
-<a
-	class="flex items-center overflow-hidden rounded-lg bg-white {classes}"
-	{href}
-	on:click={handleClick}
->
+<a class="flex items-center gap-3 py-1 {classes}" {href} on:click={handleClick}>
 	<span
-		class="flex items-center p-2 transition-colors duration-200 {active
-			? 'bg-blue-900 text-white'
-			: 'bg-orange-100 text-orange-900'}"
+		class="items-center rounded-full p-1.5 transition-colors duration-200 {active
+			? 'bg-blue-100 text-blue-900'
+			: 'bg-gray-100 text-gray-300'}"
 	>
-		<slot />
+		<GitCommitVertical />
 	</span>
-	<span class="px-3.5 py-2 font-semibold leading-none sm:px-4 sm:py-3">{text}</span>
+	<span class="text-lg font-semibold leading-none sm:text-lg">{text}</span>
 </a>
