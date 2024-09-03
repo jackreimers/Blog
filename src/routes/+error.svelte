@@ -1,9 +1,9 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { AlertCircle, Undo2 } from 'lucide-svelte';
+	import { Undo2 } from 'lucide-svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
+	import SocialLinks from '$lib/components/contact/social.svelte';
 </script>
 
 <svelte:head>
@@ -15,6 +15,7 @@
 	title="Oops..."
 >
 	<HorizontalStack slot="below">
+		<!--
 		<Button
 			color="red"
 			href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}"
@@ -23,10 +24,10 @@
 		>
 			<AlertCircle />
 		</Button>
-		{#if $page.url.pathname !== '/'}
-			<Button active={true} color="gray" href="/" text="Return Home">
-				<Undo2 />
-			</Button>
-		{/if}
+		-->
+		<Button active={true} color="gray" href="/" text="Return Home">
+			<Undo2 />
+		</Button>
+		<SocialLinks />
 	</HorizontalStack>
 </Hero>

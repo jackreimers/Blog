@@ -5,12 +5,12 @@ import {
 	PRIVATE_EXCHANGE_CLIENT_SECRET,
 	PRIVATE_EXCHANGE_TENANT_ID
 } from '$env/static/private';
-import { PUBLIC_GRAPH_ENDPOINT } from '$env/static/public';
+//import { PUBLIC_GRAPH_ENDPOINT } from '$env/static/public';
 
 export const prerender = false;
 
 /** @type {import('./$types').Actions} */
-export const actions = {
+export const actions: import('./$types').Actions = {
 	default: async (event) => {
 		const data = await event.request.formData();
 		const name = data.get('name');
@@ -56,7 +56,7 @@ export const actions = {
 		};
 
 		try {
-			await client.api(PUBLIC_GRAPH_ENDPOINT).post(payload);
+			//await client.api(PUBLIC_GRAPH_ENDPOINT).post(payload);
 		} catch (e) {
 			error(500, 'Failed to send message.');
 		}
