@@ -29,7 +29,7 @@
 	let isValid: boolean = true;
 
 	const baseClasses: string =
-		'block w-full rounded border-2 border-gray-300 bg-white px-2.5 py-2 outline-none transition-colors duration-200 sm:px-3 sm:py-2.5';
+		'block w-full rounded border-2 border-gray-200 bg-white px-2.5 py-2 outline-none transition-colors duration-200 sm:px-3 sm:py-2.5';
 	const validClasses: string =
 		'border-gray-200 focus:border-gray-800 mhover:hover:border-gray-800';
 	const invalidClasses: string = 'border-red-600';
