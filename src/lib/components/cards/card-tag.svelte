@@ -13,7 +13,7 @@
 >
 	<span class="flex aspect-square flex-1 items-center justify-center sm:aspect-auto">
 		<span class="w-1/2 overflow-hidden rounded-lg sm:w-2/5">
-			<Preload src={tag.icon}>
+			<Preload showSkeleton={false} src={tag.icon}>
 				<img alt="The {tag.name} logo." src={tag.icon} />
 			</Preload>
 		</span>

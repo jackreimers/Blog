@@ -3,6 +3,7 @@
 	import Skeleton from '$lib/components/loading/skeleton.svelte';
 
 	export let src: string | string[];
+	export let showSkeleton: boolean = true;
 	export let classes: string = '';
 
 	async function preload() {
@@ -14,7 +15,7 @@
 	}
 
 	function handlePreload(src: string) {
-		return new Promise(function (resolve) {
+		return new Promise(function(resolve) {
 			let image = new Image();
 			image.onload = resolve;
 			image.src = src;
@@ -28,9 +29,13 @@
 
 <span class="bg-gray-300 {classes}">
 	{#await preload()}
-		<Skeleton>
+		{#if showSkeleton}
+			<Skeleton>
+				<slot />
+			</Skeleton>
+		{:else}
 			<slot />
-		</Skeleton>
+		{/if}
 	{:then _}
 		<span in:blur>
 			<slot />
