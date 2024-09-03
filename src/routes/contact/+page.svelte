@@ -19,7 +19,7 @@
 	title="Success!"
 >
 	<HorizontalStack slot="below">
-		<Button active={true} color="gray" href="/" text="Return Home">
+		<Button active={true} color="gray" href="/" text="Back">
 			<Undo2 />
 		</Button>
 		<SocialLinks />
