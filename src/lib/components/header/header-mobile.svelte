@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { createEventDispatcher } from 'svelte';
-	import { CircleUserRound, Home, Notebook, X } from 'lucide-svelte';
+	import { X } from 'lucide-svelte';
 	import Blocker from '$lib/components/modal/blocker.svelte';
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
@@ -27,8 +27,7 @@
 	}
 </script>
 
-<Blocker bind:this={blocker} classes="z-20" on:close={close} />
-
+<Blocker bind:this={blocker} classes="z-20" on:close={() => isOpen = false} />
 <div
 	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-gray-50 transition-all duration-500 {isOpen
 		? 'w-[320px]'
@@ -54,26 +53,20 @@
 						href="/"
 						on:click={close}
 						text="Home"
-					>
-						<Home />
-					</MobileButton>
+					/>
 					<MobileButton
 						active={$page.url.pathname.startsWith('/blog') ||
 							$page.url.pathname.startsWith('/tags')}
 						href="/blog"
 						on:click={close}
 						text="Blog"
-					>
-						<Notebook />
-					</MobileButton>
+					/>
 					<MobileButton
 						active={$page.url.pathname.startsWith('/about')}
 						href="/about"
 						on:click={close}
 						text="About"
-					>
-						<CircleUserRound />
-					</MobileButton>
+					/>
 				</VerticalStack>
 				<Button classes="justify-center" color="blue" on:click={onContactClick} text="Contact" />
 			</VerticalStack>

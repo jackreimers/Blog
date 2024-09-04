@@ -29,7 +29,7 @@
 	}
 </script>
 
-<Blocker bind:this={blocker} classes="z-20" on:close={close} />
+<Blocker bind:this={blocker} classes="z-20" on:close={() => isOpen = false} />
 <div
 	class="root fixed left-1/2 top-1/2 z-30 w-full -translate-x-1/2 -translate-y-1/2 transform p-5 sm:max-w-xl md:max-w-2xl {isOpen
 		? ''

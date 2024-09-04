@@ -8,6 +8,8 @@
 
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
+	import { blockers } from '$lib/stores/store.blockers';
+	import { get } from 'svelte/store';
 
 	export let classes: string = '';
 
@@ -16,12 +18,23 @@
 
 	export function open() {
 		isOpen = true;
+		blockers.set(get(blockers) + 1);
 		document.querySelector('body')?.classList.add('overflow-hidden');
+
+		console.log('Blockers:', get(blockers));
 	}
 
 	export function close() {
 		isOpen = false;
-		document.querySelector('body')?.classList.remove('overflow-hidden');
+
+		const updatedBlockerAmount = get(blockers) - 1;
+		blockers.set(updatedBlockerAmount);
+
+		if (updatedBlockerAmount === 0) {
+			document.querySelector('body')?.classList.remove('overflow-hidden');
+		}
+		
+		console.log('Blockers:', get(blockers));
 	}
 
 	function handleClick(event: MouseEvent) {
