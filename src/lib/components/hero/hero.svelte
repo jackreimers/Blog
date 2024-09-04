@@ -7,7 +7,7 @@
 	export let smallerTitle: boolean = false;
 </script>
 
-<Container classes="my-6 flex items-center bg-gray-50 sm:min-h-[400px]">
+<Container classes="my-6 flex min-h-[250px] items-center bg-gray-50 sm:min-h-[400px]">
 	<VerticalStack>
 		<slot name="above" />
 		<div>
