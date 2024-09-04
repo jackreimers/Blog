@@ -24,7 +24,6 @@
 
 	function onContactClick() {
 		dispatch('contactClick');
-		close();
 	}
 </script>
 
