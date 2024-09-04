@@ -20,8 +20,6 @@
 		isOpen = true;
 		blockers.set(get(blockers) + 1);
 		document.querySelector('body')?.classList.add('overflow-hidden');
-
-		console.log('Blockers:', get(blockers));
 	}
 
 	export function close() {
@@ -33,8 +31,6 @@
 		if (updatedBlockerAmount === 0) {
 			document.querySelector('body')?.classList.remove('overflow-hidden');
 		}
-		
-		console.log('Blockers:', get(blockers));
 	}
 
 	function handleClick(event: MouseEvent) {
