@@ -27,7 +27,7 @@
 	}
 </script>
 
-<Blocker bind:this={blocker} classes="z-20" on:close={() => isOpen = false} />
+<Blocker bind:this={blocker} classes="z-20" on:close={() => (isOpen = false)} />
 <div
 	class="fixed right-0 top-0 z-20 h-full overflow-hidden bg-gray-50 transition-all duration-500 {isOpen
 		? 'w-[320px]'
@@ -35,12 +35,12 @@
 >
 	<div class="relative h-full w-[320px]">
 		<div
-			class="relative h-full p-6 transition-spacing delay-100 duration-700 {isOpen
+			class="relative h-full p-6 transition-[margin] delay-100 duration-700 sm:p-8 {isOpen
 				? 'ml-0'
 				: 'ml-4'}"
 		>
 			<VerticalStack classes="h-full">
-				<div class="mb-8 flex h-[2.875rem] justify-end align-middle sm:h-12">
+				<div class="mb-6 flex h-[2.875rem] justify-end align-middle sm:mb-8 sm:h-12">
 					<div>
 						<Button color="red" on:click={close}>
 							<X />
@@ -68,7 +68,12 @@
 						text="About"
 					/>
 				</VerticalStack>
-				<Button classes="justify-center" color="blue" on:click={onContactClick} text="Contact" />
+				<Button
+					classes="justify-center"
+					color="blueSolid"
+					on:click={onContactClick}
+					text="Contact"
+				/>
 			</VerticalStack>
 		</div>
 	</div>

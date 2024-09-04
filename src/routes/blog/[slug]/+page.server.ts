@@ -1,4 +1,4 @@
-import { parseBlogPost } from '$lib/functions/functions.blog';
+import { parseBlogPostData } from '$lib/functions/functions.blog';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, params }) {
@@ -8,7 +8,7 @@ export async function load({ fetch, params }) {
 	const postData = await postResponse.text();
 	const tagsData = await tagsResponse.json();
 
-	const post = parseBlogPost(postData, tagsData);
+	const post = parseBlogPostData(postData, tagsData);
 
 	return {
 		post: post
