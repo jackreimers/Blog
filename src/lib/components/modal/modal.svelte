@@ -15,6 +15,9 @@
 	export let showOverlay: boolean = false;
 	export let classes: string = '';
 
+	let blocker: Blocker;
+	let isOpen: boolean = false;
+
 	export function open() {
 		blocker.open();
 		isOpen = true;
@@ -24,9 +27,6 @@
 		blocker.close();
 		isOpen = false;
 	}
-
-	let blocker: Blocker;
-	let isOpen: boolean = false;
 </script>
 
 <Blocker bind:this={blocker} classes="z-20" on:close={close} />

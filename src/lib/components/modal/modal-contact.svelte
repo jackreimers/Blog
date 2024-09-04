@@ -8,6 +8,11 @@
 	import Button from '$lib/components/buttons/button.svelte';
 	import Input from '$lib/components/contact/input.svelte';
 
+	let modal: Modal;
+	let nameInput: Input;
+	let emailInput: Input;
+	let messageInput: Input;
+
 	export function open() {
 		modal.open();
 	}
@@ -15,7 +20,7 @@
 	export function close() {
 		modal.close();
 	}
-
+	
 	function validate(): boolean {
 		let isValid = true;
 
@@ -34,11 +39,6 @@
 
 		return isValid;
 	}
-
-	let modal: Modal;
-	let nameInput: Input;
-	let emailInput: Input;
-	let messageInput: Input;
 </script>
 
 <Modal bind:this={modal} showOverlay={$page.form?.success}>

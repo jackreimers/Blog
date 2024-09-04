@@ -1,18 +1,17 @@
 <style>
 	button {
 		transition:
-			visibility 0.2s,
-			opacity 0.2s linear;
+			visibility 0.3s,
+			opacity 0.3s linear;
 	}
 </style>
 
 <script lang="ts">
 	import { createEventDispatcher } from 'svelte';
 
-	const dispatch = createEventDispatcher();
-
 	export let classes: string = '';
 
+	const dispatch = createEventDispatcher();
 	let isOpen = false;
 
 	export function open() {

@@ -2,12 +2,12 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { Menu } from 'lucide-svelte';
-	import Navigation from '$lib/components/header/header-mobile.svelte';
+	import MobileNavigation from '$lib/components/header/header-mobile.svelte';
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import Modal from '$lib/components/modal/modal-contact.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
-	let navigation: Navigation;
+	let navigation: MobileNavigation;
 	let modal: Modal;
 	let scrolled: boolean;
 
@@ -20,7 +20,7 @@
 	}
 </script>
 
-<Navigation bind:this={navigation} />
+<MobileNavigation bind:this={navigation} on:contactClick={() => modal.open()} />
 <Modal bind:this={modal} />
 <header
 	class="fixed z-10 w-full bg-gray-50 transition-all duration-300

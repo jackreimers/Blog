@@ -1,10 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { createEventDispatcher } from 'svelte';
 	import { CircleUserRound, Home, Notebook, X } from 'lucide-svelte';
 	import Blocker from '$lib/components/modal/blocker.svelte';
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 	import MobileButton from '$lib/components/buttons/button-mobile.svelte';
+
+	const dispatch = createEventDispatcher();
 
 	let blocker: Blocker;
 	let isOpen: boolean = false;
@@ -18,6 +21,11 @@
 		blocker.close();
 		isOpen = false;
 	}
+
+	function onContactClick() {
+		dispatch('contactClick');
+		close();
+	}
 </script>
 
 <Blocker bind:this={blocker} classes="z-20" on:close={close} />
@@ -27,41 +35,48 @@
 		? 'w-[320px]'
 		: 'w-0'}"
 >
-	<div class="w-[320px]">
-		<div class="p-6 transition-spacing delay-100 duration-700 {isOpen ? 'ml-0' : 'ml-4'}">
-			<div class="mb-8 flex h-[2.875rem] justify-end align-middle sm:h-12">
-				<div>
-					<Button color="red" on:click={close}>
-						<X />
-					</Button>
+	<div class="relative h-full w-[320px]">
+		<div
+			class="relative h-full p-6 transition-spacing delay-100 duration-700 {isOpen
+				? 'ml-0'
+				: 'ml-4'}"
+		>
+			<VerticalStack classes="h-full">
+				<div class="mb-8 flex h-[2.875rem] justify-end align-middle sm:h-12">
+					<div>
+						<Button color="red" on:click={close}>
+							<X />
+						</Button>
+					</div>
 				</div>
-			</div>
-			<VerticalStack>
-				<MobileButton
-					active={$page.url.pathname === '/'}
-					href="/"
-					on:click={close}
-					text="Home"
-				>
-					<Home />
-				</MobileButton>
-				<MobileButton
-					active={$page.url.pathname.startsWith('/blog') ||
-						$page.url.pathname.startsWith('/tags')}
-					href="/blog"
-					on:click={close}
-					text="Blog"
-				>
-					<Notebook />
-				</MobileButton>
-				<MobileButton
-					active={$page.url.pathname.startsWith('/about')}
-					href="/about"
-					on:click={close}
-					text="About"
-				>
-					<CircleUserRound />
-				</MobileButton>
+				<VerticalStack classes="flex-1">
+					<MobileButton
+						active={$page.url.pathname === '/'}
+						href="/"
+						on:click={close}
+						text="Home"
+					>
+						<Home />
+					</MobileButton>
+					<MobileButton
+						active={$page.url.pathname.startsWith('/blog') ||
+							$page.url.pathname.startsWith('/tags')}
+						href="/blog"
+						on:click={close}
+						text="Blog"
+					>
+						<Notebook />
+					</MobileButton>
+					<MobileButton
+						active={$page.url.pathname.startsWith('/about')}
+						href="/about"
+						on:click={close}
+						text="About"
+					>
+						<CircleUserRound />
+					</MobileButton>
+				</VerticalStack>
+				<Button classes="justify-center" color="blue" on:click={onContactClick} text="Contact" />
 			</VerticalStack>
 		</div>
 	</div>
