@@ -28,7 +28,7 @@
 <Container>
 	<Section>
 		<VerticalStack>
-			<HorizontalStack classes="justify-end">
+			<HorizontalStack classes="mb-1 justify-end">
 				<Button href="/tags" text="Tags">
 					<Tags />
 				</Button>

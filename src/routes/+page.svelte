@@ -7,6 +7,7 @@
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import Card from '$lib/components/cards/card.svelte';
+	import ServiceCard from '$lib/components/cards/card-service.svelte';
 	import CardGrid from '$lib/components/grids/grid-card.svelte';
 	import SocialLinks from '$lib/components/contact/social.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
@@ -28,13 +29,44 @@
 <Container>
 	<Section>
 		<VerticalStack>
-			<HorizontalStack classes="justify-end">
-				<Button href="/tags" text="Tags">
-					<Tags />
-				</Button>
-				<Button href="/blog" text="More">
-					<ArrowRight />
-				</Button>
+			<HorizontalStack classes="mb-1 items-end">
+				<div class="flex-1">
+					<h2 class="mb-1 text-2xl font-bold sm:text-3xl">My Services</h2>
+					<p class="max-w-prose text-gray-500">
+						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+						tempor.
+					</p>
+				</div>
+				<HorizontalStack classes="justify-end">
+					<Button href="/blog" text="More">
+						<ArrowRight />
+					</Button>
+				</HorizontalStack>
+			</HorizontalStack>
+			<div class="grid grid-cols-3 gap-2.5 text-center sm:gap-3.5">
+				<ServiceCard slug="website-dev" title="Website Development" />
+				<ServiceCard slug="application-dev" title="Application Development" />
+				<ServiceCard slug="wordpress-dev" title="WordPress Development" />
+			</div>
+		</VerticalStack>
+	</Section>
+	<Section>
+		<VerticalStack>
+			<HorizontalStack classes="mb-1 items-end">
+				<div class="flex-1">
+					<h2 class="mb-1 text-2xl font-bold sm:text-3xl">Latest Posts</h2>
+					<p class="max-w-prose text-gray-500">
+						My latest blog posts on web development, game development, and more.
+					</p>
+				</div>
+				<HorizontalStack classes="justify-end">
+					<Button href="/tags" text="Tags">
+						<Tags />
+					</Button>
+					<Button href="/blog" text="More">
+						<ArrowRight />
+					</Button>
+				</HorizontalStack>
 			</HorizontalStack>
 			<HorizontalStack>
 				<CardGrid itemCount={data.posts.length}>

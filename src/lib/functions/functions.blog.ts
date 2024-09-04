@@ -19,7 +19,7 @@ export async function getBlogPostsAndTags(fetch: any) {
 		const postResponse = await fetch(`/data/blog/${fileNames[i]}/post.md`);
 		const postData = await postResponse.text();
 
-		posts.push(parseBlogPost(postData, tags));
+		posts.push(parseBlogPostData(postData, tags));
 	}
 
 	return {
@@ -28,7 +28,7 @@ export async function getBlogPostsAndTags(fetch: any) {
 	};
 }
 
-export function parseBlogPost(data: string, tags: Tag[]): BlogPost {
+export function parseBlogPostData(data: string, tags: Tag[]): BlogPost {
 	const matched = data.match(metadataPattern);
 
 	if (!matched) {
