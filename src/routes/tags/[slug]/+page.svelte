@@ -16,7 +16,8 @@
 </script>
 
 <Head
-	description="Read my blog where I talk about web and game development."
+	canonical="https://jackreimers.dev/tags"
+	description="Discover posts that match your interests by filtering through post tags, or explore the range of topics I cover."
 	title="Jack Reimers | {data.tag.name}"
 />
 <Hero

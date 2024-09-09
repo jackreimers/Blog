@@ -16,6 +16,7 @@
 </script>
 
 <Head
+	canonical="https://jackreimers.dev/tags"
 	description="Discover posts that match your interests by filtering through post tags, or explore the range of topics I cover."
 	title="Jack Reimers | Tags"
 />

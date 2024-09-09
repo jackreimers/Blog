@@ -17,7 +17,7 @@
 	export let data: any;
 </script>
 
-<Head description={data.post.description} title="Jack Reimers | {data.post.title}" />
+<Head canonical="https://jackreimers.dev/blog/{data.post.slug}" description={data.post.description} title="Jack Reimers | {data.post.title}" />
 <Hero smallerTitle={true} title={data.post.title}>
 	<p class="text-sm text-gray-500 sm:text-base" slot="above">
 		Published on {data.post.dateString}

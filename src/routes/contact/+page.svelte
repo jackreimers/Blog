@@ -11,6 +11,7 @@
 </script>
 
 <Head
+	canonical="https://jackreimers.dev/contact"
 	description="I'm a full stack Software Engineer who is passionate about web and video game development."
 	title="Jack Reimers | Contact"
 />

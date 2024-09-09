@@ -4,6 +4,7 @@
 
 	export let title: string;
 	export let description: string;
+	export let canonical: string;
 </script>
 
 <svelte:head>
@@ -16,5 +17,6 @@
 	<meta content="summary" property="twitter:card" />
 	<meta content={title} property="twitter:title" />
 	<meta content={description} property="twitter:description" />
+	<link href={canonical} rel="canonical" />
 	{@html vs}
 </svelte:head>

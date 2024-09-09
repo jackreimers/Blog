@@ -13,11 +13,12 @@
 </script>
 
 <Head
+	canonical="https://jackreimers.dev/about"
 	description="I'm a full stack Software Engineer who is passionate about web and video game development."
 	title="Jack Reimers | About"
 />
 <Hero
-	subtitle="Dive deeper into my professional background and expertise, and find out how to stay connected or reach out."
+	subtitle="Dive deeper into my professional background and expertise and find out how to stay connected or reach out."
 	title="About"
 >
 	<SocialLinks slot="below" />

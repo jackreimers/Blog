@@ -16,6 +16,7 @@
 </script>
 
 <Head
+	canonical="https://jackreimers.dev/blog"
 	description="Read my blog where I talk about web and game development."
 	title="Jack Reimers | Blog"
 />
@@ -28,7 +29,7 @@
 <Container>
 	<Section>
 		<VerticalStack>
-			<HorizontalStack classes="mb-1 justify-end">
+			<HorizontalStack classes="justify-end">
 				<Button href="/tags" text="Tags">
 					<Tags />
 				</Button>
