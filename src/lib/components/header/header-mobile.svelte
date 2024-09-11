@@ -55,8 +55,7 @@
 						text="Home"
 					/>
 					<MobileButton
-						active={$page.url.pathname.startsWith('/blog') ||
-							$page.url.pathname.startsWith('/tags')}
+						active={$page.url.pathname.startsWith('/blog')}
 						href="/blog"
 						on:click={close}
 						text="Blog"

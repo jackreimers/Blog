@@ -8,7 +8,7 @@
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import TagCard from '$lib/components/cards/card-tag.svelte';
 	import CardGrid from '$lib/components/grids/grid-tag.svelte';
-	import SocialLinks from '$lib/components/contact/social.svelte';
+	import SocialLinks from '$lib/components/contact/links.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -27,18 +27,18 @@
 	<SocialLinks slot="below" />
 </Hero>
 <Container>
-	<VerticalStack>
-		<HorizontalStack classes="mb-1 justify-end">
-			<Button href="/blog" text="Posts">
-				<Notebook />
-			</Button>
-		</HorizontalStack>
-		<Section>
+	<Section>
+		<VerticalStack>
+			<HorizontalStack classes="justify-end">
+				<Button href="/blog" text="Posts">
+					<Notebook />
+				</Button>
+			</HorizontalStack>
 			<CardGrid>
 				{#each data.tags as tag}
-					<TagCard {tag} />
+					<TagCard data={tag} />
 				{/each}
 			</CardGrid>
-		</Section>
-	</VerticalStack>
+		</VerticalStack>
+	</Section>
 </Container>

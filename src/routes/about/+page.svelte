@@ -6,7 +6,7 @@
 	import Preload from '$lib/components/loading/preload.svelte';
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
-	import SocialLinks from '$lib/components/contact/social.svelte';
+	import SocialLinks from '$lib/components/contact/links.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;

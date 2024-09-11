@@ -17,7 +17,11 @@
 	export let data: any;
 </script>
 
-<Head canonical="https://jackreimers.dev/blog/{data.post.slug}" description={data.post.description} title="Jack Reimers | {data.post.title}" />
+<Head
+	canonical="https://jackreimers.dev/blog/{data.post.slug}"
+	description={data.post.description}
+	title="Jack Reimers | {data.post.title}"
+/>
 <Hero smallerTitle={true} title={data.post.title}>
 	<p class="text-sm text-gray-500 sm:text-base" slot="above">
 		Published on {data.post.dateString}
@@ -34,7 +38,7 @@
 			</HoriontalStack>
 			<div class="markdown box-content">
 				<h2 class="!mt-4" id="introduction">Introduction</h2>
-				<SvelteMarkdown source={data.post.intro} />
+				<SvelteMarkdown source={data.post.excerpt} />
 			</div>
 		</VerticalStack>
 	</Section>

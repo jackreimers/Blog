@@ -3,7 +3,7 @@
 	import Hero from '$lib/components/hero/hero.svelte';
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
-	import SocialLinks from '$lib/components/contact/social.svelte';
+	import SocialLinks from '$lib/components/contact/links.svelte';
 </script>
 
 <svelte:head>

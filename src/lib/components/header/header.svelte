@@ -41,12 +41,25 @@
 			<HorizontalStack>
 				<Button active={$page.url.pathname === '/'} color="gray" href="/" text="Home" />
 				<Button
-					active={$page.url.pathname.startsWith('/blog') ||
-						$page.url.pathname.startsWith('/tags')}
+					active={$page.url.pathname.startsWith('/services')}
+					color="gray"
+					href="/services"
+					text="Services"
+				/>
+				<Button
+					active={$page.url.pathname.startsWith('/blog')}
 					color="gray"
 					href="/blog"
 					text="Blog"
 				/>
+				<!--
+				<Button
+					active={$page.url.pathname.startsWith('/projects')}
+					color="gray"
+					href="/projects"
+					text="Projects"
+				/>
+				-->
 				<Button
 					active={$page.url.pathname.startsWith('/about')}
 					color="gray"

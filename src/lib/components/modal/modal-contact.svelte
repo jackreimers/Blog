@@ -2,11 +2,10 @@
 	import { page } from '$app/stores';
 	import { applyAction, enhance } from '$app/forms';
 	import { ArrowRight, MailCheck, X } from 'lucide-svelte';
-	import Section from '$lib/components/page/section.svelte';
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import Modal from '$lib/components/modal/modal.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
-	import Input from '$lib/components/contact/input.svelte';
+	import Input from '$lib/components/forms/input.svelte';
 
 	let modal: Modal;
 	let nameInput: Input;
@@ -20,7 +19,7 @@
 	export function close() {
 		modal.close();
 	}
-	
+
 	function validate(): boolean {
 		let isValid = true;
 
@@ -92,33 +91,31 @@
 			</a>
 			or use the form below to get in touch.
 		</p>
-		<Section>
-			<VerticalStack>
-				<Input
-					autocomplete="name"
-					bind:this={nameInput}
-					label="Name"
-					name="name"
-					required={true}
-				/>
-				<Input
-					autocomplete="email"
-					bind:this={emailInput}
-					label="Email"
-					name="email"
-					required={true}
-					type="email"
-				/>
-				<Input
-					bind:this={messageInput}
-					classes="resize-none"
-					label="Message"
-					name="message"
-					required={true}
-					type="textarea"
-				/>
-			</VerticalStack>
-		</Section>
+		<VerticalStack classes="mb- 6 sm:mb-8">
+			<Input
+				autocomplete="name"
+				bind:this={nameInput}
+				label="Name"
+				name="name"
+				required={true}
+			/>
+			<Input
+				autocomplete="email"
+				bind:this={emailInput}
+				label="Email"
+				name="email"
+				required={true}
+				type="email"
+			/>
+			<Input
+				bind:this={messageInput}
+				classes="resize-none"
+				label="Message"
+				name="message"
+				required={true}
+				type="textarea"
+			/>
+		</VerticalStack>
 		<div class="flex justify-end">
 			<Button color="blueSolid" text="Submit" type="submit">
 				<ArrowRight />

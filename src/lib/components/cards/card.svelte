@@ -9,15 +9,36 @@
 	export let subtitle: string = 'Subtitle';
 	export let content: string = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.';
 	export let horizontal: boolean = false;
+	export let postType: 'blog' | 'project' | null = null;
+	export let showPostType: boolean = false;
 	export let classes: string = '';
+
+	function capitalizeFirstLetter(string: string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+	}
 </script>
 
 <div
-	class="flex flex-col overflow-hidden rounded-lg bg-white shadow transition-all duration-300 mhover:hover:scale-[1.015] mhover:hover:shadow-lg
+	class="relative flex flex-col overflow-hidden rounded-lg bg-white shadow transition-[transform,box-shadow] duration-300 mhover:hover:scale-[1.015] mhover:hover:shadow-lg
 		{horizontal ? 'md:flex-row' : ''}
 		{classes}"
 >
-	<a class="hidden sm:block {horizontal ? 'aspect-square flex-1 md:min-h-full' : ''}" {href}>
+	<!--
+	{#if showPostType && postType}
+		<Button
+			classes="absolute left-4 top-4 z-10 md:left-5 md:top-5"
+			color="gray"
+			active={true}
+			href={postType}
+			size="small"
+			text={capitalizeFirstLetter(postType)}
+		/>
+	{/if}
+	-->
+	<a
+		class="relative hidden sm:block {horizontal ? 'aspect-square flex-1 md:min-h-full' : ''}"
+		{href}
+	>
 		{#if imageHref}
 			<Preload src={imageHref} classes="flex aspect-square">
 				<img src={imageHref} alt={imageAlt} />

@@ -1,11 +1,11 @@
-import { getBlogPostsAndTags } from '$lib/functions/functions.blog';
+import { getPosts, getTags } from '$lib/functions/functions.posts';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
-	const result = await getBlogPostsAndTags(fetch);
+	const tagsResult = await getTags(fetch);
+	const postsResult = await getPosts(fetch, tagsResult, null);
 
 	return {
-		posts: result.posts.slice(0, 3),
-		tags: result.tags
+		posts: postsResult.posts.slice(0, 3)
 	};
 }

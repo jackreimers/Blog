@@ -1,20 +1,20 @@
-import type { Tag } from '$lib/interfaces/tag';
-import { getBlogPostsAndTags } from '$lib/functions/functions.blog';
+import { getPosts, getTags } from '$lib/functions/functions.posts';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch, params }) {
-	const result = await getBlogPostsAndTags(fetch);
-	const tag = result.tags.find((s: Tag) => s.slug === params.slug);
+	const tagsResult = await getTags(fetch);
+
+	if (!tagsResult.filter((tag) => tag.slug === params.slug).length) {
+		{
+			return {
+				posts: []
+			};
+		}
+	}
+
+	const postsResult = await getPosts(fetch, tagsResult, null, params.slug);
 
 	return {
-		posts: result.posts.filter((s) => s.tags.includes(tag)),
-		tag: tag
+		...postsResult
 	};
-}
-
-/** @type {import('./$types').EntryGenerator} */
-export async function entries() {
-	//TODO: Is this even needed?
-	//TODO: Investigate making this dynamically populated
-	return [{ slug: 'javascript' }, { slug: 'typescript' }, { slug: 'svelte' }];
 }

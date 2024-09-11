@@ -1,6 +1,6 @@
 <script lang="ts">
 	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
-	import SocialLinks from '$lib/components/contact/social.svelte';
+	import SocialLinks from '$lib/components/contact/links.svelte';
 </script>
 
 <footer class="mx-auto mt-10 sm:mt-12">

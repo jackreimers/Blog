@@ -8,7 +8,7 @@
 	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 	import Card from '$lib/components/cards/card.svelte';
 	import CardGrid from '$lib/components/grids/grid-card.svelte';
-	import SocialLinks from '$lib/components/contact/social.svelte';
+	import SocialLinks from '$lib/components/contact/links.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -18,15 +18,15 @@
 <Head
 	canonical="https://jackreimers.dev/tags"
 	description="Discover posts that match your interests by filtering through post tags, or explore the range of topics I cover."
-	title="Jack Reimers | {data.tag.name}"
+	title="Jack Reimers | {data.tagFilter?.name ?? 'Tags'}"
 />
 <Hero
-	subtitle="Read my blog where I talk about web and game development, plus any other topics or technologies I find interesting."
-	title="Blog"
+	subtitle="Discover posts that match your interests by filtering through post tags, or explore the range of topics I talk about."
+	title="Tags"
 >
 	<HorizontalStack slot="below">
 		<SocialLinks />
-		<Button color="red" href="/blog" text={data.tag.name}>
+		<Button color="red" href="/tags" text={data.tagFilter?.name ?? 'Clear'}>
 			<X />
 		</Button>
 	</HorizontalStack>
@@ -39,31 +39,37 @@
 					<Tags />
 				</Button>
 			</HorizontalStack>
-			<HorizontalStack>
-				<CardGrid horizontal={true} itemCount={data.posts.length}>
-					{#each data.posts as post}
-						<Card
-							href="/blog/{post.slug}"
-							imageHref={post.imageHref}
-							title={post.title}
-							subtitle={post.dateString}
-							content={post.intro}
-							horizontal={true}
-						>
-							<HorizontalStack classes="!gap-2 overflow-auto">
-								{#each post.tags as tag}
-									<Button
-										size="small"
-										color="orange"
-										href="/tags/{tag.slug}"
-										text={tag.name}
-									/>
-								{/each}
-							</HorizontalStack>
-						</Card>
-					{/each}
-				</CardGrid>
-			</HorizontalStack>
+			{#if data.posts.length === 0}
+				<p class="">No posts on this topic yet.</p>
+			{:else}
+				<HorizontalStack>
+					<CardGrid horizontal={true} itemCount={data.posts.length}>
+						{#each data.posts as post}
+							<Card
+								href="/{post.type}/{post.slug}"
+								imageHref={post.imageHref}
+								title={post.title}
+								subtitle={post.dateString}
+								content={post.excerpt}
+								postType={post.type}
+								showPostType={true}
+								horizontal={true}
+							>
+								<HorizontalStack classes="!gap-2 overflow-auto">
+									{#each post.tags as tag}
+										<Button
+											size="small"
+											color="orange"
+											href="/tags/{tag.slug}"
+											text={tag.name}
+										/>
+									{/each}
+								</HorizontalStack>
+							</Card>
+						{/each}
+					</CardGrid>
+				</HorizontalStack>
+			{/if}
 		</VerticalStack>
 	</Section>
 </Container>

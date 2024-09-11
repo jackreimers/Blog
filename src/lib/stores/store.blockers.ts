@@ -1,3 +1,3 @@
 import { writable } from 'svelte/store';
 
-export const blockers = writable(0);
+export const openBlockers = writable(0);

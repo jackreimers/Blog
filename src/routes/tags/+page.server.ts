@@ -1,15 +1,17 @@
-import type { Tag } from '$lib/interfaces/tag';
-import { getBlogPostsAndTags } from '$lib/functions/functions.blog';
+import type { Tag } from '$lib/interfaces/interfaces.tags';
+import { getPosts, getTags } from '$lib/functions/functions.posts';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
-	const result = await getBlogPostsAndTags(fetch);
+	const tagsResult = await getTags(fetch);
+	const postsResult = await getPosts(fetch, tagsResult);
 
-	for (const tag of result.tags) {
-		tag.count = result.posts.filter((post) => post.tags.includes(tag)).length;
+	//Get the post count for each tag
+	for (const tag of postsResult.tags) {
+		tag.count = postsResult.posts.filter((post) => post.tags.includes(tag)).length;
 	}
 
 	return {
-		tags: result.tags.sort((a: Tag, b: Tag) => (b.count ?? 0) - (a.count ?? 0))
+		tags: postsResult.tags.sort((a: Tag, b: Tag) => (b.count ?? 0) - (a.count ?? 0))
 	};
 }

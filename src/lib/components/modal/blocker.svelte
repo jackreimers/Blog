@@ -7,9 +7,9 @@
 </style>
 
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
-	import { blockers } from '$lib/stores/store.blockers';
+	import { openBlockers } from '$lib/stores/store.blockers';
 	import { get } from 'svelte/store';
+	import { createEventDispatcher } from 'svelte';
 
 	export let classes: string = '';
 
@@ -18,15 +18,15 @@
 
 	export function open() {
 		isOpen = true;
-		blockers.set(get(blockers) + 1);
+		openBlockers.set(get(openBlockers) + 1);
 		document.querySelector('body')?.classList.add('overflow-hidden');
 	}
 
 	export function close() {
 		isOpen = false;
 
-		const updatedBlockerAmount = get(blockers) - 1;
-		blockers.set(updatedBlockerAmount);
+		const updatedBlockerAmount = get(openBlockers) - 1;
+		openBlockers.set(updatedBlockerAmount);
 
 		if (updatedBlockerAmount === 0) {
 			document.querySelector('body')?.classList.remove('overflow-hidden');

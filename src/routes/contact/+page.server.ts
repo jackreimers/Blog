@@ -19,16 +19,16 @@ export const actions: import('./$types').Actions = {
 
 		//TODO: Handle invalid inputs instead of throwing exceptions
 		if (!name || name === '') {
-			error(400, 'Name is required.');
+			error(400, 'Name is required!');
 		}
 
 		//TODO: Validate email format
 		if (!email || email === '') {
-			error(400, 'Email is required.');
+			error(400, 'Email is required!');
 		}
 
 		if (!message || message === '') {
-			error(400, 'Message is required.');
+			error(400, 'Message is required!');
 		}
 
 		const client = await getGraphClient(
@@ -58,7 +58,7 @@ export const actions: import('./$types').Actions = {
 		try {
 			await client.api(PUBLIC_GRAPH_ENDPOINT).post(payload);
 		} catch (e) {
-			error(500, 'Failed to send message.');
+			error(500, 'Failed to send message!');
 		}
 
 		return { success: true };

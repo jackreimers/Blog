@@ -9,7 +9,7 @@
 	import Card from '$lib/components/cards/card.svelte';
 	import ServiceCard from '$lib/components/cards/card-service.svelte';
 	import CardGrid from '$lib/components/grids/grid-card.svelte';
-	import SocialLinks from '$lib/components/contact/social.svelte';
+	import SocialLinks from '$lib/components/contact/links.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -30,59 +30,56 @@
 <Container>
 	<Section>
 		<VerticalStack>
-			<HorizontalStack classes="mb-1 items-end">
-				<div class="flex-1">
-					<h2 class="mb-1 text-2xl font-bold sm:text-3xl">My Services</h2>
-					<p class="max-w-prose text-gray-500">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-						tempor.
-					</p>
-				</div>
-				<HorizontalStack classes="justify-end">
-					<Button href="/blog" text="More">
-						<ArrowRight />
-					</Button>
-				</HorizontalStack>
+			<HorizontalStack classes="justify-end">
+				<Button href="/services" text="More">
+					<ArrowRight />
+				</Button>
 			</HorizontalStack>
-			<div class="grid grid-cols-3 gap-2.5 text-center sm:gap-3.5">
-				<ServiceCard slug="website-dev" title="Website Development" />
-				<ServiceCard slug="application-dev" title="Application Development" />
-				<ServiceCard slug="wordpress-dev" title="WordPress Development" />
+			<div class="grid grid-cols-1 gap-2.5 sm:gap-3.5 lg:grid-cols-3">
+				<ServiceCard
+					description="Get a website that stands out and is crafted to align with your vision."
+					href="services#website-development"
+					title="Websites"
+				/>
+				<ServiceCard
+					description="Need something that goes beyond a simple website? I can help."
+					href="services#web-application-development"
+					title="Web Applications"
+				/>
+				<ServiceCard
+					description="I offer polished and high-performing WordPress solutions."
+					href="services#wordpress-development"
+					title="WordPress"
+				/>
 			</div>
 		</VerticalStack>
 	</Section>
 	<Section>
 		<VerticalStack>
-			<HorizontalStack classes="mb-1 items-end">
-				<div class="flex-1">
-					<h2 class="mb-1 text-2xl font-bold sm:text-3xl">Latest Posts</h2>
-					<p class="max-w-prose text-gray-500">
-						My latest blog posts on web development, game development, and more.
-					</p>
-				</div>
-				<HorizontalStack classes="justify-end">
-					<Button href="/tags" text="Tags">
-						<Tags />
-					</Button>
-					<Button href="/blog" text="More">
-						<ArrowRight />
-					</Button>
-				</HorizontalStack>
+			<HorizontalStack classes="justify-end">
+				<Button href="/tags" text="Tags">
+					<Tags />
+				</Button>
+				<Button href="/blog" text="More">
+					<ArrowRight />
+				</Button>
 			</HorizontalStack>
 			<HorizontalStack>
 				<CardGrid itemCount={data.posts.length}>
 					{#each data.posts as post}
 						<Card
-							href="/blog/{post.slug}"
+							href="/{post.type}/{post.slug}"
 							imageHref={post.imageHref}
 							title={post.title}
 							subtitle={post.dateString}
-							content={post.intro}
+							content={post.excerpt}
+							postType={post.type}
+							showPostType={true}
 						>
 							<Button
 								size="small"
 								color="orange"
-								href="/blog/{post.slug}"
+								href="/{post.type}/{post.slug}"
 								text="Read More"
 							/>
 						</Card>

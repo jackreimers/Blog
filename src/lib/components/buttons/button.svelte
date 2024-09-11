@@ -2,7 +2,7 @@
 	import { createEventDispatcher } from 'svelte';
 
 	export let size: 'small' | 'large' = 'large';
-	export let color: 'blue' | 'orange' | 'red' | 'gray' | 'blueSolid' | 'redSolid' = 'blue';
+	export let color: 'blue' | 'green' | 'orange' | 'red' | 'purple' | 'gray' | 'blueSolid' | 'redSolid' = 'blue';
 
 	export let href: string | null = null;
 	export let target: string = '';
