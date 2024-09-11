@@ -1,15 +1,9 @@
 <script lang="ts">
-	import { Tags } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/page/container.svelte';
 	import Section from '$lib/components/page/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
-	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
-	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
-	import Card from '$lib/components/cards/card.svelte';
-	import CardGrid from '$lib/components/grids/grid-card.svelte';
 	import SocialLinks from '$lib/components/contact/links.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -24,6 +18,7 @@
 </Hero>
 <Container>
 	<Section>
+		<!--
 		<VerticalStack>
 			<HorizontalStack classes="justify-end">
 				<Button href="/tags" text="Tags">
@@ -54,5 +49,6 @@
 				{/each}
 			</CardGrid>
 		</VerticalStack>
+		-->
 	</Section>
 </Container>
