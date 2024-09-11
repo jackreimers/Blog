@@ -15,16 +15,6 @@
 	title="Oops..."
 >
 	<HorizontalStack slot="below">
-		<!--
-		<Button
-			color="red"
-			href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/{$page.status}"
-			target="_blank"
-			text={$page.status.toString()}
-		>
-			<AlertCircle />
-		</Button>
-		-->
 		<Button active={true} color="gray" href="/" text="Back">
 			<Undo2 />
 		</Button>
