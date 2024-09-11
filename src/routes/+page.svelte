@@ -38,17 +38,17 @@
 			<div class="grid grid-cols-1 gap-2.5 sm:gap-3.5 lg:grid-cols-3">
 				<ServiceCard
 					description="Get a website that stands out and is crafted to align with your vision."
-					href="services#website-development"
+					href="services"
 					title="Websites"
 				/>
 				<ServiceCard
 					description="Need something that goes beyond a simple website? I can help."
-					href="services#web-application-development"
+					href="services"
 					title="Web Applications"
 				/>
 				<ServiceCard
 					description="I offer polished and high-performing WordPress solutions."
-					href="services#wordpress-development"
+					href="services"
 					title="WordPress"
 				/>
 			</div>
