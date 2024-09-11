@@ -55,17 +55,18 @@
 						text="Home"
 					/>
 					<MobileButton
-						active={$page.url.pathname.startsWith('/blog')}
-						href="/blog"
-						on:click={close}
-						text="Blog"
-					/>
-					<MobileButton
 						active={$page.url.pathname.startsWith('/services')}
 						href="/services"
 						on:click={close}
 						text="Services"
 					/>
+					<MobileButton
+						active={$page.url.pathname.startsWith('/blog')}
+						href="/blog"
+						on:click={close}
+						text="Blog"
+					/>
+
 					<MobileButton
 						active={$page.url.pathname.startsWith('/about')}
 						href="/about"
