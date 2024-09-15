@@ -70,7 +70,7 @@
 			<ButtonCard
 				action="Let's chat"
 				on:click={() => $contact?.open()}
-				text="With extensive experience with a wide range of frameworks and technologies, I can leverage the best tools to create a solution customised for your needs."
+				text="With extensive experience using a wide range of frameworks and technologies, I can leverage the best tools to create a solution customised for your needs."
 				title="Web Applications"
 			>
 				<div class="flex flex-wrap gap-2" slot="content">
