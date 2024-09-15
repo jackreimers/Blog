@@ -5,40 +5,45 @@
 @tailwind utilities;
 
 @layer base {
-    body {
-        @apply text-gray-800 bg-gray-50;
-        font-family: Inter, sans-serif;
-    }
+	body {
+		@apply bg-gray-50 text-gray-900;
+		font-family: Inter, sans-serif;
+	}
 
-    .markdown > *:first-child {
-        @apply mt-0;
-    }
+	.markdown > *:first-child {
+		@apply mt-0;
+	}
 
-    .markdown h1, .markdown h2 {
-        @apply mt-12 text-xl font-bold sm:mt-14 sm:text-2xl md:mt-16 md:text-3xl lg:mt-20;
-    }
+	.markdown h1,
+	.markdown h2 {
+		@apply mt-12 text-2xl font-bold sm:mt-14 sm:text-3xl md:mt-16 md:text-4xl;
+	}
 
-    .markdown h3, .markdown h4, .markdown h5, .markdown h6 {
-        @apply mt-6 text-lg font-semibold sm:mt-8 sm:text-xl md:text-2xl;
-    }
+	.markdown h3,
+	.markdown h4,
+	.markdown h5,
+	.markdown h6 {
+		@apply mt-7 text-lg font-semibold sm:mt-10 sm:text-xl md:text-2xl;
+	}
 
-    .markdown p {
-        @apply mt-4;
-    }
+	.markdown p {
+		@apply mt-4 text-gray-700;
+	}
 
-    .markdown p > code {
-        @apply rounded bg-gray-200 px-1.5 py-0.5;
-    }
+	.markdown p > code {
+		@apply rounded bg-gray-200 px-1.5 py-0.5;
+	}
 
-    .markdown ul, .markdown ol {
-        @apply my-3 pl-7 sm:my-4;
-    }
+	.markdown ul,
+	.markdown ol {
+		@apply my-3 pl-7 sm:my-4;
+	}
 
-    .markdown ul li {
-        @apply list-disc pl-2;
-    }
+	.markdown ul li {
+		@apply list-disc pl-2;
+	}
 
-    .markdown ol li {
-        @apply list-decimal;
-    }
+	.markdown ol li {
+		@apply list-decimal;
+	}
 }

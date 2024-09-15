@@ -58,7 +58,7 @@ export async function getPostData(fetch: any, href: string): Promise<PostData> {
 
 export async function getPosts(
 	fetch: any,
-	tags: Tag[],
+	allTags: Tag[] | null = null,
 	directory: 'blog' | 'projects' | null = null,
 	filter: string | null = null
 ): Promise<{ tagFilter: Tag | null; posts: Post[]; tags: any }> {
@@ -86,12 +86,16 @@ export async function getPosts(
 		}));
 	}
 
+	if (!allTags) {
+		allTags = await getTags(fetch);
+	}
+
 	const posts: Post[] = [];
 	const relevantTags: Tag[] = [];
 	let tagFilter: Tag | null = null;
 
 	if (filter) {
-		tagFilter = tags.find((tagData: Tag) => tagData.slug === filter) ?? null;
+		tagFilter = allTags.find((tagData: Tag) => tagData.slug === filter) ?? null;
 
 		if (!tagFilter) {
 			error(500, `Tag ${filter} not found!`);
@@ -104,7 +108,7 @@ export async function getPosts(
 			`/content/${filePathDetails[i].directory}/${filePathDetails[i].slug}/post.md`
 		);
 
-		const post = parsePostData(postData, tags, filePathDetails[i].directory);
+		const post = parsePostData(postData, allTags, filePathDetails[i].directory);
 
 		if (tagFilter && !post.tags.includes(tagFilter)) {
 			continue;
@@ -115,7 +119,7 @@ export async function getPosts(
 
 		//Filter out irrelevant tags
 		for (let j = 0; j < tagSlugs.length; j++) {
-			const tag = tags.find((s: Tag) => s.slug === tagSlugs[j]);
+			const tag = allTags.find((s: Tag) => s.slug === tagSlugs[j]);
 
 			if (!tag) {
 				error(500, `Tag ${tagSlugs[j]} not found!`);

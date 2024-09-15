@@ -7,8 +7,8 @@
 </script>
 
 <div
-	class="grid w-full grid-cols-1 gap-2.5 sm:grid-cols-2 sm:gap-3.5
-	{horizontal ? 'md:grid-cols-1' : 'md:grid-cols-3'}
+	class="grid w-full grid-cols-1 gap-5 sm:grid-cols-2
+	{horizontal ? 'md:grid-cols-1' : 'lg:grid-cols-3'}
 	{classes}"
 >
 	<slot />
@@ -18,7 +18,7 @@
 		{/each}
 	{:else}
 		{#each { length: (3 - itemCount) % 3 } as _}
-			<EmptyCard classes="hidden md:inline-flex" />
+			<EmptyCard classes="hidden lg:inline-flex" />
 		{/each}
 	{/if}
 </div>

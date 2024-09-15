@@ -1,12 +1,10 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
 	import Head from '$lib/components/seo/head.svelte';
-	import Container from '$lib/components/page/container.svelte';
-	import Section from '$lib/components/page/section.svelte';
-	import Preload from '$lib/components/loading/preload.svelte';
-	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
-	import SocialLinks from '$lib/components/contact/links.svelte';
+	import Container from '$lib/components/layout/container.svelte';
+	import Section from '$lib/components/layout/section.svelte';
+	import Preload from '$lib/components/loading/preload.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -17,15 +15,10 @@
 	description="I'm a full stack Software Engineer who is passionate about web and video game development."
 	title="Jack Reimers | About"
 />
-<Hero
-	subtitle="Dive deeper into my professional background and expertise and find out how to stay connected or reach out."
-	title="About"
->
-	<SocialLinks slot="below" />
-</Hero>
+<Hero subtitle="Learn more about who I am and what I do." title="About" />
 <Container>
 	<Section>
-		<VerticalStack classes="!gap-6 sm:!gap-8 md:flex-row">
+		<div class="flex flex-col gap-4 md:flex-row md:gap-7">
 			<Preload classes="overflow-hidden rounded-lg" src="/images/about/headshot.png">
 				<div
 					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center bg-gray-200"
@@ -40,6 +33,6 @@
 			<div class="markdown flex-1">
 				<SvelteMarkdown source={data.about} />
 			</div>
-		</VerticalStack>
+		</div>
 	</Section>
 </Container>

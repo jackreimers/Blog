@@ -22,7 +22,6 @@ export const actions: import('./$types').Actions = {
 			error(400, 'Name is required!');
 		}
 
-		//TODO: Validate email format
 		if (!email || email === '') {
 			error(400, 'Email is required!');
 		}

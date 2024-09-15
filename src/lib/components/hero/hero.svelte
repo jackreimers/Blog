@@ -1,29 +1,15 @@
 <script lang="ts">
-	import Container from '$lib/components/page/container.svelte';
-	import VerticalStack from '$lib/components/stacks/stack-vertical.svelte';
+	import Container from '$lib/components/layout/container.svelte';
+	import SocialLinks from '$lib/components/social/links.svelte';
 
 	export let title: string;
-	export let subtitle: string | null = null;
-	export let smallerTitle: boolean = false;
+	export let subtitle: string;
 </script>
 
-<Container classes="my-6 flex min-h-[250px] items-center bg-gray-50 sm:min-h-[400px]">
-	<VerticalStack>
-		<slot name="above" />
-		<div>
-			<h1
-				class="font-bold {smallerTitle
-					? 'text-4xl sm:text-5xl md:text-6xl'
-					: 'text-5xl sm:text-6xl md:text-7xl'}"
-			>
-				{title}
-			</h1>
-		</div>
-		{#if subtitle}
-			<p class="max-w-prose text-sm text-gray-500 sm:text-base">
-				{subtitle}
-			</p>
-		{/if}
-		<slot name="below" />
-	</VerticalStack>
+<Container classes="my-16 sm:my-20 md:my-36">
+	<h1 class="text-5xl font-bold sm:text-6xl md:text-7xl">
+		{title}
+	</h1>
+	<span class="mt-4 block text-gray-700">{subtitle}</span>
+	<SocialLinks classes="mt-4" />
 </Container>

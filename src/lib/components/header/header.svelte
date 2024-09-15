@@ -1,81 +1,66 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
+	import { contact, mobileNavigation } from '$lib/stores/store.elements';
 	import { Menu } from 'lucide-svelte';
-	import MobileNavigation from '$lib/components/header/header-mobile.svelte';
-	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
-	import Modal from '$lib/components/modal/modal-contact.svelte';
 	import Button from '$lib/components/buttons/button.svelte';
 
-	let navigation: MobileNavigation;
-	let modal: Modal;
 	let scrolled: boolean;
-
-	onMount(() => {
-		onScroll();
-	});
 
 	function onScroll() {
 		scrolled = window.scrollY > 1;
 	}
 </script>
 
-<MobileNavigation bind:this={navigation} on:contactClick={() => modal.open()} />
-<Modal bind:this={modal} />
 <header
-	class="fixed z-10 w-full bg-gray-50 transition-all duration-300
-		{scrolled ? 'py-2.5 shadow sm:py-3.5' : 'py-5 sm:py-7'}"
+	class="fixed z-10 w-full bg-gray-50 transition-all duration-500 {scrolled
+		? 'py-3 shadow sm:py-4'
+		: 'py-7 sm:py-9'}"
 >
-	<div class="mx-auto flex items-center px-5 sm:px-6 md:px-7 lg:max-w-5xl xl:max-w-6xl">
-		<div>
-			<a class="inline-block" href="/">
-				<img
-					alt="Logo"
-					class="inline-block h-[2.875rem] sm:h-12"
-					src="/images/logo/logo-light.svg"
-				/>
-			</a>
-		</div>
-		<div class="flex-1" />
-		<div class="hidden md:block">
-			<HorizontalStack>
-				<Button active={$page.url.pathname === '/'} color="gray" href="/" text="Home" />
+	<div
+		class="mx-auto flex items-center justify-between px-4 sm:px-5 md:px-7 lg:max-w-5xl xl:max-w-7xl"
+	>
+		<a aria-label="Home" class="inline-block" href="/">
+			<img
+				alt=""
+				class="inline-block h-[2.875rem] sm:h-12"
+				src="/images/logo/logo-light.svg"
+			/>
+		</a>
+		<nav>
+			<div class="hidden gap-3 md:flex">
+				<Button color="none" href="/" isActive={$page.url.pathname === '/'} text="Home" />
 				<Button
-					active={$page.url.pathname.startsWith('/services')}
-					color="gray"
+					color="none"
 					href="/services"
+					isActive={$page.url.pathname.startsWith('/services')}
 					text="Services"
 				/>
 				<Button
-					active={$page.url.pathname.startsWith('/blog')}
-					color="gray"
+					color="none"
 					href="/blog"
+					isActive={$page.url.pathname.startsWith('/blog')}
 					text="Blog"
 				/>
-				<!--
 				<Button
-					active={$page.url.pathname.startsWith('/projects')}
-					color="gray"
-					href="/projects"
-					text="Projects"
-				/>
-				-->
-				<Button
-					active={$page.url.pathname.startsWith('/about')}
-					color="gray"
+					color="none"
 					href="/about"
+					isActive={$page.url.pathname.startsWith('/about')}
 					text="About"
 				/>
-				<Button color="blueSolid" on:click={() => modal.open()} text="Contact" />
-			</HorizontalStack>
-		</div>
-		<div class="flex items-center md:hidden">
-			<Button color="blue" on:click={navigation.open}>
-				<Menu />
-			</Button>
-		</div>
+				<Button color="blue" on:click={() => $contact?.open()} text="Contact" />
+			</div>
+			<div class="flex items-center md:hidden">
+				<Button
+					ariaLabel="Menu"
+					color="lightblue"
+					on:click={() => $mobileNavigation?.open()}
+				>
+					<Menu />
+				</Button>
+			</div>
+		</nav>
 	</div>
 </header>
-<div class="h-20 bg-gray-50 sm:h-24 md:h-[6.625rem]" />
+<div aria-hidden="true" class="h-20 bg-gray-50 sm:h-24 md:h-[6.625rem]" />
 
 <svelte:window on:scroll={() => onScroll()} />

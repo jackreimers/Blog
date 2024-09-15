@@ -7,15 +7,11 @@
 	export let required: boolean = false;
 	export let classes: string = '';
 
+	export let isDisabled: boolean = true;
+
 	let input: HTMLInputElement | HTMLTextAreaElement;
 	let isModified: boolean = false;
 	let isValid: boolean = true;
-
-	const baseClasses: string =
-		'block w-full rounded border-2 border-gray-200 bg-white px-2.5 py-2 outline-none transition-colors duration-200 sm:px-3 sm:py-2.5';
-	const validClasses: string =
-		'border-gray-200 focus:border-gray-800 mhover:hover:border-gray-800';
-	const invalidClasses: string = 'border-red-600';
 
 	export function validate(): boolean {
 		if (required && input.value == '') {
@@ -35,9 +31,9 @@
 	}
 </script>
 
-<div class="w-full">
+<div class="w-full {classes}">
 	<div>
-		<label class="mb-1.5 inline-block text-sm font-medium sm:text-base" for={name}>
+		<label class="inline-block font-medium" for={name}>
 			{label}
 			{#if required}
 				<span class="text-red-600">*</span>
@@ -52,7 +48,10 @@
 			id={name}
 			{autocomplete}
 			{placeholder}
-			class="{baseClasses} {isValid ? validClasses : invalidClasses} {classes}"
+			disabled={isDisabled}
+			class="mt-2 block w-full rounded border-2 border-gray-200 bg-white px-3 py-2.5 outline-none transition-colors duration-200 disabled:!border-gray-200 disabled:bg-gray-100 {isValid
+				? 'border-gray-200 focus:border-gray-800 mhover:hover:border-gray-800'
+				: 'border-red-600'}"
 			{name}
 			rows="3"
 		/>
@@ -61,10 +60,13 @@
 			bind:this={input}
 			on:input={onInput}
 			on:change={validate}
+			disabled={isDisabled}
 			id={name}
 			{autocomplete}
 			{placeholder}
-			class="{baseClasses} {isValid ? validClasses : invalidClasses} {classes}"
+			class="mt-2 block w-full rounded border-2 border-gray-200 bg-white px-3 py-2.5 outline-none transition-colors duration-200 disabled:!border-gray-200 disabled:bg-gray-100 {isValid
+				? 'border-gray-200 focus:border-gray-800 mhover:hover:border-gray-800'
+				: 'border-red-600'}"
 			{name}
 			{type}
 		/>

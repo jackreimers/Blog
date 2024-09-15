@@ -4,7 +4,7 @@
 </script>
 
 <a
-	class="border-b border-gray-300 font-medium transition-colors duration-200 mhover:hover:border-gray-800"
+	class="border-b border-gray-300 font-medium transition-colors duration-300 mhover:hover:border-gray-900"
 	{href}
 	target="_blank"
 	{title}

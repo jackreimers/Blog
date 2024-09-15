@@ -1,7 +1,5 @@
 <script lang="ts">
-	import { GitCommitVertical } from 'lucide-svelte';
 	import { createEventDispatcher } from 'svelte';
-	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
 
 	export let href: string;
 	export let text: string;
@@ -16,14 +14,14 @@
 </script>
 
 <a class="py-1 {classes}" {href} on:click={handleClick}>
-	<HorizontalStack classes="items-center flex-1">
+	<div class="flex flex-1 items-center gap-3">
 		<span
-			class="items-center rounded p-1.5 transition-colors duration-200 {active
+			class="items-center rounded p-2 transition-colors duration-200 {active
 				? 'bg-blue-100 text-blue-900'
-				: 'bg-gray-100 text-gray-300'}"
+				: 'bg-gray-100 text-gray-400'}"
 		>
-			<GitCommitVertical />
+			<slot />
 		</span>
 		<span class="text-lg font-semibold leading-none sm:text-lg">{text}</span>
-	</HorizontalStack>
+	</div>
 </a>

@@ -7,5 +7,5 @@
 <div
 	class="flex items-center justify-center rounded-lg bg-gray-100 text-gray-300 shadow-inner {classes}"
 >
-	<CircleEllipsis size="72" />
+	<CircleEllipsis size="4.5rem" />
 </div>

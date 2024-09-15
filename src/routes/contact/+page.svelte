@@ -1,10 +1,9 @@
 <script lang="ts">
-	import { Undo2 } from 'lucide-svelte';
+	import { Frown, PartyPopper } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
-	import HorizontalStack from '$lib/components/stacks/stack-horizontal.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
-	import SocialLinks from '$lib/components/contact/links.svelte';
+	import EmptyState from '$lib/components/elements/empty-state.svelte';
+	import PillButton from '$lib/components/buttons/button-pill.svelte';
 
 	/** @type {import('./$types').ActionData} */
 	export let form: any;
@@ -15,14 +14,17 @@
 	description="I'm a full stack Software Engineer who is passionate about web and video game development."
 	title="Jack Reimers | Contact"
 />
-<Hero
-	subtitle="Thank you for your message, I appreciate you taking the time to reach out and I will get back to you as soon as possible."
-	title="Success!"
+<Hero subtitle="Get in touch to ask questions or discuss your needs." title="Contact" />
+<EmptyState
+	subtitle={form.success
+		? "Thank you for your message, I'll get back to you as soon as possible."
+		: 'Please try again later or contact me if the issue persists.'}
+	title={form.success ? 'Success' : 'An error occurred'}
 >
-	<HorizontalStack slot="below">
-		<Button active={true} color="gray" href="/" text="Back">
-			<Undo2 />
-		</Button>
-		<SocialLinks />
-	</HorizontalStack>
-</Hero>
+	{#if form.success}
+		<PartyPopper size="3.5rem" slot="icon" />
+	{:else}
+		<Frown size="3.5rem" slot="icon" />
+	{/if}
+	<PillButton color="gray" href="/" slot="content" text="Return to home" />
+</EmptyState>

@@ -15,7 +15,7 @@
 	}
 
 	function handlePreload(src: string) {
-		return new Promise(function(resolve) {
+		return new Promise(function (resolve) {
 			let image = new Image();
 			image.onload = resolve;
 			image.src = src;
@@ -27,7 +27,7 @@
 	}
 </script>
 
-<span class="bg-gray-300 {classes}">
+<span class="block {classes}" class:bg-gray-200={showSkeleton}>
 	{#await preload()}
 		{#if showSkeleton}
 			<Skeleton>
@@ -37,7 +37,7 @@
 			<slot />
 		{/if}
 	{:then _}
-		<span in:blur>
+		<span class="block" in:blur>
 			<slot />
 		</span>
 	{/await}
