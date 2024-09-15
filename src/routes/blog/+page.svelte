@@ -19,7 +19,7 @@
 
 <Head
 	canonical="https://jackreimers.dev/blog"
-	description="Read my blog where I talk about web and game development."
+	description="Read Jack Reimers blog where he talks about web and game development."
 	title="Jack Reimers | Blog"
 />
 <Hero subtitle="Discover the tech topics I’m passionate about." title="Blog" />

@@ -17,7 +17,7 @@
 
 <Head
 	canonical="https://jackreimers.dev/tags"
-	description="Discover posts that match your interests by filtering through post tags, or explore the range of topics I cover."
+	description="Discover posts by Jack Reimers that match your interests by filtering through post tags."
 	title="Jack Reimers | {data.tagFilter?.name ?? 'Tags'}"
 />
 <Hero subtitle="Filter my posts by topics that interest you." title="Tags" />

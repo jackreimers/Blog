@@ -12,13 +12,13 @@
 
 <Head
 	canonical="https://jackreimers.dev/about"
-	description="I'm a full stack Software Engineer who is passionate about web and video game development."
+	description="Learn more about who Jack Reimers is and what he does."
 	title="Jack Reimers | About"
 />
 <Hero subtitle="Learn more about who I am and what I do." title="About" />
 <Container>
 	<Section>
-		<div class="flex flex-col gap-4 md:flex-row md:gap-7">
+		<div class="flex flex-col gap-7 md:flex-row md:gap-7">
 			<Preload classes="overflow-hidden rounded-lg" src="/images/about/headshot.png">
 				<div
 					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center bg-gray-200"

@@ -17,7 +17,7 @@
 	export let data: any;
 </script>
 
-<Head canonical="https://jackreimers.dev/services" description="" title="Jack Reimers | Services" />
+<Head canonical="https://jackreimers.dev/services" description="Find out what services Jack Reimers can provide to help you and your business." title="Jack Reimers | Services" />
 <Hero subtitle="Find out how I can help you and your business." title="Services" />
 <Container>
 	<Section>
