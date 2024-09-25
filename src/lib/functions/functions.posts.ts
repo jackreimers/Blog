@@ -65,7 +65,7 @@ export async function getPosts(
 	const directoryResponse = await fetch('/content/directory.json');
 	const directoryData = await directoryResponse.json();
 
-	let filePathDetails: { directory: string; slug: string }[] = [];
+	let filePathDetails: { directory: string; slug: string }[];
 
 	if (!directory) {
 		const blogFilePathDetails = directoryData['blog'].map((s: string) => ({
