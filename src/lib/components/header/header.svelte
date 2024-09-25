@@ -35,6 +35,13 @@
 					isActive={$page.url.pathname.startsWith('/services')}
 					text="Services"
 				/>
+
+				<Button
+					color="none"
+					href="/projects"
+					isActive={$page.url.pathname.startsWith('/projects')}
+					text="Projects"
+				/>
 				<Button
 					color="none"
 					href="/blog"
