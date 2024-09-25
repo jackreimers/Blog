@@ -17,7 +17,11 @@
 	export let data: any;
 </script>
 
-<Head canonical="https://jackreimers.dev/services" description="Find out what services Jack Reimers can provide to help you and your business." title="Jack Reimers | Services" />
+<Head
+	canonical="https://jackreimers.dev/services"
+	description="Find out what services Jack Reimers can provide to help you and your business."
+	title="Jack Reimers | Services"
+/>
 <Hero subtitle="Find out how I can help you and your business." title="Services" />
 <Container>
 	<Section>
@@ -52,7 +56,8 @@
 	<Section>
 		<h2 class="text-2xl font-bold sm:text-3xl md:text-4xl">What I Offer</h2>
 		<p class="mt-4 max-w-4xl text-gray-700">
-			I offer a range of services to help you make that great first impression and get the most out of your online presence.
+			I offer a range of services to help you make that great first impression and get the
+			most out of your online presence.
 		</p>
 		<Grid classes="mt-10">
 			<ButtonCard

@@ -32,7 +32,6 @@
 			<SvelteMarkdown source={data.post.excerpt} />
 		</div>
 		<div class="markdown mt-12 box-content sm:mt-14 md:mt-16">
-			<!-- TODO: Create markdown component to avoid passing in renderers repeatedly -->
 			<SvelteMarkdown
 				renderers={{
 					link: AnchorRenderer,

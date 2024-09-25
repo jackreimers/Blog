@@ -17,7 +17,6 @@ export const actions: import('./$types').Actions = {
 		const email = data.get('email');
 		const message = data.get('message');
 
-		//TODO: Handle invalid inputs instead of throwing exceptions
 		if (!name || name === '') {
 			error(400, 'Name is required!');
 		}
