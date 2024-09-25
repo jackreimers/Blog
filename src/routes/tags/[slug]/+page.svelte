@@ -1,7 +1,8 @@
 <script lang="ts">
 	import { previousPageSlug } from '$lib/stores/store.page';
-	import { get } from 'svelte/store';
 	import { Frown } from 'lucide-svelte';
+	import { get } from 'svelte/store';
+	import { uppercaseWord } from '$lib/functions/functions.utilities';
 	import Head from '$lib/components/seo/head.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
@@ -61,6 +62,7 @@
 						horizontal={true}
 					>
 						<div class="flex gap-2 overflow-auto">
+							<PillButton color="gray" href="/{post.type}" text={uppercaseWord(post.type)} />
 							{#each post.tags as tag}
 								<PillButton href="/tags/{tag.slug}" text={tag.name} />
 							{/each}

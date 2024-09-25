@@ -145,10 +145,6 @@ export function parsePostData(data: PostData, tags: Tag[], postType: string): Po
 	const tagSlugs = data.metadata['tags'] as string[];
 	const filteredTags = tags.filter((tag) => tagSlugs.includes(tag.slug));
 
-	if (postType === 'projects') {
-		postType = 'project';
-	}
-
 	return {
 		date: date,
 		dateString: dateString,

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { contact } from '$lib/stores/store.elements';
 	import { AppWindow, Database, Monitor } from 'lucide-svelte';
+	import { uppercaseWord } from '$lib/functions/functions.utilities';
 	import Head from '$lib/components/seo/head.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
@@ -82,7 +83,10 @@
 					title={post.title}
 					content={post.excerpt}
 				>
-					<PillButton icon="chevron" href="/{post.type}/{post.slug}" text="Read more" />
+					<div class="flex gap-2 overflow-auto">
+						<PillButton color="gray" href="/{post.type}" text={uppercaseWord(post.type)} />
+						<PillButton icon="chevron" href="/{post.type}/{post.slug}" text="Read more" />
+					</div>
 				</Card>
 			{/each}
 		</CardGrid>
