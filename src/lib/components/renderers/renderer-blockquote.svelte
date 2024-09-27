@@ -9,7 +9,7 @@
 			<span class="text-blue-900">
 				<AlertOctagon />
 			</span>
-			<p class="!m-0 text-lg font-semibold text-blue-900">Important</p>
+			<p class="!m-0 text-lg font-semibold !text-blue-900">Important</p>
 		</div>
 		<div class="max-w-prose font-medium text-gray-700 [&>p]:m-0">
 			<slot />
