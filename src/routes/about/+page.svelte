@@ -19,9 +19,12 @@
 <Container>
 	<Section>
 		<div class="flex flex-col gap-7 md:flex-row md:gap-7">
-			<Preload classes="overflow-hidden rounded-lg" src="/images/about/headshot.png">
+			<Preload
+				classes="overflow-hidden rounded-lg border border-gray-300"
+				src="/images/about/headshot.png"
+			>
 				<div
-					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center bg-gray-200"
+					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center bg-gray-100"
 				>
 					<img
 						alt="Professional headshot of Jack Reimers"
