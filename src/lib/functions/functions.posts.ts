@@ -1,144 +1,88 @@
-import { error } from '@sveltejs/kit';
-import type { Post, PostData } from '$lib/interfaces/interfaces.posts';
+import type { Post } from '$lib/interfaces/interfaces.posts';
 import type { Tag } from '$lib/interfaces/interfaces.tags';
-
-const metadataPattern = /^---([\s\S]*?)---/;
-const arrayPattern = /^\[.*]$/;
+import { error } from '@sveltejs/kit';
+import { getMarkdownData } from '$lib/functions/functions.markdown';
+import type { MarkdownData } from '$lib/interfaces/interfaces.markdown';
 
 export async function getTags(fetch: any): Promise<Tag[]> {
 	const tagsResponse = await fetch(`/content/tags.json`);
-	return await tagsResponse.json();
+	const tags = await tagsResponse.json();
+
+	tags.forEach((tag: Tag) => {
+		tag.count = 0;
+	});
+
+	return tags;
 }
 
-export async function getPostData(fetch: any, href: string): Promise<PostData> {
-	const postResponse = await fetch(href);
-	const postData = await postResponse.text();
+export async function getPost(fetch: any, slug: string, postType: string): Promise<Post> {
+	const tags = await getTags(fetch);
+	const markdownData = await getMarkdownData(fetch, `/content/${postType}/${slug}/post.md`);
 
-	const matched = postData.match(metadataPattern);
-
-	if (!matched) {
-		error(500, 'Failed to read post data!');
-	}
-
-	const metadata = matched[1].split('\n');
-	const accumulator = metadata.reduce((accumulator: [string, string | string[]][], line: any) => {
-		const [key, ...value] = line.split(':').map((part: string) => part.trim());
-
-		if (key) {
-			const joinedValue = value[1] ? value.join(':') : value.join('');
-			const isArray = arrayPattern.test(joinedValue);
-
-			if (isArray) {
-				accumulator.push([key, JSON.parse(joinedValue)]);
-			} else {
-				accumulator.push([key, joinedValue]);
-			}
-		}
-		return accumulator;
-	}, []);
-
-	const mappedMetadata: { [key: string]: string | string[] } = Object.fromEntries(accumulator);
-
-	if (postData.match(/<!--endintro-->/)) {
-		const split = postData.split('<!--endintro-->');
-
-		return {
-			metadata: mappedMetadata,
-			excerpt: split[0].split('---').pop(),
-			content: split[1]
-		};
-	} else {
-		return {
-			metadata: mappedMetadata,
-			excerpt: '',
-			content: postData.split('---').pop()
-		};
-	}
+	return parsePostData(markdownData, tags, postType);
 }
 
 export async function getPosts(
 	fetch: any,
-	allTags: Tag[] | null = null,
-	directory: 'blog' | 'projects' | null = null,
+	postType: 'blog' | 'projects' | null = null,
 	filter: string | null = null
 ): Promise<{ tagFilter: Tag | null; posts: Post[]; tags: any }> {
 	const directoryResponse = await fetch('/content/directory.json');
 	const directoryData = await directoryResponse.json();
 
 	let filePathDetails: { directory: string; slug: string }[] = [];
+	let directories = postType == null ? ['blog', 'projects'] : [postType];
 
-	if (!directory) {
-		const blogFilePathDetails = directoryData['blog'].map((s: string) => ({
-			directory: 'blog',
-			slug: s
-		}));
-
-		const projectsFilePaths = directoryData['projects'].map((s: string) => ({
-			directory: 'projects',
-			slug: s
-		}));
-
-		filePathDetails = blogFilePathDetails.concat(projectsFilePaths);
-	} else {
-		filePathDetails = directoryData[directory].map((s: string) => ({
-			directory: directory,
-			slug: s
-		}));
+	for (let i = 0; i < directories.length; i++) {
+		filePathDetails = filePathDetails.concat(
+			directoryData[directories[i]].map((s: string) => ({
+				directory: directories[i],
+				slug: s
+			}))
+		);
 	}
 
-	if (!allTags) {
-		allTags = await getTags(fetch);
+	const tags = await getTags(fetch);
+	const tagFilter = tags.find((tagData: Tag) => tagData.slug === filter) ?? null;
+
+	if (filter && !tagFilter) {
+		error(500, `Tag ${filter} not found!`);
 	}
 
 	const posts: Post[] = [];
-	const relevantTags: Tag[] = [];
-	let tagFilter: Tag | null = null;
-
-	if (filter) {
-		tagFilter = allTags.find((tagData: Tag) => tagData.slug === filter) ?? null;
-
-		if (!tagFilter) {
-			error(500, `Tag ${filter} not found!`);
-		}
-	}
+	const relevantTags: Map<string, Tag> = new Map<string, Tag>();
 
 	for (let i = 0; i < filePathDetails.length; i++) {
-		const postData = await getPostData(
-			fetch,
-			`/content/${filePathDetails[i].directory}/${filePathDetails[i].slug}/post.md`
-		);
-
-		const post = parsePostData(postData, allTags, filePathDetails[i].directory);
+		const post = await getPost(fetch, filePathDetails[i].slug, filePathDetails[i].directory);
 
 		if (tagFilter && !post.tags.includes(tagFilter)) {
 			continue;
 		}
 
 		posts.push(post);
-		const tagSlugs = postData.metadata['tags'] as string[];
 
-		//Filter out irrelevant tags
-		for (let j = 0; j < tagSlugs.length; j++) {
-			const tag = allTags.find((s: Tag) => s.slug === tagSlugs[j]);
+		//Get all relevant tags
+		for (let j = 0; j < post.tags.length; j++) {
+			const relevantTag = relevantTags.get(post.tags[j].slug);
 
-			if (!tag) {
-				error(500, `Tag ${tagSlugs[j]} not found!`);
-			}
-
-			if (!relevantTags.includes(tag)) {
-				relevantTags.push(tag);
+			if (!relevantTag) {
+				const tag = post.tags[j];
+				tag.count++;
+				relevantTags.set(post.tags[j].slug, tag);
+			} else {
+				relevantTag.count++;
 			}
 		}
 	}
 
 	return {
 		posts: posts.sort(compareDates) ?? [],
-		tags: relevantTags ?? [],
+		tags: [...relevantTags.values()].sort(compareTags),
 		tagFilter: tagFilter
 	};
 }
 
-export function parsePostData(data: PostData, tags: Tag[], postType: string): Post {
+export function parsePostData(data: MarkdownData, tags: Tag[], postType: string): Post {
 	const date = new Date(data.metadata['date'] as string);
 	const dateString = `${date.toLocaleString('default', { month: 'long' })} ${date.getDate()}, ${date.getFullYear()}`;
 
@@ -147,6 +91,16 @@ export function parsePostData(data: PostData, tags: Tag[], postType: string): Po
 
 	if (postType === 'projects') {
 		postType = 'project';
+	}
+
+	let excerpt: string = '';
+	let content: string = data.content;
+
+	if (data.content.match(/<!--endintro-->/)) {
+		const split = data.content.split('<!--endintro-->');
+
+		excerpt = split[0].split('---').pop() ?? '';
+		content = split[1];
 	}
 
 	return {
@@ -159,17 +113,28 @@ export function parsePostData(data: PostData, tags: Tag[], postType: string): Po
 		slug: data.metadata['slug'] as string,
 		imageHref: (data.metadata['imageHref'] as string) ?? null,
 		imageAlt: (data.metadata['imageAlt'] as string) ?? null,
-		excerpt: data.excerpt,
-		content: data.content
+		excerpt: excerpt,
+		content: content
 	};
 }
 
-//Orders by newest first
 function compareDates(a: Post, b: Post) {
+	//Orders by newest first
 	if (a.date < b.date) {
 		return 1;
 	}
 	if (a.date > b.date) {
+		return -1;
+	}
+	return 0;
+}
+
+function compareTags(a: Tag, b: Tag) {
+	//Orders largest first
+	if ((a.count ?? 0) < (b.count ?? 0)) {
+		return 1;
+	}
+	if ((a.count ?? 0) > (b.count ?? 0)) {
 		return -1;
 	}
 	return 0;
