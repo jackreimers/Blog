@@ -12,6 +12,7 @@
 	import CalloutCard from '$lib/components/cards/card-callout.svelte';
 	import PillButton from '$lib/components/elements/pill.svelte';
 	import TickListItem from '$lib/components/lists/list-item-tick.svelte';
+	import Testimonial from '$lib/components/testimonials/testimonial.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -107,6 +108,17 @@
 			text="Contact me now for an obligation free discussion."
 			title="Not sure what's right for you?"
 		/>
+	</Section>
+	<Section>
+		<h2 class="text-2xl font-bold sm:text-3xl md:text-4xl">Testimonials</h2>
+		<p class="mt-4 max-w-4xl text-gray-700">
+			See what people I've worked with have to say.
+		</p>
+		<Grid classes="mt-10">
+			{#each data.testimonials as testimonial}
+				<Testimonial data={testimonial} />
+			{/each}
+		</Grid>
 	</Section>
 	<Section classes="markdown">
 		<SvelteMarkdown source={data.services} />
