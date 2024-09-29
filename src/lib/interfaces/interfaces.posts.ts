@@ -1,11 +1,5 @@
 import type { Tag } from '$lib/interfaces/interfaces.tags';
 
-export interface PostData {
-	metadata: { [key: string]: string | string[] };
-	excerpt: string;
-	content: string;
-}
-
 export interface Post {
 	date: Date;
 	dateString: string;
