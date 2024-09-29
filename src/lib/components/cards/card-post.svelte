@@ -34,7 +34,7 @@
 			{title}
 		</a>
 		<div class="mt-4 flex-1">
-			<p class="line-clamp-3 text-gray-600">
+			<p class="line-clamp-3 text-gray-700">
 				{content}
 			</p>
 		</div>

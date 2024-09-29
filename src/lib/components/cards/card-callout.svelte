@@ -10,6 +10,6 @@
 	</div>
 	<p>
 		<span class="font-semibold">{title}</span>
-		<span class="text-gray-600">{text}</span>
+		<span class="text-gray-700">{text}</span>
 	</p>
 </div>
