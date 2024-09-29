@@ -55,7 +55,7 @@ export async function getPosts(
 	for (let i = 0; i < filePathDetails.length; i++) {
 		const post = await getPost(fetch, filePathDetails[i].slug, filePathDetails[i].directory);
 
-		if (tagFilter && !post.tags.includes(tagFilter)) {
+		if (filter && !post.tags.find((tag) => tag.slug == filter)) {
 			continue;
 		}
 
