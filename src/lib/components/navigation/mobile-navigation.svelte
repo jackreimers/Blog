@@ -44,7 +44,7 @@
 	>
 		<div class="relative h-full w-[320px] p-6 sm:p-7">
 			<div
-				class="relative flex h-full flex-col transition-spacing delay-100 duration-700 {isOpen
+				class="relative flex h-full flex-col transition-[margin] delay-100 duration-700 {isOpen
 					? 'ml-0'
 					: 'ml-4'}"
 			>
@@ -68,7 +68,7 @@
 						on:click={close}
 						text="Services"
 					>
-						<Briefcase/>
+						<Briefcase />
 					</MobileButton>
 					<MobileButton
 						active={$page.url.pathname.startsWith('/blog')}
@@ -76,7 +76,7 @@
 						on:click={close}
 						text="Blog"
 					>
-						<File/>
+						<File />
 					</MobileButton>
 					<MobileButton
 						active={$page.url.pathname.startsWith('/about')}
@@ -84,7 +84,7 @@
 						on:click={close}
 						text="About"
 					>
-						<CircleUserRound/>
+						<CircleUserRound />
 					</MobileButton>
 				</div>
 				<Button

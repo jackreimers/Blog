@@ -10,9 +10,9 @@
 	import Grid from '$lib/components/grid/grid.svelte';
 	import ButtonCard from '$lib/components/cards/card-button.svelte';
 	import CalloutCard from '$lib/components/cards/card-callout.svelte';
+	import TestimonialCard from '$lib/components/cards/card-testimonial.svelte';
 	import PillButton from '$lib/components/elements/pill.svelte';
 	import TickListItem from '$lib/components/lists/list-item-tick.svelte';
-	import Testimonial from '$lib/components/testimonials/testimonial.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -116,7 +116,7 @@
 		</p>
 		<Grid classes="mt-10">
 			{#each data.testimonials as testimonial}
-				<Testimonial data={testimonial} />
+				<TestimonialCard data={testimonial} />
 			{/each}
 		</Grid>
 	</Section>
