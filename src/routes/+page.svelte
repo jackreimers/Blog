@@ -26,7 +26,7 @@
 <Container>
 	<Section>
 		<h2 class="text-2xl font-bold sm:text-3xl md:text-4xl">Services</h2>
-		<p class="mt-4 max-w-4xl text-gray-600">
+		<p class="mt-4 max-w-4xl text-gray-700">
 			Enhance your online presence with a custom website, web application, or WordPress site
 			designed from the ground up to elevate your brand and achieve your digital goals.
 		</p>
@@ -71,7 +71,7 @@
 	</Section>
 	<Section>
 		<h2 class="text-2xl font-bold sm:text-3xl md:text-4xl">Latest</h2>
-		<p class="mt-4 max-w-4xl text-gray-600">
+		<p class="mt-4 max-w-4xl text-gray-700">
 			Read my latest posts and see some of the projects I've been working on.
 		</p>
 		<CardGrid classes="mt-10" itemCount={data.posts.length}>
