@@ -27,7 +27,7 @@
 					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center bg-gray-100"
 				>
 					<img
-						alt="Professional headshot of Jack Reimers"
+						alt="Jack Reimers"
 						class="mx-auto h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]"
 						src="/images/about/headshot.png"
 					/>

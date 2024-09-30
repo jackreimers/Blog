@@ -14,7 +14,7 @@
 >
 	<span class="inline-block aspect-square h-full max-w-24 flex-1 overflow-hidden rounded-lg">
 		<Preload showSkeleton={false} src={logoUrls[data.slug]}>
-			<img alt="The {data.name} logo." class="block w-full" src={logoUrls[data.slug]} />
+			<img alt="{data.name} logo" class="block w-full" src={logoUrls[data.slug]} />
 		</Preload>
 	</span>
 	<span class="flex w-full flex-[5] items-center justify-between">
