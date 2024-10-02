@@ -9,7 +9,7 @@
 </script>
 
 <a
-	class="flex gap-4 rounded-lg bg-white p-5 shadow transition-[transform,box-shadow] duration-300 mhover:hover:scale-[1.015] mhover:hover:shadow-lg {classes}"
+	class="flex gap-4 rounded-lg bg-white p-5 shadow transition-[transform,box-shadow] duration-300 focus:scale-[1.015] focus:shadow-lg mhover:hover:scale-[1.015] mhover:hover:shadow-lg {classes}"
 	href="/tags/{data.slug}"
 >
 	<span class="inline-block aspect-square h-full max-w-24 flex-1 overflow-hidden rounded-lg">

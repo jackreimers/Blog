@@ -14,10 +14,11 @@
 
 	const dispatch = createEventDispatcher();
 	const colorClasses: any = {
-		'mhover:hover:bg-gray-200': color === 'none',
-		'bg-gray-200 mhover:hover:bg-gray-300': color === 'gray',
-		'bg-blue-900 text-white mhover:hover:bg-blue-950': color === 'blue',
-		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200': color === 'lightblue'
+		'mhover:hover:bg-gray-200 focus:bg-gray-200': color === 'none',
+		'bg-gray-200 mhover:hover:bg-gray-300 focus:bg-gray-300': color === 'gray',
+		'bg-blue-900 text-white mhover:hover:bg-blue-950 focus:bg-blue-950': color === 'blue',
+		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200 focus:bg-blue-200':
+			color === 'lightblue'
 	};
 
 	classes = Object.keys(colorClasses)
@@ -38,7 +39,9 @@
 		{type}
 		class="rounded font-medium transition-colors duration-200 {text
 			? 'px-4 py-2.5'
-			: 'p-2.5'} {classes} {isActive ? 'bg-gray-200 mhover:hover:!bg-gray-300' : ''}"
+			: 'p-2.5'} {classes} {isActive
+			? 'bg-gray-200 focus:!bg-gray-300 mhover:hover:!bg-gray-300'
+			: ''}"
 	>
 		{#if text}
 			{text}
@@ -54,7 +57,7 @@
 		class="relative overflow-hidden rounded font-medium transition-colors duration-200 {text
 			? 'px-4 py-2.5'
 			: 'p-2.5'} {classes} {isActive
-			? 'bg-gray-200 mhover:hover:!bg-gray-300'
+			? 'bg-gray-200 focus:!bg-gray-300 mhover:hover:!bg-gray-300'
 			: ''} {isSubmitting ? 'cursor-wait !bg-blue-950' : ''}"
 	>
 		{#if isSubmitting}

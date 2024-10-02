@@ -13,7 +13,7 @@
 
 {#if href}
 	<a
-		class="group flex flex-col rounded-lg bg-white p-6 shadow transition-[transform,box-shadow] duration-300 sm:p-7 mhover:hover:scale-[1.015] mhover:hover:shadow-lg {classes}"
+		class="group flex flex-col rounded-lg bg-white p-6 shadow transition-[transform,box-shadow] duration-300 focus:scale-[1.015] focus:shadow-lg sm:p-7 mhover:hover:scale-[1.015] mhover:hover:shadow-lg {classes}"
 		{href}
 		on:click={() => dispatch('click')}
 	>
@@ -35,7 +35,9 @@
 			<span
 				class="mt-10 inline-flex items-center gap-2 font-medium text-blue-900 transition-colors"
 			>
-				<span class="transition-[margin] duration-300 mhover:group-hover:mr-1">
+				<span
+					class="transition-[margin] duration-300 group-focus:mr-1 mhover:group-hover:mr-1"
+				>
 					{action}
 				</span>
 				<MoveRight size="1.25rem" />
@@ -44,7 +46,7 @@
 	</a>
 {:else}
 	<button
-		class="group flex flex-col rounded-lg bg-white p-7 shadow transition-[transform,box-shadow] duration-300 mhover:hover:scale-[1.015] mhover:hover:shadow-lg {classes}"
+		class="group flex flex-col rounded-lg bg-white p-6 shadow transition-[transform,box-shadow] duration-300 focus:scale-[1.015] focus:shadow-lg sm:p-7 mhover:hover:scale-[1.015] mhover:hover:shadow-lg {classes}"
 		on:click={() => dispatch('click')}
 	>
 		{#if $$slots.header}
@@ -65,9 +67,11 @@
 			<span
 				class="mt-10 inline-flex items-center gap-2 font-medium text-blue-900 transition-colors"
 			>
-				<span class="transition-[margin] duration-300 mhover:group-hover:mr-1"
-					>{action}</span
+				<span
+					class="transition-[margin] duration-300 group-focus:mr-1 mhover:group-hover:mr-1"
 				>
+					{action}
+				</span>
 				<MoveRight size="1.25rem" />
 			</span>
 		{/if}

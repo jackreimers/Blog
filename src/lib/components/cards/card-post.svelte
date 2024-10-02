@@ -17,7 +17,11 @@
 		{horizontal ? 'md:flex-row' : ''}
 		{classes}"
 >
-	<a class="relative {horizontal ? 'aspect-square flex-1 md:min-h-full' : ''}" {href}>
+	<a
+		class="relative {horizontal ? 'aspect-square flex-1 md:min-h-full' : ''}"
+		{href}
+		tabindex="-1"
+	>
 		{#if imageHref}
 			<Preload src={imageHref} classes="flex aspect-square">
 				<img src={imageHref} alt={imageAlt} />

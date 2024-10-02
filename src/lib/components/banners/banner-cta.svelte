@@ -10,7 +10,7 @@
 </script>
 
 <button
-	class="group flex w-full items-center justify-between rounded-lg bg-blue-900 p-7 text-left shadow transition-[transform,box-shadow,background-color] duration-300 sm:p-10 mhover:hover:scale-[1.015] mhover:hover:bg-blue-950 mhover:hover:shadow-lg {classes}"
+	class="group flex w-full items-center justify-between rounded-lg bg-blue-900 p-7 text-left shadow transition-[transform,box-shadow,background-color] duration-300 focus:scale-[1.015] focus:bg-blue-950 focus:shadow-lg sm:p-10 mhover:hover:scale-[1.015] mhover:hover:bg-blue-950 mhover:hover:shadow-lg {classes}"
 	on:click={() => dispatch('click')}
 >
 	<span class="block">
@@ -21,7 +21,7 @@
 	</span>
 	<span
 		aria-hidden="true"
-		class="hidden items-center gap-7 text-white transition-[margin] duration-300 sm:mr-3 sm:flex sm:gap-10 mhover:group-hover:mr-0"
+		class="hidden items-center gap-7 text-white transition-[margin] duration-300 group-focus:mr-0 sm:mr-3 sm:flex sm:gap-10 mhover:group-hover:mr-0"
 	>
 		<MoveRight size="2rem" />
 	</span>

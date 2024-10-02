@@ -9,9 +9,9 @@
 	export let classes: string = '';
 
 	const colorClasses: any = {
-		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200': color === 'blue',
-		'bg-red-100 text-red-900 mhover:hover:bg-red-200': color === 'red',
-		'bg-gray-200 mhover:hover:bg-gray-300': color === 'gray'
+		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200 focus:bg-blue-200': color === 'blue',
+		'bg-red-100 text-red-900 mhover:hover:bg-red-200 focus:bg-red-200': color === 'red',
+		'bg-gray-200 mhover:hover:bg-gray-300 focus:bg-gray-300': color === 'gray'
 	};
 
 	classes = Object.keys(colorClasses)
