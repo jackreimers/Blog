@@ -17,7 +17,7 @@ export async function getTags(fetch: any): Promise<Tag[]> {
 
 export async function getPost(fetch: any, slug: string, postType: string): Promise<Post> {
 	const tags = await getTags(fetch);
-	const markdownData = await getMarkdownData(fetch, `/content/${postType}/${slug}/post.md`);
+	const markdownData = await getMarkdownData(fetch, `/content/posts/${postType}/${slug}/post.md`);
 
 	return parsePostData(markdownData, tags, postType);
 }

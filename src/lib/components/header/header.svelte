@@ -23,7 +23,7 @@
 			<img
 				alt=""
 				class="inline-block h-[2.875rem] sm:h-12"
-				src="/content/logo/logo-light.svg"
+				src="/content/images/logo-light.svg"
 			/>
 		</a>
 		<nav>

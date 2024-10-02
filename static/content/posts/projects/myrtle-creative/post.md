@@ -4,7 +4,7 @@ tags: [ "svelte", "javascript", "typescript", "wordpress" ]
 title: The Myrtle Collective
 description: A list of six interesting SvelteKit features that I found useful whilst learning the framework.
 slug: myrtle-creative
-imageHref: /content/projects/myrtle-creative/images/cover.png
+imageHref: /content/posts/projects/myrtle-creative/images/cover.png
 imageAlt: The SvelteKit logo.
 ---
 

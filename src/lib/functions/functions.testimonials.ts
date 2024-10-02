@@ -10,7 +10,7 @@ export async function getTestimonials(fetch: any): Promise<Testimonial[]> {
 	for (let i = 0; i < directoryData.testimonials.length; i++) {
 		const testimonial = await getMarkdownData(
 			fetch,
-			`/content/testomonials/${directoryData.testimonials[i]}.md`
+			`/content/testimonials/${directoryData.testimonials[i]}.md`
 		);
 
 		testimonials.push({

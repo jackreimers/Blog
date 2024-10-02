@@ -4,7 +4,7 @@ tags: [ "azure", "graphql", "javascript", "typescript" ]
 title: Sending Emails with the Microsoft Graph API
 description: Learn how to send emails programmatically using the Microsoft Graph API with this step by step guide.
 slug: sending-emails-with-ms-graph
-imageHref: /content/blog/sending-emails-with-ms-graph/images/cover.png
+imageHref: /content/posts/blog/sending-emails-with-ms-graph/images/cover.png
 imageAlt: The Microsoft Entra ID logo.
 ---
 
@@ -36,20 +36,20 @@ permissions and generate credentials.
 
 Log in to the **[Azure Portal](https://portal.azure.com)** and navigate to **Entra ID** > **Enterprise Applications**.
 
-![The Azure Entra ID portal home screen with the 'Enterprise applications' button highlighted](/content/blog/sending-emails-with-ms-graph/images/azure-01.png)
+![The Azure Entra ID portal home screen with the 'Enterprise applications' button highlighted](/content/posts/blog/sending-emails-with-ms-graph/images/azure-01.png)
 
 Click **New application**.
 
-![The Azure Entra ID portal 'Enterprise applications' screen with the 'New application' button highlighted](/content/blog/sending-emails-with-ms-graph/images/azure-02.png)
+![The Azure Entra ID portal 'Enterprise applications' screen with the 'New application' button highlighted](/content/posts/blog/sending-emails-with-ms-graph/images/azure-02.png)
 
 Click **Create your own application**, give your application a name, select the option **Register an application to
 integrate with Microsoft Entra ID**, and click **Create**.
 
-![The 'Microsoft Entra Gallery' screen with the 'Create your own application' button highlighted and the create dialog open](/content/blog/sending-emails-with-ms-graph/images/azure-03.png)
+![The 'Microsoft Entra Gallery' screen with the 'Create your own application' button highlighted and the create dialog open](/content/posts/blog/sending-emails-with-ms-graph/images/azure-03.png)
 
 Select the option **Accounts in this organizational directory only** and click **Register**.
 
-![The 'Register an application' screen](/content/blog/sending-emails-with-ms-graph/images/azure-04.png)
+![The 'Register an application' screen](/content/posts/blog/sending-emails-with-ms-graph/images/azure-04.png)
 
 ### 2. Grant Permissions
 
@@ -61,20 +61,20 @@ emails.
 
 Navigate to **Entra ID** > **App registrations** > **All applications** and open the application you just created.
 
-![The 'App registrations' screen with the 'All applications' tab highlighted](/content/blog/sending-emails-with-ms-graph/images/azure-05.png)
+![The 'App registrations' screen with the 'All applications' tab highlighted](/content/posts/blog/sending-emails-with-ms-graph/images/azure-05.png)
 
 Navigate to **API permissions**, click **Add a permission**, then click **Microsoft Graph**.
 
-![The 'API permissions' screen under the app registration with the 'Add a permission' and 'Microsoft Graph' buttons highlighted](/content/blog/sending-emails-with-ms-graph/images/azure-06.png)
+![The 'API permissions' screen under the app registration with the 'Add a permission' and 'Microsoft Graph' buttons highlighted](/content/posts/blog/sending-emails-with-ms-graph/images/azure-06.png)
 
 Select **Application permissions**, search for the permission **Mail.ReadWrite** and **Mail.Send** and select them, then
 click **Add permissions**.
 
-![The settings screen for the Microsoft Graph API permission](/content/blog/sending-emails-with-ms-graph/images/azure-07.png)
+![The settings screen for the Microsoft Graph API permission](/content/posts/blog/sending-emails-with-ms-graph/images/azure-07.png)
 
 Click **Grant admin consent** to activate the permissions.
 
-![The 'API permissions' screen under the app registration with the 'Grant admin consent' button highlighted](/content/blog/sending-emails-with-ms-graph/images/azure-08.png)
+![The 'API permissions' screen under the app registration with the 'Grant admin consent' button highlighted](/content/posts/blog/sending-emails-with-ms-graph/images/azure-08.png)
 
 ### 3. Generate a Client Secret
 
@@ -86,7 +86,7 @@ revoke access.
 
 Navigate to **Certificates & secrets** and click **New client secret**.
 
-![The 'Certificates & secrets' screen under the app registration with the 'New client secret' button highlighted](/content/blog/sending-emails-with-ms-graph/images/azure-09.png)
+![The 'Certificates & secrets' screen under the app registration with the 'New client secret' button highlighted](/content/posts/blog/sending-emails-with-ms-graph/images/azure-09.png)
 
 Give your client secret a description, set the expiry date, and click **Add**.
 
@@ -112,7 +112,7 @@ For your application to authenticate it will need three secrets:
 You should already have your client secret from the previous step. To find the remaining secrets navigate to
 **Entra ID** > **App registrations** > **All applications** and open the Enterprise Application you just created.
 
-![The app registration overview screen with the 'Application (client) ID' and 'Directory (tenant) ID' fields highlighted](/content/blog/sending-emails-with-ms-graph/images/azure-10.png)
+![The app registration overview screen with the 'Application (client) ID' and 'Directory (tenant) ID' fields highlighted](/content/posts/blog/sending-emails-with-ms-graph/images/azure-10.png)
 
 ### 2. Install Packages
 
