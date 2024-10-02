@@ -3,14 +3,12 @@
 	import { contact, mobileNavigation } from '$lib/stores/store.elements';
 	import { onMount } from 'svelte';
 	import { inject } from '@vercel/analytics';
-	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer/footer.svelte';
 	import MobileNavigation from '$lib/components/navigation/navigation.svelte';
 	import ContactModal from '$lib/components/contact/contact.svelte';
 
 	inject();
-	injectSpeedInsights();
 
 	let mobileNavigationMenu: MobileNavigation;
 	let contactModal: ContactModal;
