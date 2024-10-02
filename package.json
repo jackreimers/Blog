@@ -15,7 +15,6 @@
     "@azure/identity": "^4.4.0",
     "@microsoft/microsoft-graph-client": "^3.0.7",
     "@sveltejs/adapter-auto": "^3.0.0",
-    "@sveltejs/adapter-static": "^3.0.0",
     "@sveltejs/adapter-vercel": "^5.2.0",
     "@sveltejs/kit": "^2.0.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
