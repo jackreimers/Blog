@@ -24,8 +24,8 @@
 <MobileNavigation bind:this={mobileNavigationMenu} />
 <ContactModal bind:this={contactModal} />
 
-<div class="h-[100dvh]">
-	<div class="flex min-h-[100dvh] flex-col">
+<div class="h-dvh">
+	<div class="flex min-h-dvh flex-col">
 		<Header />
 		<div class="flex-1">
 			<slot />

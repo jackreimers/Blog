@@ -10,6 +10,6 @@
 	<h1 class="text-5xl font-bold sm:text-6xl md:text-7xl">
 		{title}
 	</h1>
-	<span class="mt-4 block text-gray-700">{subtitle}</span>
+	<p class="mt-4 text-gray-700">{subtitle}</p>
 	<SocialLinks classes="mt-4" />
 </Container>

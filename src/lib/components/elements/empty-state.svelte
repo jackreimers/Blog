@@ -12,8 +12,8 @@
 			<HelpCircle size="3rem" />
 		</slot>
 	</div>
-	<span class="mt-4 block text-2xl font-bold sm:text-3xl md:text-4xl">{title}</span>
-	<span class="mx-auto mt-4 block max-w-sm text-gray-700">{subtitle}</span>
+	<p class="mt-4 text-2xl font-bold sm:text-3xl md:text-4xl">{title}</p>
+	<p class="mx-auto mt-4 max-w-sm text-gray-700">{subtitle}</p>
 	{#if $$slots.content}
 		<div class="mt-10">
 			<slot name="content" />
