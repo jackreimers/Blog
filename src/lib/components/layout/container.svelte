@@ -2,6 +2,6 @@
 	export let classes: string = '';
 </script>
 
-<div class="mx-auto w-full flex-1 p-4 sm:p-5 md:p-7 lg:max-w-5xl xl:max-w-7xl {classes}">
+<div class="mx-auto flex-1 px-4 sm:px-5 md:px-7 lg:max-w-5xl xl:max-w-7xl {classes}">
 	<slot />
 </div>

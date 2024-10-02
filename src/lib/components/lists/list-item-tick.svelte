@@ -9,5 +9,5 @@
 	<span class="block text-green-500">
 		<CheckCircle />
 	</span>
-	<span class="block">{text}</span>
+	{text}
 </li>

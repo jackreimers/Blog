@@ -36,11 +36,11 @@
 
 	.markdown ul,
 	.markdown ol {
-		@apply my-3 pl-7 sm:my-4;
+		@apply my-4 pl-6;
 	}
 
 	.markdown ul li {
-		@apply list-disc pl-2;
+		@apply list-disc;
 	}
 
 	.markdown ol li {
