@@ -13,6 +13,6 @@
 	<div class="flex flex-col">
 		<p class="flex-1 text-gray-700">{data.content}</p>
 		<p class="mt-4 font-semibold">{data.name}</p>
-		<p class="text-gray-700">{data.organisation}</>
+		<p class="text-gray-700">{data.organisation}</p>
 	</div>
 </div>
