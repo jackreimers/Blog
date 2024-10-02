@@ -21,7 +21,7 @@
 		<div class="flex flex-col gap-7 md:flex-row md:gap-7">
 			<Preload
 				classes="overflow-hidden rounded-lg border border-gray-300"
-				src="/images/about/headshot.png"
+				src="/content/about/images/headshot.png"
 			>
 				<div
 					class="col-start-1 col-end-3 row-start-1 row-end-3 flex justify-center bg-gray-100"
@@ -29,7 +29,7 @@
 					<img
 						alt="Jack Reimers"
 						class="mx-auto h-[250px] w-[250px] sm:h-[300px] sm:w-[300px]"
-						src="/images/about/headshot.png"
+						src="/content/about/images/headshot.png"
 					/>
 				</div>
 			</Preload>
