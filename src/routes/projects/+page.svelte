@@ -16,6 +16,7 @@
 		previousPageSlug.set('projects');
 	});
 </script>
+
 <Head
 	canonical="https://jackreimers.dev/projects"
 	description="See some of the projects that Jack Reimers has worked on in the past."

@@ -6,7 +6,7 @@
 	export let classes: string = '';
 </script>
 
-<div class="flex gap-3 rounded-lg border border-gray-300 bg-gray-100 p-5 {classes}">
+<div class="flex gap-3 rounded-lg bg-gray-100 p-5 shadow-inner {classes}">
 	<div class="text-blue-900">
 		<Quote />
 	</div>

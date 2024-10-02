@@ -84,8 +84,16 @@
 					content={post.excerpt}
 				>
 					<div class="flex gap-2 overflow-auto">
-						<PillButton color="gray" href="/{post.type}" text={uppercaseWord(post.type)} />
-						<PillButton icon="chevron" href="/{post.type}/{post.slug}" text="Read more" />
+						<PillButton
+							color="gray"
+							href="/{post.type}"
+							text={uppercaseWord(post.type)}
+						/>
+						<PillButton
+							icon="chevron"
+							href="/{post.type}/{post.slug}"
+							text="Read more"
+						/>
 					</div>
 				</Card>
 			{/each}

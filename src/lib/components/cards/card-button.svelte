@@ -65,7 +65,8 @@
 			<span
 				class="mt-10 inline-flex items-center gap-2 font-medium text-blue-900 transition-colors"
 			>
-				<span class="transition-[margin] duration-300 mhover:group-hover:mr-1">{action}</span
+				<span class="transition-[margin] duration-300 mhover:group-hover:mr-1"
+					>{action}</span
 				>
 				<MoveRight size="1.25rem" />
 			</span>

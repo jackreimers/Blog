@@ -21,7 +21,7 @@
 	</span>
 	<span
 		aria-hidden="true"
-		class="hidden items-center gap-7 sm:gap-10 text-white transition-[margin] duration-300 sm:mr-3 sm:flex mhover:group-hover:mr-0"
+		class="hidden items-center gap-7 text-white transition-[margin] duration-300 sm:mr-3 sm:flex sm:gap-10 mhover:group-hover:mr-0"
 	>
 		<MoveRight size="2rem" />
 	</span>

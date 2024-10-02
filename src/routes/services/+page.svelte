@@ -111,9 +111,7 @@
 	</Section>
 	<Section>
 		<h2 class="text-2xl font-bold sm:text-3xl md:text-4xl">Testimonials</h2>
-		<p class="mt-4 max-w-4xl text-gray-700">
-			See what people I've worked with have to say.
-		</p>
+		<p class="mt-4 max-w-4xl text-gray-700">See what people I've worked with have to say.</p>
 		<Grid classes="mt-10">
 			{#each data.testimonials as testimonial}
 				<TestimonialCard data={testimonial} />

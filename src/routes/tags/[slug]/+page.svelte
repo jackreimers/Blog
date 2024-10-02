@@ -62,7 +62,11 @@
 						horizontal={true}
 					>
 						<div class="flex gap-2 overflow-auto">
-							<PillButton color="gray" href="/{post.type}" text={uppercaseWord(post.type)} />
+							<PillButton
+								color="gray"
+								href="/{post.type}"
+								text={uppercaseWord(post.type)}
+							/>
 							{#each post.tags as tag}
 								<PillButton href="/tags/{tag.slug}" text={tag.name} />
 							{/each}
