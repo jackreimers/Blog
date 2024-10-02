@@ -5,7 +5,7 @@
 	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
-	import TagGrid from '$lib/components/grid/grid-tags.svelte';
+	import TagGrid from '$lib/components/grids/grid-tags.svelte';
 	import TagCard from '$lib/components/cards/card-tag.svelte';
 
 	/** @type {import('./$types').PageData} */

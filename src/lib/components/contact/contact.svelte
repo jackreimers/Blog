@@ -23,6 +23,7 @@
 
 		if ($page.form?.success) {
 			isSubmitting = false;
+			hasSubmitted = true;
 			formElement.reset();
 		}
 
@@ -37,6 +38,7 @@
 
 	let isOpen: boolean = false;
 	let isSubmitting: boolean = false;
+	let hasSubmitted: boolean = false;
 	let formElement: HTMLFormElement;
 	let nameInputElement: Input;
 	let emailInputElement: Input;
@@ -101,9 +103,9 @@
 											<PartyPopper size="3rem" />
 										</div>
 									</div>
-									<p class="mt-4 text-2xl font-bold sm:text-3xl md:text-4xl">
+									<h3 class="mt-4 text-2xl font-bold sm:text-3xl md:text-4xl">
 										Success
-									</p>
+									</h3>
 									<p class="mt-4 text-gray-700">
 										Thank you for your message, I'll get back to you as soon as
 										possible.
@@ -114,60 +116,64 @@
 								</div>
 							</div>
 						{/if}
-						<h3 class="text-2xl font-bold sm:text-3xl md:text-4xl" id="modal-title">
-							Contact
-						</h3>
-						<p class="mt-4 text-gray-700">Use the form below to send me a message.</p>
-						<form
-							action="/contact"
-							bind:this={formElement}
-							class="mt-10"
-							method="POST"
-							use:enhance={(event) => {
-								if (!validate()) {
-									event.cancel();
-									return;
-								}
+						<div aria-hidden={$page.form?.success || hasSubmitted}>
+							<h3 class="text-2xl font-bold sm:text-3xl md:text-4xl" id="modal-title">
+								Contact
+							</h3>
+							<p class="mt-4 text-gray-700">
+								Use the form below to send me a message.
+							</p>
+							<form
+								action="/contact"
+								bind:this={formElement}
+								class="mt-10"
+								method="POST"
+								use:enhance={(event) => {
+									if (!validate()) {
+										event.cancel();
+										return;
+									}
 
-								isSubmitting = true;
+									isSubmitting = true;
 
-								return async ({ result }) => {
-									await applyAction(result);
-								};
-							}}
-						>
-							<Input
-								autocomplete="name"
-								bind:this={nameInputElement}
-								isDisabled={isSubmitting}
-								label="Name"
-								name="name"
-								required={true}
-							/>
-							<Input
-								autocomplete="email"
-								bind:this={emailInputElement}
-								classes="mt-4"
-								isDisabled={isSubmitting}
-								label="Email"
-								name="email"
-								required={true}
-								type="email"
-							/>
-							<Input
-								bind:this={messageInputElement}
-								classes="mt-4 resize-none"
-								isDisabled={isSubmitting}
-								label="Message"
-								name="message"
-								required={true}
-								type="textarea"
-							/>
-							<div class="mt-10 flex justify-end gap-3">
-								<Button color="gray" on:click={close} text="Close" />
-								<Button color="blue" {isSubmitting} text="Send" type="submit" />
-							</div>
-						</form>
+									return async ({ result }) => {
+										await applyAction(result);
+									};
+								}}
+							>
+								<Input
+									autocomplete="name"
+									bind:this={nameInputElement}
+									isDisabled={isSubmitting}
+									label="Name"
+									name="name"
+									required={true}
+								/>
+								<Input
+									autocomplete="email"
+									bind:this={emailInputElement}
+									classes="mt-4"
+									isDisabled={isSubmitting}
+									label="Email"
+									name="email"
+									required={true}
+									type="email"
+								/>
+								<Input
+									bind:this={messageInputElement}
+									classes="mt-4 resize-none"
+									isDisabled={isSubmitting}
+									label="Message"
+									name="message"
+									required={true}
+									type="textarea"
+								/>
+								<div class="mt-10 flex justify-end gap-3">
+									<Button color="gray" on:click={close} text="Close" />
+									<Button color="blue" {isSubmitting} text="Send" type="submit" />
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -6,8 +6,8 @@
 	import { injectSpeedInsights } from '@vercel/speed-insights/sveltekit';
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer/footer.svelte';
-	import MobileNavigation from '$lib/components/navigation/mobile-navigation.svelte';
-	import ContactModal from '$lib/components/modal/contact-modal.svelte';
+	import MobileNavigation from '$lib/components/navigation/navigation.svelte';
+	import ContactModal from '$lib/components/contact/contact.svelte';
 
 	inject();
 	injectSpeedInsights();

@@ -7,7 +7,7 @@
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
 	import CallToAction from '$lib/components/banners/banner-cta.svelte';
-	import Grid from '$lib/components/grid/grid.svelte';
+	import Grid from '$lib/components/grids/grid.svelte';
 	import ButtonCard from '$lib/components/cards/card-button.svelte';
 	import CalloutCard from '$lib/components/cards/card-callout.svelte';
 	import TestimonialCard from '$lib/components/cards/card-testimonial.svelte';

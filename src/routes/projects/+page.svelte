@@ -5,7 +5,7 @@
 	import Hero from '$lib/components/hero/hero.svelte';
 	import Card from '$lib/components/cards/card-post.svelte';
 	import Section from '$lib/components/layout/section.svelte';
-	import CardGrid from '$lib/components/grid/grid-posts.svelte';
+	import CardGrid from '$lib/components/grids/grid-posts.svelte';
 	import PillButton from '$lib/components/buttons/button-pill.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 

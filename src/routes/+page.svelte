@@ -7,8 +7,8 @@
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
 	import CallToAction from '$lib/components/banners/banner-cta.svelte';
-	import Grid from '$lib/components/grid/grid.svelte';
-	import CardGrid from '$lib/components/grid/grid-posts.svelte';
+	import Grid from '$lib/components/grids/grid.svelte';
+	import CardGrid from '$lib/components/grids/grid-posts.svelte';
 	import Card from '$lib/components/cards/card-post.svelte';
 	import ButtonCard from '$lib/components/cards/card-button.svelte';
 	import PillButton from '$lib/components/buttons/button-pill.svelte';
