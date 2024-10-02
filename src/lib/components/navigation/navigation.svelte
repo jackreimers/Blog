@@ -70,6 +70,16 @@
 					>
 						<Briefcase />
 					</MobileButton>
+					<!--
+					<MobileButton
+						active={$page.url.pathname.startsWith('/projects')}
+						href="/projects"
+						on:click={close}
+						text="Projects"
+					>
+						<LibraryBig />
+					</MobileButton>
+					-->
 					<MobileButton
 						active={$page.url.pathname.startsWith('/blog')}
 						href="/blog"
