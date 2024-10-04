@@ -6,7 +6,7 @@
 	export let subtitle: string;
 </script>
 
-<Container classes="my-16 sm:my-20 md:my-36">
+<Container classes="my-16 sm:my-20 md:my-36 lg:my-40 xl:my-44">
 	<h1 class="text-5xl font-bold sm:text-6xl md:text-7xl">
 		{title}
 	</h1>

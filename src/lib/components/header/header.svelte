@@ -27,7 +27,7 @@
 			/>
 		</a>
 		<nav>
-			<div class="hidden gap-3 md:flex">
+			<div class="hidden gap-3 lg:flex">
 				<Button color="none" href="/" isActive={$page.url.pathname === '/'} text="Home" />
 				<Button
 					color="none"
@@ -57,7 +57,7 @@
 				/>
 				<Button color="blue" on:click={() => $contact?.open()} text="Contact" />
 			</div>
-			<div class="flex items-center md:hidden">
+			<div class="flex items-center lg:hidden">
 				<Button
 					ariaLabel="Menu"
 					color="lightblue"
