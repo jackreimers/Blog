@@ -62,12 +62,8 @@
 			<CardGrid itemCount={data.posts.length} classes="mt-4">
 				{#each data.posts as post}
 					<Card
-						href="/{post.type}/{post.slug}"
-						imageHref={post.imageHref}
-						type={post.type}
-						date={post.dateString}
-						title={post.title}
-						content={post.excerpt}
+						data={post}
+						displayType={true}
 					/>
 				{/each}
 			</CardGrid>
