@@ -26,5 +26,12 @@
 	{:else}
 		<Frown size="3.5rem" slot="icon" />
 	{/if}
-	<PillButton color="gray" href="/" slot="content" text="Return to home" />
+	<PillButton
+		bgColor="bg-gray-100"
+		bgHoverColor="bg-gray-200"
+		color="text-gray-900"
+		href="/"
+		slot="content"
+		text="Return to home"
+	/>
 </EmptyState>

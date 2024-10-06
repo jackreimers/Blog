@@ -23,7 +23,13 @@
 		>
 			<Frown size="3.5rem" slot="icon" />
 			<div class="flex justify-center gap-2" slot="content">
-				<PillButton color="gray" href="/" text="Return to home" />
+				<PillButton
+					bgColor="bg-gray-100"
+					bgHoverColor="bg-gray-200"
+					color="text-gray-900"
+					href="/"
+					text="Return to home"
+				/>
 			</div>
 		</EmptyState>
 	</Section>
