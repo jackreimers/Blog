@@ -13,10 +13,10 @@
 	</div>
 	<div class="mt-8 flex items-center gap-2.5">
 		<div class="rounded-full bg-blue-100 p-2 text-blue-900">
-			<UserRound class="h-5 w-5 sm:h-6 sm:w-6" />
+			<UserRound class="h-6 w-6" />
 		</div>
 		<div>
-			<p class="text-sm sm:text-base font-semibold">{data.name}</p>
+			<p class="font-semibold">{data.name}</p>
 			<p class="text-sm text-gray-700">{data.organisation}</p>
 		</div>
 	</div>
