@@ -16,7 +16,7 @@
 
     .markdown h1,
     .markdown h2 {
-        @apply mt-12 text-2xl font-bold leading-tight tracking-tight sm:mt-14 sm:text-3xl md:mt-16 md:text-4xl;
+        @apply mt-14 text-2xl font-bold leading-tight tracking-tight sm:mt-14 sm:text-3xl md:mt-16 md:text-4xl;
     }
 
     .markdown h3,
@@ -27,7 +27,7 @@
     }
 
     .markdown p {
-        @apply mt-2 leading-normal text-gray-700;
+        @apply mt-4 leading-normal text-gray-700;
     }
 
     .markdown p > code {
@@ -36,7 +36,7 @@
 
     .markdown ul,
     .markdown ol {
-        @apply my-2 pl-6;
+        @apply my-4 pl-6;
     }
 
     .markdown ul li {

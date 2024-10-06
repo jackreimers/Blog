@@ -51,7 +51,7 @@
 			{title}
 		</a>
 		<p class="mt-4 line-clamp-4 text-sm leading-normal text-gray-700">{content}</p>
-		<div class="mt-4 flex gap-1.5 overflow-x-auto">
+		<div class="mt-6 flex gap-1.5 overflow-x-auto">
 			{#each tags as tag}
 				<PillButton
 					bgColor="bg-blue-100"
