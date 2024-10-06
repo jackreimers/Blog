@@ -67,7 +67,7 @@
 			/>
 		</Grid>
 		<Cta
-			classes="mt-6 sm:mt-10"
+			classes="mt-6 sm:mt-10 hidden"
 			subtitle="Contact me now for an obligation free discussion about your digital needs."
 			title="Unlock Your Online Potential"
 		>

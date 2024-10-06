@@ -25,13 +25,7 @@
 		{/if}
 	</a>
 	<div class="p-4 sm:p-6">
-		<div class="flex items-center gap-4">
-			<time
-				class="flex items-center gap-1.5 text-sm text-gray-700"
-				datetime={data.date.toISOString()}
-			>
-				{data.dateString}
-			</time>
+		<div class="flex items-center gap-2">
 			{#if displayType}
 				<a
 					href="/{data.type}"
@@ -49,6 +43,12 @@
 				/>
 				-->
 			{/if}
+			<time
+				class="flex items-center gap-1.5 text-sm text-gray-700"
+				datetime={data.date.toISOString()}
+			>
+				{data.dateString}
+			</time>
 		</div>
 		<a
 			class="mt-4 line-clamp-1 text-xl font-semibold leading-tight tracking-tight sm:text-2xl"
