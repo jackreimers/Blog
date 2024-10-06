@@ -31,17 +31,13 @@
 				<Frown size="3.5rem" slot="icon" />
 				<div class="flex justify-center gap-2" slot="content">
 					<PillButton
-						bgColor="bg-gray-100"
-						bgHoverColor="bg-gray-200"
-						color="text-gray-900"
+						color="lightGray"
 						href="/blog"
 						text="Browse all posts"
 					/>
 					<PillButton
-						color="text-red-900"
-						bgColor="bg-red-100"
-						bgHoverColor="bg-red-200"
-						hoverColor="text-red-950" href="/tags"
+						color="lightRed"
+						href="/tags"
 						icon={X}
 						text={data.tagFilter?.name ?? 'Clear'}
 					/>
@@ -50,10 +46,7 @@
 		{:else}
 			<div class="flex justify-end">
 				<PillButton
-					color="text-red-900"
-					bgColor="bg-red-100"
-					bgHoverColor="bg-red-200"
-					hoverColor="text-red-950"
+					color="lightRed"
 					href="/{get(previousPageSlug) ?? 'tags'}"
 					icon={X}
 					text={data.tagFilter?.name ?? 'Clear'}

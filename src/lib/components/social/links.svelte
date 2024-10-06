@@ -5,30 +5,22 @@
 	export let classes: string = '';
 </script>
 
-<div class="flex overflow-x-auto gap-1.5 {classes}">
+<div class="flex gap-1.5 overflow-x-auto {classes}">
 	<PillButton
-		bgColor="bg-blue-900"
-		bgHoverColor="bg-blue-950"
-		classes="!font-medium"
-		color="text-white"
+		color="darkBlue"
 		href="mailto:me@jackreimers.dev"
 		icon={Mail}
-		iconSide="left"
 		target="_blank"
 		text="me@jackreimers.dev"
 	/>
 	<PillButton
-		bgColor="bg-blue-900"
-		bgHoverColor="bg-blue-950"
-		color="text-white"
+		color="darkBlue"
 		href="https://www.linkedin.com/in/jackreimers/"
 		icon={Linkedin}
 		target="_blank"
 	/>
 	<PillButton
-		bgColor="bg-blue-900"
-		bgHoverColor="bg-blue-950"
-		color="text-white"
+		color="darkBlue"
 		href="https://github.com/jackreimers"
 		icon={Github}
 		target="_blank"

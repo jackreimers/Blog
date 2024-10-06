@@ -8,7 +8,7 @@
 	import PostGrid from '$lib/components/grids/grid-posts.svelte';
 	import PostCard from '$lib/components/cards/card-post.svelte';
 	import PillButton from '$lib/components/buttons/button-pill.svelte';
-	import { ChevronRight } from 'lucide-svelte';
+	import { Filter } from 'lucide-svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -28,12 +28,9 @@
 	<Section>
 		<div class="flex justify-end">
 			<PillButton
-				bgColor="bg-blue-100"
-				bgHoverColor="bg-blue-200"
-				color="text-blue-900"
-				hoverColor="text-blue-950"
+				color="lightBlue"
 				href="/tags"
-				icon={ChevronRight}
+				icon={Filter}
 				text="Filter by tag"
 			/>
 		</div>

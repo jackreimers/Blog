@@ -11,7 +11,7 @@
 			</span>
 			<p class="!m-0 text-lg font-semibold !text-blue-900">Important</p>
 		</div>
-		<div class="max-w-prose text-sm mt-4 font-medium text-gray-700 [&>p]:m-0">
+		<div class="max-w-prose text-sm mt-2 font-medium text-gray-700 [&>p]:m-0">
 			<slot />
 		</div>
 	</div>
