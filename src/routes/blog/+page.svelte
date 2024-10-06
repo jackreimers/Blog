@@ -39,28 +39,7 @@
 		</div>
 		<CardGrid classes="mt-3 sm:mt-4" itemCount={data.posts.length}>
 			{#each data.posts as post}
-				<Card
-					href="/blog/{post.slug}"
-					imageHref={post.imageHref}
-					date={post.dateString}
-					type={post.type}
-					title={post.title}
-					content={post.excerpt}
-					tags={post.tags}
-				>
-					<div class="flex gap-2 overflow-auto">
-						{#each post.tags as tag}
-							<PillButton
-								bgColor="bg-blue-100"
-								bgHoverColor="bg-blue-200"
-								color="text-blue-900"
-								hoverColor="text-blue-950"
-								href="/tags/{tag.slug}"
-								text={tag.name}
-							/>
-						{/each}
-					</div>
-				</Card>
+				<Card data={post} />
 			{/each}
 		</CardGrid>
 	</Section>

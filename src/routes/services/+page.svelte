@@ -9,6 +9,7 @@
 	import ServiceCard from '$lib/components/cards/card-service-2.svelte';
 	import TestimonialCard from '$lib/components/cards/card-testimonial.svelte';
 	import PostGrid from '$lib/components/grids/grid-posts.svelte';
+	import Subheader from '$lib/components/header/subheader.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -22,6 +23,7 @@
 <Hero subtitle="Find out how I can help you and your business." title="Services" />
 <Container>
 	<Section>
+		<Subheader subtitle="See what people I've worked with have to say." title="What I Offer" />
 		<Grid>
 			<ServiceCard
 				description="Custom designed and built websites tailored to your individual needs."
@@ -75,37 +77,22 @@
 	</Section>
 	<!-- TODO: Not sure CTA -->
 	<Section>
-		<h2 class="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">
-			Testimonials
-		</h2>
-		<p class="mt-4 max-w-4xl text-gray-700 sm:text-base">
-			See what people I've worked with have to say.
-		</p>
-		<Grid classes="mt-6">
+		<Subheader subtitle="See what people I've worked with have to say." title="Testimonials" />
+		<Grid>
 			{#each data.testimonials as testimonial}
 				<TestimonialCard data={testimonial} />
 			{/each}
 		</Grid>
 	</Section>
 	<Section>
-		<h2 class="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">
-			Recent Work
-		</h2>
-		<p class="mt-4 max-w-4xl text-gray-700 sm:text-base">
-			Get a glimpse of some of the projects I've been working on.
-		</p>
-		<PostGrid classes="mt-6" itemCount={data.posts.length}>
+		<Subheader
+			subtitle="Get a glimpse of some of the projects I've been working on."
+			title="Recent Work"
+		/>
+
+		<PostGrid itemCount={data.posts.length}>
 			{#each data.posts as post}
-				<PostCard
-					href="/projects/{post.slug}"
-					imageHref={post.imageHref}
-					imageAlt={post.imageAlt}
-					type={post.type}
-					date={post.dateString}
-					title={post.title}
-					content={post.excerpt}
-					tags={post.tags}
-				/>
+				<PostCard data={post} displayType={true} />
 			{/each}
 		</PostGrid>
 	</Section>

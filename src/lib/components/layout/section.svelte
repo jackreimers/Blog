@@ -2,6 +2,6 @@
 	export let classes = '';
 </script>
 
-<section class="mb-14 sm:mb-14 md:mb-16 lg:mb-20 {classes}">
+<section class="mb-24 sm:mb-32 {classes}">
 	<slot />
 </section>

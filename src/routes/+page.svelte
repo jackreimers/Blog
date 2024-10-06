@@ -10,6 +10,7 @@
 	import PostCard from '$lib/components/cards/card-post.svelte';
 	import ServiceCard from '$lib/components/cards/card-service.svelte';
 	import Cta from '$lib/components/banners/cta.svelte';
+	import Subheader from '$lib/components/header/subheader.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -23,14 +24,11 @@
 <Hero subtitle="I'm a Melbourne based Software Engineer." title="Jack Reimers" />
 <Container>
 	<Section>
-		<!--
-		<h2 class="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Services</h2>
-		<p class="mt-2.5 max-w-4xl text-gray-700">
-			I specialise in building custom, high-performance websites and applications to help you
-			get the most out of your online presence and achieve your digital goals.
-		</p>
-		-->
-		<Grid classes="">
+		<Subheader
+			subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+			title="Services"
+		/>
+		<Grid>
 			<ServiceCard
 				description="Custom designed and built websites tailored to your individual needs."
 				href="/services"
@@ -69,36 +67,27 @@
 			/>
 		</Grid>
 		<Cta
-			classes="mt-4"
+			classes="mt-6 sm:mt-10"
 			subtitle="Contact me now for an obligation free discussion about your digital needs."
 			title="Unlock Your Online Potential"
 		>
 			<button
-				class="rounded-md inline-flex gap-2 items-center bg-white px-3.5 py-2 text-sm font-semibold"
-				on:click={$contact?.open}>
+				class="inline-flex items-center gap-2 rounded-md bg-white px-3.5 py-2 text-sm font-semibold"
+				on:click={$contact?.open}
+			>
 				Let's Chat
 				<MessageCircle class="h-5 w-5" />
 			</button>
 		</Cta>
 	</Section>
 	<Section>
-		<h2 class="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">Latest</h2>
-		<p class="mt-4 max-w-4xl text-gray-700 sm:text-base">
-			Read my latest posts and see some of the projects I've been working on.
-		</p>
-		<PostGrid classes="mt-6" itemCount={data.posts.length}>
+		<Subheader
+			subtitle="Read my latest posts and see some of the projects I've been working on."
+			title="Latest"
+		/>
+		<PostGrid itemCount={data.posts.length}>
 			{#each data.posts as post}
-				<PostCard
-					href="/{post.type}/{post.slug}"
-					imageHref={post.imageHref}
-					imageAlt={post.imageAlt}
-					type={post.type}
-					displayType={true}
-					date={post.dateString}
-					title={post.title}
-					content={post.excerpt}
-					tags={post.tags}
-				/>
+				<PostCard data={post} displayType={true} />
 			{/each}
 		</PostGrid>
 	</Section>

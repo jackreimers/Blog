@@ -12,11 +12,10 @@
 </script>
 
 <header
-	class="fixed z-10 w-full bg-gray-50 transition-[padding,box-shadow] duration-500 {scrolled
-		? 'py-4 shadow sm:py-4'
-		: 'py-4 sm:py-9'}"
+	class="fixed z-10 w-full bg-gray-50 transition-[padding,box-shadow] duration-500"
+	class:shadow={scrolled}
 >
-	<div class="mx-auto flex items-center justify-between px-4 md:px-6 lg:max-w-5xl xl:max-w-7xl">
+	<div class="mx-auto flex items-center justify-between p-4 sm:p-6 lg:max-w-5xl xl:max-w-7xl">
 		<a aria-label="Home" class="inline-block" href="/">
 			<img alt="" class="inline-block h-10 w-10" src="/content/images/logo-light.svg" />
 		</a>
@@ -57,6 +56,6 @@
 		</nav>
 	</div>
 </header>
-<div aria-hidden="true" class="h-14 bg-gray-50 sm:h-24 md:h-[6.625rem]" />
+<div aria-hidden="true" class="h-14 sm:h-16" />
 
 <svelte:window on:scroll={() => onScroll()} />

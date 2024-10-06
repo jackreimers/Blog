@@ -39,16 +39,7 @@
 		</div>
 		<PostGrid classes="mt-4" itemCount={data.posts.length}>
 			{#each data.posts as post}
-				<PostCard
-					href="/projects/{post.slug}"
-					imageHref={post.imageHref}
-					imageAlt={post.imageAlt}
-					type={post.type}
-					date={post.dateString}
-					title={post.title}
-					content={post.excerpt}
-					tags={post.tags}
-				/>
+				<PostCard data={post} />
 			{/each}
 		</PostGrid>
 	</Section>

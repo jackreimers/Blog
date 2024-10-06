@@ -18,8 +18,8 @@
 </script>
 
 <a
-	class="inline-flex items-center gap-1 rounded-full text-xs font-semibold leading-none transition-colors duration-300 {text
-		? 'px-3 py-2'
+	class="inline-flex items-center gap-1 rounded-full text-xs font-semibold transition-colors duration-300 {text
+		? 'px-3 py-1.5'
 		: 'p-2'} {classes}"
 	{href}
 	{target}
@@ -31,8 +31,6 @@
 		<span
 			class:ml-1={icon && iconSide === 'right'}
 			class:mr-1={icon && iconSide === 'left'}
-			class:mx-1={!icon}
-			class:my-0.5={!icon}
 		>
 			{text}
 		</span>

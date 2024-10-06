@@ -35,7 +35,7 @@
 			{/each}
 		</div>
 		<div class="markdown box-content">
-			<h2 class="!mt-16" id="introduction">Introduction</h2>
+			<h2 class="!mt-14" id="introduction">Introduction</h2>
 			<SvelteMarkdown source={data.post.excerpt} />
 		</div>
 		<div class="markdown mt-16 box-content sm:mt-14 md:mt-16">

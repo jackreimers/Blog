@@ -27,7 +27,7 @@
     }
 
     .markdown p {
-        @apply mt-4 leading-normal text-gray-700;
+        @apply mt-2.5 leading-normal text-gray-700;
     }
 
     .markdown p > code {
