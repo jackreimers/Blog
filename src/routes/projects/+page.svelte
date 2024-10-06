@@ -8,6 +8,7 @@
 	import PostGrid from '$lib/components/grids/grid-posts.svelte';
 	import PostCard from '$lib/components/cards/card-post.svelte';
 	import PillButton from '$lib/components/buttons/button-pill.svelte';
+	import { ChevronRight } from 'lucide-svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -22,11 +23,19 @@
 	description="See some of the projects that Jack Reimers has worked on in the past."
 	title="Jack Reimers | Projects"
 />
-<Hero subtitle="See some of the projects I've worked on in the past." title="Projects" />
+<Hero subtitle="See some of the projects I've worked on." title="Projects" />
 <Container>
 	<Section>
 		<div class="flex justify-end">
-			<PillButton href="/tags" icon="chevron" text="Filter by tag" />
+			<PillButton
+				bgColor="bg-blue-100"
+				bgHoverColor="bg-blue-200"
+				color="text-blue-900"
+				hoverColor="text-blue-950"
+				href="/tags"
+				icon={ChevronRight}
+				text="Filter by tag"
+			/>
 		</div>
 		<PostGrid classes="mt-4" itemCount={data.posts.length}>
 			{#each data.posts as post}
@@ -39,13 +48,7 @@
 					title={post.title}
 					content={post.excerpt}
 					tags={post.tags}
-				>
-					<div class="flex gap-2 overflow-auto">
-						{#each post.tags as tag}
-							<PillButton href="/tags/{tag.slug}" text={tag.name} />
-						{/each}
-					</div>
-				</PostCard>
+				/>
 			{/each}
 		</PostGrid>
 	</Section>

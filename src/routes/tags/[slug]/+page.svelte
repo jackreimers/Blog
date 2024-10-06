@@ -47,7 +47,7 @@
 					color="red"
 					href="/{get(previousPageSlug) ?? 'tags'}"
 					icon="cross"
-					iconSide="left"
+					
 					text={data.tagFilter?.name ?? 'Clear'}
 				/>
 			</div>

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Brain, Cloud, Code, Cog, Globe, Zap } from 'lucide-svelte';
+	import { contact } from '$lib/stores/store.elements';
+	import { Brain, Cloud, Code, Cog, Globe, MessageCircle, Zap } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
@@ -67,20 +68,22 @@
 				title="Maintenance"
 			/>
 		</Grid>
-	</Section>
-	<Section classes="">
 		<Cta
+			classes="mt-4"
 			subtitle="Contact me now for an obligation free discussion about your digital needs."
 			title="Unlock Your Online Potential"
 		>
-			<button class="rounded-md bg-white px-3.5 py-2 text-sm font-semibold">Let's Chat
-			</button
-			>
+			<button
+				class="rounded-md inline-flex gap-2 items-center bg-white px-3.5 py-2 text-sm font-semibold"
+				on:click={$contact?.open}>
+				Let's Chat
+				<MessageCircle class="h-5 w-5" />
+			</button>
 		</Cta>
 	</Section>
 	<Section>
-		<h2 class="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Latest</h2>
-		<p class="mt-2 max-w-4xl text-sm text-gray-700 sm:text-base">
+		<h2 class="text-2xl font-bold leading-none tracking-tight sm:text-3xl md:text-4xl">Latest</h2>
+		<p class="mt-4 max-w-4xl text-gray-700 sm:text-base">
 			Read my latest posts and see some of the projects I've been working on.
 		</p>
 		<PostGrid classes="mt-6" itemCount={data.posts.length}>

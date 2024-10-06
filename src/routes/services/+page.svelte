@@ -75,8 +75,10 @@
 	</Section>
 	<!-- TODO: Not sure CTA -->
 	<Section>
-		<h2 class="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Testimonials</h2>
-		<p class="mt-2 max-w-4xl text-sm text-gray-700 sm:text-base">
+		<h2 class="text-2xl font-bold leading-none tracking-tight sm:text-3xl md:text-4xl">
+			Testimonials
+		</h2>
+		<p class="mt-4 max-w-4xl text-gray-700 sm:text-base">
 			See what people I've worked with have to say.
 		</p>
 		<Grid classes="mt-6">
@@ -86,8 +88,10 @@
 		</Grid>
 	</Section>
 	<Section>
-		<h2 class="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Recent Work</h2>
-		<p class="mt-2 max-w-4xl text-sm text-gray-700 sm:text-base">
+		<h2 class="text-2xl font-bold leading-none tracking-tight sm:text-3xl md:text-4xl">
+			Recent Work
+		</h2>
+		<p class="mt-4 max-w-4xl text-gray-700 sm:text-base">
 			Get a glimpse of some of the projects I've been working on.
 		</p>
 		<PostGrid classes="mt-6" itemCount={data.posts.length}>

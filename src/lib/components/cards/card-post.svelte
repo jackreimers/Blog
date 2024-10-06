@@ -1,8 +1,9 @@
 <script lang="ts">
 	import type { Tag } from '$lib/interfaces/interfaces.tags';
 	import { CalendarDays, Image } from 'lucide-svelte';
-	import Preload from '$lib/components/loading/preload.svelte';
 	import { uppercaseWord } from '$lib/functions/functions.utilities';
+	import Preload from '$lib/components/loading/preload.svelte';
+	import PillButton from '$lib/components/buttons/button-pill.svelte';
 
 	export let href: string = '/';
 	export let imageHref: string | null = null;
@@ -32,31 +33,34 @@
 	</a>
 	<div class="p-4 sm:p-6">
 		<div class="flex items-center justify-between">
-			<p class="flex items-center gap-1.5 text-xs font-medium leading-none text-gray-700">
-				<CalendarDays class="h-4 w-4" />
+			<p class="flex items-center gap-1.5 text-sm leading-none text-gray-700">
+				<CalendarDays class="h-5 w-5" />
 				{date}
 			</p>
 			{#if displayType}
-				<a
-					class="rounded-full bg-gray-100 px-3.5 py-2 text-xs font-semibold leading-none text-gray-900 transition-colors duration-300 focus:bg-gray-200 focus:text-gray-950 mhover:hover:bg-gray-200 mhover:hover:text-gray-950"
+				<PillButton
+					bgColor="bg-gray-100"
+					bgHoverColor="bg-gray-200"
+					color="text-gray-900"
 					href="/{type}"
-				>
-					{uppercaseWord(type)}
-				</a>
+					text={uppercaseWord(type)}
+				/>
 			{/if}
 		</div>
-		<a class="mt-4 line-clamp-1 text-xl font-semibold tracking-tight" {href}>
+		<a class="mt-4 leading-tight line-clamp-1 text-xl font-semibold tracking-tight" {href}>
 			{title}
 		</a>
 		<p class="mt-4 line-clamp-4 text-sm leading-normal text-gray-700">{content}</p>
-		<div class="mt-6 flex gap-2 overflow-x-auto">
+		<div class="mt-4 flex gap-1.5 overflow-x-auto">
 			{#each tags as tag}
-				<a
-					class="inline-block rounded-full bg-blue-100 px-3.5 py-2 text-xs font-semibold leading-none text-blue-900 transition-colors duration-300 focus:bg-blue-200 focus:text-blue-950 mhover:hover:bg-blue-200 mhover:hover:text-blue-950"
+				<PillButton
+					bgColor="bg-blue-100"
+					bgHoverColor="bg-blue-200"
+					hoverColor="text-blue-950"
 					href="/tags/{tag.slug}"
-				>
-					{tag.name}
-				</a>
+					text={tag.name}
+					color="text-blue-900"
+				/>
 			{/each}
 		</div>
 	</div>

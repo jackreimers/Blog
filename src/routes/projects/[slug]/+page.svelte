@@ -24,7 +24,14 @@
 	<Section>
 		<div class="flex gap-2 overflow-auto sm:justify-end">
 			{#each data.post.tags as tag}
-				<PillButton href="/tags/{tag.slug}" text={tag.name} />
+				<PillButton
+					bgColor="bg-blue-100"
+					bgHoverColor="bg-blue-200"
+					color="text-blue-900"
+					hoverColor="text-blue-950"
+					href="/tags/{tag.slug}"
+					text={tag.name}
+				/>
 			{/each}
 		</div>
 		<div class="markdown box-content">

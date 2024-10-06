@@ -1,41 +1,43 @@
 <script lang="ts">
-	import { ChevronLeft, ChevronRight, X } from 'lucide-svelte';
+	import type { ComponentType } from 'svelte';
+	import { type Icon } from 'lucide-svelte';
 
 	export let href: string;
-	export let text: string;
-	export let color: 'blue' | 'red' | 'gray' = 'blue';
-	export let icon: 'chevron' | 'cross' | null = null;
+	export let target: '_blank' | '_self' = '_self';
+	export let text: string | null = null;
+	export let color: string;
+	export let hoverColor: string | null = null;
+	export let bgColor: string;
+	export let bgHoverColor: string;
+	export let icon: ComponentType<Icon> | null = null;
 	export let iconSide: 'left' | 'right' = 'right';
 	export let classes: string = '';
 
-	const colorClasses: any = {
-		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200 focus:bg-blue-200': color === 'blue',
-		'bg-red-100 text-red-900 mhover:hover:bg-red-200 focus:bg-red-200': color === 'red',
-		'bg-gray-200 mhover:hover:bg-gray-300 focus:bg-gray-300': color === 'gray'
-	};
-
-	classes = Object.keys(colorClasses)
-		.filter((key) => colorClasses[key])
-		.join(classes);
+	const colorClasses: string = ` ${color} ${bgColor} focus:${hoverColor ?? color} focus:${bgHoverColor} mhover:hover:${hoverColor ?? color} mhover:hover:${bgHoverColor}`;
+	classes += colorClasses;
 </script>
 
 <a
-	class="inline-flex items-center rounded-full px-3 py-2 text-sm font-medium transition-colors duration-300 {classes}"
+	class="inline-flex items-center gap-1 rounded-full text-xs font-semibold leading-none transition-colors duration-300 {text
+		? 'px-3 py-2'
+		: 'p-2'} {classes}"
 	{href}
+	{target}
 >
 	{#if icon && iconSide === 'left'}
-		{#if icon === 'chevron'}
-			<ChevronLeft size="1.25rem" />
-		{:else if icon === 'cross'}
-			<X size="1.25rem" />
-		{/if}
+		<svelte:component this={icon} class="h-4 w-4" />
 	{/if}
-	<span class="mx-1.5">{text}</span>
+	{#if text}
+		<span
+			class:ml-1={icon && iconSide === 'right'}
+			class:mr-1={icon && iconSide === 'left'}
+			class:mx-1={!icon}
+			class:my-0.5={!icon}
+		>
+			{text}
+		</span>
+	{/if}
 	{#if icon && iconSide === 'right'}
-		{#if icon === 'chevron'}
-			<ChevronRight size="1.25rem" />
-		{:else if icon === 'cross'}
-			<X size="1.25rem" />
-		{/if}
+		<svelte:component this={icon} class="h-4 w-4" />
 	{/if}
 </a>

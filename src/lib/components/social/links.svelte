@@ -1,30 +1,36 @@
 <script lang="ts">
 	import { Github, Linkedin, Mail } from 'lucide-svelte';
+	import PillButton from '$lib/components/buttons/button-pill.svelte';
 
 	export let classes: string = '';
 </script>
 
-<div class="flex flex-wrap gap-1 {classes}">
-	<a
-		class="flex items-center rounded-full bg-blue-900 px-3.5 py-2 text-xs text-white transition-colors duration-300 focus:bg-blue-950 mhover:hover:bg-blue-950"
+<div class="flex overflow-x-auto gap-1.5 {classes}">
+	<PillButton
+		bgColor="bg-blue-900"
+		bgHoverColor="bg-blue-950"
+		classes="!font-medium"
+		color="text-white"
 		href="mailto:me@jackreimers.dev"
-	>
-		<Mail class="h-4 w-4" />
-		<span class="mx-1.5 font-medium">me@jackreimers.dev</span>
-	</a>
-	<a
-		class="flex items-center rounded-full bg-blue-900 p-2 text-white transition-colors duration-300 focus:bg-blue-950 mhover:hover:bg-blue-950"
+		icon={Mail}
+		iconSide="left"
+		target="_blank"
+		text="me@jackreimers.dev"
+	/>
+	<PillButton
+		bgColor="bg-blue-900"
+		bgHoverColor="bg-blue-950"
+		color="text-white"
 		href="https://www.linkedin.com/in/jackreimers/"
+		icon={Linkedin}
 		target="_blank"
-	>
-		<Linkedin class="h-4 w-4" />
-	</a>
-
-	<a
-		class="flex items-center rounded-full bg-blue-900 p-2 text-white transition-colors duration-300 focus:bg-blue-950 mhover:hover:bg-blue-950"
+	/>
+	<PillButton
+		bgColor="bg-blue-900"
+		bgHoverColor="bg-blue-950"
+		color="text-white"
 		href="https://github.com/jackreimers"
+		icon={Github}
 		target="_blank"
-	>
-		<Github class="h-4 w-4" />
-	</a>
+	/>
 </div>

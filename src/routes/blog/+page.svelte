@@ -8,6 +8,7 @@
 	import Card from '$lib/components/cards/card-post.svelte';
 	import CardGrid from '$lib/components/grids/grid-posts.svelte';
 	import PillButton from '$lib/components/buttons/button-pill.svelte';
+	import { ChevronRight } from 'lucide-svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -26,21 +27,37 @@
 <Container>
 	<Section>
 		<div class="flex justify-end">
-			<PillButton href="/tags" icon="chevron" text="Filter by tag" />
+			<PillButton
+				bgColor="bg-blue-100"
+				bgHoverColor="bg-blue-200"
+				color="text-blue-900"
+				hoverColor="text-blue-950"
+				href="/tags"
+				icon={ChevronRight}
+				text="Filter by tag"
+			/>
 		</div>
-		<CardGrid classes="mt-4" itemCount={data.posts.length}>
+		<CardGrid classes="mt-3 sm:mt-4" itemCount={data.posts.length}>
 			{#each data.posts as post}
 				<Card
 					href="/blog/{post.slug}"
 					imageHref={post.imageHref}
 					date={post.dateString}
+					type={post.type}
 					title={post.title}
 					content={post.excerpt}
 					tags={post.tags}
 				>
 					<div class="flex gap-2 overflow-auto">
 						{#each post.tags as tag}
-							<PillButton href="/tags/{tag.slug}" text={tag.name} />
+							<PillButton
+								bgColor="bg-blue-100"
+								bgHoverColor="bg-blue-200"
+								color="text-blue-900"
+								hoverColor="text-blue-950"
+								href="/tags/{tag.slug}"
+								text={tag.name}
+							/>
 						{/each}
 					</div>
 				</Card>
