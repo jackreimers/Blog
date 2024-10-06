@@ -75,7 +75,7 @@
 	</Section>
 	<!-- TODO: Not sure CTA -->
 	<Section>
-		<h2 class="text-2xl font-bold leading-none tracking-tight sm:text-3xl md:text-4xl">
+		<h2 class="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">
 			Testimonials
 		</h2>
 		<p class="mt-4 max-w-4xl text-gray-700 sm:text-base">
@@ -88,7 +88,7 @@
 		</Grid>
 	</Section>
 	<Section>
-		<h2 class="text-2xl font-bold leading-none tracking-tight sm:text-3xl md:text-4xl">
+		<h2 class="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">
 			Recent Work
 		</h2>
 		<p class="mt-4 max-w-4xl text-gray-700 sm:text-base">

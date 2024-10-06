@@ -82,7 +82,7 @@
 		</Cta>
 	</Section>
 	<Section>
-		<h2 class="text-2xl font-bold leading-none tracking-tight sm:text-3xl md:text-4xl">Latest</h2>
+		<h2 class="text-2xl font-bold leading-tight tracking-tight sm:text-3xl md:text-4xl">Latest</h2>
 		<p class="mt-4 max-w-4xl text-gray-700 sm:text-base">
 			Read my latest posts and see some of the projects I've been working on.
 		</p>
