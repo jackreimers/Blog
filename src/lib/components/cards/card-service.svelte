@@ -19,7 +19,7 @@
 				class="h-7 w-7 text-blue-900 transition-colors duration-300 group-focus:text-blue-950 mhover:group-hover:text-blue-950"
 				this={icon}
 			/>
-			<span class="font-semibold leading-none tracking-tight text-lg sm:text-xl">{title}</span>
+			<span class="font-semibold leading-none tracking-tight sm:text-xl">{title}</span>
 		</span>
 		<span class="mt-4 block  leading-normal text-gray-700">{description}</span>
 	</span>
