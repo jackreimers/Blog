@@ -3,8 +3,11 @@
     "sending-emails-with-ms-graph",
     "six-interesting-svelte-features"
   ],
-  "projects": [],
+  "projects": [
+    "bunbury-sea-shanty-festival"
+  ],
   "testimonials": [
+    "summer-brinkworth",
     "colin-anker"
   ]
 }
