@@ -12,19 +12,13 @@
 </script>
 
 <header
-	class="fixed z-10 w-full bg-gray-50 transition-all duration-500 {scrolled
-		? 'py-3 shadow sm:py-4'
-		: 'py-7 sm:py-9'}"
+	class="fixed z-10 w-full bg-gray-50 transition-[padding,box-shadow] duration-500 {scrolled
+		? 'py-4 shadow sm:py-4'
+		: 'py-4 sm:py-9'}"
 >
-	<div
-		class="mx-auto flex items-center justify-between px-4 sm:px-5 md:px-7 lg:max-w-5xl xl:max-w-7xl"
-	>
+	<div class="mx-auto flex items-center justify-between px-4 md:px-6 lg:max-w-5xl xl:max-w-7xl">
 		<a aria-label="Home" class="inline-block" href="/">
-			<img
-				alt=""
-				class="inline-block h-[2.875rem] sm:h-12"
-				src="/content/images/logo-light.svg"
-			/>
+			<img alt="" class="inline-block h-10 w-10" src="/content/images/logo-light.svg" />
 		</a>
 		<nav>
 			<div class="hidden gap-3 lg:flex">
@@ -35,14 +29,12 @@
 					isActive={$page.url.pathname.startsWith('/services')}
 					text="Services"
 				/>
-				<!--
 				<Button
 					color="none"
 					href="/projects"
 					isActive={$page.url.pathname.startsWith('/projects')}
 					text="Projects"
 				/>
-				-->
 				<Button
 					color="none"
 					href="/blog"
@@ -58,17 +50,13 @@
 				<Button color="blue" on:click={() => $contact?.open()} text="Contact" />
 			</div>
 			<div class="flex items-center lg:hidden">
-				<Button
-					ariaLabel="Menu"
-					color="lightblue"
-					on:click={() => $mobileNavigation?.open()}
-				>
-					<Menu />
-				</Button>
+				<button aria-label="Menu" class="p-2" on:click={() => $mobileNavigation?.open()}>
+					<Menu class="h-6 w-6" />
+				</button>
 			</div>
 		</nav>
 	</div>
 </header>
-<div aria-hidden="true" class="h-20 bg-gray-50 sm:h-24 md:h-[6.625rem]" />
+<div aria-hidden="true" class="h-14 bg-gray-50 sm:h-24 md:h-[6.625rem]" />
 
 <svelte:window on:scroll={() => onScroll()} />

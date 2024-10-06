@@ -1,17 +1,14 @@
 <script lang="ts">
-	import { contact } from '$lib/stores/store.elements';
-	import { AppWindow, Database, Monitor } from 'lucide-svelte';
-	import { uppercaseWord } from '$lib/functions/functions.utilities';
+	import { Brain, Cloud, Code, Cog, Globe, Zap } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
-	import CallToAction from '$lib/components/banners/banner-cta.svelte';
 	import Grid from '$lib/components/grids/grid.svelte';
-	import CardGrid from '$lib/components/grids/grid-posts.svelte';
-	import Card from '$lib/components/cards/card-post.svelte';
-	import ButtonCard from '$lib/components/cards/card-button.svelte';
-	import PillButton from '$lib/components/buttons/button-pill.svelte';
+	import PostGrid from '$lib/components/grids/grid-posts.svelte';
+	import PostCard from '$lib/components/cards/card-post.svelte';
+	import ServiceCard from '$lib/components/cards/card-service.svelte';
+	import Cta from '$lib/components/banners/cta.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -25,78 +22,81 @@
 <Hero subtitle="I'm a Melbourne based Software Engineer." title="Jack Reimers" />
 <Container>
 	<Section>
-		<h2 class="text-2xl font-bold sm:text-3xl md:text-4xl">Services</h2>
-		<p class="mt-4 max-w-4xl text-gray-700">
-			Enhance your online presence with a custom website, web application, or WordPress site
-			designed from the ground up to elevate your brand and achieve your digital goals.
+		<!--
+		<h2 class="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Services</h2>
+		<p class="mt-2.5 max-w-4xl text-gray-700">
+			I specialise in building custom, high-performance websites and applications to help you
+			get the most out of your online presence and achieve your digital goals.
 		</p>
-		<Grid classes="mt-10">
-			<ButtonCard
-				action="Learn more"
+		-->
+		<Grid classes="">
+			<ServiceCard
+				description="Custom designed and built websites tailored to your individual needs."
 				href="/services"
-				text="Get a bespoke website that brings your vision to life and connects you with your audience."
-				title="Websites"
-			>
-				<div class="inline-block rounded-full bg-blue-100 p-3 text-blue-900" slot="header">
-					<Monitor size="1.875rem" />
-				</div>
-			</ButtonCard>
-			<ButtonCard
-				action="Learn more"
+				icon={Globe}
+				title="Website Development"
+			/>
+			<ServiceCard
+				description="Robust and scalable RESTful APIs for your applications."
 				href="/services"
-				text="Need to do more than display content? I can build a custom web application to suit your business requirements."
-				title="Web Applications"
-			>
-				<div class="inline-block rounded-full bg-blue-100 p-3 text-blue-900" slot="header">
-					<AppWindow size="1.875rem" />
-				</div>
-			</ButtonCard>
-			<ButtonCard
-				action="Learn more"
+				icon={Code}
+				title="API Development"
+			/>
+			<ServiceCard
+				description="Integrate cutting edge AI technologies into your project."
 				href="/services"
-				text="Enjoy effortless content management with a custom designed WordPress site, or extend your existing one with a custom plugin."
-				title="WordPress"
-			>
-				<div class="inline-block rounded-full bg-blue-100 p-3 text-blue-900" slot="header">
-					<Database size="1.875rem" />
-				</div>
-			</ButtonCard>
+				icon={Brain}
+				title="Artificial Intelligence"
+			/>
+			<ServiceCard
+				description="Reliable and scalable deployment and hosting solutions."
+				href="/services"
+				icon={Cloud}
+				title="Hosting"
+			/>
+			<ServiceCard
+				description="Supercharge your existing websites and applications."
+				href="/services"
+				icon={Zap}
+				title="Performance Optimisation"
+			/>
+			<ServiceCard
+				description="Ongoing updates, enhancements and support for your projects."
+				href="/services"
+				icon={Cog}
+				title="Maintenance"
+			/>
 		</Grid>
-		<CallToAction
-			classes="mt-10"
-			on:click={() => $contact?.open()}
-			text="Contact me now for a free consultation."
-			title="Ready to get started?"
-		/>
+	</Section>
+	<Section classes="">
+		<Cta
+			subtitle="Contact me now for an obligation free discussion about your digital needs."
+			title="Unlock Your Online Potential"
+		>
+			<button class="rounded-md bg-white px-3.5 py-2 text-sm font-semibold">Let's Chat
+			</button
+			>
+		</Cta>
 	</Section>
 	<Section>
-		<h2 class="text-2xl font-bold sm:text-3xl md:text-4xl">Latest</h2>
-		<p class="mt-4 max-w-4xl text-gray-700">
+		<h2 class="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Latest</h2>
+		<p class="mt-2 max-w-4xl text-sm text-gray-700 sm:text-base">
 			Read my latest posts and see some of the projects I've been working on.
 		</p>
-		<CardGrid classes="mt-10" itemCount={data.posts.length}>
+		<PostGrid classes="mt-6" itemCount={data.posts.length}>
 			{#each data.posts as post}
-				<Card
+				<PostCard
 					href="/{post.type}/{post.slug}"
 					imageHref={post.imageHref}
+					imageAlt={post.imageAlt}
+					type={post.type}
+					displayType={true}
 					date={post.dateString}
 					title={post.title}
 					content={post.excerpt}
-				>
-					<div class="flex gap-2 overflow-auto">
-						<PillButton
-							color="gray"
-							href="/{post.type}"
-							text={uppercaseWord(post.type)}
-						/>
-						<PillButton
-							icon="chevron"
-							href="/{post.type}/{post.slug}"
-							text="Read more"
-						/>
-					</div>
-				</Card>
+					tags={post.tags}
+				/>
 			{/each}
-		</CardGrid>
+		</PostGrid>
 	</Section>
 </Container>

@@ -6,10 +6,10 @@
 	export let subtitle: string;
 </script>
 
-<Container classes="my-16 sm:my-20 md:my-36 lg:my-40 xl:my-44">
-	<h1 class="text-5xl font-bold sm:text-6xl md:text-7xl">
+<Container classes="my-16 sm:my-28 md:my-36 lg:my-40 xl:my-44">
+	<h1 class="text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl">
 		{title}
 	</h1>
-	<p class="mt-4 text-gray-700">{subtitle}</p>
+	<p class="mt-2 text-sm text-gray-700">{subtitle}</p>
 	<SocialLinks classes="mt-4" />
 </Container>

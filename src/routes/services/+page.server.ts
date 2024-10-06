@@ -1,14 +1,13 @@
 import { getTestimonials } from '$lib/functions/functions.testimonials';
+import { getPosts } from '$lib/functions/functions.posts';
 
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ fetch }) {
-	const testimonials = await getTestimonials(fetch);
-
 	const servicesResponse = await fetch(`/content/services/services.md`);
-	const servicesData = await servicesResponse.text();
 
 	return {
-		services: servicesData,
-		testimonials: testimonials
+		testimonials: await getTestimonials(fetch),
+		services: await servicesResponse.text(),
+		...(await getPosts(fetch, 'projects'))
 	};
 }

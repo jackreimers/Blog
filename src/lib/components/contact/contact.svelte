@@ -117,7 +117,10 @@
 							</div>
 						{/if}
 						<div aria-hidden={$page.form?.success || hasSubmitted}>
-							<h3 class="text-2xl font-bold sm:text-3xl md:text-4xl" id="modal-title">
+							<h3
+								class="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
+								id="modal-title"
+							>
 								Contact
 							</h3>
 							<p class="mt-4 text-gray-700">

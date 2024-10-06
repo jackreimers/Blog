@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { contact, isContactOpen, isMobileNavigationOpen } from '$lib/stores/store.elements';
-	import { Briefcase, CircleUserRound, File, Home, X } from 'lucide-svelte';
+	import { Briefcase, CircleUserRound, File, Home, LibraryBig, X } from 'lucide-svelte';
 	import { get } from 'svelte/store';
 	import { clickOutside } from '$lib/functions/functions.utilities';
 	import Button from '$lib/components/buttons/button.svelte';
@@ -70,7 +70,6 @@
 					>
 						<Briefcase />
 					</MobileButton>
-					<!--
 					<MobileButton
 						active={$page.url.pathname.startsWith('/projects')}
 						href="/projects"
@@ -79,7 +78,6 @@
 					>
 						<LibraryBig />
 					</MobileButton>
-					-->
 					<MobileButton
 						active={$page.url.pathname.startsWith('/blog')}
 						href="/blog"

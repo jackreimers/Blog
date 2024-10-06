@@ -2,6 +2,6 @@
 	export let classes: string = '';
 </script>
 
-<div class="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3 {classes}">
+<div class="grid grid-cols-1 gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-3 {classes}">
 	<slot />
 </div>

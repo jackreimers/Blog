@@ -28,7 +28,7 @@
 		<div class="flex justify-end">
 			<PillButton href="/tags" icon="chevron" text="Filter by tag" />
 		</div>
-		<CardGrid classes="mt-4" horizontal={true} itemCount={data.posts.length}>
+		<CardGrid classes="mt-4" itemCount={data.posts.length}>
 			{#each data.posts as post}
 				<Card
 					href="/blog/{post.slug}"
@@ -36,7 +36,7 @@
 					date={post.dateString}
 					title={post.title}
 					content={post.excerpt}
-					horizontal={true}
+					tags={post.tags}
 				>
 					<div class="flex gap-2 overflow-auto">
 						{#each post.tags as tag}
