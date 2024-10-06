@@ -8,9 +8,9 @@
 	class="overflow-hidden rounded-lg bg-[url(/content/images/people.jpg)] bg-cover bg-center {classes}"
 >
 	<div class="h-full bg-black bg-opacity-60">
-		<div class="bg-gradient-to-br from-blue-900 from-25% p-6 sm:p-12">
+		<div class="bg-gradient-to-br from-blue-900 from-25% px-4 py-8 sm:p-12 text-center">
 			<div>
-				<h2 class="text-xl font-bold tracking-tight text-white sm:text-2xl">
+				<h2 class="text-2xl font-bold tracking-tight text-white sm:text-2xl">
 					{title}
 				</h2>
 				<p class="mt-4 leading-normal text-gray-200">
