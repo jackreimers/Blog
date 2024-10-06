@@ -13,7 +13,7 @@
 				<h2 class="text-xl font-bold tracking-tight text-white sm:text-2xl">
 					{title}
 				</h2>
-				<p class="mt-4 text-sm leading-normal text-gray-200">
+				<p class="mt-4 leading-normal text-gray-200">
 					{subtitle}
 				</p>
 			</div>

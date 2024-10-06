@@ -50,7 +50,7 @@
 		<a class="mt-4 leading-tight line-clamp-1 text-xl font-semibold tracking-tight" {href}>
 			{title}
 		</a>
-		<p class="mt-4 line-clamp-4 text-sm leading-normal text-gray-700">{content}</p>
+		<p class="mt-4 line-clamp-3 leading-normal text-gray-700">{content}</p>
 		<div class="mt-6 flex gap-1.5 overflow-x-auto">
 			{#each tags as tag}
 				<PillButton
