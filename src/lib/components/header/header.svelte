@@ -46,7 +46,7 @@
 					isActive={$page.url.pathname.startsWith('/about')}
 					text="About"
 				/>
-				<Button color="blue" on:click={() => $contact?.open()} text="Contact" />
+				<Button color="darkBlue" on:click={() => $contact?.open()} text="Contact" />
 			</div>
 			<div class="flex items-center lg:hidden">
 				<button aria-label="Menu" class="p-2" on:click={() => $mobileNavigation?.open()}>

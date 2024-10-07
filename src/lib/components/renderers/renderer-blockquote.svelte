@@ -6,12 +6,10 @@
 	<div aria-hidden="true" class="w-[4px] rounded-lg bg-blue-900" />
 	<div class="flex-1 py-3 pl-4">
 		<div class="inline-flex items-center gap-2">
-			<span class="text-blue-900">
-				<AlertOctagon />
-			</span>
+			<AlertOctagon class="text-blue-900" />
 			<p class="!m-0 text-lg font-semibold !text-blue-900">Important</p>
 		</div>
-		<div class="max-w-prose text-sm mt-2 font-medium text-gray-700 [&>p]:m-0">
+		<div class="mt-2 max-w-prose text-sm font-medium text-gray-700 [&>p]:m-0">
 			<slot />
 		</div>
 	</div>

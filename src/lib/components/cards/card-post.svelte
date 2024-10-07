@@ -11,9 +11,9 @@
 </script>
 
 <div
-	class="relative overflow-hidden rounded-lg bg-white shadow transition-[transform,box-shadow] duration-300 focus:scale-[1.015] focus:shadow-md mhover:hover:scale-[1.015] mhover:hover:shadow-md {classes}"
+	class="overflow-hidden rounded-lg bg-white shadow transition-[transform,box-shadow] duration-300 focus:scale-[1.015] focus:shadow-md mhover:hover:scale-[1.015] mhover:hover:shadow-md {classes}"
 >
-	<a class="bg-gray-100" href={`/${data.type}/${data.slug}`} tabindex="-1">
+	<a class="bg-gray-100" href={`/${data.type}/${data.slug}`}>
 		{#if data.imageHref}
 			<Preload src={data.imageHref} classes="aspect-[16/10]">
 				<img src={data.imageHref} alt={data.imageAlt} class="block" />
@@ -25,11 +25,8 @@
 		{/if}
 	</a>
 	<div class="p-4 sm:p-6">
-		<div class="flex items-center gap-4">
-			<time
-				class="flex items-center gap-1.5 text-sm text-gray-700"
-				datetime={data.date.toISOString()}
-			>
+		<div class="flex items-center justify-between gap-3">
+			<time class="text-sm text-gray-700" datetime={data.date.toISOString()}>
 				{data.dateString}
 			</time>
 			{#if displayType}
@@ -40,7 +37,6 @@
 					classes="!px-3 !py-1.5"
 				/>
 			{/if}
-
 		</div>
 		<a
 			class="mt-4 line-clamp-1 text-xl font-semibold leading-tight tracking-tight sm:text-2xl"
@@ -48,8 +44,8 @@
 		>
 			{data.title}
 		</a>
-		<p class="mt-4 line-clamp-3 leading-normal text-gray-700">{data.excerpt}</p>
-		<div class="mt-6 flex gap-2 overflow-x-auto sm:mt-10">
+		<p class="mt-4 line-clamp-3 text-gray-700">{data.excerpt}</p>
+		<div class="mt-6 flex gap-2 overflow-x-auto">
 			{#each data.tags as tag}
 				<PillButton href="/tags/{tag.slug}" text={tag.name} color="lightBlue" />
 			{/each}

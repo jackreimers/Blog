@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
 	import { Loader2 } from 'lucide-svelte';
+	import { createEventDispatcher } from 'svelte';
 
-	export let color: 'gray' | 'blue' | 'lightblue' | 'none' = 'gray';
+	export let color: 'lightGray' | 'lightBlue' | 'darkBlue' | 'none' = 'lightGray';
 	export let isActive: boolean = false;
 	export let isSubmitting: boolean = false;
 	export let ariaLabel: string | null = null;
@@ -13,17 +13,12 @@
 	export let classes: string = '';
 
 	const dispatch = createEventDispatcher();
-	const colorClasses: any = {
-		'mhover:hover:bg-gray-200 focus:bg-gray-200': color === 'none',
-		'bg-gray-200 mhover:hover:bg-gray-300 focus:bg-gray-300': color === 'gray',
-		'bg-blue-900 text-white mhover:hover:bg-blue-950 focus:bg-blue-950': color === 'blue',
-		'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200 focus:bg-blue-200':
-			color === 'lightblue'
+	const colors = {
+		lightGray: 'bg-gray-200 mhover:hover:bg-gray-300 focus:bg-gray-300',
+		lightBlue: 'bg-blue-100 text-blue-900 mhover:hover:bg-blue-200 focus:bg-blue-200',
+		darkBlue: 'bg-blue-900 text-white mhover:hover:bg-blue-950 focus:bg-blue-950',
+		none: 'mhover:hover:bg-gray-200 focus:bg-gray-200'
 	};
-
-	classes = Object.keys(colorClasses)
-		.filter((key) => colorClasses[key])
-		.join(classes);
 
 	function handleClick(event: MouseEvent) {
 		dispatch('click', event);
@@ -39,7 +34,7 @@
 		{type}
 		class="rounded font-medium transition-colors duration-200 {text
 			? 'px-4 py-2.5'
-			: 'p-2.5'} {classes} {isActive
+			: 'p-2.5'} {colors[color]} {classes} {isActive
 			? 'bg-gray-200 focus:!bg-gray-300 mhover:hover:!bg-gray-300'
 			: ''}"
 	>
@@ -55,8 +50,8 @@
 		aria-label={ariaLabel}
 		{type}
 		class="relative overflow-hidden rounded font-medium transition-colors duration-200 {text
-			? 'px-4 py-2.5'
-			: 'p-2.5'} {classes} {isActive
+			? 'sm:2.5 px-4 py-2'
+			: 'sm:2.5 p-2'} {colors[color]} {classes} {isActive
 			? 'bg-gray-200 focus:!bg-gray-300 mhover:hover:!bg-gray-300'
 			: ''} {isSubmitting ? 'cursor-wait !bg-blue-950' : ''}"
 	>

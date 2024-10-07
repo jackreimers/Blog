@@ -1,15 +1,15 @@
 <script lang="ts">
 	import { Brain, Cloud, Code, Cog, Globe, Zap } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
-	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
-	import Grid from '$lib/components/grids/grid.svelte';
-	import PostCard from '$lib/components/cards/card-post.svelte';
-	import ServiceCard from '$lib/components/cards/card-service-2.svelte';
-	import TestimonialCard from '$lib/components/cards/card-testimonial.svelte';
-	import PostGrid from '$lib/components/grids/grid-posts.svelte';
+	import Hero from '$lib/components/hero/hero.svelte';
 	import Subheader from '$lib/components/header/subheader.svelte';
+	import Grid from '$lib/components/grids/grid.svelte';
+	import ServiceCard from '$lib/components/cards/card-content.svelte';
+	import TestimonialCard from '$lib/components/cards/card-testimonial.svelte';
+	import PostCard from '$lib/components/cards/card-post.svelte';
+	import PostGrid from '$lib/components/grids/grid-posts.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -23,7 +23,10 @@
 <Hero subtitle="Find out how I can help you and your business." title="Services" />
 <Container>
 	<Section>
-		<Subheader subtitle="See what people I've worked with have to say." title="What I Offer" />
+		<Subheader
+			subtitle="I offer a range of digital services to help you achieve your online goals."
+			title="What I Offer"
+		/>
 		<Grid>
 			<ServiceCard
 				description="Custom designed and built websites tailored to your individual needs."
@@ -78,7 +81,7 @@
 	<!-- TODO: Not sure CTA -->
 	<Section>
 		<Subheader subtitle="See what people I've worked with have to say." title="Testimonials" />
-		<Grid>
+		<Grid classes="md:!grid-cols-1 lg:!grid-cols-2">
 			{#each data.testimonials as testimonial}
 				<TestimonialCard data={testimonial} />
 			{/each}
@@ -96,16 +99,4 @@
 			{/each}
 		</PostGrid>
 	</Section>
-	<!--
-	<Section>
-		<h2 class="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">Technical Details</h2>
-		<p class="mt-2.5 max-w-4xl text-gray-700">
-			Dive deeper into the technical details of my skillset and the services I offer.
-		</p>
-		<div class="mt-10 markdown">
-
-			<SvelteMarkdown source={data.services} />
-		</div>
-	</Section>
-	-->
 </Container>

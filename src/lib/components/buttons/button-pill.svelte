@@ -4,8 +4,8 @@
 
 	export let href: string;
 	export let target: '_blank' | '_self' = '_self';
-	export let text: string | null = null;
 	export let color: 'lightGray' | 'lightBlue' | 'lightRed' | 'darkBlue' = 'lightGray';
+	export let text: string | null = null;
 	export let icon: ComponentType<Icon> | null = null;
 	export let iconSide: 'left' | 'right' = 'right';
 	export let classes: string = '';
@@ -22,8 +22,8 @@
 
 <a
 	class="relative inline-flex items-center gap-1.5 rounded-full text-xs font-medium transition-colors duration-300 {text
-		? 'px-3 py-1.5 sm:px-3.5 sm:py-2'
-		: 'p-1.5 sm:p-2'} {colors[color]} {classes}"
+		? 'px-3 py-1.5'
+		: 'p-2'} {colors[color]} {classes}"
 	class:flex-row-reverse={iconSide === 'left'}
 	{href}
 	{target}

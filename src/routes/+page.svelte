@@ -2,15 +2,15 @@
 	import { contact } from '$lib/stores/store.elements';
 	import { Brain, Cloud, Code, Cog, Globe, MessageCircle, Zap } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
-	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
+	import Hero from '$lib/components/hero/hero.svelte';
+	import Subheader from '$lib/components/header/subheader.svelte';
 	import Grid from '$lib/components/grids/grid.svelte';
 	import PostGrid from '$lib/components/grids/grid-posts.svelte';
 	import PostCard from '$lib/components/cards/card-post.svelte';
-	import ServiceCard from '$lib/components/cards/card-service.svelte';
+	import ServiceCard from '$lib/components/cards/card-content-button.svelte';
 	import Cta from '$lib/components/banners/cta.svelte';
-	import Subheader from '$lib/components/header/subheader.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -67,7 +67,7 @@
 			/>
 		</Grid>
 		<Cta
-			classes="mt-6 sm:mt-10 hidden"
+			classes="mt-6 hidden sm:mt-10"
 			subtitle="Contact me now for an obligation free discussion about your digital needs."
 			title="Unlock Your Online Potential"
 		>

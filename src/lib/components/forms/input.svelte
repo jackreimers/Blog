@@ -5,9 +5,8 @@
 	export let placeholder: string = '';
 	export let autocomplete: string = 'off';
 	export let required: boolean = false;
-	export let classes: string = '';
-
 	export let isDisabled: boolean = true;
+	export let classes: string = '';
 
 	let input: HTMLInputElement | HTMLTextAreaElement;
 	let isModified: boolean = false;
@@ -33,7 +32,7 @@
 
 <div class="w-full {classes}">
 	<div>
-		<label class="inline-block font-medium" for={name}>
+		<label class="inline-block text-sm font-medium" for={name}>
 			{label}
 			{#if required}
 				<span class="text-red-600">*</span>

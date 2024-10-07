@@ -1,11 +1,10 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
 	import Head from '$lib/components/seo/head.svelte';
-	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
+	import Hero from '$lib/components/hero/hero.svelte';
 	import Preload from '$lib/components/loading/preload.svelte';
-	import Subheader from '$lib/components/header/subheader.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -19,8 +18,6 @@
 <Hero subtitle="Learn more about who I am and what I do." title="About" />
 <Container>
 	<Section>
-		<Subheader subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-				   title="Who I Am" />
 		<div class="flex flex-col gap-6 md:flex-row">
 			<Preload classes="overflow-hidden rounded-lg" src="/content/about/images/headshot.png">
 				<div
@@ -37,9 +34,5 @@
 				<SvelteMarkdown source={data.about} />
 			</div>
 		</div>
-	</Section>
-	<Section>
-		<Subheader subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-				   title="What I Know" />
 	</Section>
 </Container>

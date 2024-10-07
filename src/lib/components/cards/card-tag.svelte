@@ -2,27 +2,30 @@
 	import type { Tag } from '$lib/interfaces/interfaces.tags';
 	import { logoUrls } from '$lib/constants/logos.constants.js';
 	import Preload from '$lib/components/loading/preload.svelte';
-	import Pill from '$lib/components/elements/pill.svelte';
 
 	export let data: Tag;
 	export let classes: string = '';
 </script>
 
 <a
-	class="flex gap-4 rounded-lg bg-white p-5 shadow transition-[transform,box-shadow] duration-300 focus:scale-[1.015] focus:shadow-lg mhover:hover:scale-[1.015] mhover:hover:shadow-lg {classes}"
+	class="flex items-center gap-3 rounded-lg bg-white p-4 shadow transition-[transform,box-shadow] duration-300 focus:scale-[1.015] focus:shadow-md mhover:hover:scale-[1.015] mhover:hover:shadow-md {classes}"
 	href="/tags/{data.slug}"
 >
-	<span class="inline-block aspect-square h-full max-w-24 flex-1 overflow-hidden rounded-lg">
-		<Preload showSkeleton={false} src={logoUrls[data.slug]}>
-			<img alt="{data.name} logo" class="block w-full" src={logoUrls[data.slug]} />
-		</Preload>
-	</span>
-	<span class="flex w-full flex-[5] items-center justify-between">
-		<span class="text-xl font-semibold leading-none sm:text-2xl">{data.name}</span>
-		<Pill
-			classes="hidden sm:inline-flex"
-			showChevron={true}
-			text="{data.count} {data.count === 1 ? 'Post' : 'Posts'}"
+	<Preload showSkeleton={false} src={logoUrls[data.slug]}>
+		<img
+			alt="{data.name} logo"
+			class="block h-12 rounded-lg sm:h-14 md:h-16"
+			src={logoUrls[data.slug]}
 		/>
+	</Preload>
+
+	<span>
+		<span class="block font-semibold tracking-tight sm:text-xl">
+			{data.name}
+		</span>
+		<span class="block text-sm text-gray-700">
+			{data.count}
+			{data.count === 1 ? 'Post' : 'Posts'}
+		</span>
 	</span>
 </a>

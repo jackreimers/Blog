@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { blockersOpen, isContactOpen } from '$lib/stores/store.elements';
-	import { PartyPopper } from 'lucide-svelte';
 	import { get } from 'svelte/store';
 	import { blur } from 'svelte/transition';
 	import { applyAction, enhance } from '$app/forms';
@@ -85,7 +84,7 @@
 				on:clickoutside={close}
 				use:clickOutside
 			>
-				<div class="p-6 sm:p-7 md:p-10">
+				<div class="p-6 sm:p-10">
 					<div class="relative">
 						{#if $page.form?.success}
 							<div
@@ -93,43 +92,40 @@
 								class="absolute inset-0 z-10 flex min-w-full flex-col bg-gray-50"
 							>
 								<div class="flex-1">
-									<div
-										class="inline-block rounded-full bg-green-100 p-4 text-green-900"
-									>
-										<div class="hidden sm:block">
-											<PartyPopper size="3.75rem" />
-										</div>
-										<div class="sm:hidden">
-											<PartyPopper size="3rem" />
-										</div>
-									</div>
-									<h3 class="mt-4 text-2xl font-bold sm:text-3xl md:text-4xl">
-										Success
-									</h3>
+									<!-- TODO: Put some sort of visual here -->
+									<h3 class="text-2xl font-bold sm:text-3xl">Success</h3>
 									<p class="mt-4 text-gray-700">
 										Thank you for your message, I'll get back to you as soon as
 										possible.
 									</p>
 								</div>
 								<div class="flex justify-end">
-									<Button color="blue" on:click={close} text="Close" />
+									<Button color="darkBlue" on:click={close} text="Close" />
 								</div>
 							</div>
 						{/if}
 						<div aria-hidden={$page.form?.success || hasSubmitted}>
-							<h3
-								class="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl"
-								id="modal-title"
-							>
-								Contact
-							</h3>
-							<p class="mt-4 text-gray-700">
-								Use the form below to send me a message.
-							</p>
+							<div class="mb-6 sm:mb-10">
+								<h3
+									class="text-2xl font-bold tracking-tight sm:text-3xl"
+									id="modal-title"
+								>
+									Contact
+								</h3>
+								<p class="mt-4 text-gray-700">
+									Send me an email directly at
+									<a
+										class="border-b border-gray-300 font-medium transition-colors duration-300 focus:border-gray-900 mhover:hover:border-gray-900"
+										href="mailto:me@jackreimers.dev"
+									>
+										me@jackreimers.dev
+									</a>
+									or use the form below to send me a message.
+								</p>
+							</div>
 							<form
 								action="/contact"
 								bind:this={formElement}
-								class="mt-10"
 								method="POST"
 								use:enhance={(event) => {
 									if (!validate()) {
@@ -144,36 +140,41 @@
 									};
 								}}
 							>
-								<Input
-									autocomplete="name"
-									bind:this={nameInputElement}
-									isDisabled={isSubmitting}
-									label="Name"
-									name="name"
-									required={true}
-								/>
-								<Input
-									autocomplete="email"
-									bind:this={emailInputElement}
-									classes="mt-4"
-									isDisabled={isSubmitting}
-									label="Email"
-									name="email"
-									required={true}
-									type="email"
-								/>
-								<Input
-									bind:this={messageInputElement}
-									classes="mt-4 resize-none"
-									isDisabled={isSubmitting}
-									label="Message"
-									name="message"
-									required={true}
-									type="textarea"
-								/>
-								<div class="mt-10 flex justify-end gap-3">
-									<Button color="gray" on:click={close} text="Close" />
-									<Button color="blue" {isSubmitting} text="Send" type="submit" />
+								<div class="flex flex-col gap-4">
+									<Input
+										autocomplete="name"
+										bind:this={nameInputElement}
+										isDisabled={isSubmitting}
+										label="Name"
+										name="name"
+										required={true}
+									/>
+									<Input
+										autocomplete="email"
+										bind:this={emailInputElement}
+										isDisabled={isSubmitting}
+										label="Email"
+										name="email"
+										required={true}
+										type="email"
+									/>
+									<Input
+										bind:this={messageInputElement}
+										isDisabled={isSubmitting}
+										label="Message"
+										name="message"
+										required={true}
+										type="textarea"
+									/>
+								</div>
+								<div class="mt-6 flex justify-end gap-4">
+									<Button color="lightGray" on:click={close} text="Close" />
+									<Button
+										color="darkBlue"
+										{isSubmitting}
+										text="Submit"
+										type="submit"
+									/>
 								</div>
 							</form>
 						</div>

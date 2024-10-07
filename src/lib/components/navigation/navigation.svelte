@@ -42,62 +42,57 @@
 		on:clickoutside={onClickOutside}
 		use:clickOutside
 	>
-		<div class="relative h-full w-[320px] p-6 sm:p-7">
+		<div class="relative h-full w-[320px] p-4 sm:p-6">
 			<div
 				class="relative flex h-full flex-col transition-[margin] delay-100 duration-700 {isOpen
 					? 'ml-0'
 					: 'ml-4'}"
 			>
-				<div class="flex h-[2.875rem] justify-end align-middle sm:h-12">
+				<div class="flex justify-end">
 					<Button color="none" on:click={close}>
 						<X />
 					</Button>
 				</div>
-				<div class="mt-7 flex flex-1 flex-col gap-2">
+				<div class="mt-4 flex flex-1 flex-col gap-2">
 					<MobileButton
 						active={$page.url.pathname === '/'}
 						href="/"
+						icon={Home}
 						on:click={close}
 						text="Home"
-					>
-						<Home />
-					</MobileButton>
+					/>
 					<MobileButton
 						active={$page.url.pathname.startsWith('/services')}
 						href="/services"
+						icon={Briefcase}
 						on:click={close}
 						text="Services"
-					>
-						<Briefcase />
-					</MobileButton>
+					/>
 					<MobileButton
 						active={$page.url.pathname.startsWith('/projects')}
 						href="/projects"
+						icon={LibraryBig}
 						on:click={close}
 						text="Projects"
-					>
-						<LibraryBig />
-					</MobileButton>
+					/>
 					<MobileButton
 						active={$page.url.pathname.startsWith('/blog')}
 						href="/blog"
+						icon={File}
 						on:click={close}
 						text="Blog"
-					>
-						<File />
-					</MobileButton>
+					/>
 					<MobileButton
 						active={$page.url.pathname.startsWith('/about')}
 						href="/about"
+						icon={CircleUserRound}
 						on:click={close}
 						text="About"
-					>
-						<CircleUserRound />
-					</MobileButton>
+					/>
 				</div>
 				<Button
 					classes="justify-center"
-					color="blue"
+					color="darkBlue"
 					on:click={() => $contact?.open()}
 					text="Contact"
 				/>

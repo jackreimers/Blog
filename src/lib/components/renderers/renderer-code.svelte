@@ -20,7 +20,7 @@
 	}
 </script>
 
-<div class="group my-7">
+<div class="group my-4">
 	<div
 		class="relative inline-block w-full overflow-hidden overflow-x-auto rounded-lg text-sm text-gray-300 sm:text-base"
 	>
@@ -52,7 +52,7 @@
 			<p>Missing language!</p>
 		{/if}
 		<button
-			class="absolute right-3 top-3 z-10 rounded p-1.5 text-gray-400 opacity-0 transition-all duration-200 sm:right-4 sm:top-4 sm:p-2 mhover:hover:bg-blue-100 mhover:hover:text-blue-900 mhover:group-hover:opacity-100"
+			class="absolute right-3 top-3 z-10 rounded p-2.5 text-gray-400 opacity-0 transition-all duration-200 focus:bg-blue-100 focus:text-blue-900 focus:opacity-100 sm:right-4 sm:top-4 sm:p-2 mhover:hover:bg-blue-100 mhover:hover:text-blue-900 mhover:group-hover:opacity-100"
 			on:click={copy}
 		>
 			{#if copied}

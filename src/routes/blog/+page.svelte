@@ -1,14 +1,14 @@
 <script lang="ts">
 	import { previousPageSlug } from '$lib/stores/store.page';
 	import { onMount } from 'svelte';
+	import { Filter } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
-	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
-	import Card from '$lib/components/cards/card-post.svelte';
-	import CardGrid from '$lib/components/grids/grid-posts.svelte';
+	import Hero from '$lib/components/hero/hero.svelte';
+	import PostCard from '$lib/components/cards/card-post.svelte';
+	import PostGrid from '$lib/components/grids/grid-posts.svelte';
 	import PillButton from '$lib/components/buttons/button-pill.svelte';
-	import { Filter } from 'lucide-svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -27,17 +27,12 @@
 <Container>
 	<Section>
 		<div class="flex justify-end">
-			<PillButton
-				color="lightBlue"
-				href="/tags"
-				icon={Filter}
-				text="Filter by tag"
-			/>
+			<PillButton color="lightBlue" href="/tags" icon={Filter} text="Filter by tag" />
 		</div>
-		<CardGrid classes="mt-3 sm:mt-4" itemCount={data.posts.length}>
+		<PostGrid classes="mt-4" itemCount={data.posts.length}>
 			{#each data.posts as post}
-				<Card data={post} />
+				<PostCard data={post} />
 			{/each}
-		</CardGrid>
+		</PostGrid>
 	</Section>
 </Container>

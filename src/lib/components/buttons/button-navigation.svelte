@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { createEventDispatcher } from 'svelte';
+	import { type ComponentType, createEventDispatcher } from 'svelte';
+	import type { Icon } from 'lucide-svelte';
 
 	export let href: string;
 	export let text: string;
+	export let icon: ComponentType<Icon>;
 	export let active: boolean = false;
 	export let classes: string = '';
 
@@ -20,8 +22,8 @@
 				? 'bg-blue-100 text-blue-900'
 				: 'bg-gray-100 text-gray-400'}"
 		>
-			<slot />
+			<svelte:component this={icon} />
 		</span>
-		<span class="text-lg font-semibold leading-none sm:text-lg">{text}</span>
+		<span class="font-semibold">{text}</span>
 	</div>
 </a>

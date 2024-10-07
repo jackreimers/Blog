@@ -2,7 +2,6 @@
 	import type { ComponentType } from 'svelte';
 	import { type Icon, MoveRight } from 'lucide-svelte';
 
-	//TODO: Rename component to something more generic
 	export let href: string;
 	export let icon: ComponentType<Icon>;
 	export let title: string;
@@ -19,9 +18,9 @@
 				class="h-6 w-6 text-blue-900 transition-colors duration-300 group-focus:text-blue-950 mhover:group-hover:text-blue-950"
 				this={icon}
 			/>
-			<span class="font-semibold leading-none tracking-tight sm:text-xl">{title}</span>
+			<span class="font-semibold tracking-tight sm:text-xl">{title}</span>
 		</span>
-		<span class="mt-4 block  leading-normal text-gray-700">{description}</span>
+		<span class="mt-4 block text-gray-700">{description}</span>
 	</span>
 	<span
 		class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-900 transition-colors duration-300 group-focus:text-blue-950 mhover:group-hover:text-blue-950"

@@ -7,9 +7,9 @@
 </script>
 
 <Container classes="my-24 sm:my-32 md:my-40 lg:my-48">
-	<h1 class="my-3 text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+	<h1 class="text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
 		{title}
 	</h1>
-	<p class="mt-2 text-gray-700">{subtitle}</p>
-	<SocialLinks classes="mt-4" />
+	<p class="mt-2 text-gray-700 sm:mt-4">{subtitle}</p>
+	<SocialLinks classes="mt-4 sm:mt-6" />
 </Container>

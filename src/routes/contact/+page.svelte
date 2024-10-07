@@ -2,7 +2,7 @@
 	import { Frown, PartyPopper } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
-	import EmptyState from '$lib/components/elements/empty-state.svelte';
+	import EmptyState from '$lib/components/empty/empty-state.svelte';
 	import PillButton from '$lib/components/buttons/button-pill.svelte';
 
 	/** @type {import('./$types').ActionData} */
@@ -16,22 +16,11 @@
 />
 <Hero subtitle="Get in touch to ask questions or discuss your needs." title="Contact" />
 <EmptyState
+	icon={form.success ? PartyPopper : Frown}
 	subtitle={form.success
 		? "Thank you for your message, I'll get back to you as soon as possible."
 		: 'Please try again later or contact me if the issue persists.'}
 	title={form.success ? 'Success' : 'An error occurred'}
 >
-	{#if form.success}
-		<PartyPopper size="3.5rem" slot="icon" />
-	{:else}
-		<Frown size="3.5rem" slot="icon" />
-	{/if}
-	<PillButton
-		bgColor="bg-gray-100"
-		bgHoverColor="bg-gray-200"
-		color="text-gray-900"
-		href="/"
-		slot="content"
-		text="Return to home"
-	/>
+	<PillButton color="lightGray" href="/" text="Return to home" />
 </EmptyState>

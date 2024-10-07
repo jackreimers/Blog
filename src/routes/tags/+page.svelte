@@ -2,10 +2,10 @@
 	import { previousPageSlug } from '$lib/stores/store.page';
 	import { onMount } from 'svelte';
 	import Head from '$lib/components/seo/head.svelte';
-	import Hero from '$lib/components/hero/hero.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
-	import TagGrid from '$lib/components/grids/grid-tags.svelte';
+	import Hero from '$lib/components/hero/hero.svelte';
+	import Grid from '$lib/components/grids/grid.svelte';
 	import TagCard from '$lib/components/cards/card-tag.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -24,10 +24,10 @@
 <Hero subtitle="Filter my posts by topics that interest you." title="Tags" />
 <Container>
 	<Section>
-		<TagGrid classes="mt-10">
+		<Grid>
 			{#each data.tags as tag}
 				<TagCard data={tag} />
 			{/each}
-		</TagGrid>
+		</Grid>
 	</Section>
 </Container>

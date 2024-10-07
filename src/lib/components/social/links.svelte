@@ -5,7 +5,7 @@
 	export let classes: string = '';
 </script>
 
-<div class="flex gap-1.5 overflow-x-auto {classes}">
+<div class="flex gap-2 overflow-x-auto {classes}">
 	<PillButton
 		color="darkBlue"
 		href="mailto:me@jackreimers.dev"
