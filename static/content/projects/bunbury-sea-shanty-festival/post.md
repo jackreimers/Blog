@@ -1,5 +1,5 @@
 ---
-date: 2024-10-06T00:00:00.000+10:00
+date: 2024-10-09T12:30:00.000+11:00
 tags: [ "svelte", "javascript", "typescript" ]
 title: Bunbury Sea Shanty Festival
 description: A list of six interesting SvelteKit features that I found useful whilst learning the framework.
@@ -18,6 +18,6 @@ entertainers and attendees.
 
 ## Services Provided
 
-- Website Design and Development
-- Website Hosting
-- Custom Domain and Email Hosting
+- Website design and development
+- Website hosting
+- Custom domain and email hosting
