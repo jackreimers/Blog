@@ -15,8 +15,8 @@
 	<span class="flex-1">
 		<span class="flex items-center gap-2">
 			<svelte:component
-				class="h-6 w-6 text-blue-900 transition-colors duration-300 group-focus:text-blue-950 mhover:group-hover:text-blue-950"
 				this={icon}
+				class="h-6 w-6 text-blue-900 transition-colors duration-300 group-focus:text-blue-950 mhover:group-hover:text-blue-950"
 			/>
 			<span class="font-semibold tracking-tight sm:text-xl">{title}</span>
 		</span>

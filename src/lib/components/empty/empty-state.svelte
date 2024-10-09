@@ -10,7 +10,7 @@
 
 <div class="text-center {classes}">
 	<div class="mx-auto inline-block">
-		<svelte:component class="h-12 w-12" this={icon} />
+		<svelte:component this={icon} class="h-12 w-12" />
 	</div>
 	<p class="mt-4 text-2xl font-bold leading-tight tracking-tight sm:text-3xl">{title}</p>
 	<p class="mx-auto mt-4 max-w-sm text-gray-700">{subtitle}</p>

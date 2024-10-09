@@ -19,7 +19,6 @@
 <Head
 	canonical="https://jackreimers.dev"
 	description="Jack Reimers is a full stack Software Engineer who is passionate about web and video game development."
-	title="Jack Reimers"
 />
 <Hero subtitle="I'm a Melbourne based Software Engineer." title="Jack Reimers" />
 <Container>

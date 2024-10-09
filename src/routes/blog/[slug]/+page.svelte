@@ -17,7 +17,7 @@
 <Head
 	canonical="https://jackreimers.dev/blog/{data.post.slug}"
 	description={data.post.description}
-	title="Jack Reimers | {data.post.title}"
+	title={data.post.title}
 />
 <Hero subtitle="Published on {data.post.dateString}" title={data.post.title} />
 <Container>

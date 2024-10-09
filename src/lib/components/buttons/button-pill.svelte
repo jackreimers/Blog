@@ -31,5 +31,5 @@
 	{#if text}
 		{text}
 	{/if}
-	<svelte:component class="h-4 w-4" this={icon} />
+	<svelte:component this={icon} class="h-4 w-4" />
 </a>

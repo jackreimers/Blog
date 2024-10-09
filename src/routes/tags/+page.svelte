@@ -19,7 +19,7 @@
 <Head
 	canonical="https://jackreimers.dev/tags"
 	description="Discover posts by Jack Reimers that match your interests by filtering through post tags."
-	title="Jack Reimers | Tags"
+	title="Tags"
 />
 <Hero subtitle="Filter my posts by topics that interest you." title="Tags" />
 <Container>

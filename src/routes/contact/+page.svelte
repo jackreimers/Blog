@@ -12,7 +12,7 @@
 <Head
 	canonical="https://jackreimers.dev/contact"
 	description="Get in touch with Jack Reimers to ask questions or discuss your needs."
-	title="Jack Reimers | Contact"
+	title="Contact"
 />
 <Hero subtitle="Get in touch to ask questions or discuss your needs." title="Contact" />
 <EmptyState

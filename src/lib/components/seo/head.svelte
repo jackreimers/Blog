@@ -2,13 +2,13 @@
 	import { page } from '$app/stores';
 	import { vs } from 'svelte-highlight/styles';
 
-	export let title: string;
+	export let title: string | null = null;
 	export let description: string;
 	export let canonical: string;
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{title ? title + ' | Jack Reimers' : 'Jack Reimers'}</title>
 	<meta content={description} name="description" />
 	<meta content="Jack Reimers" property="og:site_name" />
 	<meta content={title} property="og:title" />

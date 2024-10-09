@@ -21,7 +21,7 @@
 <Head
 	canonical="https://jackreimers.dev/projects"
 	description="See some of the projects that Jack Reimers has worked on in the past."
-	title="Jack Reimers | Projects"
+	title="Projects"
 />
 <Hero subtitle="See some of the projects I've worked on." title="Projects" />
 <Container>
