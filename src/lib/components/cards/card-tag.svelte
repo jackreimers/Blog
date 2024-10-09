@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Tag } from '$lib/interfaces/interfaces.tags';
+	import type { Tag } from '$lib/interfaces/interfaces.posts';
 	import { logoUrls } from '$lib/constants/logos.constants.js';
 	import Preload from '$lib/components/loading/preload.svelte';
 
@@ -14,7 +14,7 @@
 	<Preload showSkeleton={false} src={logoUrls[data.slug]}>
 		<img
 			alt="{data.name} logo"
-			class="block h-12 rounded-lg sm:h-14 md:h-16"
+			class="block aspect-square h-12 rounded-lg sm:h-14 md:h-16"
 			src={logoUrls[data.slug]}
 		/>
 	</Preload>
