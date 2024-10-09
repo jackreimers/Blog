@@ -5,7 +5,7 @@
 </script>
 
 <div
-	class="overflow-hidden rounded-lg bg-[url(/content/images/people.jpg)] bg-cover bg-center {classes}"
+	class="overflow-hidden rounded-lg bg-[url(/content/images/people.jpg)] bg-cover bg-center shadow {classes}"
 >
 	<div class="h-full bg-black bg-opacity-60">
 		<div

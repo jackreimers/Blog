@@ -66,12 +66,12 @@
 			/>
 		</Grid>
 		<Cta
-			classes="mt-4"
+			classes="mt-6 sm:mt-10"
 			subtitle="Contact me now for an obligation free discussion about your digital needs."
 			title="Unlock Your Online Potential"
 		>
 			<button
-				class="inline-flex items-center gap-2 rounded-md bg-white px-3.5 py-2 text-sm font-semibold transition-colors duration-300 focus:bg-gray-200 mhover:hover:bg-gray-200"
+				class="inline-flex items-center gap-2 rounded bg-white px-3.5 py-2 text-sm font-semibold transition-colors duration-300 focus:bg-gray-200 mhover:hover:bg-gray-200"
 				on:click={$contact?.open}
 			>
 				Let's Chat
