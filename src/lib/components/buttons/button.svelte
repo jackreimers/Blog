@@ -34,7 +34,7 @@
 		{href}
 		{target}
 		{type}
-		class="inline-flex items-center gap-2 rounded font-medium transition-colors duration-200 {text
+		class="inline-flex items-center gap-2 rounded font-medium transition-colors duration-300 {text
 			? 'px-4 py-2.5'
 			: 'p-2.5'} {colors[color]} {classes} {isActive
 			? 'bg-gray-200 focus:!bg-gray-300 mhover:hover:!bg-gray-300'
@@ -51,7 +51,7 @@
 		disabled={isSubmitting}
 		aria-label={ariaLabel}
 		{type}
-		class="relative inline-flex items-center gap-2 overflow-hidden rounded font-medium transition-colors duration-200 {text
+		class="relative inline-flex items-center gap-2 overflow-hidden rounded font-medium transition-colors duration-300 {text
 			? 'px-4 py-2'
 			: 'p-2'} {colors[color]} {classes} {isActive
 			? 'bg-gray-200 focus:!bg-gray-300 mhover:hover:!bg-gray-300'
