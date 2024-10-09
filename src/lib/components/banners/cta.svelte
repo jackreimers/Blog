@@ -9,7 +9,7 @@
 >
 	<div class="h-full bg-black bg-opacity-60">
 		<div
-			class="bg-gradient-to-br from-blue-900 from-25% px-4 py-8 text-center sm:px-6 sm:py-10"
+			class="bg-gradient-to-br from-blue-900 from-25% p-6 sm:p-10"
 		>
 			<div>
 				<h2
