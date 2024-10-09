@@ -1,4 +1,9 @@
-import type { Tag } from '$lib/interfaces/interfaces.tags';
+export interface Tag {
+	name: string;
+	slug: string;
+	icon: string;
+	count: number;
+}
 
 export interface Post {
 	date: Date;
@@ -12,4 +17,9 @@ export interface Post {
 	imageAlt: string | null;
 	excerpt: string;
 	content: string;
+}
+
+export interface ProjectPost extends Post {
+	projectHref: string;
+	projectText: string;
 }

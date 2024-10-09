@@ -1,8 +1,7 @@
-import type { Post } from '$lib/interfaces/interfaces.posts';
-import type { Tag } from '$lib/interfaces/interfaces.tags';
+import type { Post, ProjectPost, Tag } from '$lib/interfaces/interfaces.posts';
+import type { MarkdownData } from '$lib/interfaces/interfaces.markdown';
 import { error } from '@sveltejs/kit';
 import { getMarkdownData } from '$lib/functions/functions.markdown';
-import type { MarkdownData } from '$lib/interfaces/interfaces.markdown';
 
 export async function getTags(fetch: any): Promise<Tag[]> {
 	const tagsResponse = await fetch(`/content/tags.json`);
@@ -82,7 +81,11 @@ export async function getPosts(
 	};
 }
 
-export function parsePostData(data: MarkdownData, tags: Tag[], postType: string): Post {
+export function parsePostData(
+	data: MarkdownData,
+	tags: Tag[],
+	postType: string
+): Post | ProjectPost {
 	const date = new Date(data.metadata['date'] as string);
 	const dateString = `${date.toLocaleString('default', { month: 'long' })} ${date.getDate()}, ${date.getFullYear()}`;
 
@@ -99,7 +102,7 @@ export function parsePostData(data: MarkdownData, tags: Tag[], postType: string)
 		content = split[1];
 	}
 
-	return {
+	const post: Post | ProjectPost = {
 		date: date,
 		dateString: dateString,
 		type: postType,
@@ -112,6 +115,16 @@ export function parsePostData(data: MarkdownData, tags: Tag[], postType: string)
 		excerpt: excerpt,
 		content: content
 	};
+
+	if (postType === 'projects') {
+		const projectPost = post as ProjectPost;
+		projectPost.projectHref = data.metadata['projectHref'] as string;
+		projectPost.projectText = data.metadata['projectText'] as string;
+
+		return projectPost;
+	}
+
+	return post;
 }
 
 function compareDates(a: Post, b: Post) {
@@ -126,7 +139,7 @@ function compareDates(a: Post, b: Post) {
 }
 
 function compareTags(a: Tag, b: Tag) {
-	//Orders largest first
+	//Orders largest count first
 	if ((a.count ?? 0) < (b.count ?? 0)) {
 		return 1;
 	}

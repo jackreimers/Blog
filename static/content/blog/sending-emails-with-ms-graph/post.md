@@ -5,7 +5,7 @@ title: Sending Emails with the Microsoft Graph API
 description: Learn how to send emails programmatically using the Microsoft Graph API with this step by step guide.
 slug: sending-emails-with-ms-graph
 imageHref: /content/blog/sending-emails-with-ms-graph/images/cover.png
-imageAlt: The Microsoft Entra ID logo.
+imageAlt: Microsoft Entra ID logo
 ---
 
 Recently I have been exploring options for sending emails programmatically for a contact form and found that most

@@ -5,7 +5,7 @@ title: Six Interesting Svelte Features
 description: A list of six interesting SvelteKit features that I found useful whilst learning the framework.
 slug: six-interesting-svelte-features
 imageHref: /content/blog/six-interesting-svelte-features/images/cover.png
-imageAlt: The SvelteKit logo.
+imageAlt: SvelteKit logo
 ---
 
 Having only recently started using SvelteKit I was impressed with how easy it was to get started and surprised by how

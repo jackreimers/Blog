@@ -24,7 +24,7 @@
 <Container>
 	<Section>
 		<Subheader
-			subtitle="I offer a range of digital services to help you achieve your online goals."
+			subtitle="Let me take care of your digital needs so you can focus on what you do best."
 			title="What I Offer"
 		/>
 		<Grid>
@@ -50,7 +50,7 @@
 			/>
 			<ServiceCard
 				description="Integrate cutting edge AI technologies into your project."
-				features={['Natural language processing', 'Text embedding']}
+				features={['Generative AI', 'Natural language processing', 'Text embedding']}
 				icon={Brain}
 				title="Artificial Intelligence"
 			/>

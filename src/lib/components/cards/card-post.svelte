@@ -19,7 +19,7 @@
 				<img src={data.imageHref} alt={data.imageAlt} class="block" />
 			</Preload>
 		{:else}
-			<div class="flex h-full items-center justify-center">
+			<div class="flex aspect-[16/10] items-center justify-center bg-gray-100">
 				<Image class="h-20 w-20 text-gray-200" />
 			</div>
 		{/if}

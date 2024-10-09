@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { ArrowUpRightFromSquare } from 'lucide-svelte';
 	import SvelteMarkdown from 'svelte-markdown';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/layout/container.svelte';
@@ -8,6 +9,7 @@
 	import ImageRenderer from '$lib/components/renderers/renderer-image.svelte';
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
 	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
+	import Button from '$lib/components/buttons/button.svelte';
 	import PillButton from '$lib/components/buttons/button-pill.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -21,7 +23,7 @@
 />
 <Hero subtitle="Published on {data.post.dateString}" title={data.post.title} />
 <Container>
-	<Section>
+	<Section classes="sm:mb-16">
 		<div class="flex gap-2 overflow-auto sm:justify-end">
 			{#each data.post.tags as tag}
 				<PillButton color="lightBlue" href="/tags/{tag.slug}" text={tag.name} />
@@ -31,6 +33,16 @@
 			<h2 class="!mt-6" id="introduction">Introduction</h2>
 			<SvelteMarkdown source={data.post.excerpt} />
 		</div>
+		<Button
+			classes="mt-6"
+			color="darkBlue"
+			href={data.post.projectHref}
+			icon={ArrowUpRightFromSquare}
+			target="_blank"
+			text={data.post.projectText}
+		/>
+	</Section>
+	<Section classes="sm:mb-16">
 		<div class="markdown mt-16 box-content">
 			<SvelteMarkdown
 				renderers={{

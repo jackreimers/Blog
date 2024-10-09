@@ -25,7 +25,7 @@
 <Container>
 	<Section>
 		<Subheader
-			subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+			subtitle="I’m dedicated to helping you achieve your online goals with a full range of digital services."
 			title="Services"
 		/>
 		<Grid>
