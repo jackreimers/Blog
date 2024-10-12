@@ -65,7 +65,9 @@
 			</span>
 		{/if}
 		{#if text}
-			{text}
+			<span class:text-blue-950={isSubmitting}>
+				{text}
+			</span>
 		{/if}
 		<svelte:component this={icon} />
 	</button>
