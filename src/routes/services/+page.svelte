@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { Brain, Cloud, Code, Cog, Globe, Zap } from 'lucide-svelte';
+	import { contact } from '$lib/stores/store.elements';
+	import { Brain, Cloud, Code, Cog, Globe, MessageCircle, Zap } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/layout/container.svelte';
 	import Section from '$lib/components/layout/section.svelte';
@@ -10,6 +11,7 @@
 	import TestimonialCard from '$lib/components/cards/card-testimonial.svelte';
 	import PostCard from '$lib/components/cards/card-post.svelte';
 	import PostGrid from '$lib/components/grids/grid-posts.svelte';
+	import Cta from '$lib/components/banners/cta.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -77,6 +79,19 @@
 				title="Maintenance"
 			/>
 		</Grid>
+		<Cta
+			classes="mt-4 md:mt-10"
+			subtitle="Contact me now for an obligation free discussion about your digital needs."
+			title="Unlock Your Online Potential"
+		>
+			<button
+				class="inline-flex items-center gap-2 rounded bg-white px-3.5 py-2 text-sm font-semibold transition-colors duration-300 focus:bg-gray-200 mhover:hover:bg-gray-200"
+				on:click={$contact?.open}
+			>
+				Let's Chat
+				<MessageCircle class="h-5 w-5" />
+			</button>
+		</Cta>
 	</Section>
 	<Section>
 		<Subheader
