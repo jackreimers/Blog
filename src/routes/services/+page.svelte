@@ -78,7 +78,17 @@
 			/>
 		</Grid>
 	</Section>
-	<!-- TODO: Not sure CTA -->
+	<Section>
+		<Subheader
+			subtitle="Get a glimpse of some of the projects I've been working on."
+			title="Recent Work"
+		/>
+		<PostGrid itemCount={data.posts.length}>
+			{#each data.posts as post}
+				<PostCard data={post} displayType={true} />
+			{/each}
+		</PostGrid>
+	</Section>
 	<Section>
 		<Subheader subtitle="See what people I've worked with have to say." title="Testimonials" />
 		<Grid classes="md:!grid-cols-1 lg:!grid-cols-2">
@@ -86,17 +96,5 @@
 				<TestimonialCard data={testimonial} />
 			{/each}
 		</Grid>
-	</Section>
-	<Section>
-		<Subheader
-			subtitle="Get a glimpse of some of the projects I've been working on."
-			title="Recent Work"
-		/>
-
-		<PostGrid itemCount={data.posts.length}>
-			{#each data.posts as post}
-				<PostCard data={post} displayType={true} />
-			{/each}
-		</PostGrid>
 	</Section>
 </Container>
