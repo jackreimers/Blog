@@ -3,7 +3,7 @@
 	import Head from '$lib/components/seo/head.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import EmptyState from '$lib/components/empty/empty-state.svelte';
-	import PillButton from '$lib/components/buttons/pill/pill-button.svelte.js';
+	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 
 	/** @type {import('./$types').ActionData} */
 	export let form: any;
@@ -22,5 +22,5 @@
 		: 'Please try again later or contact me if the issue persists.'}
 	title={form.success ? 'Success' : 'An error occurred'}
 >
-	<PillButton color="lightGray" href="/" text="Return to home" />
+	<PillButton color="secondary" href="/" text="Return to home" />
 </EmptyState>

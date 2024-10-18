@@ -9,7 +9,7 @@
 	import EmptyState from '$lib/components/empty/empty-state.svelte';
 	import PostGrid from '$lib/components/grids/grid-posts.svelte';
 	import PostCard from '$lib/components/cards/card-post.svelte';
-	import PillButton from '$lib/components/buttons/pill/pill-button.svelte.js';
+	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -30,9 +30,9 @@
 				icon={Frown}
 			>
 				<div class="flex justify-center gap-2">
-					<PillButton color="lightGray" href="/blog" text="Browse all posts" />
+					<PillButton color="secondary" href="/blog" text="Browse all posts" />
 					<PillButton
-						color="lightRed"
+						color="primary"
 						href="/tags"
 						icon={X}
 						text={data.tagFilter?.name ?? 'Clear'}
@@ -42,7 +42,7 @@
 		{:else}
 			<div class="flex justify-end">
 				<PillButton
-					color="lightRed"
+					color="primary"
 					href="/{get(previousPageSlug) ?? 'tags'}"
 					icon={X}
 					text={data.tagFilter?.name ?? 'Clear'}
