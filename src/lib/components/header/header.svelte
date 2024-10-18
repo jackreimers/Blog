@@ -16,7 +16,11 @@
 >
 	<div class="container mx-auto flex items-center justify-between p-4 sm:p-6">
 		<a aria-label="Home" class="inline-block" href="/">
-			<img alt="" class="inline-block h-10 w-10" src="/content/images/logo-light.svg" />
+			<img
+				alt=""
+				class="inline-block h-10 w-10 md:h-11 md:w-11"
+				src="/content/images/logo-light.svg"
+			/>
 		</a>
 		<nav>
 			<div class="hidden gap-3 lg:flex">
@@ -42,6 +46,5 @@
 		</nav>
 	</div>
 </header>
-<div aria-hidden="true" class="h-[3.75rem] sm:h-[4.25rem]" />
-
+<div aria-hidden="true" class="h-14 sm:h-16 md:h-[4.25rem]" />
 <svelte:window on:scroll={() => onScroll()} />
