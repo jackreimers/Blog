@@ -3,7 +3,7 @@
 	import Head from '$lib/components/seo/head.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import EmptyState from '$lib/components/empty/empty-state.svelte';
-	import PillButton from '$lib/components/buttons/button-pill.svelte';
+	import PillButton from '$lib/components/buttons/pill/pill-button.svelte.js';
 
 	/** @type {import('./$types').ActionData} */
 	export let form: any;

@@ -11,8 +11,8 @@
 	<div class="flex-1 text-gray-700 [&>p]:mt-4 first:[&>p]:mt-0">
 		<SvelteMarkdown source={data.content} />
 	</div>
-	<div class="mt-6 flex items-center gap-3">
-		<div class="rounded-full bg-blue-100 p-2 text-blue-900">
+	<div class="mt-10 flex items-center gap-3">
+		<div class="rounded-full bg-blue-600 p-2 text-white">
 			<UserRound class="h-6 w-6" />
 		</div>
 		<div>

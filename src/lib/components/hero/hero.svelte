@@ -1,15 +1,18 @@
 <script lang="ts">
-	import Container from '$lib/components/layout/container.svelte';
-	import SocialLinks from '$lib/components/social/links.svelte';
+	import Container from '$lib/components/container/container.svelte';
 
 	export let title: string;
 	export let subtitle: string;
 </script>
 
-<Container classes="my-24 sm:my-32 md:my-40 lg:my-48">
-	<h1 class="text-4xl font-bold leading-tight tracking-tight sm:text-5xl md:text-6xl">
+<Container class="my-24 md:my-64 flex flex-1 flex-col">
+	<h1
+		class="mx-auto max-w-4xl text-center text-3xl font-bold tracking-tight sm:text-5xl md:text-7xl"
+	>
 		{title}
 	</h1>
-	<p class="mt-2 text-gray-700 sm:mt-4">{subtitle}</p>
-	<SocialLinks classes="mt-4 sm:mt-6" />
+	<p class="mx-auto mt-4 max-w-2xl text-center sm:text-lg tracking-tight text-gray-700">
+		{subtitle}
+	</p>
+	<slot />
 </Container>

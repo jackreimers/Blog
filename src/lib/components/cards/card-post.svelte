@@ -3,7 +3,7 @@
 	import { Image } from 'lucide-svelte';
 	import { uppercaseWord } from '$lib/functions/functions.utilities';
 	import Preload from '$lib/components/loading/preload.svelte';
-	import PillButton from '$lib/components/buttons/button-pill.svelte';
+	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 
 	export let data: Post;
 	export let displayType: boolean = false;
@@ -31,10 +31,9 @@
 			</time>
 			{#if displayType}
 				<PillButton
-					color="lightGray"
+					color="secondary"
 					href="/{data.type}"
 					text={uppercaseWord(data.type)}
-					classes="!px-3 !py-1.5"
 				/>
 			{/if}
 		</div>
@@ -47,7 +46,7 @@
 		<p class="mt-4 line-clamp-3 text-gray-700">{data.excerpt}</p>
 		<div class="mt-6 flex gap-2 overflow-x-auto">
 			{#each data.tags as tag}
-				<PillButton href="/tags/{tag.slug}" text={tag.name} color="lightBlue" />
+				<PillButton href="/tags/{tag.slug}" text={tag.name} color="primary" />
 			{/each}
 		</div>
 	</div>

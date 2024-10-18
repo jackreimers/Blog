@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { Frown } from 'lucide-svelte';
-	import Container from '$lib/components/layout/container.svelte';
-	import Section from '$lib/components/layout/section.svelte';
+	import Container from '$lib/components/container/container.svelte';
+	import Section from '$lib/components/section/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import EmptyState from '$lib/components/empty/empty-state.svelte';
-	import PillButton from '$lib/components/buttons/button-pill.svelte';
+	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 </script>
 
 <svelte:head>
@@ -23,7 +23,7 @@
 			title={$page.status === 404 ? 'Not found' : 'An error occurred'}
 		>
 			<div class="flex justify-center gap-2">
-				<PillButton color="lightGray" href="/" text="Return to home" />
+				<PillButton color="secondary" href="/" text="Return to home" />
 			</div>
 		</EmptyState>
 	</Section>

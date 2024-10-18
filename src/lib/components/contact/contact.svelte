@@ -6,7 +6,7 @@
 	import { applyAction, enhance } from '$app/forms';
 	import { clickOutside } from '$lib/functions/functions.utilities';
 	import Input from '$lib/components/forms/input.svelte';
-	import Button from '$lib/components/buttons/button.svelte';
+	import Button from '$lib/components/buttons/basic/basic-button.svelte';
 
 	export function open() {
 		isOpen = true;

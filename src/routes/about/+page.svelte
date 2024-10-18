@@ -1,8 +1,8 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
 	import Head from '$lib/components/seo/head.svelte';
-	import Container from '$lib/components/layout/container.svelte';
-	import Section from '$lib/components/layout/section.svelte';
+	import Container from '$lib/components/container/container.svelte';
+	import Section from '$lib/components/section/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import Preload from '$lib/components/loading/preload.svelte';
 

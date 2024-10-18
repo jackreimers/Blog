@@ -4,7 +4,7 @@
 	import { Briefcase, CircleUserRound, File, Home, LibraryBig, X } from 'lucide-svelte';
 	import { get } from 'svelte/store';
 	import { clickOutside } from '$lib/functions/functions.utilities';
-	import Button from '$lib/components/buttons/button.svelte';
+	import Button from '$lib/components/buttons/basic/basic-button.svelte';
 	import MobileButton from '$lib/components/buttons/button-navigation.svelte';
 
 	let isOpen: boolean = false;

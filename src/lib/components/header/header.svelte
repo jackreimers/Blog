@@ -1,52 +1,38 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { scrolled } from '$lib/stores/store.page';
 	import { contact, mobileNavigation } from '$lib/stores/store.elements';
-	import { Menu } from 'lucide-svelte';
-	import Button from '$lib/components/buttons/button.svelte';
-
-	let scrolled: boolean;
+	import { Menu, MessageCircleMore } from 'lucide-svelte';
+	import Button from '$lib/components/buttons/basic/basic-button.svelte';
 
 	function onScroll() {
-		scrolled = window.scrollY > 1;
+		scrolled.set(window.scrollY > 1);
 	}
 </script>
 
 <header
 	class="fixed z-10 w-full bg-gray-50 transition-[padding,box-shadow] duration-500"
-	class:shadow={scrolled}
+	class:shadow={$scrolled}
 >
-	<div class="mx-auto flex items-center justify-between p-4 sm:p-6 lg:max-w-5xl xl:max-w-7xl">
+	<div class="container mx-auto flex items-center justify-between p-4 sm:p-6">
 		<a aria-label="Home" class="inline-block" href="/">
 			<img alt="" class="inline-block h-10 w-10" src="/content/images/logo-light.svg" />
 		</a>
 		<nav>
 			<div class="hidden gap-3 lg:flex">
-				<Button color="none" href="/" isActive={$page.url.pathname === '/'} text="Home" />
+				<Button active={$page.url.pathname === '/'} href="/" text="Home" />
+				<Button active={$page.url.pathname.startsWith('/blog')} href="/blog" text="Blog" />
 				<Button
-					color="none"
-					href="/services"
-					isActive={$page.url.pathname.startsWith('/services')}
-					text="Services"
-				/>
-				<Button
-					color="none"
+					active={$page.url.pathname.startsWith('/projects')}
 					href="/projects"
-					isActive={$page.url.pathname.startsWith('/projects')}
 					text="Projects"
 				/>
 				<Button
-					color="none"
-					href="/blog"
-					isActive={$page.url.pathname.startsWith('/blog')}
-					text="Blog"
+					color="primary"
+					icon={MessageCircleMore}
+					on:click={() => $contact?.open()}
+					text="Contact"
 				/>
-				<Button
-					color="none"
-					href="/about"
-					isActive={$page.url.pathname.startsWith('/about')}
-					text="About"
-				/>
-				<Button color="darkBlue" on:click={() => $contact?.open()} text="Contact" />
 			</div>
 			<div class="flex items-center lg:hidden">
 				<button aria-label="Menu" class="p-2" on:click={() => $mobileNavigation?.open()}>
@@ -56,6 +42,6 @@
 		</nav>
 	</div>
 </header>
-<div aria-hidden="true" class="h-14 sm:h-16" />
+<div aria-hidden="true" class="h-[3.75rem] sm:h-[4.25rem]" />
 
 <svelte:window on:scroll={() => onScroll()} />

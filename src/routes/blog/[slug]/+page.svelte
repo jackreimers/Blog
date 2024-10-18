@@ -1,14 +1,14 @@
 <script lang="ts">
 	import SvelteMarkdown from 'svelte-markdown';
 	import Head from '$lib/components/seo/head.svelte';
-	import Container from '$lib/components/layout/container.svelte';
-	import Section from '$lib/components/layout/section.svelte';
+	import Container from '$lib/components/container/container.svelte';
+	import Section from '$lib/components/section/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import AnchorRenderer from '$lib/components/renderers/renderer-anchor.svelte';
 	import ImageRenderer from '$lib/components/renderers/renderer-image.svelte';
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
 	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
-	import PillButton from '$lib/components/buttons/button-pill.svelte';
+	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -24,7 +24,7 @@
 	<Section>
 		<div class="flex gap-2 overflow-auto sm:justify-end">
 			{#each data.post.tags as tag}
-				<PillButton color="lightBlue" href="/tags/{tag.slug}" text={tag.name} />
+				<PillButton color="primary" href="/tags/{tag.slug}" text={tag.name} />
 			{/each}
 		</div>
 		<div class="markdown box-content">

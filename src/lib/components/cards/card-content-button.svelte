@@ -5,7 +5,7 @@
 	export let href: string;
 	export let icon: ComponentType<Icon>;
 	export let title: string;
-	export let description: string;
+	export let content: string;
 </script>
 
 <a
@@ -15,15 +15,15 @@
 	<span class="flex-1">
 		<span class="flex items-center gap-2">
 			<svelte:component
+				class="h-6 w-6 text-sky-600 transition-colors duration-300 group-focus:text-blue-950 mhover:group-hover:text-blue-950"
 				this={icon}
-				class="h-6 w-6 text-blue-900 transition-colors duration-300 group-focus:text-blue-950 mhover:group-hover:text-blue-950"
 			/>
 			<span class="font-semibold tracking-tight sm:text-xl">{title}</span>
 		</span>
-		<span class="mt-4 block text-gray-700">{description}</span>
+		<span class="mt-4 block text-gray-700">{content}</span>
 	</span>
 	<span
-		class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-blue-900 transition-colors duration-300 group-focus:text-blue-950 mhover:group-hover:text-blue-950"
+		class="mt-4 inline-flex items-center gap-2 text-sm font-medium text-sky-600 transition-colors duration-300 group-focus:text-blue-950 mhover:group-hover:text-blue-950"
 	>
 		<span class="transition-[margin] duration-300 group-focus:mr-1 mhover:group-hover:mr-1">
 			Learn more

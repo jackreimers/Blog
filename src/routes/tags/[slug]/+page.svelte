@@ -3,13 +3,13 @@
 	import { Frown, X } from 'lucide-svelte';
 	import { get } from 'svelte/store';
 	import Head from '$lib/components/seo/head.svelte';
-	import Container from '$lib/components/layout/container.svelte';
-	import Section from '$lib/components/layout/section.svelte';
+	import Container from '$lib/components/container/container.svelte';
+	import Section from '$lib/components/section/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import EmptyState from '$lib/components/empty/empty-state.svelte';
 	import PostGrid from '$lib/components/grids/grid-posts.svelte';
 	import PostCard from '$lib/components/cards/card-post.svelte';
-	import PillButton from '$lib/components/buttons/button-pill.svelte';
+	import PillButton from '$lib/components/buttons/pill/pill-button.svelte.js';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;

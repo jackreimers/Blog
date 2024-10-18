@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { Github, Linkedin, Mail } from 'lucide-svelte';
-	import PillButton from '$lib/components/buttons/button-pill.svelte';
+	import PillButton from '$lib/components/buttons/pill/pill-button.svelte.js';
 
 	export let classes: string = '';
 </script>

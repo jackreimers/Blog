@@ -2,10 +2,10 @@
 	import { contact } from '$lib/stores/store.elements';
 	import { Brain, Cloud, Code, Cog, Globe, MessageCircle, Zap } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
-	import Container from '$lib/components/layout/container.svelte';
-	import Section from '$lib/components/layout/section.svelte';
+	import Container from '$lib/components/container/container.svelte';
+	import Section from '$lib/components/section/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
-	import Subheader from '$lib/components/header/subheader.svelte';
+	import Subheader from '$lib/components/subheader/subheader.svelte';
 	import Grid from '$lib/components/grids/grid.svelte';
 	import ServiceCard from '$lib/components/cards/card-content.svelte';
 	import TestimonialCard from '$lib/components/cards/card-testimonial.svelte';
