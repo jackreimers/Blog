@@ -11,7 +11,7 @@
 				Important
 			</p>
 		</div>
-		<div class="mt-3 max-w-prose font-medium tracking-tight [&>p]:m-0 [&>p]:!text-gray-700">
+		<div class="mt-2 max-w-prose font-medium tracking-tight [&>p]:m-0 [&>p]:!text-gray-700">
 			<slot />
 		</div>
 	</div>
