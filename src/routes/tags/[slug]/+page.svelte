@@ -24,8 +24,10 @@
 	description="Discover posts by Jack Reimers that match your interests by filtering through post tags."
 	title={data.tagFilter?.name ?? 'Tags'}
 />
-<Hero subtitle="All of the posts I've written about {data.tagFilter?.name}."
-	  title={data.tagFilter?.name}>
+<Hero
+	subtitle="All of the posts I've written about {data.tagFilter?.name}."
+	title={data.tagFilter?.name}
+>
 	<div class="flex flex-wrap items-center justify-center gap-3">
 		<BasicButton color="secondary" href="/{previousSlug}" icon={Undo2} text="Return" />
 		<BasicButton color="error" href="/tags" icon={X} text="Clear" />

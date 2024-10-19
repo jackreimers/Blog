@@ -14,7 +14,7 @@
 	}
 
 	function handlePreload(src: string) {
-		return new Promise(function(resolve) {
+		return new Promise(function (resolve) {
 			let image = new Image();
 			image.onload = resolve;
 			image.src = src;

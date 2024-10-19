@@ -10,7 +10,7 @@
 <div class="rounded-lg bg-white p-5 shadow sm:p-6 {$$restProps.class ?? ''}">
 	<div class="flex justify-center">
 		<div class="rounded-full bg-blue-600 p-2 text-white sm:p-3">
-			<svelte:component class="h-7 w-7 sm:h-8 sm:w-8" this={icon} />
+			<svelte:component this={icon} class="h-7 w-7 sm:h-8 sm:w-8" />
 		</div>
 	</div>
 	<p class="mt-4 text-lg font-semibold tracking-tight">{title}</p>
