@@ -9,10 +9,7 @@
 	}
 </script>
 
-<header
-	class="fixed z-10 w-full bg-gray-50 transition-[padding,box-shadow] duration-500"
-	class:shadow={$scrolled}
->
+<header class="z-10 w-full">
 	<div class="mx-auto flex items-center justify-between p-4 sm:p-6 lg:max-w-5xl xl:max-w-7xl">
 		<a aria-label="Home" class="inline-block" href="/">
 			<img
@@ -45,5 +42,4 @@
 		</nav>
 	</div>
 </header>
-<div aria-hidden="true" class="h-14 sm:h-16 md:h-[4.25rem]" />
 <svelte:window on:scroll={() => onScroll()} />
