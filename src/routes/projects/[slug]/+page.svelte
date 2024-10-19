@@ -6,7 +6,6 @@
 	import Section from '$lib/components/section/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
-	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 	import AnchorRenderer from '$lib/components/renderers/renderer-anchor.svelte';
 	import ImageRenderer from '$lib/components/renderers/renderer-image.svelte';
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
@@ -21,16 +20,17 @@
 	description={data.post.description}
 	title={data.post.title}
 />
-<Hero subtitle="Published on {data.post.dateString}" title={data.post.title} />
+<Hero subtitle="Published on {data.post.dateString}" title={data.post.title}>
+	<div class="flex flex-wrap items-center justify-center gap-3">
+		{#each data.post.tags as tag}
+			<BasicButton color="tertiary" href="/tags/{tag.slug}" text={tag.name} />
+		{/each}
+	</div>
+</Hero>
 <Container>
-	<Section class="!mb-16">
-		<div class="flex gap-2 overflow-auto sm:justify-end">
-			{#each data.post.tags as tag}
-				<PillButton color="primary" href="/tags/{tag.slug}" text={tag.name} />
-			{/each}
-		</div>
+	<Section>
 		<div class="markdown box-content">
-			<h2 class="!mt-6" id="introduction">Introduction</h2>
+			<h2 class="!mt-0" id="introduction">Introduction</h2>
 			<SvelteMarkdown source={data.post.excerpt} />
 		</div>
 		<BasicButton
@@ -41,9 +41,7 @@
 			target="_blank"
 			text={data.post.projectText}
 		/>
-	</Section>
-	<Section>
-		<div class="markdown box-content">
+		<div class="markdown mt-16 box-content">
 			<SvelteMarkdown
 				renderers={{
 					link: AnchorRenderer,

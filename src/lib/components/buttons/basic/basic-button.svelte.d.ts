@@ -11,7 +11,7 @@ export interface BasicButtonComponentProps extends ComponentProps {
 	target?: '_blank' | '_self' | '_parent' | '_top';
 	text?: string;
 	icon?: ComponentType<Icon> | null;
-	color?: 'none' | 'primary' | 'secondary';
+	color?: 'none' | 'primary' | 'secondary' | 'tertiary' | 'error';
 }
 
 declare const __propDef: {

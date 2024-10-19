@@ -10,25 +10,31 @@
 	export let target: '_blank' | '_self' | '_parent' | '_top' = '_self';
 	export let text: string | null = null;
 	export let icon: ComponentType<Icon> | null = null;
-	export let color: 'none' | 'primary' | 'secondary' = 'none';
+	export let color: 'none' | 'primary' | 'secondary' | 'tertiary' | 'error' = 'none';
 
 	const dispatch = createEventDispatcher();
 	const colors = {
 		none: 'focus:bg-gray-200 mhover:hover:bg-gray-200',
 		primary: 'bg-blue-600 text-white focus:bg-blue-700 mhover:hover:bg-blue-700',
-		secondary: 'bg-gray-200 focus:bg-gray-300 mhover:hover:bg-gray-300'
+		secondary: 'bg-gray-200 focus:bg-gray-300 mhover:hover:bg-gray-300',
+		tertiary: 'bg-blue-100 text-blue-700 focus:bg-blue-200 mhover:hover:bg-blue-200',
+		error: 'bg-red-100 text-red-900 focus:bg-red-200 mhover:hover:bg-red-200'
 	};
 
 	const activeColors = {
 		none: 'bg-gray-200 focus:bg-gray-300 mhover:hover:bg-gray-300',
 		primary: 'bg-blue-700 focus:bg-blue-800 mhover:hover:bg-blue-800',
-		secondary: 'bg-gray-300 focus:bg-gray-400 mhover:hover:bg-gray-400'
+		secondary: 'bg-gray-300 focus:bg-gray-400 mhover:hover:bg-gray-400',
+		tertiary: 'bg-blue-200 focus:bg-blue-300 mhover:hover:bg-blue-300',
+		error: 'bg-red-200 focus:bg-red-300 mhover:hover:bg-red-300'
 	};
 
 	const submittingColors = {
 		none: '!bg-gray-200 cursor-wait',
 		primary: '!bg-blue-700 cursor-wait',
-		secondary: '!bg-gray-400 cursor-wait'
+		secondary: '!bg-gray-400 cursor-wait',
+		tertiary: '!bg-blue-200 cursor-wait',
+		error: '!bg-red-200 cursor-wait'
 	};
 
 	function handleClick(event: MouseEvent) {

@@ -28,7 +28,7 @@
 </Hero>
 <Container>
 	<Section>
-		<PostGrid classes="mt-4" itemCount={data.posts.length}>
+		<PostGrid itemCount={data.posts.length}>
 			{#each data.posts as post}
 				<PostCard data={post} />
 			{/each}

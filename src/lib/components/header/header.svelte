@@ -14,7 +14,7 @@
 	class="fixed z-10 w-full bg-gray-50 transition-[padding,box-shadow] duration-500"
 	class:shadow={$scrolled}
 >
-	<div class="container mx-auto flex items-center justify-between p-4 sm:p-6">
+	<div class="lg:max-w-5xl xl:max-w-7xl mx-auto flex items-center justify-between p-4 sm:p-6">
 		<a aria-label="Home" class="inline-block" href="/">
 			<img
 				alt=""

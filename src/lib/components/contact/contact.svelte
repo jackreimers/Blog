@@ -172,7 +172,7 @@
 										type="textarea"
 									/>
 								</div>
-								<div class="mt-6 flex justify-end gap-3">
+								<div class="mt-6 sm:mt-10 flex justify-end gap-3">
 									<Button color="secondary" on:click={close} text="Close" />
 									<Button
 										color="primary"

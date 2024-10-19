@@ -10,7 +10,7 @@
 
 	const colors = {
 		none: 'focus:bg-gray-200 mhover:hover:bg-gray-200',
-		primary: 'bg-blue-100 text-blue-600 focus:bg-blue-200 mhover:hover:bg-blue-200',
+		primary: 'bg-blue-100 text-blue-700 focus:bg-blue-200 mhover:hover:bg-blue-200',
 		secondary: 'bg-gray-100 focus:bg-gray-200 mhover:hover:bg-gray-200'
 	};
 </script>

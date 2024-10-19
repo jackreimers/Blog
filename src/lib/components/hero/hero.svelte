@@ -7,7 +7,7 @@
 
 <Container class="my-24 flex flex-1 flex-col text-center sm:my-32 md:my-40 lg:my-48 xl:my-56">
 	<h1
-		class="mx-auto max-w-4xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl"
+		class="mx-auto max-w-5xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl"
 	>
 		{title}
 	</h1>
