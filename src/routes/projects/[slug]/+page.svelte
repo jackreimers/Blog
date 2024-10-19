@@ -34,28 +34,30 @@
 </Hero>
 <Container>
 	<Section>
-		<div class="markdown box-content">
-			<h2 class="!mt-0" id="introduction">Introduction</h2>
-			<SvelteMarkdown source={data.post.excerpt} />
-		</div>
-		<BasicButton
-			class="mt-6"
-			color="primary"
-			href={data.post.projectHref}
-			icon={ArrowUpRightFromSquare}
-			target="_blank"
-			text={data.post.projectText}
-		/>
-		<div class="markdown mt-16 box-content">
-			<SvelteMarkdown
-				renderers={{
-					link: AnchorRenderer,
-					image: ImageRenderer,
-					code: CodeRenderer,
-					blockquote: BlockquoteRenderer
-				}}
-				source={data.post.content}
+		<div class="-w-5xl mx-auto rounded-xl bg-white p-6 shadow sm:p-10">
+			<div class="markdown box-content">
+				<h2 class="!mt-0" id="introduction">Introduction</h2>
+				<SvelteMarkdown source={data.post.excerpt} />
+			</div>
+			<BasicButton
+				class="mt-6"
+				color="primary"
+				href={data.post.projectHref}
+				icon={ArrowUpRightFromSquare}
+				target="_blank"
+				text={data.post.projectText}
 			/>
+			<div class="markdown mt-16 box-content">
+				<SvelteMarkdown
+					renderers={{
+						link: AnchorRenderer,
+						image: ImageRenderer,
+						code: CodeRenderer,
+						blockquote: BlockquoteRenderer
+					}}
+					source={data.post.content}
+				/>
+			</div>
 		</div>
 	</Section>
 </Container>
