@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="flex items-center justify-center rounded-lg bg-gray-100 text-gray-300 shadow-inner
+	class="flex items-center justify-center rounded-lg bg-gray-100 text-gray-200
 		{$$restProps.class ?? ''}"
 >
 	<CircleDashed class="h-24 w-24" />
