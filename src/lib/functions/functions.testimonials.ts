@@ -1,5 +1,5 @@
 import { getMarkdownData } from '$lib/functions/functions.markdown';
-import type { Testimonial } from '$lib/interfaces/interfaces.testimonials';
+import type { Testimonial } from '$lib/interfaces/interfaces.d';
 
 export async function getTestimonials(fetch: any): Promise<Testimonial[]> {
 	const directoryResponse = await fetch('/content/directory.json');

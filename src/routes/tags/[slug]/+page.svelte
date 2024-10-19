@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { previousPageSlug } from '$lib/stores/store.page';
-	import { Frown, X } from 'lucide-svelte';
+	import { X } from 'lucide-svelte';
 	import { get } from 'svelte/store';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/container/container.svelte';
 	import Section from '$lib/components/section/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
-	import EmptyState from '$lib/components/empty/empty-state.svelte';
-	import PostGrid from '$lib/components/grids/grid-posts.svelte';
-	import PostCard from '$lib/components/cards/card-post.svelte';
+	import PostGrid from '$lib/components/grids/posts/posts-grid.svelte';
+	import PostCard from '$lib/components/cards/post/post-card.svelte';
 	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 
 	/** @type {import('./$types').PageData} */
@@ -23,36 +22,18 @@
 <Hero subtitle="Filter my posts by topics that interest you." title="Tags" />
 <Container>
 	<Section>
-		{#if data.posts.length === 0}
-			<EmptyState
-				title="Not found"
-				subtitle="There are no posts associated with this tag yet."
-				icon={Frown}
-			>
-				<div class="flex justify-center gap-2">
-					<PillButton color="secondary" href="/blog" text="Browse all posts" />
-					<PillButton
-						color="primary"
-						href="/tags"
-						icon={X}
-						text={data.tagFilter?.name ?? 'Clear'}
-					/>
-				</div>
-			</EmptyState>
-		{:else}
-			<div class="flex justify-end">
-				<PillButton
-					color="primary"
-					href="/{get(previousPageSlug) ?? 'tags'}"
-					icon={X}
-					text={data.tagFilter?.name ?? 'Clear'}
-				/>
-			</div>
-			<PostGrid itemCount={data.posts.length} classes="mt-4">
-				{#each data.posts as post}
-					<PostCard data={post} displayType={true} />
-				{/each}
-			</PostGrid>
-		{/if}
+		<div class="flex justify-end">
+			<PillButton
+				color="primary"
+				href="/{get(previousPageSlug) ?? 'tags'}"
+				icon={X}
+				text={data.tagFilter?.name ?? 'Clear'}
+			/>
+		</div>
+		<PostGrid class="mt-4" itemCount={data.posts.length}>
+			{#each data.posts as post}
+				<PostCard data={post} displayType={true} />
+			{/each}
+		</PostGrid>
 	</Section>
 </Container>

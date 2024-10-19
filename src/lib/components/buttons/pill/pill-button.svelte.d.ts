@@ -1,8 +1,17 @@
-import type { LinkComponentProps } from '$lib/interfaces/component-props';
-import { SvelteComponent } from 'svelte';
+import type { ComponentProps } from '$lib/interfaces/props';
+import type { Icon } from 'lucide-svelte';
+import { type ComponentType, SvelteComponent } from 'svelte';
+
+export interface PillButtonComponentProps extends ComponentProps {
+	href?: string | null;
+	target?: '_blank' | '_self' | '_parent' | '_top';
+	text?: string | null;
+	icon?: ComponentType<Icon> | null;
+	color?: 'none' | 'primary' | 'secondary';
+}
 
 declare const __propDef: {
-	props: LinkComponentProps;
+	props: PillButtonComponentProps;
 	events: {
 		[evt: string]: CustomEvent;
 	};

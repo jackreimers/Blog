@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { contact, isContactOpen, isMobileNavigationOpen } from '$lib/stores/store.elements';
-	import { Briefcase, CircleUserRound, File, Home, LibraryBig, X } from 'lucide-svelte';
 	import { get } from 'svelte/store';
 	import { clickOutside } from '$lib/functions/functions.utilities';
-	import Button from '$lib/components/buttons/basic/basic-button.svelte';
-	import MobileButton from '$lib/components/buttons/button-navigation.svelte';
+	import { X } from 'lucide-svelte';
+	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
+	import NavigationButton from '$lib/components/buttons/navigation/navigation-button.svelte';
+	import GitHub from '$lib/components/icons/github/github.svelte';
+	import LinkedIn from '$lib/components/icons/linkedin/linkedin.svelte';
 
 	let isOpen: boolean = false;
 
@@ -49,50 +51,53 @@
 					: 'ml-4'}"
 			>
 				<div class="flex justify-end">
-					<Button color="none" on:click={close}>
-						<X />
-					</Button>
+					<BasicButton color="none" icon={X} on:click={close} />
 				</div>
 				<div class="mt-4 flex flex-1 flex-col gap-2">
-					<MobileButton
+					<NavigationButton
 						active={$page.url.pathname === '/'}
 						href="/"
-						icon={Home}
 						on:click={close}
 						text="Home"
 					/>
-					<MobileButton
-						active={$page.url.pathname.startsWith('/services')}
-						href="/services"
-						icon={Briefcase}
-						on:click={close}
-						text="Services"
-					/>
-					<MobileButton
-						active={$page.url.pathname.startsWith('/projects')}
-						href="/projects"
-						icon={LibraryBig}
-						on:click={close}
-						text="Projects"
-					/>
-					<MobileButton
+					<NavigationButton
 						active={$page.url.pathname.startsWith('/blog')}
 						href="/blog"
-						icon={File}
 						on:click={close}
 						text="Blog"
 					/>
-					<MobileButton
-						active={$page.url.pathname.startsWith('/about')}
-						href="/about"
-						icon={CircleUserRound}
+					<NavigationButton
+						active={$page.url.pathname.startsWith('/projects')}
+						href="/projects"
 						on:click={close}
-						text="About"
+						text="Projects"
 					/>
+					<button
+						class="rounded-lg p-3.5 text-left font-semibold leading-none tracking-tight"
+						on:click={$contact?.open}
+					>
+						Contact
+					</button>
 				</div>
-				<Button
-					classes="justify-center"
-					color="darkBlue"
+				<div class="m-3.5 flex justify-end gap-3 text-gray-500 sm:mx-0">
+					<a
+						class="transition-colors duration-300 focus:text-gray-700 mhover:hover:text-gray-700"
+						href="https://www.linkedin.com/in/jackreimers"
+						target="_blank"
+					>
+						<LinkedIn class="h-6 w-6" />
+					</a>
+					<a
+						class="transition-colors duration-300 focus:text-gray-700 mhover:hover:text-gray-700"
+						href="https://github.com/jackreimers"
+						target="_blank"
+					>
+						<GitHub class="h-6 w-6" />
+					</a>
+				</div>
+				<BasicButton
+					class="hidden justify-center"
+					color="primary"
 					on:click={() => $contact?.open()}
 					text="Contact"
 				/>

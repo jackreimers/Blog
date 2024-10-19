@@ -2,16 +2,15 @@
 	import { type ComponentType, createEventDispatcher } from 'svelte';
 	import { type Icon, Loader2 } from 'lucide-svelte';
 
+	export let active: boolean = false;
 	export let type: 'button' | 'submit' | 'reset' = 'button';
 	export let disabled: boolean = false;
-	export let active: boolean = false;
 	export let submitting: boolean = false;
 	export let href: string | null = null;
 	export let target: '_blank' | '_self' | '_parent' | '_top' = '_self';
 	export let text: string | null = null;
 	export let icon: ComponentType<Icon> | null = null;
 	export let color: 'none' | 'primary' | 'secondary' = 'none';
-	export let ariaLabel: string | null = null;
 
 	const dispatch = createEventDispatcher();
 	const colors = {
@@ -40,14 +39,13 @@
 {#if href}
 	<a
 		on:click={handleClick}
-		aria-label={ariaLabel}
 		{href}
 		{target}
 		{type}
 		class="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-colors duration-300 sm:text-base {text
 			? 'px-4 py-2 sm:px-5 sm:py-2.5'
 			: 'p-2.5 sm:p-2.5'} {colors[color]} 
-			{active ? activeColors[color] : ''} {$$restProps.class}"
+			{active ? activeColors[color] : ''} {$$restProps.class ?? ''}"
 	>
 		{#if text}
 			{text}
@@ -58,12 +56,11 @@
 	<button
 		on:click={handleClick}
 		disabled={disabled || submitting}
-		aria-label={ariaLabel}
 		{type}
 		class="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-colors duration-300 sm:text-base {text
 			? 'px-4 py-2 sm:px-5 sm:py-2.5'
 			: 'p-2 sm:p-2.5'} {colors[color]} {active ? activeColors[color] : ''} 
-			{submitting ? submittingColors[color] : ''} {$$restProps.class}"
+			{submitting ? submittingColors[color] : ''} {$$restProps.class ?? ''}"
 	>
 		{#if submitting}
 			<span

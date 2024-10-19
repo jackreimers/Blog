@@ -1,4 +1,4 @@
-import type { TitledComponentProps } from '$lib/interfaces/component-props';
+import type { TitledComponentProps } from '$lib/interfaces/props';
 import { SvelteComponent } from 'svelte';
 
 declare const __propDef: {

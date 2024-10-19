@@ -1,18 +1,18 @@
 <script lang="ts">
 	import Container from '$lib/components/container/container.svelte';
-	import GitHub from '$lib/components/icons/github/github.svelte';
 	import LinkedIn from '$lib/components/icons/linkedin/linkedin.svelte';
+	import GitHub from '$lib/components/icons/github/github.svelte';
 </script>
 
 <footer>
 	<Container>
-		<div class="flex flex-col-reverse sm:flex-row gap-4 text-center justify-between border-t border-gray-300 py-6">
-			<div class="text-gray-700">
-				<p class="tracking-tight">
-					Copyright © 2021 - {new Date().getFullYear()}. All rights reserved.
-				</p>
-			</div>
-			<div class="flex gap-3 mx-auto sm:mx-0 text-gray-500">
+		<div
+			class="flex flex-col-reverse justify-between gap-4 border-t-2 border-gray-300 py-6 text-center sm:flex-row"
+		>
+			<p class="text-sm font-medium tracking-tight text-gray-500 sm:text-base">
+				Copyright © 2021 - {new Date().getFullYear()}. All rights reserved.
+			</p>
+			<div class="mx-auto flex gap-3 text-gray-500 sm:mx-0">
 				<a
 					class="transition-colors duration-300 focus:text-gray-700 mhover:hover:text-gray-700"
 					href="https://www.linkedin.com/in/jackreimers"

@@ -1,8 +1,21 @@
-import type { ButtonComponentProps } from '$lib/interfaces/component-props';
-import { SvelteComponent } from 'svelte';
+import type { ComponentProps } from '$lib/interfaces/props';
+import type { Icon } from 'lucide-svelte';
+import { type ComponentType, SvelteComponent } from 'svelte';
+
+export interface BasicButtonComponentProps extends ComponentProps {
+	active?: boolean;
+	type?: 'button' | 'submit' | 'reset';
+	disabled?: boolean;
+	submitting?: boolean;
+	href?: string;
+	target?: '_blank' | '_self' | '_parent' | '_top';
+	text?: string;
+	icon?: ComponentType<Icon> | null;
+	color?: 'none' | 'primary' | 'secondary';
+}
 
 declare const __propDef: {
-	props: ButtonComponentProps;
+	props: BasicButtonComponentProps;
 	events: {
 		[evt: string]: CustomEvent;
 	};

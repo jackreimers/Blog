@@ -5,12 +5,12 @@
 	import Container from '$lib/components/container/container.svelte';
 	import Section from '$lib/components/section/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
+	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
+	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 	import AnchorRenderer from '$lib/components/renderers/renderer-anchor.svelte';
 	import ImageRenderer from '$lib/components/renderers/renderer-image.svelte';
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
 	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
-	import Button from '$lib/components/buttons/basic/basic-button.svelte';
-	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
@@ -33,7 +33,7 @@
 			<h2 class="!mt-6" id="introduction">Introduction</h2>
 			<SvelteMarkdown source={data.post.excerpt} />
 		</div>
-		<Button
+		<BasicButton
 			class="mt-6"
 			color="primary"
 			href={data.post.projectHref}
@@ -42,8 +42,8 @@
 			text={data.post.projectText}
 		/>
 	</Section>
-	<Section class="!mb-16">
-		<div class="markdown mt-16 box-content">
+	<Section>
+		<div class="markdown box-content">
 			<SvelteMarkdown
 				renderers={{
 					link: AnchorRenderer,

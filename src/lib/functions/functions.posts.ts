@@ -1,5 +1,4 @@
-import type { Post, ProjectPost, Tag } from '$lib/interfaces/interfaces.posts';
-import type { MarkdownData } from '$lib/interfaces/interfaces.markdown';
+import type { MarkdownData, Post, ProjectPost, Tag } from '$lib/interfaces/interfaces.d';
 import { error } from '@sveltejs/kit';
 import { getMarkdownData } from '$lib/functions/functions.markdown';
 

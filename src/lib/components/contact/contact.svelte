@@ -5,7 +5,8 @@
 	import { blur } from 'svelte/transition';
 	import { applyAction, enhance } from '$app/forms';
 	import { clickOutside } from '$lib/functions/functions.utilities';
-	import Input from '$lib/components/forms/input.svelte';
+	import { SendHorizonal } from 'lucide-svelte';
+	import Input from '$lib/components/input/input.svelte';
 	import Button from '$lib/components/buttons/basic/basic-button.svelte';
 
 	export function open() {
@@ -93,21 +94,25 @@
 							>
 								<div class="flex-1">
 									<!-- TODO: Put some sort of visual here -->
-									<h3 class="text-2xl font-bold sm:text-3xl">Success</h3>
+									<h3
+										class="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl"
+									>
+										Success
+									</h3>
 									<p class="mt-4 text-gray-700">
 										Thank you for your message, I'll get back to you as soon as
 										possible.
 									</p>
 								</div>
 								<div class="flex justify-end">
-									<Button color="darkBlue" on:click={close} text="Close" />
+									<Button color="primary" on:click={close} text="Close" />
 								</div>
 							</div>
 						{/if}
 						<div aria-hidden={$page.form?.success || hasSubmitted}>
 							<div class="mb-6 sm:mb-10">
 								<h3
-									class="text-2xl font-bold tracking-tight sm:text-3xl"
+									class="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl"
 									id="modal-title"
 								>
 									Contact
@@ -144,7 +149,7 @@
 									<Input
 										autocomplete="name"
 										bind:this={nameInputElement}
-										isDisabled={isSubmitting}
+										disabled={isSubmitting}
 										label="Name"
 										name="name"
 										required={true}
@@ -152,7 +157,7 @@
 									<Input
 										autocomplete="email"
 										bind:this={emailInputElement}
-										isDisabled={isSubmitting}
+										disabled={isSubmitting}
 										label="Email"
 										name="email"
 										required={true}
@@ -160,18 +165,19 @@
 									/>
 									<Input
 										bind:this={messageInputElement}
-										isDisabled={isSubmitting}
+										disabled={isSubmitting}
 										label="Message"
 										name="message"
 										required={true}
 										type="textarea"
 									/>
 								</div>
-								<div class="mt-6 flex justify-end gap-4">
-									<Button color="lightGray" on:click={close} text="Close" />
+								<div class="mt-6 flex justify-end gap-3">
+									<Button color="secondary" on:click={close} text="Close" />
 									<Button
-										color="darkBlue"
-										{isSubmitting}
+										color="primary"
+										icon={SendHorizonal}
+										submitting={isSubmitting}
 										text="Submit"
 										type="submit"
 									/>

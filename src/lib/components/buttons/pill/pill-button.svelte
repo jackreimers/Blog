@@ -7,7 +7,6 @@
 	export let text: string | null = null;
 	export let icon: ComponentType<Icon> | null = null;
 	export let color: 'none' | 'primary' | 'secondary' = 'none';
-	export let ariaLabel: string | null = null;
 
 	const colors = {
 		none: 'focus:bg-gray-200 mhover:hover:bg-gray-200',
@@ -17,10 +16,9 @@
 </script>
 
 <a
-	aria-label={ariaLabel}
 	class="relative inline-flex items-center gap-1.5 rounded-full text-xs font-medium transition-colors duration-300 {text
 		? 'px-3 py-1.5'
-		: 'p-2'} {colors[color]} {$$restProps.class}"
+		: 'p-2'} {colors[color]} {$$restProps.class ?? ''}"
 	{href}
 	{target}
 >

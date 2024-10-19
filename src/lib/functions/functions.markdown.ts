@@ -1,4 +1,4 @@
-import type { MarkdownData } from '$lib/interfaces/interfaces.markdown';
+import type { MarkdownData } from '$lib/interfaces/interfaces.d';
 import { error } from '@sveltejs/kit';
 
 const metadataPattern = /^---([\s\S]*?)---/;

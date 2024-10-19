@@ -5,13 +5,13 @@
 	import { inject } from '@vercel/analytics';
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer/footer.svelte';
-	import MobileNavigation from '$lib/components/navigation/navigation.svelte';
-	import ContactModal from '$lib/components/contact/contact.svelte';
+	import Navigation from '$lib/components/navigation/navigation.svelte';
+	import Contact from '$lib/components/contact/contact.svelte';
 
 	inject();
 
-	let mobileNavigationMenu: MobileNavigation;
-	let contactModal: ContactModal;
+	let mobileNavigationMenu: Navigation;
+	let contactModal: Contact;
 
 	onMount(() => {
 		mobileNavigation.set(mobileNavigationMenu);
@@ -19,8 +19,8 @@
 	});
 </script>
 
-<MobileNavigation bind:this={mobileNavigationMenu} />
-<ContactModal bind:this={contactModal} />
+<Navigation bind:this={mobileNavigationMenu} />
+<Contact bind:this={contactModal} />
 <div class="h-dvh">
 	<div class="flex min-h-dvh flex-col">
 		<Header />
