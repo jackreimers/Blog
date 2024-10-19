@@ -22,4 +22,5 @@ entertainers and attendees.
 
 - Website design and development
 - Website hosting
-- Custom domain and email hosting
+- Domain registration 
+- Email hosting
