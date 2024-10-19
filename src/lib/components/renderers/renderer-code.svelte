@@ -20,9 +20,9 @@
 	}
 </script>
 
-<div class="group my-4">
+<div class="group my-10">
 	<div
-		class="relative inline-block w-full overflow-hidden overflow-x-auto rounded-lg text-sm text-gray-300 sm:text-base"
+		class="relative border-2 border-gray-300 block w-full overflow-hidden overflow-x-auto rounded-lg text-sm text-gray-300 sm:text-base"
 	>
 		{#if lang === 'svelte'}
 			<HighlightSvelte code={text} let:highlighted>
