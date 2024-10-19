@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { contact, isContactOpen, isMobileNavigationOpen } from '$lib/stores/store.elements';
+	import { contact, isContactOpen, isMobileNavigationOpen } from '$lib/stores/stores';
 	import { get } from 'svelte/store';
 	import { clickOutside } from '$lib/functions/functions.utilities';
 	import { X } from 'lucide-svelte';

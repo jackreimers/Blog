@@ -10,9 +10,14 @@
 	import ImageRenderer from '$lib/components/renderers/renderer-image.svelte';
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
 	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
+	import { onMount } from 'svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
+
+	onMount(() => {
+		sessionStorage.setItem('previousSlug', 'projects/' + data.post.slug);
+	});
 </script>
 
 <Head

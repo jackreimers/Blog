@@ -1,6 +1,6 @@
 <script lang="ts">
 	import '../app.css';
-	import { contact, mobileNavigation } from '$lib/stores/store.elements';
+	import { contact, navigation } from '$lib/stores/stores';
 	import { onMount } from 'svelte';
 	import { inject } from '@vercel/analytics';
 	import Header from '$lib/components/header/header.svelte';
@@ -14,7 +14,7 @@
 	let contactModal: Contact;
 
 	onMount(() => {
-		mobileNavigation.set(mobileNavigationMenu);
+		navigation.set(mobileNavigationMenu);
 		contact.set(contactModal);
 	});
 </script>

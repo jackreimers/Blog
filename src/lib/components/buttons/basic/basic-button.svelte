@@ -48,10 +48,11 @@
 		{href}
 		{target}
 		{type}
-		class="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-colors duration-300 sm:text-base {text
-			? 'px-4 py-2 sm:px-5 sm:py-2.5'
-			: 'p-2.5 sm:p-2.5'} {colors[color]} 
-			{active ? activeColors[color] : ''} {$$restProps.class ?? ''}"
+		class="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-colors duration-300 sm:text-base
+			{text ? 'px-4 py-2 sm:px-5 sm:py-2.5' : 'p-2.5 sm:p-2.5'} 
+			{colors[color]} 
+			{active ? activeColors[color] : ''}
+			{$$restProps.class ?? ''}"
 	>
 		{#if text}
 			{text}
@@ -63,10 +64,12 @@
 		on:click={handleClick}
 		disabled={disabled || submitting}
 		{type}
-		class="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-colors duration-300 sm:text-base {text
-			? 'px-4 py-2 sm:px-5 sm:py-2.5'
-			: 'p-2 sm:p-2.5'} {colors[color]} {active ? activeColors[color] : ''} 
-			{submitting ? submittingColors[color] : ''} {$$restProps.class ?? ''}"
+		class="inline-flex items-center gap-2 rounded-full text-sm font-medium transition-colors duration-300 sm:text-base
+			{text ? 'px-4 py-2 sm:px-5 sm:py-2.5' : 'p-2 sm:p-2.5'}
+			{colors[color]}
+			{active ? activeColors[color] : ''}
+			{submitting ? submittingColors[color] : ''}
+			{$$restProps.class ?? ''}"
 	>
 		{#if submitting}
 			<span

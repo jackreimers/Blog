@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { contact } from '$lib/stores/store.elements';
+	import { contact } from '$lib/stores/stores';
 	import { MessageCircleMore, MoveRight } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/container/container.svelte';
@@ -29,13 +29,13 @@
 		},
 		{
 			title: 'Hosting',
-			description: 'Get your website or application online with a fast, secure, and reliable hosting solution.',
+			description:
+				'Get your website or application online with a fast, secure, and reliable hosting solution.',
 			component: HostingTab
 		},
 		{
 			title: 'Maintenance',
-			description:
-				'Sleep easy knowing your application is being monitored and maintained.',
+			description: 'Sleep easy knowing your application is being monitored and maintained.',
 			component: MaintenanceTab
 		}
 	];

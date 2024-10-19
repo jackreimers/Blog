@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { previousPageSlug } from '$lib/stores/store.page';
 	import { Undo2, X } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/container/container.svelte';
@@ -8,9 +7,16 @@
 	import PostGrid from '$lib/components/grids/posts/posts-grid.svelte';
 	import PostCard from '$lib/components/cards/post/post-card.svelte';
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
+	import { onMount } from 'svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
+
+	let previousSlug: string;
+
+	onMount(() => {
+		previousSlug = sessionStorage.getItem('previousSlug') ?? '';
+	});
 </script>
 
 <Head
@@ -20,7 +26,7 @@
 />
 <Hero subtitle="Filter my posts by topics that interest you." title="Tags">
 	<div class="flex flex-wrap items-center justify-center gap-3">
-		<BasicButton color="secondary" href="/{$previousPageSlug ?? 'tags'}" icon={Undo2} text="Return" />
+		<BasicButton color="secondary" href="/{previousSlug}" icon={Undo2} text="Return" />
 		<BasicButton color="error" href="/tags" icon={X} text={data.tagFilter?.name} />
 	</div>
 </Hero>

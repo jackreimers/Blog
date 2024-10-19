@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { previousPageSlug } from '$lib/stores/store.page';
 	import { onMount } from 'svelte';
 	import { Filter } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
@@ -14,7 +13,7 @@
 	export let data: any;
 
 	onMount(() => {
-		previousPageSlug.set('projects');
+		sessionStorage.setItem('previousSlug', 'projects');
 	});
 </script>
 

@@ -1,6 +1,6 @@
 <script lang="ts">
-	import type { Tag } from '$lib/interfaces/interfaces.d';
-	import { logoUrls } from '$lib/constants/logos.constants.js';
+	import type { Tag } from '$lib/interfaces/interfaces';
+	import { logoUrls } from '$lib/constants/constants.js';
 	import Preload from '$lib/components/preload/preload.svelte';
 
 	export let data: Tag;

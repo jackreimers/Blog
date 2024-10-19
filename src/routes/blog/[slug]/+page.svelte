@@ -9,9 +9,14 @@
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
 	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
+	import { onMount } from 'svelte';
 
 	/** @type {import('./$types').PageData} */
 	export let data: any;
+
+	onMount(() => {
+		sessionStorage.setItem('previousSlug', 'blog/' + data.post.slug);
+	});
 </script>
 
 <Head

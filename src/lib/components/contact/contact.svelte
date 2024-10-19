@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { blockersOpen, isContactOpen } from '$lib/stores/store.elements';
+	import { blockersOpen, isContactOpen } from '$lib/stores/stores';
 	import { get } from 'svelte/store';
 	import { blur } from 'svelte/transition';
 	import { applyAction, enhance } from '$app/forms';
@@ -172,7 +172,7 @@
 										type="textarea"
 									/>
 								</div>
-								<div class="mt-6 sm:mt-10 flex justify-end gap-3">
+								<div class="mt-6 flex justify-end gap-3 sm:mt-10">
 									<Button color="secondary" on:click={close} text="Close" />
 									<Button
 										color="primary"

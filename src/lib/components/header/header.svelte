@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import { scrolled } from '$lib/stores/store.page';
-	import { contact, mobileNavigation } from '$lib/stores/store.elements';
+	import { contact, navigation, scrolled } from '$lib/stores/stores';
 	import { Menu, MessageCircleMore } from 'lucide-svelte';
 	import Button from '$lib/components/buttons/basic/basic-button.svelte';
 
@@ -14,7 +13,7 @@
 	class="fixed z-10 w-full bg-gray-50 transition-[padding,box-shadow] duration-500"
 	class:shadow={$scrolled}
 >
-	<div class="lg:max-w-5xl xl:max-w-7xl mx-auto flex items-center justify-between p-4 sm:p-6">
+	<div class="mx-auto flex items-center justify-between p-4 sm:p-6 lg:max-w-5xl xl:max-w-7xl">
 		<a aria-label="Home" class="inline-block" href="/">
 			<img
 				alt=""
@@ -39,7 +38,7 @@
 				/>
 			</div>
 			<div class="flex items-center lg:hidden">
-				<button aria-label="Menu" class="p-2" on:click={() => $mobileNavigation?.open()}>
+				<button aria-label="Menu" class="p-2" on:click={() => $navigation?.open()}>
 					<Menu class="h-6 w-6" />
 				</button>
 			</div>
