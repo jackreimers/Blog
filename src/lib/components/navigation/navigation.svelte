@@ -28,6 +28,13 @@
 
 		close();
 	}
+
+	function onKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			event.preventDefault();
+			close();
+		}
+	}
 </script>
 
 <div class="fixed z-30 transition-[visibility] duration-500 {isOpen ? 'visible' : 'invisible'}">
@@ -107,3 +114,4 @@
 		</div>
 	</nav>
 </div>
+<svelte:window on:keydown={onKeyDown} />

@@ -62,6 +62,13 @@
 
 		return isValid;
 	}
+
+	function onKeyDown(event: KeyboardEvent) {
+		if (event.key === 'Escape') {
+			event.preventDefault();
+			close();
+		}
+	}
 </script>
 
 <div
@@ -190,3 +197,4 @@
 		</div>
 	</div>
 </div>
+<svelte:window on:keydown={onKeyDown} />
