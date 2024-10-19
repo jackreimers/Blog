@@ -81,6 +81,7 @@
 				</div>
 				<div class="m-3.5 flex justify-end gap-3 text-gray-500 sm:mx-0">
 					<a
+						aria-label="LinkedIn"
 						class="transition-colors duration-300 focus:text-gray-700 mhover:hover:text-gray-700"
 						href="https://www.linkedin.com/in/jackreimers"
 						target="_blank"
@@ -88,6 +89,7 @@
 						<LinkedIn class="h-6 w-6" />
 					</a>
 					<a
+						aria-label="GitHub"
 						class="transition-colors duration-300 focus:text-gray-700 mhover:hover:text-gray-700"
 						href="https://github.com/jackreimers"
 						target="_blank"
