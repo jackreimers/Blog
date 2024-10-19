@@ -5,7 +5,9 @@
 	export let subtitle: string;
 </script>
 
-<Container class="my-24 flex flex-1 flex-col text-center sm:my-32 md:my-40 lg:my-48 xl:my-56">
+<Container
+	class="mb-24 mt-20 flex flex-1 flex-col text-center sm:mb-32 sm:mt-[6.5rem] md:mb-40 md:mt-[8.5rem] lg:mb-48 lg:mt-[11.5rem] xl:mb-56 xl:mt-[12.5rem]"
+>
 	<h1
 		class="mx-auto max-w-5xl text-3xl font-bold tracking-tight sm:text-4xl md:text-5xl lg:text-6xl"
 	>
