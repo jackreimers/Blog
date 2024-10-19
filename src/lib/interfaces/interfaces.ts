@@ -27,6 +27,8 @@ export interface Post {
 export interface ProjectPost extends Post {
 	projectHref: string;
 	projectText: string;
+	projectImageHref: string;
+	projectImageAlt: string;
 }
 
 export interface Testimonial {

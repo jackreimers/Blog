@@ -119,6 +119,8 @@ export function parsePostData(
 		const projectPost = post as ProjectPost;
 		projectPost.projectHref = data.metadata['projectHref'] as string;
 		projectPost.projectText = data.metadata['projectText'] as string;
+		projectPost.projectImageHref = data.metadata['projectImageHref'] as string;
+		projectPost.projectImageAlt = data.metadata['projectImageAlt'] as string;
 
 		return projectPost;
 	}

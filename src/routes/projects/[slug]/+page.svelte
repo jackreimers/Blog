@@ -34,7 +34,16 @@
 </Hero>
 <Container>
 	<Section>
-		<div class="-w-5xl mx-auto rounded-xl bg-white p-6 shadow sm:p-10">
+		<div class="rounded-xl bg-white p-6 shadow sm:p-10">
+			{#if data.projectImageHref}
+				<div class="mb-16">
+					<img
+						alt={data.projectImageAlt}
+						class="mx-auto"
+						src={data.post.projectImageHref}
+					/>
+				</div>
+			{/if}
 			<div class="markdown box-content">
 				<h2 class="!mt-0" id="introduction">Introduction</h2>
 				<SvelteMarkdown source={data.post.excerpt} />

@@ -4,8 +4,10 @@ tags: [ "svelte", "javascript", "typescript" ]
 title: Bunbury Sea Shanty Festival
 description: A list of six interesting SvelteKit features that I found useful whilst learning the framework.
 slug: bunbury-sea-shanty-festival
-imageHref:
-imageAlt:
+imageHref: /content/projects/bunbury-sea-shanty-festival/images/cover.png
+imageAlt: Mockup showing the shanty festival website on a desktop and mobile screen
+projectImageHref: /content/projects/bunbury-sea-shanty-festival/images/mockup.png
+projectImageAlt: Mockup showing the shanty festival website on a desktop and mobile screen
 projectHref: https://bunburyshantyfest.au
 projectText: Visit the website
 ---
