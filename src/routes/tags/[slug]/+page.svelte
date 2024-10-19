@@ -20,7 +20,7 @@
 />
 <Hero subtitle="Filter my posts by topics that interest you." title="Tags">
 	<div class="flex flex-wrap items-center justify-center gap-3">
-		<BasicButton color="secondary" href="/{$previousPageSlug}" icon={Undo2} text="Return" />
+		<BasicButton color="secondary" href="/{$previousPageSlug ?? 'tags'}" icon={Undo2} text="Return" />
 		<BasicButton color="error" href="/tags" icon={X} text={data.tagFilter?.name} />
 	</div>
 </Hero>
