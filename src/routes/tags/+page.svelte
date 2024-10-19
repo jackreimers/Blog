@@ -12,7 +12,7 @@
 	/** @type {import('./$types').PageData} */
 	export let data: any;
 
-	let previousSlug: string;
+	let previousSlug: string = '';
 
 	onMount(() => {
 		previousSlug = sessionStorage.getItem('previousSlug') ?? '';
