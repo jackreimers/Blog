@@ -24,19 +24,18 @@
 		{
 			title: 'Development',
 			description:
-				'Lorem ipsum odor amet, consectetuer adipiscing elit. Interdum aenean eget taciti torquent.',
+				'Build something new or update your existing application to use modern web technologies.',
 			component: DevelopmentTab
 		},
 		{
 			title: 'Hosting',
-			description:
-				'Lorem ipsum odor amet, consectetuer adipiscing elit. Interdum aenean eget taciti torquent.',
+			description: 'Get your website or application online with a fast, secure, and reliable hosting solution.',
 			component: HostingTab
 		},
 		{
 			title: 'Maintenance',
 			description:
-				'Lorem ipsum odor amet, consectetuer adipiscing elit. Interdum aenean eget taciti torquent.',
+				'Sleep easy knowing your application is being monitored and maintained.',
 			component: MaintenanceTab
 		}
 	];

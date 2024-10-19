@@ -6,22 +6,22 @@
 <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 xl:grid-cols-4">
 	<ServiceCard
 		icon={CloudCog}
-		subtitle="Lorem ipsum odor amet, consectetuer adipiscing elit."
+		subtitle="Reliable and scalable cloud hosting for your applications."
 		title="Cloud Hosting"
 	/>
 	<ServiceCard
 		icon={Globe2}
-		subtitle="Lorem ipsum odor amet, consectetuer adipiscing elit."
+		subtitle="Get a custom domain to set you and your business apart."
 		title="Custom Domains"
 	/>
 	<ServiceCard
 		icon={Mail}
-		subtitle="Lorem ipsum odor amet, consectetuer adipiscing elit."
+		subtitle="Professional email hosting to keep you connected."
 		title="Email Hosting"
 	/>
 	<ServiceCard
 		icon={Workflow}
-		subtitle="Lorem ipsum odor amet, consectetuer adipiscing elit."
+		subtitle="Automate your workflows with continuous integration."
 		title="Continuous Integration"
 	/>
 </div>

@@ -6,22 +6,22 @@
 <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-2 xl:grid-cols-4">
 	<ServiceCard
 		icon={Shield}
-		subtitle="Lorem ipsum odor amet, consectetuer adipiscing elit."
+		subtitle="Keep your website secure with regular security updates."
 		title="Security Updates"
 	/>
 	<ServiceCard
 		icon={HardDriveUpload}
-		subtitle="Lorem ipsum odor amet, consectetuer adipiscing elit."
+		subtitle="Worry free content updates to keep your users engaged."
 		title="Content Updates"
 	/>
 	<ServiceCard
 		icon={GaugeCircle}
-		subtitle="Lorem ipsum odor amet, consectetuer adipiscing elit."
+		subtitle="Ensure your application is performing at its best."
 		title="Performance Optimisation"
 	/>
 	<ServiceCard
 		icon={Bug}
-		subtitle="Lorem ipsum odor amet, consectetuer adipiscing elit."
+		subtitle="Fix those annoying bugs that are causing you headaches."
 		title="Bug Fixes"
 	/>
 </div>
