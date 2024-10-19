@@ -26,7 +26,7 @@
 	}
 </script>
 
-<span class="block {$$restProps.class ?? ''}" class:bg-gray-200={showSkeleton}>
+<span class="block {$$restProps.class ?? ''}">
 	{#await preload()}
 		{#if showSkeleton}
 			<Skeleton>
