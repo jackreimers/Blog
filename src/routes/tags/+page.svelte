@@ -19,7 +19,7 @@
 	title="Tags"
 />
 <Hero subtitle="Filter posts by topics that interest you." title="All Tags">
-	<BasicButton color="secondary" href="/{$previousPageSlug}" icon={Undo2} text="Return" />
+	<BasicButton color="secondary" href="/{$previousPageSlug ?? ''}" icon={Undo2} text="Return" />
 </Hero>
 <Container>
 	<Section>
