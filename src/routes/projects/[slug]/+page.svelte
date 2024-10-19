@@ -35,7 +35,7 @@
 <Container>
 	<Section>
 		<div class="rounded-xl bg-white p-6 shadow sm:p-10">
-			{#if data.projectImageHref}
+			{#if data.post.projectImageHref}
 				<div class="mb-16">
 					<img
 						alt={data.projectImageAlt}
