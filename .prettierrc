@@ -1,8 +1,5 @@
 {
   "svelteSortOrder": "options-styles-scripts-markup",
-  "tailwindAttributes": [
-    "classes"
-  ],
   "useTabs": true,
   "tabWidth": 4,
   "singleQuote": true,
