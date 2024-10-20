@@ -10,11 +10,11 @@
 	<div class="h-full bg-black bg-opacity-65 px-5 py-10 text-center sm:px-6 md:p-16">
 		<div>
 			<h2
-				class="text-2xl font-bold leading-tight tracking-tight text-white sm:text-2xl md:text-4xl"
+				class="text-xl font-bold leading-tight tracking-tight text-white sm:text-2xl md:text-3xl"
 			>
 				{title}
 			</h2>
-			<p class="mt-4 text-lg tracking-tight text-blue-50">
+			<p class="mt-4 tracking-tight text-blue-50 sm:text-lg">
 				{subtitle}
 			</p>
 		</div>
