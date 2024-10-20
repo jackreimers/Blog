@@ -130,14 +130,15 @@ async function getTags(fetch: any): Promise<Tag[]> {
 
 function parseImageData(src: string, alt: string): Image {
 	const split = src.split('_');
-	const dimensions = split[split.length - 1].split('x');
+	const dimensions = split[split.length - 1].split('.');
+	const splitDimensions = dimensions[0].split('x');
 
 	return {
 		src: src,
 		alt: alt,
 		width: parseInt(dimensions[0]),
 		height: parseInt(dimensions[1]),
-		aspect: `${dimensions[0]}/${dimensions[1]}`
+		aspect: `${splitDimensions[0]}/${splitDimensions[1]}`
 	};
 }
 

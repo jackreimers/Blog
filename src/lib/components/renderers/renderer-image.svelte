@@ -10,9 +10,10 @@
 
 	onMount(() => {
 		const split = href.split('_');
-		const dimensions = split[split.length - 1].split('x');
+		const dimensions = split[split.length - 1].split('.');
+		const splitDimensions = dimensions[0].split('x');
 
-		aspect = `${dimensions[0]}/${dimensions[1]}`;
+		aspect = `${splitDimensions[0]}/${splitDimensions[1]}`;
 	});
 </script>
 
