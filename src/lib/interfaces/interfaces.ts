@@ -15,7 +15,6 @@ export interface Image {
 	alt: string;
 	width: number;
 	height: number;
-	aspect: string;
 }
 
 export interface Post {

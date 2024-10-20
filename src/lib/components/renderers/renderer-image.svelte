@@ -1,22 +1,21 @@
 <script lang="ts">
 	import Preload from '$lib/components/preload/preload.svelte';
-	import { onMount } from 'svelte';
 
 	export let href = '';
 	export let title: string | null = null;
 	export let text = '';
 
-	let aspect: string;
+	let width: number;
+	let height: number;
 
-	onMount(() => {
-		const split = href.split('_');
-		const dimensions = split[split.length - 1].split('.');
-		const splitDimensions = dimensions[0].split('x');
+	const split = href.split('_');
+	const dimensions = split[split.length - 1].split('.');
+	const splitDimensions = dimensions[0].split('x');
 
-		aspect = `${splitDimensions[0]}/${splitDimensions[1]}`;
-	});
+	width = parseInt(splitDimensions[0]);
+	height = parseInt(splitDimensions[1]);
 </script>
 
-<Preload class="mx-auto my-10 block overflow-hidden rounded aspect-[{aspect}]" src={href}>
-	<img alt={text} src={href} {title} />
+<Preload class="mx-auto my-10 block overflow-hidden rounded" src={href}>
+	<img alt={text} {height} src={href} {title} {width} />
 </Preload>

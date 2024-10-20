@@ -136,9 +136,8 @@ function parseImageData(src: string, alt: string): Image {
 	return {
 		src: src,
 		alt: alt,
-		width: parseInt(dimensions[0]),
-		height: parseInt(dimensions[1]),
-		aspect: `${splitDimensions[0]}/${splitDimensions[1]}`
+		width: parseInt(splitDimensions[0]),
+		height: parseInt(splitDimensions[1])
 	};
 }
 

@@ -16,7 +16,13 @@
 	<a href={`/${data.type}/${data.slug}`}>
 		{#if data.image.src}
 			<Preload src={data.image.src} class="aspect-[16/10] bg-gray-200">
-				<img src={data.image.src} alt={data.image.alt} class="block" />
+				<img
+					src={data.image.src}
+					alt={data.image.alt}
+					width={data.image.width}
+					height={data.image.height}
+					class="block"
+				/>
 			</Preload>
 		{:else}
 			<div class="flex aspect-[16/10] items-center justify-center bg-gray-100">
