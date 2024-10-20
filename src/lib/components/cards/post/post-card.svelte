@@ -13,10 +13,10 @@
 	class="overflow-hidden rounded-lg bg-white shadow transition-[transform,box-shadow] duration-300 focus:scale-[1.015] focus:shadow-md mhover:hover:scale-[1.015] mhover:hover:shadow-md
 		{$$restProps.class ?? ''}"
 >
-	<a class="bg-gray-100" href={`/${data.type}/${data.slug}`}>
-		{#if data.imageHref}
-			<Preload src={data.imageHref} class="aspect-[16/10]">
-				<img src={data.imageHref} alt={data.imageAlt} class="block" />
+	<a href={`/${data.type}/${data.slug}`}>
+		{#if data.image.src}
+			<Preload src={data.image.src} class="aspect-[16/10] bg-gray-200">
+				<img src={data.image.src} alt={data.image.alt} class="block" />
 			</Preload>
 		{:else}
 			<div class="flex aspect-[16/10] items-center justify-center bg-gray-100">

@@ -1,17 +1,6 @@
-import type { MarkdownData, Post, ProjectPost, Tag } from '$lib/interfaces/interfaces';
+import type { Image, MarkdownData, Post, ProjectPost, Tag } from '$lib/interfaces/interfaces';
 import { error } from '@sveltejs/kit';
 import { getMarkdownData } from '$lib/functions/functions.markdown';
-
-export async function getTags(fetch: any): Promise<Tag[]> {
-	const tagsResponse = await fetch(`/content/tags.json`);
-	const tags = await tagsResponse.json();
-
-	tags.forEach((tag: Tag) => {
-		tag.count = 0;
-	});
-
-	return tags;
-}
 
 export async function getPost(fetch: any, slug: string, postType: string): Promise<Post> {
 	const tags = await getTags(fetch);
@@ -80,11 +69,7 @@ export async function getPosts(
 	};
 }
 
-export function parsePostData(
-	data: MarkdownData,
-	tags: Tag[],
-	postType: string
-): Post | ProjectPost {
+function parsePostData(data: MarkdownData, tags: Tag[], postType: string): Post | ProjectPost {
 	const date = new Date(data.metadata['date'] as string);
 	const dateString = `${date.toLocaleString('default', { month: 'long' })} ${date.getDate()}, ${date.getFullYear()}`;
 
@@ -109,8 +94,10 @@ export function parsePostData(
 		title: data.metadata['title'] as string,
 		description: data.metadata['description'] as string,
 		slug: data.metadata['slug'] as string,
-		imageHref: (data.metadata['imageHref'] as string) ?? null,
-		imageAlt: (data.metadata['imageAlt'] as string) ?? null,
+		image: parseImageData(
+			data.metadata['imageHref'] as string,
+			data.metadata['imageAlt'] as string
+		),
 		excerpt: excerpt,
 		content: content
 	};
@@ -119,13 +106,39 @@ export function parsePostData(
 		const projectPost = post as ProjectPost;
 		projectPost.projectHref = data.metadata['projectHref'] as string;
 		projectPost.projectText = data.metadata['projectText'] as string;
-		projectPost.projectImageHref = data.metadata['projectImageHref'] as string;
-		projectPost.projectImageAlt = data.metadata['projectImageAlt'] as string;
+		projectPost.projectImage = parseImageData(
+			data.metadata['projectImageHref'] as string,
+			data.metadata['projectImageAlt'] as string
+		);
 
 		return projectPost;
 	}
 
 	return post;
+}
+
+async function getTags(fetch: any): Promise<Tag[]> {
+	const tagsResponse = await fetch(`/content/tags.json`);
+	const tags = await tagsResponse.json();
+
+	tags.forEach((tag: Tag) => {
+		tag.count = 0;
+	});
+
+	return tags;
+}
+
+function parseImageData(src: string, alt: string): Image {
+	const split = src.split('_');
+	const dimensions = split[split.length - 1].split('x');
+
+	return {
+		src: src,
+		alt: alt,
+		width: parseInt(dimensions[0]),
+		height: parseInt(dimensions[1]),
+		aspect: `[${dimensions[0]}/${dimensions[1]}]`
+	};
 }
 
 function compareDates(a: Post, b: Post) {

@@ -36,15 +36,12 @@
 <Container>
 	<Section>
 		<div class="rounded-xl bg-white p-6 shadow sm:p-10">
-			{#if data.post.projectImageHref}
-				<Preload
-					class="mb-16 overflow-hidden rounded-lg"
-					src={data.post.projectImageHref}
-				>
+			{#if data.post.projectImage.src}
+				<Preload class="mb-16 overflow-hidden rounded-lg" src={data.post.projectImage.src}>
 					<img
-						alt={data.projectImageAlt}
-						class="mx-auto block"
-						src={data.post.projectImageHref}
+						alt={data.post.projectImage.alt}
+						class="mx-auto block aspect-[{data.post.projectImage.aspect}]"
+						src={data.post.projectImage.src}
 					/>
 				</Preload>
 			{/if}

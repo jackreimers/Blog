@@ -10,6 +10,14 @@ export interface Tag {
 	count: number;
 }
 
+export interface Image {
+	src: string;
+	alt: string;
+	width: number;
+	height: number;
+	aspect: string;
+}
+
 export interface Post {
 	date: Date;
 	dateString: string;
@@ -18,8 +26,7 @@ export interface Post {
 	title: string;
 	description: string;
 	slug: string;
-	imageHref: string | null;
-	imageAlt: string | null;
+	image: Image;
 	excerpt: string;
 	content: string;
 }
@@ -27,8 +34,7 @@ export interface Post {
 export interface ProjectPost extends Post {
 	projectHref: string;
 	projectText: string;
-	projectImageHref: string;
-	projectImageAlt: string;
+	projectImage: Image;
 }
 
 export interface Testimonial {
