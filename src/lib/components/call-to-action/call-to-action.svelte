@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="overflow-hidden rounded-lg bg-[url(/content/images/people_1280x850.jpg)] bg-cover bg-center
+	class="overflow-hidden rounded-lg bg-[url(/content/images/people-1280x850.jpg)] bg-cover bg-center
 		{$$restProps.class ?? ''}"
 >
 	<div class="h-full bg-black bg-opacity-65 px-5 py-10 text-center sm:px-6 md:p-16">

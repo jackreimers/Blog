@@ -8,7 +8,7 @@
 	let width: number;
 	let height: number;
 
-	const split = href.split('_');
+	const split = href.split('-');
 	const dimensions = split[split.length - 1].split('.');
 	const splitDimensions = dimensions[0].split('x');
 

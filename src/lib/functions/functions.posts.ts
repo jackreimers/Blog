@@ -129,7 +129,7 @@ async function getTags(fetch: any): Promise<Tag[]> {
 }
 
 function parseImageData(src: string, alt: string): Image {
-	const split = src.split('_');
+	const split = src.split('-');
 	const dimensions = split[split.length - 1].split('.');
 	const splitDimensions = dimensions[0].split('x');
 

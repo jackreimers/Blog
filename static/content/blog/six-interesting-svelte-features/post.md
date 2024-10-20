@@ -4,7 +4,7 @@ tags: [ "svelte", "javascript", "typescript" ]
 title: Six Interesting Svelte Features
 description: A list of six interesting SvelteKit features that I found useful whilst learning the framework.
 slug: six-interesting-svelte-features
-imageHref: /content/blog/six-interesting-svelte-features/images/cover_800x500.png
+imageHref: /content/blog/six-interesting-svelte-features/images/cover-800x500.png
 imageAlt: SvelteKit logo
 ---
 

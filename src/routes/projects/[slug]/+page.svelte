@@ -38,7 +38,7 @@
 		<div class="rounded-xl bg-white p-6 shadow sm:p-10">
 			{#if data.post.projectImage.src}
 				<Preload
-					class="mb-16 overflow-hidden rounded-lg"
+					class="mb-16 overflow-hidden rounded"
 					src={data.post.projectImage.src}
 				>
 					<img
