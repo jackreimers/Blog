@@ -14,11 +14,17 @@
 	<meta content={title} property="og:title" />
 	<meta content={description} property="og:description" />
 	<meta content={'https://jackreimers.dev' + $page.url.pathname} property="og:url" />
-	<meta content="https://jackreimers.dev/content/images/banner_1200x630.png" property="og:image" />
+	<meta
+		content="https://jackreimers.dev/content/images/banner_1200x630.png"
+		property="og:image"
+	/>
 	<meta content="summary" property="twitter:card" />
 	<meta content={title} property="twitter:title" />
 	<meta content={description} property="twitter:description" />
-	<meta content="https://jackreimers.dev/content/images/banner_1200x630.png" property="twitter:image" />
+	<meta
+		content="https://jackreimers.dev/content/images/banner_1200x630.png"
+		property="twitter:image"
+	/>
 	<link href={canonical} rel="canonical" />
 	{@html vs}
 </svelte:head>
