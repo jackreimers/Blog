@@ -11,7 +11,7 @@
 	<title>{title ? title + ' | Jack Reimers' : 'Jack Reimers'}</title>
 	<meta content={description} name="description" />
 	<meta content="Jack Reimers" property="og:site_name" />
-	<meta content={title} property="og:title" />
+	<meta content={title ?? 'Jack Reimers'} property="og:title" />
 	<meta content={description} property="og:description" />
 	<meta content={'https://jackreimers.dev' + $page.url.pathname} property="og:url" />
 	<meta
@@ -19,7 +19,7 @@
 		property="og:image"
 	/>
 	<meta content="summary" property="twitter:card" />
-	<meta content={title} property="twitter:title" />
+	<meta content={title ?? 'Jack Reimers'} property="twitter:title" />
 	<meta content={description} property="twitter:description" />
 	<meta
 		content="https://jackreimers.dev/content/images/banner_1200x630.png"
