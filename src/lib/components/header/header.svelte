@@ -15,7 +15,7 @@
 			<img
 				alt=""
 				class="inline-block h-10 w-10 md:h-11 md:w-11"
-				src="/content/icons/logo-light.svg"
+				src="/content/icons/logo-dark-square.svg"
 			/>
 		</a>
 		<nav>
