@@ -20,5 +20,11 @@
 	<meta content={description} property="twitter:description" />
 	<meta content="https://jackreimers.dev/content/images/banner_1200x630.png" property="twitter:image" />
 	<link href={canonical} rel="canonical" />
+	<link href="/favicon-48x48.png" rel="icon" sizes="48x48" type="image/png" />
+	<link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+	<link href="/favicon.ico" rel="shortcut icon" />
+	<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180" />
+	<meta content="Jack Reimers" name="apple-mobile-web-app-title" />
+	<link href="/site.webmanifest" rel="manifest" />
 	{@html vs}
 </svelte:head>
