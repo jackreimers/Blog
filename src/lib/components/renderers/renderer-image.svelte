@@ -16,6 +16,6 @@
 	});
 </script>
 
-<Preload class="mx-auto my-10 block overflow-hidden rounded aspect-[{aspect}]" src={href}>
+<Preload class="mx-auto my-10 block overflow-hidden rounded aspect-{aspect}" src={href}>
 	<img alt={text} src={href} {title} />
 </Preload>
