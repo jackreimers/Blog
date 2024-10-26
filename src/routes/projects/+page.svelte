@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { PageServerData } from './$types';
 	import { onMount } from 'svelte';
 	import { Filter } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
@@ -9,8 +10,7 @@
 	import PostGrid from '$lib/components/grids/posts/posts-grid.svelte';
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data: any;
+	export let data: PageServerData;
 
 	onMount(() => {
 		sessionStorage.setItem('previousSlug', 'projects');

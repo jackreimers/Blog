@@ -1,4 +1,6 @@
 <script lang="ts">
+	import type { PageServerData } from './$types';
+	import { onMount } from 'svelte';
 	import { Undo2, X } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/container/container.svelte';
@@ -7,10 +9,8 @@
 	import PostGrid from '$lib/components/grids/posts/posts-grid.svelte';
 	import PostCard from '$lib/components/cards/post/post-card.svelte';
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
-	import { onMount } from 'svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data: any;
+	export let data: PageServerData;
 
 	let previousSlug: string = '';
 

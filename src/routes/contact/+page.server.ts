@@ -1,16 +1,15 @@
+import { type Actions, error } from '@sveltejs/kit';
+import { getGraphClient } from '$lib/functions/functions.email';
+import { PUBLIC_GRAPH_ENDPOINT } from '$env/static/public';
 import {
 	PRIVATE_EXCHANGE_CLIENT_ID,
 	PRIVATE_EXCHANGE_CLIENT_SECRET,
 	PRIVATE_EXCHANGE_TENANT_ID
 } from '$env/static/private';
-import { PUBLIC_GRAPH_ENDPOINT } from '$env/static/public';
-import { error } from '@sveltejs/kit';
-import { getGraphClient } from '$lib/functions/functions.email';
 
 export const prerender = false;
 
-/** @type {import('./$types').Actions} */
-export const actions: import('./$types').Actions = {
+export const actions = {
 	default: async (event) => {
 		const data = await event.request.formData();
 		const name = data.get('name');
@@ -61,4 +60,4 @@ export const actions: import('./$types').Actions = {
 
 		return { success: true };
 	}
-};
+} satisfies Actions;

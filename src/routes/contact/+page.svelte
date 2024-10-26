@@ -1,11 +1,11 @@
 <script lang="ts">
+	import type { ActionData } from './$types';
 	import Head from '$lib/components/seo/head.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import ErrorState from '$lib/components/error-state/error-state.svelte';
 	import PillButton from '$lib/components/buttons/pill/pill-button.svelte';
 
-	/** @type {import('./$types').ActionData} */
-	export let form: any;
+	export let form: ActionData;
 </script>
 
 <Head
@@ -15,10 +15,10 @@
 />
 <Hero subtitle="Get in touch to ask questions or discuss your needs." title="Contact" />
 <ErrorState
-	subtitle={form.success
+	subtitle={form?.success
 		? "Thank you for your message, I'll get back to you as soon as possible."
 		: 'Please try again later or contact me if the issue persists.'}
-	title={form.success ? 'Success' : 'Error'}
+	title={form?.success ? 'Success' : 'Error'}
 >
 	<PillButton color="secondary" href="/" text="Return to home" />
 </ErrorState>

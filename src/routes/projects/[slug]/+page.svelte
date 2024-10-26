@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { PageServerData } from './$types';
 	import { onMount } from 'svelte';
 	import { ArrowUpRightFromSquare } from 'lucide-svelte';
 	import SvelteMarkdown from 'svelte-markdown';
@@ -13,8 +14,7 @@
 	import CodeRenderer from '$lib/components/renderers/renderer-code.svelte';
 	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data: any;
+	export let data: PageServerData;
 
 	onMount(() => {
 		sessionStorage.setItem('previousSlug', 'projects/' + data.post.slug);

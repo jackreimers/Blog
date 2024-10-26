@@ -1,10 +1,10 @@
+import type { PageServerLoad } from './$types';
 import { getPosts } from '$lib/functions/functions.posts';
 
-/** @type {import('./$types').PageServerLoad} */
-export async function load({ fetch }) {
+export const load: PageServerLoad = async ({ fetch }) => {
 	const posts = await getPosts(fetch);
 
 	return {
 		tags: posts.tags
 	};
-}
+};

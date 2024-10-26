@@ -1,4 +1,5 @@
 <script lang="ts">
+	import type { PageServerData } from './$types';
 	import { contact } from '$lib/stores/stores';
 	import { MessageCircleMore, MoveRight } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
@@ -17,8 +18,7 @@
 	import HostingTab from '$lib/components/tabs-content/tab-hosting.svelte';
 	import MaintenanceTab from '$lib/components/tabs-content/tab-maintenance.svelte';
 
-	/** @type {import('./$types').PageData} */
-	export let data: any;
+	export let data: PageServerData;
 
 	let servicesData = [
 		{
