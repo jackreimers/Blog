@@ -28,6 +28,11 @@
 					text="Projects"
 				/>
 				<Button
+					active={$page.url.pathname.startsWith('/tags')}
+					href="/tags"
+					text="Tags"
+				/>
+				<Button
 					color="primary"
 					icon={MessageCircleMore}
 					on:click={() => $contact?.open()}

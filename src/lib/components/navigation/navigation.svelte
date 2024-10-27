@@ -79,6 +79,12 @@
 						on:click={close}
 						text="Projects"
 					/>
+					<NavigationButton
+						active={$page.url.pathname.startsWith('/tags')}
+						href="/tags"
+						on:click={close}
+						text="Tags"
+					/>
 					<button
 						class="rounded-lg p-3.5 text-left font-semibold leading-none tracking-tight"
 						on:click={$contact?.open}
