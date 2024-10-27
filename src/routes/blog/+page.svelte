@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { PageServerData } from './$types';
-	import { onMount } from 'svelte';
 	import { Filter } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/container/container.svelte';
@@ -11,10 +10,6 @@
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
 
 	export let data: PageServerData;
-
-	onMount(() => {
-		sessionStorage.setItem('previousSlug', 'blog');
-	});
 </script>
 
 <Head
@@ -23,7 +18,13 @@
 	title="Blog"
 />
 <Hero subtitle="Discover the tech topics I’m working with and passionate about." title="My Blog">
-	<BasicButton color="primary" href="/tags" icon={Filter} text="Filter by tag" />
+	<BasicButton
+		color="primary"
+		href="/tags"
+		icon={Filter}
+		on:click={() => sessionStorage.setItem('previousPage', 'blog')}
+		text="Filter by tag"
+	/>
 </Hero>
 <Container>
 	<Section>

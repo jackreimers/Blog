@@ -9,13 +9,14 @@
 	import PostGrid from '$lib/components/grids/posts/posts-grid.svelte';
 	import PostCard from '$lib/components/cards/post/post-card.svelte';
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
+	import { error } from '@sveltejs/kit';
 
 	export let data: PageServerData;
 
-	let previousSlug: string = '';
+	let previousPage: string | null = null;
 
 	onMount(() => {
-		previousSlug = sessionStorage.getItem('previousSlug') ?? '';
+		previousPage = sessionStorage.getItem('previousPage');
 	});
 </script>
 
@@ -26,11 +27,13 @@
 />
 <Hero
 	subtitle="All of the posts I've written about {data.tagFilter?.name}."
-	title={data.tagFilter?.name}
+	title={data.tagFilter?.name ?? error(404)}
 >
 	<div class="flex flex-wrap items-center justify-center gap-3">
-		<BasicButton color="secondary" href="/{previousSlug}" icon={Undo2} text="Return" />
 		<BasicButton color="error" href="/tags" icon={X} text="Clear" />
+		{#if previousPage}
+			<BasicButton color="secondary" href="/{previousPage}" icon={Undo2} text="Return" />
+		{/if}
 	</div>
 </Hero>
 <Container>

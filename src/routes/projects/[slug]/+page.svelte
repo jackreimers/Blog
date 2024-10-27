@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { PageServerData } from './$types';
-	import { onMount } from 'svelte';
 	import { ArrowUpRightFromSquare } from 'lucide-svelte';
 	import SvelteMarkdown from 'svelte-markdown';
 	import Head from '$lib/components/seo/head.svelte';
@@ -15,10 +14,6 @@
 	import BlockquoteRenderer from '$lib/components/renderers/renderer-blockquote.svelte';
 
 	export let data: PageServerData;
-
-	onMount(() => {
-		sessionStorage.setItem('previousSlug', 'projects/' + data.post.slug);
-	});
 </script>
 
 <Head
@@ -29,7 +24,13 @@
 <Hero subtitle="Published on {data.post.dateString}" title={data.post.title}>
 	<div class="flex flex-wrap items-center justify-center gap-3">
 		{#each data.post.tags as tag}
-			<BasicButton color="tertiary" href="/tags/{tag.slug}" text={tag.name} />
+			<BasicButton
+				color="tertiary"
+				href="/tags/{tag.slug}"
+				text={tag.name}
+				on:click={() =>
+					sessionStorage.setItem('previousPage', 'projects/' + data.post.slug)}
+			/>
 		{/each}
 	</div>
 </Hero>
@@ -37,10 +38,7 @@
 	<Section>
 		<div class="rounded-xl bg-white p-6 shadow sm:p-10">
 			{#if data.post.projectImage.src}
-				<Preload
-					class="mb-16 overflow-hidden rounded"
-					src={data.post.projectImage.src}
-				>
+				<Preload class="mb-16 overflow-hidden rounded" src={data.post.projectImage.src}>
 					<img
 						alt={data.post.projectImage.alt}
 						class="mx-auto block"

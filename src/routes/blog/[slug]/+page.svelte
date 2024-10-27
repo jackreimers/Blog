@@ -1,6 +1,5 @@
 <script lang="ts">
 	import type { PageServerData } from './$types';
-	import { onMount } from 'svelte';
 	import SvelteMarkdown from 'svelte-markdown';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/container/container.svelte';
@@ -13,10 +12,6 @@
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
 
 	export let data: PageServerData;
-
-	onMount(() => {
-		sessionStorage.setItem('previousSlug', 'blog/' + data.post.slug);
-	});
 </script>
 
 <Head
@@ -27,7 +22,12 @@
 <Hero subtitle="Published on {data.post.dateString}" title={data.post.title}>
 	<div class="flex flex-wrap items-center justify-center gap-3">
 		{#each data.post.tags as tag}
-			<BasicButton color="tertiary" href="/tags/{tag.slug}" text={tag.name} />
+			<BasicButton
+				color="tertiary"
+				href="/tags/{tag.slug}"
+				text={tag.name}
+				on:click={() => sessionStorage.setItem('previousPage', 'blog/' + data.post.slug)}
+			/>
 		{/each}
 	</div>
 </Hero>

@@ -82,7 +82,10 @@
 					<NavigationButton
 						active={$page.url.pathname.startsWith('/tags')}
 						href="/tags"
-						on:click={close}
+						on:click={() => {
+							sessionStorage.removeItem('previousPage');
+							close();
+						}}
 						text="Tags"
 					/>
 					<button

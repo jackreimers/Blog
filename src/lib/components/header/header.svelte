@@ -30,6 +30,7 @@
 				<Button
 					active={$page.url.pathname.startsWith('/tags')}
 					href="/tags"
+					on:click={() => sessionStorage.removeItem('previousPage')}
 					text="Tags"
 				/>
 				<Button
