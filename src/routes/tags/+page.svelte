@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageServerData } from './$types';
 	import { onMount } from 'svelte';
-	import { BookOpen, FolderGit2, Undo2 } from 'lucide-svelte';
+	import { FileText, FolderGit2, Undo2 } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
 	import Container from '$lib/components/container/container.svelte';
 	import Section from '$lib/components/section/section.svelte';
@@ -28,7 +28,7 @@
 	<div class="flex flex-wrap items-center justify-center gap-3">
 		{#if previousPage}
 			{#if previousPage.startsWith('projects')}
-				<BasicButton color="primary" href="/blog" icon={BookOpen} text="View Blog" />
+				<BasicButton color="primary" href="/blog" icon={FileText} text="View Blog" />
 			{/if}
 			{#if previousPage.startsWith('blog')}
 				<BasicButton
@@ -40,7 +40,7 @@
 			{/if}
 			<BasicButton color="secondary" href="/{previousPage}" icon={Undo2} text="Return" />
 		{:else}
-			<BasicButton color="primary" href="/blog" icon={BookOpen} text="View Blog" />
+			<BasicButton color="primary" href="/blog" icon={FileText} text="View Blog" />
 			<BasicButton
 				color="secondary"
 				href="/projects"
