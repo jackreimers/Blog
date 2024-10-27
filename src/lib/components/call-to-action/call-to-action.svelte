@@ -7,7 +7,7 @@
 	class="overflow-hidden rounded-lg bg-[url(/content/images/people-1280x850.jpg)] bg-cover bg-center
 		{$$restProps.class ?? ''}"
 >
-	<div class="h-full bg-black bg-opacity-65 px-5 py-10 text-center sm:px-6 md:p-16">
+	<div class="h-full bg-black bg-opacity-65 px-5 py-8 text-center sm:px-6 sm:py-9 md:p-16">
 		<div>
 			<h2
 				class="text-xl font-bold leading-tight tracking-tight text-white sm:text-2xl md:text-3xl"
