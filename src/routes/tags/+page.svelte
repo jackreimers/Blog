@@ -7,7 +7,7 @@
 	import Section from '$lib/components/section/section.svelte';
 	import Hero from '$lib/components/hero/hero.svelte';
 	import BasicGrid from '$lib/components/grids/basic/basic-grid.svelte';
-	import TagCard from '$lib/components/cards/card-tag.svelte';
+	import TagCard from '$lib/components/cards/tag/tag-card.svelte';
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
 
 	export let data: PageServerData;
