@@ -15,13 +15,13 @@ declare const __propDef: {
 	slots: {};
 };
 
-export type ContainerProps = typeof __propDef.props;
-export type ContainerEvents = typeof __propDef.events;
-export type ContainerSlots = typeof __propDef.slots;
+export type PostCardProps = typeof __propDef.props;
+export type PostCardEvents = typeof __propDef.events;
+export type PostCardSlots = typeof __propDef.slots;
 
-export default class Container extends SvelteComponent<
-	ContainerProps,
-	ContainerEvents,
-	ContainerSlots
+export default class PostCard extends SvelteComponent<
+	PostCardProps,
+	PostCardEvents,
+	PostCardSlots
 > {}
 export {};

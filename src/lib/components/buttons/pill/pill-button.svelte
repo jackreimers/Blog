@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { ComponentType } from 'svelte';
-	import { type Icon } from 'lucide-svelte';
+	import type { Icon } from 'lucide-svelte';
 
 	export let href: string | null = null;
 	export let target: '_blank' | '_self' | '_parent' | '_top' = '_self';
@@ -25,5 +25,5 @@
 	{#if text}
 		{text}
 	{/if}
-	<svelte:component this={icon} class="h-4 w-4" />
+	<svelte:component class="h-4 w-4" this={icon} />
 </a>

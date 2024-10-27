@@ -1,4 +1,5 @@
 import type { ComponentProps } from '$lib/interfaces/props';
+import type { Testimonial } from '$lib/interfaces/interfaces';
 import { SvelteComponent } from 'svelte';
 
 export interface TestimonialCardComponentProps extends ComponentProps {
@@ -13,13 +14,13 @@ declare const __propDef: {
 	slots: {};
 };
 
-export type TestimonialProps = typeof __propDef.props;
-export type TestimonialEvents = typeof __propDef.events;
-export type TestimonialSlots = typeof __propDef.slots;
+export type TestimonialCardProps = typeof __propDef.props;
+export type TestimonialCardEvents = typeof __propDef.events;
+export type TestimonialCardSlots = typeof __propDef.slots;
 
-export default class Testimonial extends SvelteComponent<
-	TestimonialProps,
-	TestimonialEvents,
-	TestimonialSlots
+export default class TestimonialCard extends SvelteComponent<
+	TestimonialCardProps,
+	TestimonialCardEvents,
+	TestimonialCardSlots
 > {}
 export {};
