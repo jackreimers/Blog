@@ -6,12 +6,12 @@
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer/footer.svelte';
 	import Navigation from '$lib/components/navigation/navigation.svelte';
-	import Contact from '$lib/components/contact/contact.svelte';
+	import ContactModal from '$lib/components/contact-modal/contact-modal.svelte';
 
 	inject();
 
 	let mobileNavigationMenu: Navigation;
-	let contactModal: Contact;
+	let contactModal: ContactModal;
 
 	onMount(() => {
 		navigation.set(mobileNavigationMenu);
@@ -20,7 +20,7 @@
 </script>
 
 <Navigation bind:this={mobileNavigationMenu} />
-<Contact bind:this={contactModal} />
+<ContactModal bind:this={contactModal} />
 <div class="h-dvh">
 	<div class="flex min-h-dvh flex-col">
 		<Header />

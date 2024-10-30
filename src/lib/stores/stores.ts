@@ -1,6 +1,6 @@
 import { writable } from 'svelte/store';
 import MobileNavigation from '$lib/components/navigation/navigation.svelte';
-import ContactModal from '$lib/components/contact/contact.svelte';
+import ContactModal from '$lib/components/contact-modal/contact-modal.svelte';
 
 export const scrolled = writable<boolean>(false);
 
