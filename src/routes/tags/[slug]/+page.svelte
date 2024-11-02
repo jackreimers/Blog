@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageServerData } from './$types';
+	import { error } from '@sveltejs/kit';
 	import { onMount } from 'svelte';
 	import { Undo2, X } from 'lucide-svelte';
 	import Head from '$lib/components/seo/head.svelte';
@@ -9,7 +10,6 @@
 	import PostGrid from '$lib/components/grids/posts/posts-grid.svelte';
 	import PostCard from '$lib/components/cards/post/post-card.svelte';
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
-	import { error } from '@sveltejs/kit';
 
 	export let data: PageServerData;
 

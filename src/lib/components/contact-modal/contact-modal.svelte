@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { blockersOpen, isContactOpen } from '$lib/stores/stores';
-	import { get } from 'svelte/store';
 	import { blur } from 'svelte/transition';
+	import { get } from 'svelte/store';
 	import { applyAction, enhance } from '$app/forms';
 	import { clickOutside } from '$lib/functions/functions.utilities';
+	import { page } from '$app/stores';
+	import { isContactOpen, isNavigationOpen } from '$lib/stores/stores';
 	import { SendHorizonal } from 'lucide-svelte';
 	import Input from '$lib/components/input/input.svelte';
 	import Button from '$lib/components/buttons/basic/basic-button.svelte';
@@ -12,8 +12,11 @@
 	export function open() {
 		isOpen = true;
 		isContactOpen.set(true);
-		blockersOpen.set(get(blockersOpen) + 1);
 		document.querySelector('body')?.classList.add('overflow-hidden');
+
+		setTimeout(() => {
+			nameInputElement.focus();
+		}, 300);
 	}
 
 	export function close() {
@@ -29,9 +32,8 @@
 
 		isOpen = false;
 		isContactOpen.set(false);
-		blockersOpen.set(get(blockersOpen) - 1);
 
-		if (get(blockersOpen) === 0) {
+		if (!get(isNavigationOpen)) {
 			document.querySelector('body')?.classList.remove('overflow-hidden');
 		}
 	}
@@ -159,6 +161,7 @@
 										disabled={isSubmitting}
 										label="Name"
 										name="name"
+										placeholder="Enter your name..."
 										required={true}
 									/>
 									<Input
@@ -167,6 +170,7 @@
 										disabled={isSubmitting}
 										label="Email"
 										name="email"
+										placeholder="Enter your email..."
 										required={true}
 										type="email"
 									/>
@@ -175,6 +179,7 @@
 										disabled={isSubmitting}
 										label="Message"
 										name="message"
+										placeholder="Enter your message..."
 										required={true}
 										type="textarea"
 									/>

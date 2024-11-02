@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { page } from '$app/stores';
-	import { contact, isContactOpen, isMobileNavigationOpen } from '$lib/stores/stores';
 	import { get } from 'svelte/store';
 	import { clickOutside } from '$lib/functions/functions.utilities';
+	import { page } from '$app/stores';
+	import { contact, isContactOpen, isNavigationOpen } from '$lib/stores/stores';
 	import { X } from 'lucide-svelte';
 	import BasicButton from '$lib/components/buttons/basic/basic-button.svelte';
 	import NavigationButton from '$lib/components/buttons/navigation/navigation-button.svelte';
@@ -13,12 +13,17 @@
 
 	export function open() {
 		isOpen = true;
-		isMobileNavigationOpen.set(true);
+		isNavigationOpen.set(true);
+		document.querySelector('body')?.classList.add('overflow-hidden');
 	}
 
 	export function close() {
 		isOpen = false;
-		isMobileNavigationOpen.set(false);
+		isNavigationOpen.set(false);
+
+		if (!get(isContactOpen)) {
+			document.querySelector('body')?.classList.remove('overflow-hidden');
+		}
 	}
 
 	function onClickOutside(_: any) {

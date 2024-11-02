@@ -7,6 +7,5 @@ export const scrolled = writable<boolean>(false);
 export const navigation = writable<MobileNavigation | null>(null);
 export const contact = writable<ContactModal | null>(null);
 
-export const isMobileNavigationOpen = writable(false);
 export const isContactOpen = writable(false);
-export const blockersOpen = writable(0);
+export const isNavigationOpen = writable(false);

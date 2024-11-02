@@ -11,6 +11,10 @@
 	let isModified: boolean = false;
 	let isValid: boolean = true;
 
+	export function focus() {
+		input.focus();
+	}
+
 	export function validate(): boolean {
 		if (required && input.value == '') {
 			isValid = false;
@@ -47,9 +51,9 @@
 			{autocomplete}
 			{placeholder}
 			{disabled}
-			class="mt-2 block w-full rounded border-2 border-gray-200 bg-white px-3 py-2.5 outline-none transition-colors duration-200 disabled:!border-gray-200 disabled:bg-gray-100 {isValid
-				? 'border-gray-200 focus:border-gray-800 mhover:hover:border-gray-800'
-				: 'border-red-600'}"
+			class="mt-2 block w-full rounded bg-gray-200 px-3 py-2.5 placeholder-gray-500 outline-none ring-blue-600 ring-offset-2 transition-[background-color,box-shadow] duration-200 disabled:!border-gray-200 disabled:bg-gray-100 mhover:hover:bg-gray-300 {isValid
+				? 'border-gray-200 focus:ring-2'
+				: 'ring-2 ring-red-600'}"
 			{name}
 			rows="3"
 		/>
@@ -62,9 +66,9 @@
 			id={name}
 			{autocomplete}
 			{placeholder}
-			class="mt-2 block w-full rounded border-2 border-gray-200 bg-white px-3 py-2.5 outline-none transition-colors duration-200 disabled:!border-gray-200 disabled:bg-gray-100 {isValid
-				? 'border-gray-200 focus:border-gray-800 mhover:hover:border-gray-800'
-				: 'border-red-600'}"
+			class="mt-2 block w-full rounded bg-gray-200 px-3 py-2.5 placeholder-gray-500 outline-none ring-blue-600 ring-offset-2 transition-[background-color,box-shadow] duration-200 disabled:!border-gray-200 disabled:bg-gray-100 mhover:hover:bg-gray-300 {isValid
+				? 'border-gray-200 focus:ring-2'
+				: 'ring-2 ring-red-600'}"
 			{name}
 			{type}
 		/>

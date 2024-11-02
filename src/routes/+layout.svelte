@@ -1,8 +1,8 @@
 <script lang="ts">
 	import '../app.css';
-	import { contact, navigation } from '$lib/stores/stores';
 	import { onMount } from 'svelte';
 	import { inject } from '@vercel/analytics';
+	import { contact, navigation } from '$lib/stores/stores';
 	import Header from '$lib/components/header/header.svelte';
 	import Footer from '$lib/components/footer/footer.svelte';
 	import Navigation from '$lib/components/navigation/navigation.svelte';

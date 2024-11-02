@@ -1,7 +1,7 @@
 <script lang="ts">
+	import { coffeescript, typescript } from 'svelte-highlight/languages';
 	import { Clipboard, ClipboardCheck } from 'lucide-svelte';
 	import { Highlight, HighlightSvelte, LineNumbers } from 'svelte-highlight';
-	import { coffeescript, typescript } from 'svelte-highlight/languages';
 
 	export let lang: string = '';
 	export let text: string = '';
