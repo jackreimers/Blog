@@ -161,7 +161,6 @@
 										disabled={isSubmitting}
 										label="Name"
 										name="name"
-										placeholder="Enter your name..."
 										required={true}
 									/>
 									<Input
@@ -170,7 +169,6 @@
 										disabled={isSubmitting}
 										label="Email"
 										name="email"
-										placeholder="Enter your email..."
 										required={true}
 										type="email"
 									/>
@@ -179,7 +177,6 @@
 										disabled={isSubmitting}
 										label="Message"
 										name="message"
-										placeholder="Enter your message..."
 										required={true}
 										type="textarea"
 									/>
